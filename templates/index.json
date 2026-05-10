@@ -68,10 +68,25 @@
           "type": "button",
           "name": "t:names.button",
           "settings": {
-            "label": "Shop all",
+            "label": "Shop the lookbook",
+            "link": "shopify://collections/photo-sheets",
+            "open_in_new_tab": false,
+            "style_class": "button",
+            "width": "fit-content",
+            "custom_width": 100,
+            "width_mobile": "fit-content",
+            "custom_width_mobile": 100
+          },
+          "blocks": {}
+        },
+        "button_JBDhNy": {
+          "type": "button",
+          "name": "t:names.button",
+          "settings": {
+            "label": "How it works",
             "link": "shopify://collections/all",
             "open_in_new_tab": false,
-            "style_class": "button-secondary",
+            "style_class": "button",
             "width": "fit-content",
             "custom_width": 100,
             "width_mobile": "fit-content",
@@ -83,7 +98,8 @@
       "block_order": [
         "text_YLPk4p",
         "text_qJdVRm",
-        "button_H9gpTf"
+        "button_H9gpTf",
+        "button_JBDhNy"
       ],
       "name": "t:names.hero",
       "settings": {
