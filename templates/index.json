@@ -206,7 +206,7 @@
             "width": "fit-content",
             "max_width": "normal",
             "alignment": "left",
-            "type_preset": "h2",
+            "type_preset": "h3",
             "font": "var(--font-body--family)",
             "font_size": "1rem",
             "line_height": "normal",
@@ -304,6 +304,29 @@
                 "padding-inline-end": 0
               },
               "blocks": {
+                "image_hd6Dag": {
+                  "type": "image",
+                  "name": "t:names.image",
+                  "settings": {
+                    "image": "shopify://shop_images/shoe-sticker-with-laces.jpg",
+                    "link": "",
+                    "image_ratio": "square",
+                    "width": "fill",
+                    "custom_width": 100,
+                    "width_mobile": "fill",
+                    "custom_width_mobile": 100,
+                    "height": "fit",
+                    "border": "none",
+                    "border_width": 1,
+                    "border_opacity": 100,
+                    "border_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                },
                 "text_eNPRPg": {
                   "type": "text",
                   "name": "t:names.text",
@@ -312,7 +335,7 @@
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
-                    "type_preset": "h3",
+                    "type_preset": "h4",
                     "font": "var(--font-body--family)",
                     "font_size": "1rem",
                     "line_height": "normal",
@@ -358,6 +381,7 @@
                 }
               },
               "block_order": [
+                "image_hd6Dag",
                 "text_eNPRPg",
                 "text_rR8LLp"
               ]
@@ -402,6 +426,29 @@
                 "padding-inline-end": 0
               },
               "blocks": {
+                "image_zbGi3e": {
+                  "type": "image",
+                  "name": "t:names.image",
+                  "settings": {
+                    "image": "shopify://shop_images/hangloose-hand-on-pink.jpg",
+                    "link": "",
+                    "image_ratio": "square",
+                    "width": "fill",
+                    "custom_width": 100,
+                    "width_mobile": "fill",
+                    "custom_width_mobile": 100,
+                    "height": "fit",
+                    "border": "none",
+                    "border_width": 1,
+                    "border_opacity": 100,
+                    "border_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                },
                 "text_83VPa3": {
                   "type": "text",
                   "name": "t:names.text",
@@ -410,7 +457,7 @@
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
-                    "type_preset": "h3",
+                    "type_preset": "h4",
                     "font": "var(--font-body--family)",
                     "font_size": "1rem",
                     "line_height": "normal",
@@ -456,6 +503,7 @@
                 }
               },
               "block_order": [
+                "image_zbGi3e",
                 "text_83VPa3",
                 "text_MpcqyR"
               ]
@@ -500,6 +548,29 @@
                 "padding-inline-end": 0
               },
               "blocks": {
+                "image_cL7ACg": {
+                  "type": "image",
+                  "name": "t:names.image",
+                  "settings": {
+                    "image": "shopify://shop_images/keep-reading.jpg",
+                    "link": "",
+                    "image_ratio": "square",
+                    "width": "fill",
+                    "custom_width": 100,
+                    "width_mobile": "fill",
+                    "custom_width_mobile": 100,
+                    "height": "fit",
+                    "border": "none",
+                    "border_width": 1,
+                    "border_opacity": 100,
+                    "border_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                },
                 "text_kMFkx9": {
                   "type": "text",
                   "name": "t:names.text",
@@ -508,7 +579,7 @@
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
-                    "type_preset": "h3",
+                    "type_preset": "h4",
                     "font": "var(--font-body--family)",
                     "font_size": "1rem",
                     "line_height": "normal",
@@ -554,6 +625,7 @@
                 }
               },
               "block_order": [
+                "image_cL7ACg",
                 "text_kMFkx9",
                 "text_qNJRUB"
               ]
@@ -642,11 +714,11 @@
               "type": "_product-list-text",
               "name": "t:names.collection_title",
               "settings": {
-                "text": "<h3>{{ closest.collection.title }}</h3>",
+                "text": "<p>{{ closest.collection.title }}</p>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
-                "type_preset": "h4",
+                "type_preset": "h3",
                 "font": "var(--font-body--family)",
                 "font_size": "",
                 "line_height": "normal",
