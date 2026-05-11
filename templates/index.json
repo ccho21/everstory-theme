@@ -815,6 +815,14 @@
               },
               "blocks": {}
             },
+            "custom_liquid_FaLXCf": {
+              "type": "custom-liquid",
+              "name": "t:names.custom_liquid",
+              "settings": {
+                "custom_liquid": "{% if closest.product.metafields.custom.card_subtitle != blank %}\n  <p style=\"margin:0; padding-bottom:0.4rem; opacity:.7;font-size:0.75rem;line-height:1.4;\">\n    {{ closest.product.metafields.custom.card_subtitle }}\n  </p>\n{% endif %}"
+              },
+              "blocks": {}
+            },
             "price_JQzVV4": {
               "type": "price",
               "name": "t:names.product_price",
@@ -842,6 +850,7 @@
           "block_order": [
             "product_card_gallery_677WP3",
             "product_title_YXxMTj",
+            "custom_liquid_FaLXCf",
             "price_JQzVV4"
           ]
         }
