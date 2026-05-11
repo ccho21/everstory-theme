@@ -227,9 +227,18 @@
           },
           "blocks": {}
         },
+        "custom_liquid_agcXcd": {
+          "type": "custom-liquid",
+          "name": "t:names.custom_liquid",
+          "settings": {
+            "custom_liquid": "<p style=\"margin:0;margin-bottom:-0.75em;color:#444;font-size:0.75rem;letter-spacing:.12em;text-transform:uppercase;line-height:1.2;\">\n  HOW IT WORKS\n</p>"
+          },
+          "blocks": {}
+        },
         "text_WHg7JM": {
           "type": "text",
           "name": "t:names.text",
+          "disabled": true,
           "settings": {
             "text": "<p>HOW IT WORKS</p>",
             "width": "100%",
@@ -695,6 +704,7 @@
       },
       "block_order": [
         "custom_liquid_j7xPNL",
+        "custom_liquid_agcXcd",
         "text_WHg7JM",
         "text_yViXcX",
         "group_9KzczH"
@@ -995,15 +1005,23 @@
             "padding-inline-end": 0
           },
           "blocks": {
+            "custom_liquid_qrJfWx": {
+              "type": "custom-liquid",
+              "name": "t:names.custom_liquid",
+              "settings": {
+                "custom_liquid": "<p style=\"margin:0;color:#444;font-size:0.75rem;letter-spacing:.12em;text-transform:uppercase;line-height:1.2;\">\n  Why Everstory\n</p>"
+              },
+              "blocks": {}
+            },
             "text_cRKE48": {
               "type": "text",
               "name": "t:names.heading",
               "settings": {
-                "text": "<p>Why Everstory</p><h3>Made to keep, not to scroll past.</h3>",
+                "text": "<p>Made to keep, not to scroll past.</p>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
-                "type_preset": "rte",
+                "type_preset": "h3",
                 "font": "var(--font-body--family)",
                 "font_size": "1rem",
                 "line_height": "normal",
@@ -1062,6 +1080,7 @@
             }
           },
           "block_order": [
+            "custom_liquid_qrJfWx",
             "text_cRKE48",
             "text_Thh3Gp",
             "button_4m6yAG"
