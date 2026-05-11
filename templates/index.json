@@ -209,7 +209,7 @@
         "color_scheme": "scheme-1",
         "toggle_overlay": true,
         "overlay_color": "#12121266",
-        "overlay_style": "solid",
+        "overlay_style": "gradient",
         "gradient_direction": "to bottom",
         "blurred_reflection": false,
         "reflection_opacity": 75,
