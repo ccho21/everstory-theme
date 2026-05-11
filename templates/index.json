@@ -211,7 +211,7 @@
         "overlay_color": "#12121266",
         "overlay_style": "gradient",
         "gradient_direction": "to bottom",
-        "blurred_reflection": false,
+        "blurred_reflection": true,
         "reflection_opacity": 75,
         "padding-block-start": 80,
         "padding-block-end": 80
