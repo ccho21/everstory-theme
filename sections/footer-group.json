@@ -117,15 +117,24 @@
             "padding-inline-end": 0
           },
           "blocks": {
+            "custom_liquid_VzAR9m": {
+              "type": "custom-liquid",
+              "name": "t:names.custom_liquid",
+              "settings": {
+                "custom_liquid": "<h3 style=\"letter-spacing: 0.15em;\">MADE TO KEEP / MOMENTS THAT MATTER</h3>"
+              },
+              "blocks": {}
+            },
             "text_yKzFaP": {
               "type": "text",
               "name": "t:names.text",
+              "disabled": true,
               "settings": {
-                "text": "<p>MADE TO KEEP /  MOMENTS THAT MATTER</p>",
+                "text": "<h3>MADE TO KEEP  |  MOMENTS THAT MATTER</h3>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
-                "type_preset": "h3",
+                "type_preset": "rte",
                 "font": "var(--font-body--family)",
                 "font_size": "1rem",
                 "line_height": "normal",
@@ -282,6 +291,7 @@
             }
           },
           "block_order": [
+            "custom_liquid_VzAR9m",
             "text_yKzFaP",
             "group_g3gANU"
           ]
