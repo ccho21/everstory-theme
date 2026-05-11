@@ -714,11 +714,11 @@
               "type": "_product-list-text",
               "name": "t:names.collection_title",
               "settings": {
-                "text": "<p>{{ closest.collection.title }}</p>",
+                "text": "<p>Photo sheets by count</p><h3>Pick the count that fits your story.</h3>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
-                "type_preset": "h3",
+                "type_preset": "rte",
                 "font": "var(--font-body--family)",
                 "font_size": "",
                 "line_height": "normal",
