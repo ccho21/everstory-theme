@@ -291,9 +291,9 @@
         "color_scheme": "",
         "icons_style": "chevron",
         "icons_shape": "none",
-        "slideshow_controls_style": "dots",
-        "autoplay": false,
-        "autoplay_speed": 4,
+        "slideshow_controls_style": "counter",
+        "autoplay": true,
+        "autoplay_speed": 5,
         "padding-block-start": 0,
         "padding-block-end": 0
       }
