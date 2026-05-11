@@ -12,15 +12,24 @@
     "hero_jVaWmY": {
       "type": "hero",
       "blocks": {
+        "custom_liquid_gCJwqw": {
+          "type": "custom-liquid",
+          "name": "t:names.custom_liquid",
+          "settings": {
+            "custom_liquid": "<p style=\"margin:0;margin-bottom:-0.75em;color:#444;font-size:0.75rem;letter-spacing:.12em;text-transform:uppercase;line-height:1.2;\">\n  Made in Toronto\n</p>"
+          },
+          "blocks": {}
+        },
         "text_m3MLkj": {
           "type": "text",
           "name": "t:names.text",
+          "disabled": true,
           "settings": {
-            "text": "<p>Made in Toronto</p>",
-            "width": "fit-content",
+            "text": "<p><br/>  Made in Toron</p>",
+            "width": "100%",
             "max_width": "normal",
-            "alignment": "left",
-            "type_preset": "custom",
+            "alignment": "center",
+            "type_preset": "rte",
             "font": "var(--font-body--family)",
             "font_size": "1rem",
             "line_height": "normal",
@@ -168,6 +177,7 @@
         }
       },
       "block_order": [
+        "custom_liquid_gCJwqw",
         "text_m3MLkj",
         "text_YLPk4p",
         "text_qJdVRm",
@@ -202,8 +212,8 @@
         "gradient_direction": "to bottom",
         "blurred_reflection": false,
         "reflection_opacity": 75,
-        "padding-block-start": 100,
-        "padding-block-end": 100
+        "padding-block-start": 80,
+        "padding-block-end": 80
       }
     },
     "section_yr4xMG": {
