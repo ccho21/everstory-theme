@@ -193,6 +193,32 @@
                 "padding-inline-end": 0
               },
               "blocks": {
+                "email_signup_QahQmC": {
+                  "type": "email-signup",
+                  "name": "t:names.email_signup",
+                  "settings": {
+                    "width": "fill",
+                    "custom_width": 100,
+                    "inherit_color_scheme": true,
+                    "color_scheme": "",
+                    "heading": "Newsletter",
+                    "heading_preset": "h4",
+                    "border_style": "all",
+                    "border_width": 1,
+                    "border_radius": 100,
+                    "input_type_preset": "paragraph",
+                    "style_class": "button-unstyled",
+                    "display_type": "arrow",
+                    "label": "Sign up",
+                    "integrated_button": true,
+                    "button_type_preset": "paragraph",
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                },
                 "menu_CMe9JQ": {
                   "type": "menu",
                   "name": "t:names.menu",
@@ -255,39 +281,13 @@
                     "padding-inline-end": 0
                   },
                   "blocks": {}
-                },
-                "email_signup_QahQmC": {
-                  "type": "email-signup",
-                  "name": "t:names.email_signup",
-                  "settings": {
-                    "width": "fill",
-                    "custom_width": 100,
-                    "inherit_color_scheme": true,
-                    "color_scheme": "",
-                    "heading": "Newsletter",
-                    "heading_preset": "h4",
-                    "border_style": "all",
-                    "border_width": 1,
-                    "border_radius": 100,
-                    "input_type_preset": "paragraph",
-                    "style_class": "button-unstyled",
-                    "display_type": "arrow",
-                    "label": "Sign up",
-                    "integrated_button": true,
-                    "button_type_preset": "paragraph",
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
-                  },
-                  "blocks": {}
                 }
               },
               "block_order": [
+                "email_signup_QahQmC",
                 "menu_CMe9JQ",
                 "menu_Lfepgw",
-                "menu_VjYiVA",
-                "email_signup_QahQmC"
+                "menu_VjYiVA"
               ]
             }
           },
@@ -337,6 +337,32 @@
             "padding-inline-end": 0
           },
           "blocks": {
+            "email_signup_kLbQg8": {
+              "type": "email-signup",
+              "name": "t:names.email_signup",
+              "settings": {
+                "width": "fill",
+                "custom_width": 100,
+                "inherit_color_scheme": true,
+                "color_scheme": "",
+                "heading": "Newsletter",
+                "heading_preset": "h4",
+                "border_style": "all",
+                "border_width": 1,
+                "border_radius": 14,
+                "input_type_preset": "paragraph",
+                "style_class": "button-unstyled",
+                "display_type": "arrow",
+                "label": "Sign up",
+                "integrated_button": true,
+                "button_type_preset": "paragraph",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
             "menu_FJGgrL": {
               "type": "menu",
               "name": "t:names.menu",
@@ -399,39 +425,13 @@
                 "padding-inline-end": 0
               },
               "blocks": {}
-            },
-            "email_signup_kLbQg8": {
-              "type": "email-signup",
-              "name": "t:names.email_signup",
-              "settings": {
-                "width": "fill",
-                "custom_width": 100,
-                "inherit_color_scheme": true,
-                "color_scheme": "",
-                "heading": "Newsletter",
-                "heading_preset": "h4",
-                "border_style": "all",
-                "border_width": 1,
-                "border_radius": 14,
-                "input_type_preset": "paragraph",
-                "style_class": "button-unstyled",
-                "display_type": "arrow",
-                "label": "Sign up",
-                "integrated_button": true,
-                "button_type_preset": "paragraph",
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
             }
           },
           "block_order": [
+            "email_signup_kLbQg8",
             "menu_FJGgrL",
             "menu_XbUprX",
-            "menu_U8zdqV",
-            "email_signup_kLbQg8"
+            "menu_U8zdqV"
           ]
         }
       },
