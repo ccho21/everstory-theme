@@ -120,6 +120,7 @@
             "custom_liquid_VzAR9m": {
               "type": "custom-liquid",
               "name": "t:names.custom_liquid",
+              "disabled": true,
               "settings": {
                 "custom_liquid": "<h3 style=\"letter-spacing: 0.15em;\">MADE TO KEEP / MOMENTS THAT MATTER</h3>"
               },
