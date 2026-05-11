@@ -64,8 +64,8 @@
               "name": "t:names.heading",
               "settings": {
                 "text": "<h1>Photographs, kept by hand.</h1>",
-                "width": "fit-content",
-                "max_width": "normal",
+                "width": "100%",
+                "max_width": "none",
                 "alignment": "left",
                 "type_preset": "h1",
                 "font": "var(--font-body--family)",
