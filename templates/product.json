@@ -308,7 +308,7 @@
                   "name": "t:names.accordion_row",
                   "settings": {
                     "heading": "What you get",
-                    "open_by_default": false,
+                    "open_by_default": true,
                     "icon": "none",
                     "width": 20
                   },
