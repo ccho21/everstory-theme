@@ -421,10 +421,50 @@
                     "text_X6BebL"
                   ]
                 },
+                "accordion_row_hmBQLR": {
+                  "type": "_accordion-row",
+                  "name": "t:names.accordion_row",
+                  "settings": {
+                    "heading": "Lead time & shipping",
+                    "open_by_default": false,
+                    "icon": "none",
+                    "width": 20
+                  },
+                  "blocks": {
+                    "text_pcmYjm": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<p>We will work quickly to ship your order as soon as possible. Once your order has shipped, you will receive an email with further information. Delivery times vary depending on your location.</p>",
+                        "width": "100%",
+                        "max_width": "normal",
+                        "alignment": "left",
+                        "type_preset": "rte",
+                        "font": "var(--font-body--family)",
+                        "font_size": "1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "color": "var(--color-foreground)",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "text_pcmYjm"
+                  ]
+                },
                 "accordion_row_bGLBAp": {
                   "type": "_accordion-row",
                   "settings": {
-                    "heading": "Manufacturing",
+                    "heading": "Photo guidelines",
                     "open_by_default": false,
                     "icon": "none",
                     "width": 20
@@ -433,7 +473,7 @@
                     "text_zPTBJa": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>Our products are manufactured both locally and globally. We carefully select our manufacturing partners to ensure our products are high quality and a fair value.</p>",
+                        "text": "<p>Bright lighting, subject filling the frame, minimal motion blur. We email if a photo needs replacement before printing.</p>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -465,6 +505,7 @@
                 "accordion_row_8eXVJa",
                 "accordion_row_TUac8P",
                 "accordion_row_GGCVwz",
+                "accordion_row_hmBQLR",
                 "accordion_row_bGLBAp"
               ]
             }
