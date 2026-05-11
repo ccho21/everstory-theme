@@ -372,7 +372,7 @@
                   "type": "image",
                   "name": "t:names.image",
                   "settings": {
-                    "image": "shopify://shop_images/ChatGPT_Image_May_11_2026_at_12_28_18_PM_1.png",
+                    "image": "shopify://shop_images/ChatGPT_Image_May_11_2026_at_01_29_16_PM.png",
                     "link": "",
                     "image_ratio": "square",
                     "width": "fill",
@@ -494,7 +494,7 @@
                   "type": "image",
                   "name": "t:names.image",
                   "settings": {
-                    "image": "shopify://shop_images/ChatGPT_Image_May_11_2026_at_12_28_18_PM_2.png",
+                    "image": "shopify://shop_images/ChatGPT_Image_May_11_2026_at_01_19_09_PM.png",
                     "link": "",
                     "image_ratio": "square",
                     "width": "fill",
@@ -616,7 +616,7 @@
                   "type": "image",
                   "name": "t:names.image",
                   "settings": {
-                    "image": "shopify://shop_images/ChatGPT_Image_May_11_2026_at_12_28_19_PM_3.png",
+                    "image": "shopify://shop_images/ChatGPT_Image_May_11_2026_at_01_33_30_PM.png",
                     "link": "",
                     "image_ratio": "square",
                     "width": "fill",
@@ -665,7 +665,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Printed on Epson ET-8550, cut on Summa D75. Free Ontario shipping or Toronto pickup.</p>",
+                    "text": "<p>Free Ontario shipping or Toronto pickup.</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
