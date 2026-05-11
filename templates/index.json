@@ -199,7 +199,7 @@
           "settings": {
             "image": "shopify://shop_images/ChatGPT_Image_May_11_2026_at_02_09_38_PM.png",
             "link": "",
-            "image_ratio": "portrait",
+            "image_ratio": "square",
             "width": "fill",
             "custom_width": 100,
             "width_mobile": "fill",
