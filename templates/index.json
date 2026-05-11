@@ -55,7 +55,7 @@
               "type": "custom-liquid",
               "name": "t:names.custom_liquid",
               "settings": {
-                "custom_liquid": "<p style=\"margin:0;margin-bottom:-0.75em;color:#444;font-size:1rem;letter-spacing:.12em;text-transform:uppercase;line-height:1.2;\">\n  Made in Toronto\n</p>"
+                "custom_liquid": "<p style=\"margin:0;color:#444;font-size:1rem;letter-spacing:.12em;text-transform:uppercase;line-height:1.2;\">\n  Made in Toronto\n</p>"
               },
               "blocks": {}
             },
