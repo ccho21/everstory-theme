@@ -110,7 +110,7 @@
           "name": "t:names.button",
           "settings": {
             "label": "How it works",
-            "link": "shopify://collections/photo-sheets",
+            "link": "#how-it-works",
             "open_in_new_tab": false,
             "style_class": "button-secondary",
             "width": "fit-content",
