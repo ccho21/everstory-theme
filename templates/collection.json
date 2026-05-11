@@ -68,7 +68,7 @@
           "type": "text",
           "name": "Description",
           "settings": {
-            "text": "{{ closest.collection.description }}",
+            "text": "<p>A5 die-cut sheets, hand cut at our Toronto studio. Pick the count that fits your story — from a single portrait to a four-photo keepsake set.</p>",
             "width": "fit-content",
             "max_width": "normal",
             "alignment": "left",
