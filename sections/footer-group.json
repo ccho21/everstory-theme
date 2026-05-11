@@ -215,7 +215,7 @@
                     "padding-block-start": 30,
                     "padding-block-end": 30,
                     "padding-inline-start": 0,
-                    "padding-inline-end": 30
+                    "padding-inline-end": 0
                   },
                   "blocks": {}
                 },
