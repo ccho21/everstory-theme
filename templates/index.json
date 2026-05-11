@@ -12,27 +12,6 @@
     "section_yzephL": {
       "type": "section",
       "blocks": {
-        "image_hE973Y": {
-          "type": "image",
-          "settings": {
-            "link": "",
-            "image_ratio": "square",
-            "width": "fill",
-            "custom_width": 100,
-            "width_mobile": "fill",
-            "custom_width_mobile": 100,
-            "height": "fit",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {}
-        },
         "group_itzj3X": {
           "type": "group",
           "settings": {
@@ -214,11 +193,32 @@
             "text_KL3QyL",
             "group_NQQKfQ"
           ]
+        },
+        "image_hE973Y": {
+          "type": "image",
+          "settings": {
+            "link": "",
+            "image_ratio": "square",
+            "width": "fill",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
         }
       },
       "block_order": [
-        "image_hE973Y",
-        "group_itzj3X"
+        "group_itzj3X",
+        "image_hE973Y"
       ],
       "name": "t:names.image_with_text",
       "settings": {
@@ -231,7 +231,7 @@
         "vertical_alignment_flex_direction_column": "center",
         "gap": 32,
         "section_width": "page-width",
-        "section_height": "full-screen",
+        "section_height": "large",
         "section_height_custom": 50,
         "color_scheme": "",
         "background_media": "none",
