@@ -460,8 +460,8 @@
                   "type": "button",
                   "name": "t:names.button",
                   "settings": {
-                    "label": "Shop now",
-                    "link": "shopify://collections/all",
+                    "label": "How it works",
+                    "link": "#how-it-works",
                     "open_in_new_tab": false,
                     "style_class": "button-secondary",
                     "width": "fit-content",
