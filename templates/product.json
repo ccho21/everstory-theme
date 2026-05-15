@@ -536,7 +536,7 @@
       "type": "custom-liquid",
       "name": "t:names.custom_liquid",
       "settings": {
-        "custom_liquid": "test",
+        "custom_liquid": "{% if product.metafields.custom.product_story_html != blank %}\n  {{ product.metafields.custom.product_story_html.value }}\n{% endif %}",
         "color_scheme": "",
         "section_width": "page-width",
         "padding-block-start": 0,
