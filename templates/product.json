@@ -532,6 +532,17 @@
         "padding-block-end": 0
       }
     },
+    "custom_liquid_6CMhUX": {
+      "type": "custom-liquid",
+      "name": "t:names.custom_liquid",
+      "settings": {
+        "custom_liquid": "test",
+        "color_scheme": "",
+        "section_width": "page-width",
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      }
+    },
     "custom_liquid_YXWHeB": {
       "type": "custom-liquid",
       "name": "t:names.custom_liquid",
@@ -687,6 +698,7 @@
   },
   "order": [
     "main",
+    "custom_liquid_6CMhUX",
     "custom_liquid_YXWHeB",
     "product_recommendations_qggXJq"
   ]
