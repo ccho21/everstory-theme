@@ -219,27 +219,6 @@
                   },
                   "blocks": {}
                 },
-                "menu_CMe9JQ": {
-                  "type": "menu",
-                  "name": "t:names.menu",
-                  "settings": {
-                    "menu": "shop",
-                    "heading": "",
-                    "menu_spacing": 12,
-                    "show_as_accordion": true,
-                    "accordion_icon": "caret",
-                    "accordion_dividers": false,
-                    "inherit_color_scheme": true,
-                    "color_scheme": "",
-                    "heading_preset": "h4",
-                    "link_preset": "",
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
-                  },
-                  "blocks": {}
-                },
                 "menu_Lfepgw": {
                   "type": "menu",
                   "name": "t:names.menu",
@@ -285,7 +264,6 @@
               },
               "block_order": [
                 "email_signup_QahQmC",
-                "menu_CMe9JQ",
                 "menu_Lfepgw",
                 "menu_VjYiVA"
               ]
