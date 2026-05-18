@@ -677,8 +677,8 @@
       ],
       "name": "t:names.product_recommendations",
       "settings": {
-        "product": "package-full",
-        "recommendation_type": "complementary",
+        "product": "{{ product }}",
+        "recommendation_type": "related",
         "layout_type": "grid",
         "carousel_on_mobile": false,
         "max_products": 4,
