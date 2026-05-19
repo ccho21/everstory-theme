@@ -221,32 +221,6 @@
     "slideshow_DdxtkG": {
       "type": "slideshow",
       "blocks": {
-        "slide_gtYc8n": {
-          "type": "_slide",
-          "settings": {
-            "media_type_1": "image",
-            "image_1": "shopify://shop_images/ChatGPT_Image_May_11_2026_at_02_09_38_PM.png",
-            "content_direction": "column",
-            "vertical_on_mobile": true,
-            "horizontal_alignment": "flex-start",
-            "vertical_alignment": "center",
-            "align_baseline": false,
-            "horizontal_alignment_flex_direction_column": "center",
-            "vertical_alignment_flex_direction_column": "center",
-            "gap": 12,
-            "inherit_color_scheme": false,
-            "color_scheme": "scheme-6",
-            "toggle_overlay": false,
-            "overlay_color": "#00000026",
-            "overlay_style": "solid",
-            "gradient_direction": "to top",
-            "padding-block-start": 48,
-            "padding-block-end": 48,
-            "padding-inline-start": 48,
-            "padding-inline-end": 48
-          },
-          "blocks": {}
-        },
         "slide_JEBCHf": {
           "type": "_slide",
           "settings": {
@@ -275,7 +249,6 @@
         }
       },
       "block_order": [
-        "slide_gtYc8n",
         "slide_JEBCHf"
       ],
       "name": "t:names.slideshow_full_frame",
