@@ -1,0 +1,24 @@
+{% schema %}
+{
+  "name": "Hero Split",
+  "settings": [
+    { "type": "text",         "id": "eyebrow",   "label": "Eyebrow",  "default": "Made in Toronto" },
+    { "type": "text",         "id": "headline",  "label": "Headline", "default": "Photographs, kept by hand." },
+    { "type": "textarea",     "id": "body",      "label": "Body" },
+    { "type": "image_picker", "id": "image",     "label": "Hero image" },
+    { "type": "text",         "id": "cta1_label","label": "CTA 1 label" },
+    { "type": "url",          "id": "cta1_url",  "label": "CTA 1 link" },
+    { "type": "text",         "id": "cta2_label","label": "CTA 2 label" },
+    { "type": "url",          "id": "cta2_url",  "label": "CTA 2 link" },
+    { "type": "select",       "id": "split_ratio", "label": "Split ratio",
+      "options": [
+        { "value": "45-55", "label": "45 / 55 (image-leaning)" },
+        { "value": "50-50", "label": "50 / 50" },
+        { "value": "55-45", "label": "55 / 45 (text-leaning)" }
+      ],
+      "default": "45-55"
+    }
+  ],
+  "presets": [{ "name": "Hero Split" }]
+}
+{% endschema %}
