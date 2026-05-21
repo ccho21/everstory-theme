@@ -267,7 +267,7 @@
               "settings": {
                 "text": "MADE IN TORONTO",
                 "alignment": "left",
-                "tight": true
+                "tight": false
               },
               "blocks": {}
             },
@@ -1270,7 +1270,7 @@
                   "settings": {
                     "text": "PHOTO SHEETS BY COUNT",
                     "alignment": "left",
-                    "tight": true
+                    "tight": false
                   },
                   "blocks": {}
                 },
@@ -1544,7 +1544,7 @@
               "settings": {
                 "text": "WHY EVERSTORY",
                 "alignment": "left",
-                "tight": true
+                "tight": false
               },
               "blocks": {}
             },
