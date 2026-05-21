@@ -718,7 +718,7 @@
           "settings": {
             "text": "<p>From your photo to a sheet you'll keep.</p>",
             "width": "fit-content",
-            "max_width": "normal",
+            "max_width": "narrow",
             "alignment": "left",
             "type_preset": "h3",
             "font": "var(--font-body--family)",
