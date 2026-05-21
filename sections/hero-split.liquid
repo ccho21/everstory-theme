@@ -1,3 +1,174 @@
+{% liquid
+  assign split = section.settings.split_ratio | default: '45-55'
+%}
+
+<div class="hero-split hero-split--{{ split }}">
+  <div class="hero-split__inner">
+    <div class="hero-split__content">
+      {% if section.settings.eyebrow != blank %}
+        <p class="hero-split__eyebrow">{{ section.settings.eyebrow }}</p>
+      {% endif %}
+      {% if section.settings.headline != blank %}
+        <h1 class="hero-split__headline">{{ section.settings.headline }}</h1>
+      {% endif %}
+      {% if section.settings.body != blank %}
+        <p class="hero-split__body">{{ section.settings.body }}</p>
+      {% endif %}
+      {% if section.settings.cta1_label != blank or section.settings.cta2_label != blank %}
+        <div class="hero-split__ctas">
+          {% if section.settings.cta1_label != blank %}
+            <a class="hero-split__cta hero-split__cta--primary" href="{{ section.settings.cta1_url | default: '#' }}">
+              {{ section.settings.cta1_label }}
+            </a>
+          {% endif %}
+          {% if section.settings.cta2_label != blank %}
+            <a class="hero-split__cta hero-split__cta--secondary" href="{{ section.settings.cta2_url | default: '#' }}">
+              {{ section.settings.cta2_label }}
+            </a>
+          {% endif %}
+        </div>
+      {% endif %}
+    </div>
+
+    <div class="hero-split__media">
+      {% if section.settings.image != blank %}
+        {{
+          section.settings.image
+          | image_url: width: 1600
+          | image_tag:
+            widths: '400, 600, 800, 1200, 1600',
+            sizes: '(min-width: 750px) 50vw, 100vw',
+            class: 'hero-split__image',
+            loading: 'eager',
+            alt: section.settings.image.alt
+        }}
+      {% else %}
+        {{ 'lifestyle-1' | placeholder_svg_tag: 'hero-split__image' }}
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{% stylesheet %}
+  .hero-split {
+    background: rgb(var(--color-background));
+    color: rgb(var(--color-foreground));
+    padding-block: clamp(32px, 6vw, 64px);
+  }
+
+  .hero-split__inner {
+    max-width: var(--page-width, 1280px);
+    margin-inline: auto;
+    padding-inline: 24px;
+    display: grid;
+    gap: 32px;
+    grid-template-columns: 1fr;
+    align-items: center;
+  }
+
+  @media screen and (min-width: 750px) {
+    .hero-split__inner {
+      gap: 48px;
+      padding-inline: 48px;
+    }
+    .hero-split--45-55 .hero-split__inner { grid-template-columns: 45fr 55fr; }
+    .hero-split--50-50 .hero-split__inner { grid-template-columns: 1fr 1fr; }
+    .hero-split--55-45 .hero-split__inner { grid-template-columns: 55fr 45fr; }
+  }
+
+  .hero-split__media {
+    order: -1;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+  }
+
+  @media screen and (min-width: 750px) {
+    .hero-split__media {
+      order: 0;
+    }
+  }
+
+  .hero-split__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .hero-split__content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .hero-split__eyebrow {
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin: 0;
+    opacity: 0.7;
+  }
+
+  .hero-split__headline {
+    font-size: clamp(28px, 4.4vw, 44px);
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    margin: 0;
+  }
+
+  .hero-split__body {
+    font-size: 16px;
+    line-height: 1.55;
+    margin: 0;
+    max-width: 52ch;
+  }
+
+  .hero-split__ctas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 8px;
+  }
+
+  .hero-split__cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 20px;
+    font-size: 14px;
+    text-decoration: none;
+    border: 1px solid currentColor;
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+
+  .hero-split__cta--primary {
+    background: rgb(var(--color-foreground));
+    color: rgb(var(--color-background));
+  }
+
+  .hero-split__cta--primary:hover {
+    background: transparent;
+    color: rgb(var(--color-foreground));
+  }
+
+  .hero-split__cta--secondary {
+    background: transparent;
+    color: rgb(var(--color-foreground));
+  }
+
+  .hero-split__cta--secondary:hover {
+    background: rgb(var(--color-foreground));
+    color: rgb(var(--color-background));
+  }
+
+  @media screen and (max-width: 749px) {
+    .hero-split__cta {
+      flex: 1;
+      min-width: 0;
+    }
+  }
+{% endstylesheet %}
+
 {% schema %}
 {
   "name": "Hero Split",
