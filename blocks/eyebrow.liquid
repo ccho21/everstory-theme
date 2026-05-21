@@ -1,0 +1,63 @@
+{% liquid
+  assign text = block.settings.text
+  assign alignment = block.settings.alignment | default: 'left'
+%}
+
+{%- if text != blank or request.design_mode -%}
+  <p
+    class="eyebrow eyebrow--{{ alignment }}{% if block.settings.tight %} eyebrow--tight{% endif %}"
+    {{ block.shopify_attributes }}
+  >
+    {{ text }}
+  </p>
+{%- endif -%}
+
+{% stylesheet %}
+  .eyebrow {
+    margin: 0;
+    color: rgb(var(--color-foreground) / 0.7);
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    line-height: 1.2;
+  }
+  .eyebrow--center { text-align: center; }
+  .eyebrow--right  { text-align: right; }
+  .eyebrow--tight  { margin-bottom: -0.75em; }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Eyebrow",
+  "tag": null,
+  "settings": [
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Text",
+      "default": "HOW IT WORKS"
+    },
+    {
+      "type": "select",
+      "id": "alignment",
+      "label": "Alignment",
+      "options": [
+        { "value": "left",   "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right",  "label": "Right" }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "checkbox",
+      "id": "tight",
+      "label": "Tight to next block",
+      "default": true,
+      "info": "Pulls the next block closer underneath (uses negative margin)."
+    }
+  ],
+  "presets": [
+    { "name": "Eyebrow" }
+  ]
+}
+{% endschema %}
