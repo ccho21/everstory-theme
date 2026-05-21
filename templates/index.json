@@ -218,6 +218,21 @@
         "padding-block-end": 80
       }
     },
+    "hero_split_r4kq9R": {
+      "type": "hero-split",
+      "name": "Hero Split",
+      "settings": {
+        "eyebrow": "Made in Toronto",
+        "headline": "Photographs, kept by hand.",
+        "body": "sadjfhad",
+        "image": "shopify://shop_images/temp_template_for.png",
+        "cta1_label": "",
+        "cta1_url": "",
+        "cta2_label": "",
+        "cta2_url": "",
+        "split_ratio": "45-55"
+      }
+    },
     "slideshow_DdxtkG": {
       "type": "slideshow",
       "blocks": {
@@ -251,6 +266,7 @@
       "block_order": [
         "slide_JEBCHf"
       ],
+      "disabled": true,
       "name": "t:names.slideshow_full_frame",
       "settings": {
         "display_mode": "full_frame",
@@ -461,6 +477,7 @@
       "block_order": [
         "group_MgighJ"
       ],
+      "disabled": true,
       "name": "t:names.custom_section",
       "settings": {
         "content_direction": "column",
@@ -1479,6 +1496,7 @@
   },
   "order": [
     "hero_jVaWmY",
+    "hero_split_r4kq9R",
     "slideshow_DdxtkG",
     "section_6ALzkf",
     "section_yr4xMG",
