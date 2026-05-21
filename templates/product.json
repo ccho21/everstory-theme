@@ -108,29 +108,13 @@
                 "padding-inline-end": 0
               },
               "blocks": {
-                "text_eK8N7t": {
-                  "type": "text",
-                  "name": "t:names.text",
+                "eyebrow_YrxtJT": {
+                  "type": "eyebrow",
+                  "name": "Eyebrow",
                   "settings": {
-                    "text": "<p>Custom Photo Sticker Sheet</p>",
-                    "width": "fit-content",
-                    "max_width": "normal",
+                    "text": "Custom Photo Sticker Sheet",
                     "alignment": "left",
-                    "type_preset": "rte",
-                    "font": "var(--font-body--family)",
-                    "font_size": "1rem",
-                    "line_height": "normal",
-                    "letter_spacing": "normal",
-                    "case": "none",
-                    "wrap": "pretty",
-                    "color": "var(--color-foreground)",
-                    "background": false,
-                    "background_color": "#00000026",
-                    "corner_radius": 0,
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
+                    "tight": false
                   },
                   "blocks": {}
                 },
@@ -192,7 +176,7 @@
                 }
               },
               "block_order": [
-                "text_eK8N7t",
+                "eyebrow_YrxtJT",
                 "text_xrnftG",
                 "custom_liquid_7zq3TB",
                 "price_tVjtKg"
