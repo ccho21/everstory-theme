@@ -702,38 +702,13 @@
           },
           "blocks": {}
         },
-        "custom_liquid_agcXcd": {
-          "type": "custom-liquid",
-          "name": "t:names.custom_liquid",
+        "eyebrow_kVRB8B": {
+          "type": "eyebrow",
+          "name": "Eyebrow",
           "settings": {
-            "custom_liquid": "<p style=\"margin:0;margin-bottom:-0.75em;color:#444;font-size:0.75rem;letter-spacing:.12em;text-transform:uppercase;line-height:1.2;\">\n  HOW IT WORKS\n</p>"
-          },
-          "blocks": {}
-        },
-        "text_WHg7JM": {
-          "type": "text",
-          "name": "t:names.text",
-          "disabled": true,
-          "settings": {
-            "text": "<p>HOW IT WORKS</p>",
-            "width": "100%",
-            "max_width": "none",
-            "alignment": "center",
-            "type_preset": "rte",
-            "font": "var(--font-body--family)",
-            "font_size": "1rem",
-            "line_height": "normal",
-            "letter_spacing": "normal",
-            "case": "none",
-            "wrap": "pretty",
-            "color": "var(--color-foreground)",
-            "background": false,
-            "background_color": "#00000026",
-            "corner_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
+            "text": "HOW IT WORKS",
+            "alignment": "left",
+            "tight": true
           },
           "blocks": {}
         },
@@ -1179,8 +1154,7 @@
       },
       "block_order": [
         "custom_liquid_j7xPNL",
-        "custom_liquid_agcXcd",
-        "text_WHg7JM",
+        "eyebrow_kVRB8B",
         "text_yViXcX",
         "group_9KzczH"
       ],
@@ -1290,11 +1264,13 @@
                 "padding-inline-end": 0
               },
               "blocks": {
-                "custom_liquid_qmxeGU": {
-                  "type": "custom-liquid",
-                  "name": "t:names.custom_liquid",
+                "eyebrow_BPrVFL": {
+                  "type": "eyebrow",
+                  "name": "Eyebrow",
                   "settings": {
-                    "custom_liquid": "<p style=\"margin:0;color:#444;font-size:0.75rem;letter-spacing:.12em;text-transform:uppercase;line-height:1.2;\">\n  PHOTO SHEETS BY COUNT\n</p>"
+                    "text": "PHOTO SHEETS BY COUNT",
+                    "alignment": "left",
+                    "tight": true
                   },
                   "blocks": {}
                 },
@@ -1326,7 +1302,7 @@
                 }
               },
               "block_order": [
-                "custom_liquid_qmxeGU",
+                "eyebrow_BPrVFL",
                 "text_tLf7Bz"
               ]
             },
@@ -1562,11 +1538,13 @@
             "padding-inline-end": 0
           },
           "blocks": {
-            "custom_liquid_qrJfWx": {
-              "type": "custom-liquid",
-              "name": "t:names.custom_liquid",
+            "eyebrow_7BzwJA": {
+              "type": "eyebrow",
+              "name": "Eyebrow",
               "settings": {
-                "custom_liquid": "<p style=\"margin:0;color:#444;font-size:0.75rem;letter-spacing:.12em;text-transform:uppercase;line-height:1.2;\">\n  Why Everstory\n</p>"
+                "text": "WHY EVERSTORY",
+                "alignment": "left",
+                "tight": true
               },
               "blocks": {}
             },
@@ -1637,7 +1615,7 @@
             }
           },
           "block_order": [
-            "custom_liquid_qrJfWx",
+            "eyebrow_7BzwJA",
             "text_cRKE48",
             "text_Thh3Gp",
             "button_4m6yAG"
