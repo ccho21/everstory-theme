@@ -13,38 +13,6 @@
   "sections": {
     "section_nTCVMy": {
       "type": "section",
-      "blocks": {
-        "text_j7AyBE": {
-          "type": "text",
-          "name": "t:names.heading",
-          "disabled": true,
-          "settings": {
-            "text": "<p>MADE TO KEEP /  MOMENTS THAT MATTER</p>",
-            "width": "100%",
-            "max_width": "normal",
-            "alignment": "left",
-            "type_preset": "h3",
-            "font": "var(--font-heading--family)",
-            "font_size": "2rem",
-            "line_height": "normal",
-            "letter_spacing": "normal",
-            "case": "none",
-            "wrap": "pretty",
-            "color": "var(--color-foreground-heading)",
-            "background": false,
-            "background_color": "#00000026",
-            "corner_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "text_j7AyBE"
-      ],
       "name": "t:names.rich_text_section",
       "settings": {
         "content_direction": "column",
@@ -117,6 +85,32 @@
             "padding-inline-end": 0
           },
           "blocks": {
+            "text_Rb6cA7": {
+              "type": "text",
+              "name": "t:names.heading",
+              "settings": {
+                "text": "<h3>MADE TO KEEP /  MOMENTS THAT MATTER</h3>",
+                "width": "fit-content",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
             "custom_liquid_VzAR9m": {
               "type": "custom-liquid",
               "name": "t:names.custom_liquid",
@@ -293,6 +287,7 @@
             }
           },
           "block_order": [
+            "text_Rb6cA7",
             "custom_liquid_VzAR9m",
             "text_yKzFaP",
             "group_g3gANU"
