@@ -42,8 +42,8 @@
           "type": "text",
           "name": "t:names.content",
           "settings": {
-            "text": "<p>{{ closest.page.content }}</p>",
-            "width": "100%",
+            "text": "{{ closest.page.content }}",
+            "width": "fit-content",
             "max_width": "narrow",
             "alignment": "left",
             "type_preset": "rte",
@@ -84,7 +84,7 @@
           "type": "contact-form",
           "settings": {
             "width": "custom",
-            "custom_width": 75,
+            "custom_width": 50,
             "width_mobile": "custom",
             "custom_width_mobile": 100,
             "inherit_color_scheme": true,
