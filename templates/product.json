@@ -274,7 +274,7 @@
                     "text_KXwCJR": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>- One A5 sticker sheet (148 × 195 mm)<br/>- One photograph, repeated at chosen size<br/>- ~7–13 stickers depending on size<br/>- Header printed with your name + order date<br/>- Reviewed and hand-cut at our Toronto studio</p>",
+                        "text": "<ul><li>One A5 sticker sheet</li><li>Face or upper-body crop by default</li><li>Size shown in inch / mm, no letter codes</li><li>Your selected number of different photos</li><li>Header printed with your name and order date</li><li>Reviewed and hand-cut at our Toronto studio</li></ul>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -304,7 +304,7 @@
                 "accordion_row_TUac8P": {
                   "type": "_accordion-row",
                   "settings": {
-                    "heading": "Materials & sizes",
+                    "heading": "Materials",
                     "open_by_default": false,
                     "icon": "none",
                     "width": 20
@@ -313,7 +313,7 @@
                     "text_YzHXbm": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>White Matte / Pearl Grey / Silver / Gold — all Korean substrates with LAMat-AF / Oraguard lamination, waterproof and fade-resistant. Sizes XS through XXL plus Mixed.</p>",
+                        "text": "<ul><li><strong>White Matte</strong> — soft, paper-like finish. Best for diaries, journals, and indoor packaging.</li><li><strong>Translucent</strong> — semi-clear finish that lets the surface show through. Best for glass, windows, and layered looks on light surfaces.</li><li><strong>Silver</strong> — metallic silver finish. Reflective accent for waterproof use.</li><li><strong>Gold</strong> — metallic gold finish. Reflective accent for waterproof use.</li></ul><p>All four are laminated, waterproof, and fade resistant.</p>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -340,6 +340,45 @@
                     "text_YzHXbm"
                   ]
                 },
+                "accordion_row_gtXwtx": {
+                  "type": "_accordion-row",
+                  "settings": {
+                    "heading": "sizes",
+                    "open_by_default": false,
+                    "icon": "none",
+                    "width": 20
+                  },
+                  "blocks": {
+                    "text_WgmTCC": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<ul><li><strong>White Matte</strong> — soft, paper-like finish. Best for diaries, journals, and indoor packaging.</li><li><strong>Translucent</strong> — semi-clear finish that lets the surface show through. Best for glass, windows, and layered looks on light surfaces.</li><li><strong>Silver</strong> — metallic silver finish. Reflective accent for waterproof use.</li><li><strong>Gold</strong> — metallic gold finish. Reflective accent for waterproof use.</li></ul><p>All four are laminated, waterproof, and fade resistant.</p>",
+                        "width": "100%",
+                        "max_width": "normal",
+                        "alignment": "left",
+                        "type_preset": "paragraph",
+                        "font": "var(--font-body--family)",
+                        "font_size": "1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "color": "var(--color-foreground)",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "text_WgmTCC"
+                  ]
+                },
                 "accordion_row_GGCVwz": {
                   "type": "_accordion-row",
                   "settings": {
@@ -352,7 +391,7 @@
                     "text_X6BebL": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>  Print + cut: 1–3 business days. Ships 2–5 business days from order. Free Ontario shipping or Toronto pickup.</p>",
+                        "text": "<ul><li>Indoor: 5+ years without fade.</li><li>Outdoor: 2-3 years depending on UV exposure.</li><li>Waterproof: yes.</li><li>Dishwasher: not recommended. Hand wash only.</li></ul>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -392,7 +431,7 @@
                     "text_pcmYjm": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>We will work quickly to ship your order as soon as possible. Once your order has shipped, you will receive an email with further information. Delivery times vary depending on your location.</p>",
+                        "text": "<ul><li>Production: 1-3 business days after order.</li><li>Shipping: same or next business day after cut.</li><li>Total: typically 2-5 business days from order to shipped.</li><li>Free Ontario shipping via Canada Post lettermail. Toronto Studio pickup available.</li></ul>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -431,7 +470,7 @@
                     "text_zPTBJa": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>Bright lighting, subject filling the frame, minimal motion blur. We email if a photo needs replacement before printing.</p>",
+                        "text": "<p>If no special request is provided, Studio chooses the crop from the photo:</p><ul><li>Kids: face crop by default.</li><li>Adults: full body crop by default.</li><li>Pets: full body crop by default; face crop when the face has stronger impact.</li></ul>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -462,6 +501,7 @@
               "block_order": [
                 "accordion_row_8eXVJa",
                 "accordion_row_TUac8P",
+                "accordion_row_gtXwtx",
                 "accordion_row_GGCVwz",
                 "accordion_row_hmBQLR",
                 "accordion_row_bGLBAp"
