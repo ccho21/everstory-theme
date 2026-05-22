@@ -265,13 +265,53 @@
                   "type": "_accordion-row",
                   "name": "t:names.accordion_row",
                   "settings": {
-                    "heading": "What you get",
+                    "heading": "Safety and age guidance",
                     "open_by_default": true,
                     "icon": "none",
                     "width": 20
                   },
                   "blocks": {
                     "text_KXwCJR": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<p>Everstory sticker sheets are decorative photo products, <strong>not a toy and not a children's product</strong>.</p><ul><li>Not suitable for children under 3 — small peelable die-cut parts pose a choking hazard.</li><li>Not intended for unsupervised use by children under 14. Adults should place the stickers or supervise placement.</li><li>Keep sheets and any loose cut pieces out of reach of infants and toddlers.</li><li>Even when the photograph features a child, the finished sheet is intended for adult handling and care.</li><li>Damage or injury caused by use outside this guidance is not covered by reprint or refund.<br/></li></ul>",
+                        "width": "100%",
+                        "max_width": "normal",
+                        "alignment": "left",
+                        "type_preset": "paragraph",
+                        "font": "var(--font-body--family)",
+                        "font_size": "1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "color": "var(--color-foreground)",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "text_KXwCJR"
+                  ]
+                },
+                "accordion_row_HDrYzB": {
+                  "type": "_accordion-row",
+                  "name": "t:names.accordion_row",
+                  "settings": {
+                    "heading": "What you get",
+                    "open_by_default": true,
+                    "icon": "none",
+                    "width": 20
+                  },
+                  "blocks": {
+                    "text_Fn4pzU": {
                       "type": "text",
                       "settings": {
                         "text": "<ul><li>One A5 sticker sheet</li><li>Face or upper-body crop by default</li><li>Size shown in inch / mm, no letter codes</li><li>Your selected number of different photos</li><li>Header printed with your name and order date</li><li>Reviewed and hand-cut at our Toronto studio</li></ul>",
@@ -298,7 +338,7 @@
                     }
                   },
                   "block_order": [
-                    "text_KXwCJR"
+                    "text_Fn4pzU"
                   ]
                 },
                 "accordion_row_TUac8P": {
@@ -500,6 +540,7 @@
               },
               "block_order": [
                 "accordion_row_8eXVJa",
+                "accordion_row_HDrYzB",
                 "accordion_row_TUac8P",
                 "accordion_row_gtXwtx",
                 "accordion_row_GGCVwz",
