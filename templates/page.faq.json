@@ -209,7 +209,7 @@
                 "accordion_row_BqDTre": {
                   "type": "_accordion-row",
                   "settings": {
-                    "heading": "Return policy",
+                    "heading": "How does ordering work?",
                     "open_by_default": true,
                     "icon": "none",
                     "width": 20
@@ -218,7 +218,7 @@
                     "text_N7Xam8": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>Our goal is for every customer to be totally satisfied with their purchase. If this isn't the case, let us know and we'll do our best to work with you to make it right.</p>",
+                        "text": "<p>Choose Face Sticker, Full Body Sticker, Circle Sticker, Package Mini, or Package Full. For non-Package products, choose size, material, and Photos to include. For Package products, upload photos into Big / Medium / Small print sections and Studio picks the final set. We start cutting within one business day and ship within 2–5 business days. No mockup back-and-forth — the order notes are how we hear what matters to you.</p>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -248,7 +248,7 @@
                 "accordion_row_twRhnM": {
                   "type": "_accordion-row",
                   "settings": {
-                    "heading": "Shipping",
+                    "heading": "Can I cancel my order?",
                     "open_by_default": false,
                     "icon": "none",
                     "width": 20
@@ -257,7 +257,7 @@
                     "text_zxpk9g": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>We will work quickly to ship your order as soon as possible. Once your order has shipped, you will receive an email with further information. Delivery times vary depending on your location.</p>",
+                        "text": "<p>Yes, before we begin printing — typically within one business day of your order. Email<a>studio.everstory@gmail.com</a>as soon as possible.</p>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -287,7 +287,7 @@
                 "accordion_row_Cq7FbW": {
                   "type": "_accordion-row",
                   "settings": {
-                    "heading": "Manufacturing",
+                    "heading": "Can I request changes after I order?",
                     "open_by_default": false,
                     "icon": "none",
                     "width": 20
@@ -296,7 +296,7 @@
                     "text_WGUPxg": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>Our products are manufactured both locally and globally. We carefully select our manufacturing partners to ensure our products are high quality and a fair value.</p>",
+                        "text": "<p>The order notes at checkout are where we capture your details. If you missed something, reach out before printing starts (typically within one business day) and we will fold it in if we can. After printing, changes require a new order.</p>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -424,7 +424,7 @@
                 "accordion_row_LQEVRP": {
                   "type": "_accordion-row",
                   "settings": {
-                    "heading": "Return policy",
+                    "heading": "What kind of photo should I send?",
                     "open_by_default": true,
                     "icon": "none",
                     "width": 20
@@ -433,7 +433,7 @@
                     "text_rVYPGq": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>Our goal is for every customer to be totally satisfied with their purchase. If this isn't the case, let us know and we'll do our best to work with you to make it right.</p>",
+                        "text": "<p>The clearer, the better. Bright lighting, the subject filling the frame, minimal motion blur. We handle background removal and color correction.</p>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -463,7 +463,7 @@
                 "accordion_row_hczY3X": {
                   "type": "_accordion-row",
                   "settings": {
-                    "heading": "Shipping",
+                    "heading": "What file formats do you accept?",
                     "open_by_default": false,
                     "icon": "none",
                     "width": 20
@@ -472,7 +472,7 @@
                     "text_PaxyGT": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>We will work quickly to ship your order as soon as possible. Once your order has shipped, you will receive an email with further information. Delivery times vary depending on your location.</p>",
+                        "text": "<p>JPG, JPEG, PNG, HEIC. Up to 100 MB per file. Higher resolution is always better.</p>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -502,7 +502,7 @@
                 "accordion_row_qMUwkd": {
                   "type": "_accordion-row",
                   "settings": {
-                    "heading": "Manufacturing",
+                    "heading": "Will my photo look exactly like the examples on your site?",
                     "open_by_default": false,
                     "icon": "none",
                     "width": 20
@@ -511,7 +511,7 @@
                     "text_WQFe7U": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>Our products are manufactured both locally and globally. We carefully select our manufacturing partners to ensure our products are high quality and a fair value.</p>",
+                        "text": "<p>Every photo is different. We do our best with the photo you upload and the details you share at checkout. The clearer your photo and the more specific your notes, the closer the result matches your expectation.</p>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -537,12 +537,52 @@
                   "block_order": [
                     "text_WQFe7U"
                   ]
+                },
+                "accordion_row_R9wVYX": {
+                  "type": "_accordion-row",
+                  "settings": {
+                    "heading": "Can I send multiple photos?",
+                    "open_by_default": false,
+                    "icon": "none",
+                    "width": 20
+                  },
+                  "blocks": {
+                    "text_MdX9L6": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<p>Face, Full Body, and Circle Sticker accept 1–13 photos via the Photos to include option. Package Mini and Package Full accept candidate photos by Big / Medium / Small print tier and Studio picks the final set.</p>",
+                        "width": "100%",
+                        "max_width": "normal",
+                        "alignment": "left",
+                        "type_preset": "rte",
+                        "font": "var(--font-body--family)",
+                        "font_size": "1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "color": "var(--color-foreground)",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "text_MdX9L6"
+                  ]
                 }
               },
               "block_order": [
                 "accordion_row_LQEVRP",
                 "accordion_row_hczY3X",
-                "accordion_row_qMUwkd"
+                "accordion_row_qMUwkd",
+                "accordion_row_R9wVYX"
               ]
             }
           },
@@ -639,7 +679,7 @@
                 "accordion_row_pKGHaL": {
                   "type": "_accordion-row",
                   "settings": {
-                    "heading": "Return policy",
+                    "heading": "What size should I pick?",
                     "open_by_default": true,
                     "icon": "none",
                     "width": 20
@@ -648,7 +688,7 @@
                     "text_pjAwCm": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>Our goal is for every customer to be totally satisfied with their purchase. If this isn't the case, let us know and we'll do our best to work with you to make it right.</p>",
+                        "text": "<p>1\" / 25mm is the most popular — planners, journals, bottles, phone cases. 1.25\"–1.5\" for tumblers and laptops. 2\" and 2.5\" are statement sizes. 0.75\" for collectors/calendars.</p>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -678,7 +718,7 @@
                 "accordion_row_MpxTGF": {
                   "type": "_accordion-row",
                   "settings": {
-                    "heading": "Shipping",
+                    "heading": "What is the difference between the materials?",
                     "open_by_default": false,
                     "icon": "none",
                     "width": 20
@@ -687,7 +727,7 @@
                     "text_gfdef4": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>We will work quickly to ship your order as soon as possible. Once your order has shipped, you will receive an email with further information. Delivery times vary depending on your location.</p>",
+                        "text": "<p>White matte is paper-like, best for indoor use. Translucent is semi-clear and lets the surface show through. Silver and gold have a slight metallic finish. All are laminated and waterproof — good for bottles, phone cases, and outdoor surfaces.</p>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -717,7 +757,7 @@
                 "accordion_row_BpHJEJ": {
                   "type": "_accordion-row",
                   "settings": {
-                    "heading": "Manufacturing",
+                    "heading": "Are the stickers waterproof?",
                     "open_by_default": false,
                     "icon": "none",
                     "width": 20
@@ -726,7 +766,7 @@
                     "text_LkG3D3": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>Our products are manufactured both locally and globally. We carefully select our manufacturing partners to ensure our products are high quality and a fair value.</p>",
+                        "text": "<p>All four materials are laminated and waterproof. Hand wash recommended; not dishwasher-safe.</p>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -854,7 +894,7 @@
                 "accordion_row_iiEUqT": {
                   "type": "_accordion-row",
                   "settings": {
-                    "heading": "Return policy",
+                    "heading": "Where do you ship?",
                     "open_by_default": true,
                     "icon": "none",
                     "width": 20
@@ -863,7 +903,7 @@
                     "text_pUqcRz": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>Our goal is for every customer to be totally satisfied with their purchase. If this isn't the case, let us know and we'll do our best to work with you to make it right.</p>",
+                        "text": "<p>Anywhere in Ontario. Free shipping by Canada Post lettermail.</p>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -893,7 +933,7 @@
                 "accordion_row_GMytqg": {
                   "type": "_accordion-row",
                   "settings": {
-                    "heading": "Shipping",
+                    "heading": "How long does shipping take?",
                     "open_by_default": false,
                     "icon": "none",
                     "width": 20
@@ -902,7 +942,7 @@
                     "text_Hrn3AC": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>We will work quickly to ship your order as soon as possible. Once your order has shipped, you will receive an email with further information. Delivery times vary depending on your location.</p>",
+                        "text": "<p>Lettermail typically arrives 3–7 business days after shipping confirmation. Total time from order to delivery is usually 5–12 business days.</p>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -932,13 +972,91 @@
                 "accordion_row_XFGPYy": {
                   "type": "_accordion-row",
                   "settings": {
-                    "heading": "Manufacturing",
+                    "heading": "Why no tracking?",
                     "open_by_default": false,
                     "icon": "none",
                     "width": 20
                   },
                   "blocks": {
                     "text_XY3xUa": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<p>Lettermail is the most affordable way to ship sticker sheets. Free shipping is the trade-off. If your order is lost, we reprint and reship at no cost.</p>",
+                        "width": "100%",
+                        "max_width": "normal",
+                        "alignment": "left",
+                        "type_preset": "rte",
+                        "font": "var(--font-body--family)",
+                        "font_size": "1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "color": "var(--color-foreground)",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "text_XY3xUa"
+                  ]
+                },
+                "accordion_row_fmDwVC": {
+                  "type": "_accordion-row",
+                  "settings": {
+                    "heading": "Can I pick up locally?",
+                    "open_by_default": false,
+                    "icon": "none",
+                    "width": 20
+                  },
+                  "blocks": {
+                    "text_ak8eL9": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<p>Yes — choose Toronto Studio Pickup at checkout.</p>",
+                        "width": "100%",
+                        "max_width": "normal",
+                        "alignment": "left",
+                        "type_preset": "rte",
+                        "font": "var(--font-body--family)",
+                        "font_size": "1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "color": "var(--color-foreground)",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "text_ak8eL9"
+                  ]
+                },
+                "accordion_row_PpKezF": {
+                  "type": "_accordion-row",
+                  "settings": {
+                    "heading": "Not yet. Message us — we evaluate case by case.",
+                    "open_by_default": false,
+                    "icon": "none",
+                    "width": 20
+                  },
+                  "blocks": {
+                    "text_tJXAPd": {
                       "type": "text",
                       "settings": {
                         "text": "<p>Our products are manufactured both locally and globally. We carefully select our manufacturing partners to ensure our products are high quality and a fair value.</p>",
@@ -965,14 +1083,16 @@
                     }
                   },
                   "block_order": [
-                    "text_XY3xUa"
+                    "text_tJXAPd"
                   ]
                 }
               },
               "block_order": [
                 "accordion_row_iiEUqT",
                 "accordion_row_GMytqg",
-                "accordion_row_XFGPYy"
+                "accordion_row_XFGPYy",
+                "accordion_row_fmDwVC",
+                "accordion_row_PpKezF"
               ]
             }
           },
@@ -1069,7 +1189,7 @@
                 "accordion_row_79Te3C": {
                   "type": "_accordion-row",
                   "settings": {
-                    "heading": "Return policy",
+                    "heading": "What if my sticker has a defect?",
                     "open_by_default": true,
                     "icon": "none",
                     "width": 20
@@ -1078,7 +1198,7 @@
                     "text_reJXMq": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>Our goal is for every customer to be totally satisfied with their purchase. If this isn't the case, let us know and we'll do our best to work with you to make it right.</p>",
+                        "text": "<p>We reprint and reship at no cost. Email a photo of the issue within 7 days of delivery.</p>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -1108,7 +1228,7 @@
                 "accordion_row_xCRLFB": {
                   "type": "_accordion-row",
                   "settings": {
-                    "heading": "Shipping",
+                    "heading": "What if I do not like how it turned out?",
                     "open_by_default": false,
                     "icon": "none",
                     "width": 20
@@ -1117,7 +1237,7 @@
                     "text_dfHLcW": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>We will work quickly to ship your order as soon as possible. Once your order has shipped, you will receive an email with further information. Delivery times vary depending on your location.</p>",
+                        "text": "<p>After printing, we do not refund based on personal preference, but we always reprint genuine print or cut defects.</p>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -1147,7 +1267,7 @@
                 "accordion_row_LPr3QE": {
                   "type": "_accordion-row",
                   "settings": {
-                    "heading": "Manufacturing",
+                    "heading": "How long do the stickers last?",
                     "open_by_default": false,
                     "icon": "none",
                     "width": 20
@@ -1156,7 +1276,7 @@
                     "text_FdHcR4": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>Our products are manufactured both locally and globally. We carefully select our manufacturing partners to ensure our products are high quality and a fair value.</p>",
+                        "text": "<p>Indoor: 5+ years. Outdoor (UV-exposed): 2-3 years.</p>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -1284,7 +1404,7 @@
                 "accordion_row_3BdkcT": {
                   "type": "_accordion-row",
                   "settings": {
-                    "heading": "Return policy",
+                    "heading": "Can I order in Korean?",
                     "open_by_default": true,
                     "icon": "none",
                     "width": 20
@@ -1293,7 +1413,7 @@
                     "text_deJDxq": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>Our goal is for every customer to be totally satisfied with their purchase. If this isn't the case, let us know and we'll do our best to work with you to make it right.</p>",
+                        "text": "<p>네. 결제는 영어로 진행되지만, 주문 노트에 한국어로 디테일 적어주시거나 이메일로 한국어 회신 주시면 한국어로 응대합니다.</p>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -1323,7 +1443,7 @@
                 "accordion_row_tMwwQG": {
                   "type": "_accordion-row",
                   "settings": {
-                    "heading": "Shipping",
+                    "heading": "Do you offer wholesale or bulk pricing?",
                     "open_by_default": false,
                     "icon": "none",
                     "width": 20
@@ -1332,7 +1452,7 @@
                     "text_38PFJb": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>We will work quickly to ship your order as soon as possible. Once your order has shipped, you will receive an email with further information. Delivery times vary depending on your location.</p>",
+                        "text": "<p>For orders of 20+ sheets, message us at<a>studio.everstory@gmail.com</a>for a custom quote.</p>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -1362,7 +1482,7 @@
                 "accordion_row_GYK7LQ": {
                   "type": "_accordion-row",
                   "settings": {
-                    "heading": "Manufacturing",
+                    "heading": "Do you make stickers other than photos?",
                     "open_by_default": false,
                     "icon": "none",
                     "width": 20
@@ -1371,7 +1491,7 @@
                     "text_ehQje6": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>Our products are manufactured both locally and globally. We carefully select our manufacturing partners to ensure our products are high quality and a fair value.</p>",
+                        "text": "<p>Photo sticker sheets are our focus right now. Calligraphy, name tags, and logo stickers are on our roadmap.</p>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
