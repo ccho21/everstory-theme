@@ -94,7 +94,7 @@
               "settings": {
                 "text": "{{ closest.page.content }}",
                 "width": "fit-content",
-                "max_width": "normal",
+                "max_width": "none",
                 "alignment": "left",
                 "type_preset": "rte",
                 "font": "var(--font-body--family)",
@@ -183,7 +183,7 @@
                 "accordion_row_BqDTre": {
                   "type": "_accordion-row",
                   "settings": {
-                    "heading": "Where we ship",
+                    "heading": "Cancellation",
                     "open_by_default": true,
                     "icon": "none",
                     "width": 20
@@ -192,9 +192,9 @@
                     "text_N7Xam8": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>Everstory Studio currently ships within Ontario, Canada, and offers local pickup at our Toronto studio. We do not ship outside Ontario at this time. Future regions will be announced as we grow.</p>",
+                        "text": "<p>You can cancel for a full refund any time before we begin printing — typically within one business day of your order. Email <strong>studio. everstory@gmail.com</strong> as soon as possible.</p><p>Once printing starts, the order cannot be refunded. The work is yours.</p>",
                         "width": "100%",
-                        "max_width": "normal",
+                        "max_width": "none",
                         "alignment": "left",
                         "type_preset": "rte",
                         "font": "var(--font-body--family)",
@@ -222,7 +222,7 @@
                 "accordion_row_twRhnM": {
                   "type": "_accordion-row",
                   "settings": {
-                    "heading": "Delivery options",
+                    "heading": "ORDER DETAILS YOU PROVIDE",
                     "open_by_default": false,
                     "icon": "none",
                     "width": 20
@@ -231,9 +231,9 @@
                     "text_zxpk9g": {
                       "type": "text",
                       "settings": {
-                        "text": "<p><strong>1. Free shipping across Ontario</strong><br/>Canada Post lettermail. No tracking number. Delivery typically arrives 3–7 business days after shipping confirmation, but lettermail timing varies.</p><p><strong>2. Local pickup at Toronto Studio</strong><br/>Free. Address shared in your \"ready for pickup\" email. Pickup window is 30 days from the ready-for-pickup notification.</p>",
+                        "text": "<p>At checkout, you upload your photograph(s) and share details that matter — name for the header, any specific request (a face we should not crop, a tone you prefer, a detail we should keep crisp). The more specific your notes, the closer the result matches your expectation. We work directly from what you provide; we do not send a mockup for approval.</p><p>If your photograph genuinely cannot be used (too low resolution, too blurry to cut around), we will email you before we begin. In that case you can replace the photo or cancel for a full refund.</p>",
                         "width": "100%",
-                        "max_width": "normal",
+                        "max_width": "none",
                         "alignment": "left",
                         "type_preset": "rte",
                         "font": "var(--font-body--family)",
@@ -261,7 +261,7 @@
                 "accordion_row_Cq7FbW": {
                   "type": "_accordion-row",
                   "settings": {
-                    "heading": "Lead time",
+                    "heading": "damage and issues",
                     "open_by_default": false,
                     "icon": "none",
                     "width": 20
@@ -270,9 +270,9 @@
                     "text_WGUPxg": {
                       "type": "text",
                       "settings": {
-                        "text": "<ul><li>Print and cut: 1–3 business days after your order</li><li>Ship: same or next business day after cut</li><li>Total time from order to shipped: typically <strong>2–5 business days</strong></li></ul><p>We begin production within one business day of your order. If your photograph needs replacement before we can cut around it, we will email you before we start.</p>",
+                        "text": "<p>Please inspect your order upon reception and contact us immediately if the item is defective, damaged, or if you receive the wrong item, so that we can evaluate the issue and make it right.</p><p>Email <strong>studio.everstory@gmail.com</strong> within 7 days of delivery with a clear photo of the issue. If a return is required for evaluation, we will email return instructions and the return address:</p><p>Everstory Studio</p><p>Items sent back to us without first requesting a return will not be accepted.</p>",
                         "width": "100%",
-                        "max_width": "normal",
+                        "max_width": "none",
                         "alignment": "left",
                         "type_preset": "rte",
                         "font": "var(--font-body--family)",
@@ -300,7 +300,7 @@
                 "accordion_row_4YhxFg": {
                   "type": "_accordion-row",
                   "settings": {
-                    "heading": "Lost or delayed packages",
+                    "heading": "exceptions / non returnable items",
                     "open_by_default": false,
                     "icon": "none",
                     "width": 20
@@ -309,9 +309,9 @@
                     "text_t94UAC": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>Lettermail does not include tracking. If 14 business days have passed since your shipping confirmation and your order has not arrived, email<a>studio.everstory@gmail.com</a>. We will reprint and reship one replacement at no cost.</p>",
+                        "text": "<p>Certain types of items cannot be returned. The following are non-returnable:</p><p>- All Everstory Studio sticker sheets — they are custom, made-to-order products built from a photograph you provide (custom and personalized items are non-returnable under standard retail practice)<br/>- Returns based on personal preference about how the photograph turned out — your checkout notes are the moment to be specific (see ORDER DETAILS YOU PROVIDE)<br/>- Sale items and gift cards</p><p>Damaged or defective items are covered separately under DAMAGES AND ISSUES.</p>",
                         "width": "100%",
-                        "max_width": "normal",
+                        "max_width": "none",
                         "alignment": "left",
                         "type_preset": "rte",
                         "font": "var(--font-body--family)",
@@ -339,7 +339,7 @@
                 "accordion_row_QdeAXa": {
                   "type": "_accordion-row",
                   "settings": {
-                    "heading": "Orders outside Ontario",
+                    "heading": "exchanges",
                     "open_by_default": false,
                     "icon": "none",
                     "width": 20
@@ -350,7 +350,7 @@
                       "settings": {
                         "text": "<p>Our checkout will not accept addresses outside Ontario at this time. If you are outside Ontario and want to order, message us at <a><strong>studio.everstory@gmail.com <br/></strong></a>We evaluate exceptions case by case.</p>",
                         "width": "100%",
-                        "max_width": "normal",
+                        "max_width": "none",
                         "alignment": "left",
                         "type_preset": "rte",
                         "font": "var(--font-body--family)",
@@ -374,6 +374,240 @@
                   "block_order": [
                     "text_wBbVgr"
                   ]
+                },
+                "accordion_row_EayjHr": {
+                  "type": "_accordion-row",
+                  "settings": {
+                    "heading": "lost in transit",
+                    "open_by_default": false,
+                    "icon": "none",
+                    "width": 20
+                  },
+                  "blocks": {
+                    "text_gR7pzM": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<p>Canada Post lettermail does not include tracking. If your sheet has not arrived 14 business days after shipping confirmation, email <strong>studio.everstory@gmail.com</strong>. We will reprint and reship one replacement at no cost. Lost replacements are evaluated case by case.</p>",
+                        "width": "100%",
+                        "max_width": "none",
+                        "alignment": "left",
+                        "type_preset": "rte",
+                        "font": "var(--font-body--family)",
+                        "font_size": "1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "color": "var(--color-foreground)",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "text_gR7pzM"
+                  ]
+                },
+                "accordion_row_fTTX6k": {
+                  "type": "_accordion-row",
+                  "settings": {
+                    "heading": "LOCAL PICKUP",
+                    "open_by_default": false,
+                    "icon": "none",
+                    "width": 20
+                  },
+                  "blocks": {
+                    "text_i6hqKk": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<p>If you selected Toronto Studio Pickup, your order is held for 30 days from the \"ready for pickup\" email. Orders not picked up within 30 days are not refunded but can still be claimed.</p>",
+                        "width": "100%",
+                        "max_width": "none",
+                        "alignment": "left",
+                        "type_preset": "rte",
+                        "font": "var(--font-body--family)",
+                        "font_size": "1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "color": "var(--color-foreground)",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "text_i6hqKk"
+                  ]
+                },
+                "accordion_row_4wz7gp": {
+                  "type": "_accordion-row",
+                  "settings": {
+                    "heading": "AGE & SAFETY ",
+                    "open_by_default": false,
+                    "icon": "none",
+                    "width": 20
+                  },
+                  "blocks": {
+                    "text_XBpEqR": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<p>Everstory sticker sheets are decorative photo products, not a toy and not a children's product. They are not suitable for children under 3 (choking hazard from small peelable die-cut parts) and require adult supervision for any child under 14. Even when the photograph features a child, the finished sheet is intended for adult handling. Damage or injury caused by use outside this guidance is not eligible for refund or reprint.</p>",
+                        "width": "100%",
+                        "max_width": "none",
+                        "alignment": "left",
+                        "type_preset": "rte",
+                        "font": "var(--font-body--family)",
+                        "font_size": "1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "color": "var(--color-foreground)",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "text_XBpEqR"
+                  ]
+                },
+                "accordion_row_YJ4bkz": {
+                  "type": "_accordion-row",
+                  "settings": {
+                    "heading": "EUROPEAN UNION 14 DAY COOLING OFF PERIOD ",
+                    "open_by_default": false,
+                    "icon": "none",
+                    "width": 20
+                  },
+                  "blocks": {
+                    "text_ndAef9": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<p>Everstory Studio currently ships to Ontario, Canada only and does not ship to the European Union. The EU 14-day cooling-off period does not apply to current orders. If we expand to EU markets in the future, this policy will be updated and EU-specific consumer rights will apply at that time.</p>",
+                        "width": "100%",
+                        "max_width": "none",
+                        "alignment": "left",
+                        "type_preset": "rte",
+                        "font": "var(--font-body--family)",
+                        "font_size": "1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "color": "var(--color-foreground)",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "text_ndAef9"
+                  ]
+                },
+                "accordion_row_BEpbYz": {
+                  "type": "_accordion-row",
+                  "settings": {
+                    "heading": "REFUNDS",
+                    "open_by_default": false,
+                    "icon": "none",
+                    "width": 20
+                  },
+                  "blocks": {
+                    "text_Y6NwLw": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<p>When a refund is approved — cancellation before printing, an unusable photograph we cannot work from, or a verified defect we decide to refund instead of reprint — we will notify you and refund automatically to your original payment method within 10 business days. Please remember it can take some time for your bank or credit card company to process and post the refund.</p><p>If more than 15 business days have passed since we approved your refund, please contact us at <strong>studio.everstory@gmail.com.</strong></p><p>You can always contact us for any refund question at studio.everstory@gmail.com.</p>",
+                        "width": "100%",
+                        "max_width": "none",
+                        "alignment": "left",
+                        "type_preset": "rte",
+                        "font": "var(--font-body--family)",
+                        "font_size": "1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "color": "var(--color-foreground)",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "text_Y6NwLw"
+                  ]
+                },
+                "accordion_row_azpth8": {
+                  "type": "_accordion-row",
+                  "settings": {
+                    "heading": "CONTACT",
+                    "open_by_default": false,
+                    "icon": "none",
+                    "width": 20
+                  },
+                  "blocks": {
+                    "text_Qjg9tQ": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<p><strong>studio.everstory@gmail.com</strong><br/>Everstory Studio</p>",
+                        "width": "100%",
+                        "max_width": "normal",
+                        "alignment": "left",
+                        "type_preset": "rte",
+                        "font": "var(--font-body--family)",
+                        "font_size": "1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "color": "var(--color-foreground)",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "text_Qjg9tQ"
+                  ]
                 }
               },
               "block_order": [
@@ -381,7 +615,13 @@
                 "accordion_row_twRhnM",
                 "accordion_row_Cq7FbW",
                 "accordion_row_4YhxFg",
-                "accordion_row_QdeAXa"
+                "accordion_row_QdeAXa",
+                "accordion_row_EayjHr",
+                "accordion_row_fTTX6k",
+                "accordion_row_4wz7gp",
+                "accordion_row_YJ4bkz",
+                "accordion_row_BEpbYz",
+                "accordion_row_azpth8"
               ]
             }
           },
