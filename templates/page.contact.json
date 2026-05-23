@@ -983,6 +983,7 @@
         "group_3LTYCn",
         "contact_form_UwiCkQ"
       ],
+      "disabled": true,
       "name": "t:names.contact_form",
       "settings": {
         "content_direction": "column",
