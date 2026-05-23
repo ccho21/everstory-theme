@@ -16,7 +16,7 @@
           "type": "eyebrow",
           "name": "Eyebrow",
           "settings": {
-            "text": "1 Made in Toronto",
+            "text": "Made in Toronto",
             "alignment": "center",
             "tight": true
           },
