@@ -324,11 +324,11 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<h3>Toronto, Ontario</h3>",
+                    "text": "",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
-                    "type_preset": "h5",
+                    "type_preset": "paragraph",
                     "font": "var(--font-body--family)",
                     "font_size": "1rem",
                     "line_height": "normal",
