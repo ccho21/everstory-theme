@@ -92,7 +92,7 @@
               "type": "text",
               "name": "t:names.text",
               "settings": {
-                "text": "<p>Ordering, photos, sizes, materials, shipping, returns. Still curious? Email us.</p>",
+                "text": "{{ closest.page.content }}",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
@@ -257,7 +257,7 @@
                     "text_zxpk9g": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>Yes, before we begin printing — typically within one business day of your order. Email<a>studio.everstory@gmail.com</a>as soon as possible.</p>",
+                        "text": "<p>Yes, before we begin printing — typically within one business day of your order. Email <a>studio.everstory@gmail.com </a>as soon as possible.</p>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -435,7 +435,7 @@
                       "settings": {
                         "text": "<p>The clearer, the better. Bright lighting, the subject filling the frame, minimal motion blur. We handle background removal and color correction.</p>",
                         "width": "100%",
-                        "max_width": "normal",
+                        "max_width": "none",
                         "alignment": "left",
                         "type_preset": "rte",
                         "font": "var(--font-body--family)",
@@ -474,7 +474,7 @@
                       "settings": {
                         "text": "<p>JPG, JPEG, PNG, HEIC. Up to 100 MB per file. Higher resolution is always better.</p>",
                         "width": "100%",
-                        "max_width": "normal",
+                        "max_width": "none",
                         "alignment": "left",
                         "type_preset": "rte",
                         "font": "var(--font-body--family)",
@@ -513,7 +513,7 @@
                       "settings": {
                         "text": "<p>Every photo is different. We do our best with the photo you upload and the details you share at checkout. The clearer your photo and the more specific your notes, the closer the result matches your expectation.</p>",
                         "width": "100%",
-                        "max_width": "normal",
+                        "max_width": "none",
                         "alignment": "left",
                         "type_preset": "rte",
                         "font": "var(--font-body--family)",
@@ -552,7 +552,7 @@
                       "settings": {
                         "text": "<p>Face, Full Body, and Circle Sticker accept 1–13 photos via the Photos to include option. Package Mini and Package Full accept candidate photos by Big / Medium / Small print tier and Studio picks the final set.</p>",
                         "width": "100%",
-                        "max_width": "normal",
+                        "max_width": "none",
                         "alignment": "left",
                         "type_preset": "rte",
                         "font": "var(--font-body--family)",
@@ -690,7 +690,7 @@
                       "settings": {
                         "text": "<p>1\" / 25mm is the most popular — planners, journals, bottles, phone cases. 1.25\"–1.5\" for tumblers and laptops. 2\" and 2.5\" are statement sizes. 0.75\" for collectors/calendars.</p>",
                         "width": "100%",
-                        "max_width": "normal",
+                        "max_width": "none",
                         "alignment": "left",
                         "type_preset": "rte",
                         "font": "var(--font-body--family)",
@@ -729,7 +729,7 @@
                       "settings": {
                         "text": "<p>White matte is paper-like, best for indoor use. Translucent is semi-clear and lets the surface show through. Silver and gold have a slight metallic finish. All are laminated and waterproof — good for bottles, phone cases, and outdoor surfaces.</p>",
                         "width": "100%",
-                        "max_width": "normal",
+                        "max_width": "none",
                         "alignment": "left",
                         "type_preset": "rte",
                         "font": "var(--font-body--family)",
@@ -768,7 +768,7 @@
                       "settings": {
                         "text": "<p>All four materials are laminated and waterproof. Hand wash recommended; not dishwasher-safe.</p>",
                         "width": "100%",
-                        "max_width": "normal",
+                        "max_width": "none",
                         "alignment": "left",
                         "type_preset": "rte",
                         "font": "var(--font-body--family)",
@@ -905,7 +905,7 @@
                       "settings": {
                         "text": "<p>Anywhere in Ontario. Free shipping by Canada Post lettermail.</p>",
                         "width": "100%",
-                        "max_width": "normal",
+                        "max_width": "none",
                         "alignment": "left",
                         "type_preset": "rte",
                         "font": "var(--font-body--family)",
@@ -944,7 +944,7 @@
                       "settings": {
                         "text": "<p>Lettermail typically arrives 3–7 business days after shipping confirmation. Total time from order to delivery is usually 5–12 business days.</p>",
                         "width": "100%",
-                        "max_width": "normal",
+                        "max_width": "none",
                         "alignment": "left",
                         "type_preset": "rte",
                         "font": "var(--font-body--family)",
@@ -983,7 +983,7 @@
                       "settings": {
                         "text": "<p>Lettermail is the most affordable way to ship sticker sheets. Free shipping is the trade-off. If your order is lost, we reprint and reship at no cost.</p>",
                         "width": "100%",
-                        "max_width": "normal",
+                        "max_width": "none",
                         "alignment": "left",
                         "type_preset": "rte",
                         "font": "var(--font-body--family)",
@@ -1050,7 +1050,7 @@
                 "accordion_row_PpKezF": {
                   "type": "_accordion-row",
                   "settings": {
-                    "heading": "Not yet. Message us — we evaluate case by case.",
+                    "heading": "Do you ship outside Ontario?",
                     "open_by_default": false,
                     "icon": "none",
                     "width": 20
@@ -1059,9 +1059,9 @@
                     "text_tJXAPd": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>Our products are manufactured both locally and globally. We carefully select our manufacturing partners to ensure our products are high quality and a fair value.</p>",
+                        "text": "<p>Not yet. Message us — we evaluate case by case.</p>",
                         "width": "100%",
-                        "max_width": "normal",
+                        "max_width": "none",
                         "alignment": "left",
                         "type_preset": "rte",
                         "font": "var(--font-body--family)",
@@ -1200,7 +1200,7 @@
                       "settings": {
                         "text": "<p>We reprint and reship at no cost. Email a photo of the issue within 7 days of delivery.</p>",
                         "width": "100%",
-                        "max_width": "normal",
+                        "max_width": "none",
                         "alignment": "left",
                         "type_preset": "rte",
                         "font": "var(--font-body--family)",
@@ -1239,7 +1239,7 @@
                       "settings": {
                         "text": "<p>After printing, we do not refund based on personal preference, but we always reprint genuine print or cut defects.</p>",
                         "width": "100%",
-                        "max_width": "normal",
+                        "max_width": "none",
                         "alignment": "left",
                         "type_preset": "rte",
                         "font": "var(--font-body--family)",
@@ -1278,7 +1278,7 @@
                       "settings": {
                         "text": "<p>Indoor: 5+ years. Outdoor (UV-exposed): 2-3 years.</p>",
                         "width": "100%",
-                        "max_width": "normal",
+                        "max_width": "none",
                         "alignment": "left",
                         "type_preset": "rte",
                         "font": "var(--font-body--family)",
@@ -1415,7 +1415,7 @@
                       "settings": {
                         "text": "<p>네. 결제는 영어로 진행되지만, 주문 노트에 한국어로 디테일 적어주시거나 이메일로 한국어 회신 주시면 한국어로 응대합니다.</p>",
                         "width": "100%",
-                        "max_width": "normal",
+                        "max_width": "none",
                         "alignment": "left",
                         "type_preset": "rte",
                         "font": "var(--font-body--family)",
@@ -1454,7 +1454,7 @@
                       "settings": {
                         "text": "<p>For orders of 20+ sheets, message us at<a>studio.everstory@gmail.com</a>for a custom quote.</p>",
                         "width": "100%",
-                        "max_width": "normal",
+                        "max_width": "none",
                         "alignment": "left",
                         "type_preset": "rte",
                         "font": "var(--font-body--family)",
@@ -1493,7 +1493,7 @@
                       "settings": {
                         "text": "<p>Photo sticker sheets are our focus right now. Calligraphy, name tags, and logo stickers are on our roadmap.</p>",
                         "width": "100%",
-                        "max_width": "normal",
+                        "max_width": "none",
                         "alignment": "left",
                         "type_preset": "rte",
                         "font": "var(--font-body--family)",
