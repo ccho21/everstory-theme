@@ -601,7 +601,7 @@
       "type": "custom-liquid",
       "name": "t:names.custom_liquid",
       "settings": {
-        "custom_liquid": "<div class=\"es-pdp\" lang=\"en\">\n  <div class=\"es-page\">\n    <section class=\"es-section\" aria-label=\"Product introduction\">\n      <div class=\"es-section-shell\">\n        <div class=\"heading-block\">\n          <span class=\"es-eyebrow\">Full body sticker</span>\n          <h2>The whole subject, kept.</h2>\n        </div>\n\n        <div class=\"photo-pair\">\n          <div class=\"photo-frame\">\n            <img src=\"https://cdn.shopify.com/s/files/1/0833/4760/3712/files/temp_1.png\" alt=\"Face sticker on a phone case\">\n          </div>\n          <div class=\"photo-frame\">\n            <img src=\"https://cdn.shopify.com/s/files/1/0833/4760/3712/files/temp_2.png\" alt=\"Face sticker on a planner · laptop\">\n          </div>\n        </div>\n\n        <p class=\"copy\">\n          Your photo, traced and cut by hand into a die-cut sticker of the full subject — pose and all.\n          It reads best at 1.25&Prime; and up.\n          Choose your size; we pack each sheet by hand.\n        </p>\n\n        <div class=\"single-photo\" style=\"margin-top: 56px;\">\n          <div class=\"image-placeholder\">Packaging<br>Hand-packed by the order</div>\n        </div>\n      </div>\n    </section>\n  </div>\n</div>",
+        "custom_liquid": "{{ product.metafields.custom.product_story_html }}",
         "color_scheme": "",
         "section_width": "page-width",
         "padding-block-start": 0,
