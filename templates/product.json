@@ -274,7 +274,7 @@
                     "text_Fn4pzU": {
                       "type": "text",
                       "settings": {
-                        "text": "<ul><li>One A5 sticker sheet (148 × 210 mm)</li><li>Face or upper-body crop — your chosen subject, precisely cut</li><li>Your selected photos at your chosen size</li><li>Header printed with your name + order date</li><li>Reviewed and hand-cut by hand in Toronto</li></ul>",
+                        "text": "<ul><li>One A5 sticker sheet (148 × 210 mm)</li><li>Face or upper-body crop — your chosen subject, precisely cut</li><li>Your selected photos at your chosen size</li><li>Header printed with your name + order date</li><li>Reviewed and hand-cut by hand in Toronto</li></ul>{{ closest.product.metafields.custom.product_intro | metafield_tag }}",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
