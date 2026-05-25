@@ -453,45 +453,6 @@
                     "text_XBpEqR"
                   ]
                 },
-                "accordion_row_YJ4bkz": {
-                  "type": "_accordion-row",
-                  "settings": {
-                    "heading": "EUROPEAN UNION 14 DAY COOLING OFF PERIOD ",
-                    "open_by_default": false,
-                    "icon": "none",
-                    "width": 20
-                  },
-                  "blocks": {
-                    "text_ndAef9": {
-                      "type": "text",
-                      "settings": {
-                        "text": "<p>Everstory Studio currently ships to Ontario, Canada only and does not ship to the European Union. The EU 14-day cooling-off period does not apply to current orders. If we expand to EU markets in the future, this policy will be updated and EU-specific consumer rights will apply at that time.</p>",
-                        "width": "100%",
-                        "max_width": "none",
-                        "alignment": "left",
-                        "type_preset": "rte",
-                        "font": "var(--font-body--family)",
-                        "font_size": "1rem",
-                        "line_height": "normal",
-                        "letter_spacing": "normal",
-                        "case": "none",
-                        "wrap": "pretty",
-                        "color": "var(--color-foreground)",
-                        "background": false,
-                        "background_color": "#00000026",
-                        "corner_radius": 0,
-                        "padding-block-start": 0,
-                        "padding-block-end": 0,
-                        "padding-inline-start": 0,
-                        "padding-inline-end": 0
-                      },
-                      "blocks": {}
-                    }
-                  },
-                  "block_order": [
-                    "text_ndAef9"
-                  ]
-                },
                 "accordion_row_BEpbYz": {
                   "type": "_accordion-row",
                   "settings": {
@@ -579,7 +540,6 @@
                 "accordion_row_QdeAXa",
                 "accordion_row_EayjHr",
                 "accordion_row_4wz7gp",
-                "accordion_row_YJ4bkz",
                 "accordion_row_BEpbYz",
                 "accordion_row_azpth8"
               ]
