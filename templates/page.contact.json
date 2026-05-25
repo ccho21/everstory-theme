@@ -56,7 +56,7 @@
               "type": "eyebrow",
               "name": "Eyebrow",
               "settings": {
-                "text": "Contact · Toronto Studio",
+                "text": "Contact · Toronto",
                 "alignment": "left",
                 "tight": false
               },
@@ -314,7 +314,7 @@
                   "type": "eyebrow",
                   "name": "Eyebrow",
                   "settings": {
-                    "text": "STUDIO",
+                    "text": "Local Pickup",
                     "alignment": "left",
                     "tight": false
                   },
