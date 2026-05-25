@@ -274,7 +274,7 @@
                     "text_Fn4pzU": {
                       "type": "text",
                       "settings": {
-                        "text": "<ul><li>One A5 sticker sheet</li><li>Face or upper-body crop by default</li><li>Size shown in inch / mm, no letter codes</li><li>Your selected number of different photos</li><li>Header printed with your name and order date</li><li>Reviewed and hand-cut at our Toronto studio</li></ul>",
+                        "text": "<ul><li>One A5 sticker sheet (148 × 210 mm)</li><li>Face or upper-body crop — your chosen subject, precisely cut</li><li>Your selected photos at your chosen size</li><li>Header printed with your name + order date</li><li>Reviewed and hand-cut by hand in Toronto</li></ul>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -471,7 +471,7 @@
                     "text_pcmYjm": {
                       "type": "text",
                       "settings": {
-                        "text": "<ul><li>Production: 1-3 business days after order.</li><li>Shipping: same or next business day after cut.</li><li>Total: typically 2-5 business days from order to shipped.</li><li>Free Ontario shipping via Canada Post lettermail. Toronto Studio pickup available.</li></ul>",
+                        "text": "<ul><li>Production: 1-3 business days after order.</li><li>Shipping: same or next business day after cut.</li><li>Total: typically 2-5 business days from order to shipped.</li><li>Free Canada-wide shipping or local pickup by arrangement.</li></ul>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
