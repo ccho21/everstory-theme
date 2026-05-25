@@ -297,6 +297,45 @@
                     "text_NRq3Fz"
                   ]
                 },
+                "accordion_row_BhTiTT": {
+                  "type": "_accordion-row",
+                  "settings": {
+                    "heading": "Photo quality & personal preference",
+                    "open_by_default": false,
+                    "icon": "none",
+                    "width": 20
+                  },
+                  "blocks": {
+                    "text_m6gUaQ": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<p>We use the photograph you upload, with our standard background removal and color correction, and we apply the details you share at checkout. We cannot refund or reprint based on personal preference about how the photo turned out — the order notes at checkout are your moment to be specific.</p>",
+                        "width": "100%",
+                        "max_width": "none",
+                        "alignment": "left",
+                        "type_preset": "rte",
+                        "font": "var(--font-body--family)",
+                        "font_size": "1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "color": "var(--color-foreground)",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "text_m6gUaQ"
+                  ]
+                },
                 "accordion_row_Cq7FbW": {
                   "type": "_accordion-row",
                   "settings": {
@@ -453,6 +492,45 @@
                     "text_gR7pzM"
                   ]
                 },
+                "accordion_row_xneX9M": {
+                  "type": "_accordion-row",
+                  "settings": {
+                    "heading": "Local pickup",
+                    "open_by_default": false,
+                    "icon": "none",
+                    "width": 20
+                  },
+                  "blocks": {
+                    "text_gxeMxj": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<p>If you selected Local Pickup, we email you after production to arrange a pickup location and time. Pickup is held for 30 days from that email. Orders not picked up within 30 days are not refunded but can still be claimed.</p>",
+                        "width": "100%",
+                        "max_width": "none",
+                        "alignment": "left",
+                        "type_preset": "rte",
+                        "font": "var(--font-body--family)",
+                        "font_size": "1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "color": "var(--color-foreground)",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "text_gxeMxj"
+                  ]
+                },
                 "accordion_row_4wz7gp": {
                   "type": "_accordion-row",
                   "settings": {
@@ -575,10 +653,12 @@
                 "accordion_row_BqDTre",
                 "accordion_row_twRhnM",
                 "accordion_row_xr3ViN",
+                "accordion_row_BhTiTT",
                 "accordion_row_Cq7FbW",
                 "accordion_row_4YhxFg",
                 "accordion_row_QdeAXa",
                 "accordion_row_EayjHr",
+                "accordion_row_xneX9M",
                 "accordion_row_4wz7gp",
                 "accordion_row_BEpbYz",
                 "accordion_row_azpth8"
