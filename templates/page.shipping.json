@@ -192,7 +192,7 @@
                     "text_N7Xam8": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>Everstory Studio currently ships within Ontario, Canada, and offers local pickup at our Toronto studio. We do not ship outside Ontario at this time. Future regions will be announced as we grow.</p>",
+                        "text": "<p>Everstory Studio ships across Canada. We currently do not ship outside Canada. Future regions will be announced as we grow.</p>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -231,7 +231,7 @@
                     "text_zxpk9g": {
                       "type": "text",
                       "settings": {
-                        "text": "<p><strong>1. Free shipping across Ontario</strong><br/>Canada Post lettermail. No tracking number. Delivery typically arrives 3–7 business days after shipping confirmation, but lettermail timing varies.</p><p><strong>2. Local pickup at Toronto Studio</strong><br/>Free. Address shared in your \"ready for pickup\" email. Pickup window is 30 days from the ready-for-pickup notification.</p>",
+                        "text": "<p><strong>Free shipping across Canada</strong>Canada Post lettermail. No tracking number.<br/>• Within Ontario: typically 3–7 business days after shipping confirmation<br/>• Rest of Canada: typically 5–10 business days<br/>Lettermail timing varies.</p>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -270,7 +270,7 @@
                     "text_WGUPxg": {
                       "type": "text",
                       "settings": {
-                        "text": "<ul><li>Print and cut: 1–3 business days after your order</li><li>Ship: same or next business day after cut</li><li>Total time from order to shipped: typically <strong>2–5 business days</strong></li></ul><p>We begin production within one business day of your order. If your photograph needs replacement before we can cut around it, we will email you before we start.</p>",
+                        "text": "<p>• Print and cut: 1–3 business days after your order<br/>• Ship: same or next business day after cut<br/>• Total time from order to delivered: typically <strong>5–10 business days within Ontario, 7–13 business days for the rest of Canada</strong></p><p>We begin production within one business day of your order. If your photograph needs replacement before we can cut around it, we will email you before we start.</p>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -309,7 +309,7 @@
                     "text_t94UAC": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>Lettermail does not include tracking. If 14 business days have passed since your shipping confirmation and your order has not arrived, email<a>studio.everstory@gmail.com</a>. We will reprint and reship one replacement at no cost.</p>",
+                        "text": "<p>Lettermail does not include tracking. If <strong>14 business days (Ontario) or 20 business days (rest of Canada) </strong>have passed since your shipping confirmation and your order has not arrived, email <strong>studio.everstory@gmail.com</strong>. We will reprint and reship one replacement at no cost.</p>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -335,53 +335,13 @@
                   "block_order": [
                     "text_t94UAC"
                   ]
-                },
-                "accordion_row_QdeAXa": {
-                  "type": "_accordion-row",
-                  "settings": {
-                    "heading": "Orders outside Ontario",
-                    "open_by_default": false,
-                    "icon": "none",
-                    "width": 20
-                  },
-                  "blocks": {
-                    "text_wBbVgr": {
-                      "type": "text",
-                      "settings": {
-                        "text": "<p>Our checkout will not accept addresses outside Ontario at this time. If you are outside Ontario and want to order, message us at <a><strong>studio.everstory@gmail.com <br/></strong></a>We evaluate exceptions case by case.</p>",
-                        "width": "100%",
-                        "max_width": "normal",
-                        "alignment": "left",
-                        "type_preset": "rte",
-                        "font": "var(--font-body--family)",
-                        "font_size": "1rem",
-                        "line_height": "normal",
-                        "letter_spacing": "normal",
-                        "case": "none",
-                        "wrap": "pretty",
-                        "color": "var(--color-foreground)",
-                        "background": false,
-                        "background_color": "#00000026",
-                        "corner_radius": 0,
-                        "padding-block-start": 0,
-                        "padding-block-end": 0,
-                        "padding-inline-start": 0,
-                        "padding-inline-end": 0
-                      },
-                      "blocks": {}
-                    }
-                  },
-                  "block_order": [
-                    "text_wBbVgr"
-                  ]
                 }
               },
               "block_order": [
                 "accordion_row_BqDTre",
                 "accordion_row_twRhnM",
                 "accordion_row_Cq7FbW",
-                "accordion_row_4YhxFg",
-                "accordion_row_QdeAXa"
+                "accordion_row_4YhxFg"
               ]
             }
           },
