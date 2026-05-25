@@ -903,7 +903,7 @@
                     "text_pUqcRz": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>Anywhere in Ontario. Free shipping by Canada Post lettermail.</p>",
+                        "text": "<p>Anywhere in Canada. Free shipping by Canada Post lettermail.</p>",
                         "width": "100%",
                         "max_width": "none",
                         "alignment": "left",
@@ -1020,7 +1020,7 @@
                     "text_ak8eL9": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>Yes — choose Toronto Studio Pickup at checkout.</p>",
+                        "text": "<p>Yes — for nearby customers by arrangement. Choose Local Pickup at checkout.</p>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -1050,7 +1050,7 @@
                 "accordion_row_PpKezF": {
                   "type": "_accordion-row",
                   "settings": {
-                    "heading": "Do you ship outside Ontario?",
+                    "heading": "Do you ship internationally?",
                     "open_by_default": false,
                     "icon": "none",
                     "width": 20
@@ -1059,7 +1059,7 @@
                     "text_tJXAPd": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>Not yet. Message us — we evaluate case by case.</p>",
+                        "text": "<p>Not yet — Canadian addresses only. Message us for international (US, Korea, etc.) — we evaluate case by case.</p>",
                         "width": "100%",
                         "max_width": "none",
                         "alignment": "left",
@@ -1452,7 +1452,7 @@
                     "text_38PFJb": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>For orders of 20+ sheets, message us at<a>studio.everstory@gmail.com</a>for a custom quote.</p>",
+                        "text": "<p>For orders of 20+ sheets, message us at <a><strong>studio.everstory@gmail.com</strong></a> for a custom quote.</p>",
                         "width": "100%",
                         "max_width": "none",
                         "alignment": "left",
