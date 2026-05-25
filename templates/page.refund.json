@@ -258,6 +258,45 @@
                     "text_zxpk9g"
                   ]
                 },
+                "accordion_row_xr3ViN": {
+                  "type": "_accordion-row",
+                  "settings": {
+                    "heading": "Print defects",
+                    "open_by_default": false,
+                    "icon": "none",
+                    "width": 20
+                  },
+                  "blocks": {
+                    "text_NRq3Fz": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<p>If your sheet arrives with a print or cutting defect — visible color shift, lamination flaws, misaligned cuts, or visible damage — we will reprint and reship at no cost. Email us within <strong>7 days of delivery </strong>with a photo of the issue at <a><strong>studio.everstory@gmail.com</strong></a>.</p>",
+                        "width": "100%",
+                        "max_width": "none",
+                        "alignment": "left",
+                        "type_preset": "rte",
+                        "font": "var(--font-body--family)",
+                        "font_size": "1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "color": "var(--color-foreground)",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "text_NRq3Fz"
+                  ]
+                },
                 "accordion_row_Cq7FbW": {
                   "type": "_accordion-row",
                   "settings": {
@@ -387,7 +426,7 @@
                     "text_gR7pzM": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>Canada Post lettermail does not include tracking. If your sheet has not arrived 14 business days after shipping confirmation, email <strong>studio.everstory@gmail.com</strong>. We will reprint and reship one replacement at no cost. Lost replacements are evaluated case by case.</p>",
+                        "text": "<p>Canada Post lettermail does not include tracking. If your sheet has not arrived 14 business days after shipping confirmation, email us. We will reprint and reship one replacement at no cost. Lost replacements are evaluated case by case.</p>",
                         "width": "100%",
                         "max_width": "none",
                         "alignment": "left",
@@ -535,6 +574,7 @@
               "block_order": [
                 "accordion_row_BqDTre",
                 "accordion_row_twRhnM",
+                "accordion_row_xr3ViN",
                 "accordion_row_Cq7FbW",
                 "accordion_row_4YhxFg",
                 "accordion_row_QdeAXa",
