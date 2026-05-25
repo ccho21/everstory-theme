@@ -414,45 +414,6 @@
                     "text_gR7pzM"
                   ]
                 },
-                "accordion_row_fTTX6k": {
-                  "type": "_accordion-row",
-                  "settings": {
-                    "heading": "LOCAL PICKUP",
-                    "open_by_default": false,
-                    "icon": "none",
-                    "width": 20
-                  },
-                  "blocks": {
-                    "text_i6hqKk": {
-                      "type": "text",
-                      "settings": {
-                        "text": "<p>If you selected Toronto Studio Pickup, your order is held for 30 days from the \"ready for pickup\" email. Orders not picked up within 30 days are not refunded but can still be claimed.</p>",
-                        "width": "100%",
-                        "max_width": "none",
-                        "alignment": "left",
-                        "type_preset": "rte",
-                        "font": "var(--font-body--family)",
-                        "font_size": "1rem",
-                        "line_height": "normal",
-                        "letter_spacing": "normal",
-                        "case": "none",
-                        "wrap": "pretty",
-                        "color": "var(--color-foreground)",
-                        "background": false,
-                        "background_color": "#00000026",
-                        "corner_radius": 0,
-                        "padding-block-start": 0,
-                        "padding-block-end": 0,
-                        "padding-inline-start": 0,
-                        "padding-inline-end": 0
-                      },
-                      "blocks": {}
-                    }
-                  },
-                  "block_order": [
-                    "text_i6hqKk"
-                  ]
-                },
                 "accordion_row_4wz7gp": {
                   "type": "_accordion-row",
                   "settings": {
@@ -617,7 +578,6 @@
                 "accordion_row_4YhxFg",
                 "accordion_row_QdeAXa",
                 "accordion_row_EayjHr",
-                "accordion_row_fTTX6k",
                 "accordion_row_4wz7gp",
                 "accordion_row_YJ4bkz",
                 "accordion_row_BEpbYz",
