@@ -1115,7 +1115,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Free Canada-wide shipping or local pickup.</p>",
+                    "text": "<p>Free Canada-wide shipping or local pickup by arrangement </p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",

@@ -903,7 +903,7 @@
                     "text_pUqcRz": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>Anywhere in Canada. Free standard shipping for over $25 or more by Canada Post lettermail.</p>",
+                        "text": "<p>Anywhere in Canada. Free standard shipping by Canada Post lettermail.</p>",
                         "width": "100%",
                         "max_width": "none",
                         "alignment": "left",
