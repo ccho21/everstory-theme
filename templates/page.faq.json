@@ -942,7 +942,7 @@
                     "text_Hrn3AC": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>Lettermail typically arrives 3–7 business days after shipping confirmation. Total time from order to delivery is usually 5–12 business days.</p>",
+                        "text": "<p>Lettermail typically arrives 4–10 business days after shipping confirmation. Total time from order to delivery is usually 5–12 business days.</p>",
                         "width": "100%",
                         "max_width": "none",
                         "alignment": "left",

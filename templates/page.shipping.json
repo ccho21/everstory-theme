@@ -231,7 +231,7 @@
                     "text_zxpk9g": {
                       "type": "text",
                       "settings": {
-                        "text": "<p><strong>1. Free shipping across Canada</strong><br/>Canada Post lettermail. No tracking number. Delivery typically arrives 3–7 business days after shipping confirmation, but lettermail timing varies.</p><p><strong>2. Local pickup (by arrangement)</strong><br/>Free, for nearby customers. We email you after production to arrange a pickup location and time. Pickup window is 30 days from that email.</p>",
+                        "text": "<p><strong>1. Free shipping across Canada</strong><br/>Canada Post lettermail. No tracking number. Delivery typically arrives 4–10 business days after shipping confirmation, but lettermail timing varies.</p><p><strong>2. Local pickup (by arrangement)</strong><br/>Free, for nearby customers. We email you after production to arrange a pickup location and time. Pickup window is 30 days from that email.</p>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
