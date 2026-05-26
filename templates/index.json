@@ -1115,7 +1115,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Free Ontario shipping or Toronto pickup.</p>",
+                    "text": "<p>Free Canada-wide shipping or local pickup.</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
