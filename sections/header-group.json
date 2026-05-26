@@ -17,7 +17,7 @@
         "announcement_BxgCk9": {
           "type": "_announcement",
           "settings": {
-            "text": "Free standard shipping for order of $24.99 or more",
+            "text": "Free standard shipping for every order",
             "link": "",
             "font": "var(--font-subheading--family)",
             "font_size": "0.75rem",
