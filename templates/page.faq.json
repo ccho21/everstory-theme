@@ -218,7 +218,7 @@
                     "text_N7Xam8": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>Choose Face Sticker, Full Body Sticker, Circle Sticker, Package Mini, or Package Full. For non-Package products, choose size, material, and Photos to include. For Package products, upload photos into Big / Medium / Small print sections and Studio picks the final set. We start cutting within one business day and ship within 2–5 business days. No mockup back-and-forth — the order notes are how we hear what matters to you.</p>",
+                        "text": "<p>Choose Face Sticker, Full Body Sticker, Shape Sticker, Package Mini, or Package Full. For non-Package products, choose size, material, and Photos to include. For Package products, upload photos into Big / Medium / Small print sections and Studio picks the final set. We start cutting within one business day and ship within 2–5 business days. No mockup back-and-forth — the order notes are how we hear what matters to you.</p>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -550,7 +550,7 @@
                     "text_MdX9L6": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>Face, Full Body, and Circle Sticker accept 1–13 photos via the Photos to include option. Package Mini and Package Full accept candidate photos by Big / Medium / Small print tier and Studio picks the final set.</p>",
+                        "text": "<p>Face, Full Body, and Shape Sticker accept 1–13 photos via the Photos to include option. Package Mini and Package Full accept candidate photos by Big / Medium / Small print tier and Studio picks the final set.</p>",
                         "width": "100%",
                         "max_width": "none",
                         "alignment": "left",
