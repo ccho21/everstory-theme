@@ -88,7 +88,7 @@
         "disabled": false,
         "settings": {
           "theme_app_version": "none",
-          "path_loading_mode": "include",
+          "path_loading_mode": "exclude",
           "page_paths": ""
         }
       }
