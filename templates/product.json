@@ -123,10 +123,6 @@
                   },
                   "blocks": {}
                 },
-                "judge_me_reviews_preview_badge_4ahFA7": {
-                  "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-                  "settings": {}
-                },
                 "text_xrnftG": {
                   "type": "text",
                   "name": "Product title",
@@ -152,6 +148,10 @@
                     "padding-inline-end": 0
                   },
                   "blocks": {}
+                },
+                "judge_me_reviews_preview_badge_4ahFA7": {
+                  "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+                  "settings": {}
                 },
                 "custom_liquid_7zq3TB": {
                   "type": "custom-liquid",
@@ -186,8 +186,8 @@
               },
               "block_order": [
                 "eyebrow_YrxtJT",
-                "judge_me_reviews_preview_badge_4ahFA7",
                 "text_xrnftG",
+                "judge_me_reviews_preview_badge_4ahFA7",
                 "custom_liquid_7zq3TB",
                 "price_tVjtKg"
               ]
