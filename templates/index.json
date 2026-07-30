@@ -186,7 +186,7 @@
       "name": "t:names.hero",
       "settings": {
         "media_type_1": "image",
-        "image_1": "shopify://shop_images/ChatGPT_Image_May_11_2026_at_01_48_46_PM.png",
+        "image_1": "shopify://shop_images/everstory_home_hero_reference_locked.png",
         "video_1": "shopify://files/videos/Gen-4 Turbo - PromptA realistic 5-second lifestyle product video based on this exact image_ A hand i.mp4",
         "media_type_2": "image",
         "stack_media_on_mobile": false,
@@ -208,7 +208,7 @@
         "section_height_custom": 50,
         "color_scheme": "scheme-1",
         "toggle_overlay": true,
-        "overlay_color": "#12121266",
+        "overlay_color": "#12121236",
         "overlay_style": "solid",
         "gradient_direction": "to top",
         "blurred_reflection": false,
