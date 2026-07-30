@@ -183,7 +183,6 @@
         "text_qJdVRm",
         "group_hanGD9"
       ],
-      "disabled": true,
       "name": "t:names.hero",
       "settings": {
         "media_type_1": "image",
@@ -411,6 +410,7 @@
         "group_8WMRjm",
         "group_B6Art8"
       ],
+      "disabled": true,
       "name": "Hero Split",
       "settings": {
         "image": "shopify://shop_images/temp_template_for.png",
