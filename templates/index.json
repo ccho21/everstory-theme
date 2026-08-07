@@ -415,7 +415,8 @@
       "settings": {
         "image": "shopify://shop_images/temp_template_for.png",
         "split_ratio": "55-45"
-      }
+      },
+      "disabled": true
     },
     "slideshow_DdxtkG": {
       "type": "slideshow",
@@ -1724,9 +1725,307 @@
         "padding-block-start": 0,
         "padding-block-end": 0
       }
+    },
+    "hero_scatter": {
+      "type": "hero-scatter",
+      "blocks": {
+        "s01": {
+          "type": "sticker",
+          "settings": {
+            "image": "shopify://shop_images/hero_kid_dothat.png",
+            "x": 45,
+            "y": 0,
+            "width": 155,
+            "rotation": -7
+          }
+        },
+        "s02": {
+          "type": "sticker",
+          "settings": {
+            "image": "shopify://shop_images/hero_cat_grumpy.png",
+            "x": 47,
+            "y": 40,
+            "width": 145,
+            "rotation": 3
+          }
+        },
+        "s04": {
+          "type": "sticker",
+          "settings": {
+            "image": "shopify://shop_images/hero_chihuahua.png",
+            "x": 91,
+            "y": 19,
+            "width": 150,
+            "rotation": -6
+          }
+        },
+        "s27": {
+          "type": "sticker",
+          "settings": {
+            "image": "shopify://shop_images/hero_family_pets.png",
+            "x": 73,
+            "y": 0,
+            "width": 175,
+            "rotation": -3
+          }
+        },
+        "s09": {
+          "type": "sticker",
+          "settings": {
+            "image": "shopify://shop_images/hero_puppy_lab.png",
+            "x": 54,
+            "y": 0,
+            "width": 150,
+            "rotation": -3
+          }
+        },
+        "s10": {
+          "type": "sticker",
+          "settings": {
+            "image": "shopify://shop_images/hero_kid_horse.png",
+            "x": 65,
+            "y": 0,
+            "width": 165,
+            "rotation": 3
+          }
+        },
+        "s03": {
+          "type": "sticker",
+          "settings": {
+            "image": "shopify://shop_images/hero_cat_longhair.png",
+            "x": 90,
+            "y": 54,
+            "width": 140,
+            "rotation": 10
+          }
+        },
+        "s13": {
+          "type": "sticker",
+          "settings": {
+            "image": "shopify://shop_images/hero_kid_bearhat.png",
+            "x": 87,
+            "y": 72,
+            "width": 160,
+            "rotation": -4
+          }
+        },
+        "s14": {
+          "type": "sticker",
+          "settings": {
+            "image": "shopify://shop_images/hero_minpin_full.png",
+            "x": 75,
+            "y": 69,
+            "width": 165,
+            "rotation": 3
+          }
+        },
+        "s19": {
+          "type": "sticker",
+          "settings": {
+            "image": "shopify://shop_images/hero_baby_shades.png",
+            "x": 87,
+            "y": 0,
+            "width": 145,
+            "rotation": 5
+          }
+        },
+        "s12": {
+          "type": "sticker",
+          "settings": {
+            "image": "shopify://shop_images/hero_kid_scarf.png",
+            "x": 53,
+            "y": 54,
+            "width": 125,
+            "rotation": -8
+          }
+        },
+        "s15": {
+          "type": "sticker",
+          "settings": {
+            "image": "shopify://shop_images/hero_kid_circle.png",
+            "x": 61,
+            "y": 54,
+            "width": 135,
+            "rotation": -5
+          }
+        },
+        "s06": {
+          "type": "sticker",
+          "settings": {
+            "image": "shopify://shop_images/hero_kid_tongue.png",
+            "x": 59,
+            "y": 30,
+            "width": 140,
+            "rotation": 5
+          }
+        },
+        "s05": {
+          "type": "sticker",
+          "settings": {
+            "image": "shopify://shop_images/hero_dog_tongue.png",
+            "x": 78,
+            "y": 21,
+            "width": 135,
+            "rotation": 6
+          }
+        },
+        "s11": {
+          "type": "sticker",
+          "settings": {
+            "image": "shopify://shop_images/hero_kid_dress.png",
+            "x": 69,
+            "y": 59,
+            "width": 145,
+            "rotation": 4
+          }
+        },
+        "s20": {
+          "type": "sticker",
+          "settings": {
+            "image": "shopify://shop_images/hero_baby_knithat.png",
+            "x": 80,
+            "y": 45,
+            "width": 145,
+            "rotation": -7
+          }
+        },
+        "s17": {
+          "type": "sticker",
+          "settings": {
+            "image": "shopify://shop_images/hero_kid_glasses.png",
+            "x": 89,
+            "y": 35,
+            "width": 145,
+            "rotation": 7
+          }
+        },
+        "s07": {
+          "type": "sticker",
+          "settings": {
+            "image": "shopify://shop_images/hero_cat_calico.png",
+            "x": 58,
+            "y": 71,
+            "width": 135,
+            "rotation": 4
+          }
+        },
+        "s22": {
+          "type": "sticker",
+          "settings": {
+            "image": "shopify://shop_images/hero_girl_running.png",
+            "x": 42,
+            "y": 62,
+            "width": 155,
+            "rotation": -2
+          }
+        },
+        "s26": {
+          "type": "sticker",
+          "settings": {
+            "image": "shopify://shop_images/hero_cat_black.png",
+            "x": 42,
+            "y": 88,
+            "width": 160,
+            "rotation": 8
+          }
+        },
+        "sticker_redcircle": {
+          "type": "sticker",
+          "settings": {
+            "image": "shopify://shop_images/hero_kid_redcircle.png",
+            "x": 72,
+            "y": 39,
+            "width": 150,
+            "rotation": -8
+          }
+        }
+      },
+      "block_order": [
+        "s01",
+        "s02",
+        "s04",
+        "s27",
+        "s09",
+        "s10",
+        "s03",
+        "s13",
+        "s14",
+        "s19",
+        "s12",
+        "s15",
+        "s06",
+        "s05",
+        "s11",
+        "s20",
+        "s17",
+        "s07",
+        "s22",
+        "s26",
+        "sticker_redcircle"
+      ],
+      "custom_css": [
+        ".hero-scatter__inner {min-height: min(720px, calc(100svh - 110px));}"
+      ],
+      "settings": {
+        "color_scheme": "scheme-2",
+        "split": 50,
+        "cluster_zoom": 100,
+        "eyebrow": "Made in Toronto · A5 die-cut sheets",
+        "heading": "Your people,\ncut by hand.",
+        "subtext": "Send a photograph. We trace every silhouette ourselves — hair, ears, the gap between fingers — and press it onto a sheet made to keep.",
+        "button1_label": "Shop now",
+        "button1_link": "/collections/all",
+        "button2_label": "How it works",
+        "button2_link": "#how-it-works",
+        "trustline": "✓ Made-right promise · ✓ Free Canada-wide shipping · ✓ Your photos stay private"
+      }
+    },
+    "trust_band": {
+      "type": "trust-band",
+      "blocks": {
+        "ti1": {
+          "type": "item",
+          "settings": {
+            "icon": "heart",
+            "text": "Made by hand in Toronto"
+          }
+        },
+        "ti2": {
+          "type": "item",
+          "settings": {
+            "icon": "truck",
+            "text": "Free Canada-wide shipping"
+          }
+        },
+        "ti3": {
+          "type": "item",
+          "settings": {
+            "icon": "shield",
+            "text": "Made-right promise"
+          }
+        },
+        "ti4": {
+          "type": "item",
+          "settings": {
+            "icon": "lock",
+            "text": "Your photos stay private"
+          }
+        }
+      },
+      "block_order": [
+        "ti1",
+        "ti2",
+        "ti3",
+        "ti4"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1"
+      }
     }
   },
   "order": [
+    "hero_scatter",
+    "trust_band",
     "hero_jVaWmY",
     "hero_split_r4kq9R",
     "slideshow_DdxtkG",

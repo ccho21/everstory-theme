@@ -1,0 +1,68 @@
+{%- comment -%}
+  Trust band — everstory design system v1.1
+  Thin hairline strip with Lucide-style 1.5px stroke icons.
+{%- endcomment -%}
+
+<div class="color-{{ section.settings.color_scheme }} trust-band" style="background: var(--color-background);">
+  <div class="trust-band__inner">
+    {%- for block in section.blocks -%}
+      <span class="trust-band__item" {{ block.shopify_attributes }}>
+        {%- case block.settings.icon -%}
+          {%- when 'heart' -%}
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21C7 17 3 13.5 3 9.5A4.5 4.5 0 0 1 12 7a4.5 4.5 0 0 1 9 2.5c0 4-4 7.5-9 11.5Z"/></svg>
+          {%- when 'truck' -%}
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9h18M3 9l2-5h14l2 5M3 9v10a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V9"/></svg>
+          {%- when 'shield' -%}
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 7.8-8 9-4.6-1.2-8-4.5-8-9V6l8-3Z"/><path d="m9 12 2 2 4-4"/></svg>
+          {%- when 'lock' -%}
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="10" width="14" height="10" rx="1"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+        {%- endcase -%}
+        {{ block.settings.text }}
+      </span>
+    {%- endfor -%}
+  </div>
+</div>
+
+{% stylesheet %}
+.trust-band__inner { display: flex; justify-content: center; gap: 56px; flex-wrap: wrap; max-width: 1280px; margin: 0 auto; padding: 22px 40px; border-bottom: 1px solid rgb(var(--color-foreground-rgb) / 0.10); font-size: 13px; }
+.trust-band__item { display: flex; align-items: center; gap: 8px; }
+.trust-band__item svg { color: var(--color-foreground-heading, #000); flex: none; }
+@media (max-width: 749px) { .trust-band__inner { gap: 14px 24px; padding: 16px 20px; font-size: 12px; } }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Trust band",
+  "tag": "section",
+  "settings": [
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "scheme-1" }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Trust item",
+      "settings": [
+        { "type": "select", "id": "icon", "label": "Icon", "default": "heart", "options": [
+          { "value": "heart", "label": "Heart (made by hand)" },
+          { "value": "truck", "label": "Truck (shipping)" },
+          { "value": "shield", "label": "Shield (promise)" },
+          { "value": "lock", "label": "Lock (privacy)" }
+        ] },
+        { "type": "text", "id": "text", "label": "Text", "default": "Made by hand in Toronto" }
+      ]
+    }
+  ],
+  "max_blocks": 4,
+  "presets": [
+    {
+      "name": "Trust band",
+      "blocks": [
+        { "type": "item", "settings": { "icon": "heart", "text": "Made by hand in Toronto" } },
+        { "type": "item", "settings": { "icon": "truck", "text": "Free Canada-wide shipping" } },
+        { "type": "item", "settings": { "icon": "shield", "text": "Made-right promise" } },
+        { "type": "item", "settings": { "icon": "lock", "text": "Your photos stay private" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

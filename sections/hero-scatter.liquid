@@ -1,0 +1,287 @@
+{%- comment -%}
+  Hero Scatter v6 — everstory design system v1.1 (split layout)
+
+  Coordinate system
+  -----------------
+  Every sticker lives in a fixed 1280 x 720 "design canvas", scaled by one
+  value, --stk-unit (1px at full size). Positions, widths, padding, the white
+  sticker edge and the section height all multiply by it, so the composition
+  keeps identical proportions at every viewport.
+
+  Two-column split
+  ----------------
+  "Text column width" cuts the canvas in two: text only on the left, stickers
+  only on the right. The authored x values are NOT absolute — they are read as
+  relative order/spread and remapped to fill the sticker column exactly:
+
+    left = band_left + (authored_left - cluster_left) * scale
+
+  So narrowing the split automatically packs the same stickers tighter
+  (more overlap) instead of pushing them off the canvas, and no sticker can
+  ever cross into the text column. Change the split slider and the whole
+  cluster re-fits itself — no need to retune 20 x sliders.
+
+  "Photo size" scales every sticker together; combined with the split it is
+  the overlap control. Vertical placement (y) stays exactly as authored.
+
+  Mobile reproduces the SAME canvas cropped to the remapped bounding box, so
+  the cluster fills the width edge to edge. Nothing is hardcoded.
+{%- endcomment -%}
+
+{%- liquid
+  assign zoom = section.settings.cluster_zoom | default: 100 | times: 0.01
+  assign split = section.settings.split | default: 50
+  assign band_l = split | times: 12.8
+  assign band_r = 1318.4
+  if band_r <= band_l
+    assign band_r = band_l | plus: 120
+  endif
+
+  comment
+    Pass 1 - bounding box of the stickers as authored.
+  endcomment
+  assign o_min_l = 999999
+  assign o_max_r = -999999
+  assign min_t = 999999
+  assign max_b = -999999
+  assign counted = 0
+
+  for block in section.blocks
+    assign bw = block.settings.width | default: 120 | times: zoom
+    assign bh = bw | times: 1.25
+    if block.settings.image != blank
+      assign iw = block.settings.image.width | times: 1.0
+      assign ih = block.settings.image.height | times: 1.0
+      if iw > 0
+        assign bh = bw | times: ih | divided_by: iw
+      endif
+    endif
+    assign l0 = block.settings.x | default: 60 | times: 12.8
+    assign t0 = block.settings.y | default: 10 | times: 7.2
+    assign r0 = l0 | plus: bw
+    assign b0 = t0 | plus: bh
+    if l0 < o_min_l
+      assign o_min_l = l0
+    endif
+    if r0 > o_max_r
+      assign o_max_r = r0
+    endif
+    if t0 < min_t
+      assign min_t = t0
+    endif
+    if b0 > max_b
+      assign max_b = b0
+    endif
+    assign counted = counted | plus: 1
+  endfor
+
+  if counted == 0
+    assign o_min_l = 0
+    assign o_max_r = 1280
+    assign min_t = 0
+    assign max_b = 720
+  endif
+
+  assign o_span = o_max_r | minus: o_min_l
+  if o_span <= 0
+    assign o_span = 1
+  endif
+  assign scale_x = band_r | minus: band_l | divided_by: o_span
+
+  comment
+    Pass 2 - bounding box after remapping, used for the mobile crop.
+  endcomment
+  assign n_min_l = 999999
+  assign n_max_r = -999999
+  for block in section.blocks
+    assign bw = block.settings.width | default: 120 | times: zoom
+    assign l0 = block.settings.x | default: 60 | times: 12.8
+    assign nl = l0 | minus: o_min_l | times: scale_x | plus: band_l
+    assign nr = nl | plus: bw
+    if nl < n_min_l
+      assign n_min_l = nl
+    endif
+    if nr > n_max_r
+      assign n_max_r = nr
+    endif
+  endfor
+  if counted == 0
+    assign n_min_l = 0
+    assign n_max_r = 1280
+  endif
+
+  assign band_w = n_max_r | minus: n_min_l
+  assign band_h = max_b | minus: min_t
+  if band_w <= 0
+    assign band_w = 1280
+  endif
+  if band_h <= 0
+    assign band_h = 720
+  endif
+
+  comment
+    3% breathing room on each side so rotated corners are not clipped.
+  endcomment
+  assign pad_x = band_w | times: 0.03
+  assign pad_y = band_h | times: 0.03
+  assign off_x = 0 | minus: n_min_l | plus: pad_x
+  assign off_y = 0 | minus: min_t | plus: pad_y
+  assign band_w = band_w | times: 1.06
+  assign band_h = band_h | times: 1.06
+
+  comment
+    Text column: canvas left padding (64) + gutter (40) reserved.
+  endcomment
+  assign text_w = band_l | minus: 104
+  if text_w < 300
+    assign text_w = 300
+  endif
+-%}
+
+<div
+  class="color-{{ section.settings.color_scheme }} hero-scatter"
+  style="background: var(--color-background); --field-band-w: {{ band_w }}; --field-band-h: {{ band_h }}; --field-off-x: {{ off_x }}; --field-off-y: {{ off_y }}; --text-w: {{ text_w }};"
+>
+  <div class="hero-scatter__inner">
+    <div class="hero-scatter__field">
+      {%- for block in section.blocks -%}
+        {%- liquid
+          assign bw = block.settings.width | default: 120 | times: zoom
+          assign l0 = block.settings.x | default: 60 | times: 12.8
+          assign nl = l0 | minus: o_min_l | times: scale_x | plus: band_l
+          assign nt = block.settings.y | default: 10 | times: 7.2
+          assign src_w = bw | times: 2 | round
+          if src_w < 160
+            assign src_w = 160
+          endif
+          if src_w > 800
+            assign src_w = 800
+          endif
+        -%}
+        {%- if block.settings.image != blank -%}
+          <div
+            class="hero-scatter__stk"
+            style="--stk-l: {{ nl }}; --stk-t: {{ nt }}; --stk-w: {{ bw }}; --stk-rot: {{ block.settings.rotation }}deg;"
+            {{ block.shopify_attributes }}
+          >
+            <img
+              class="hero-scatter__img"
+              src="{{ block.settings.image | image_url: width: src_w }}"
+              alt="{{ block.settings.image.alt | escape }}"
+              width="{{ block.settings.image.width }}"
+              height="{{ block.settings.image.height }}"
+              loading="eager"
+              decoding="async"
+            >
+          </div>
+        {%- elsif request.design_mode -%}
+          <div
+            class="hero-scatter__stk"
+            style="--stk-l: {{ nl }}; --stk-t: {{ nt }}; --stk-w: {{ bw }}; --stk-rot: {{ block.settings.rotation }}deg;"
+            {{ block.shopify_attributes }}
+          >
+            <div class="hero-scatter__blob"><span>Pick image</span></div>
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+
+    <div class="hero-scatter__content">
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="hero-scatter__eyebrow">{{ section.settings.eyebrow }}</p>
+      {%- endif -%}
+      <h1 class="hero-scatter__title">{{ section.settings.heading | newline_to_br }}</h1>
+      {%- if section.settings.subtext != blank -%}
+        <p class="hero-scatter__sub">{{ section.settings.subtext }}</p>
+      {%- endif -%}
+      <div class="hero-scatter__cta">
+        {%- if section.settings.button1_label != blank -%}
+          <a class="hero-scatter__btn hero-scatter__btn--primary" href="{{ section.settings.button1_link }}">{{ section.settings.button1_label }}</a>
+        {%- endif -%}
+        {%- if section.settings.button2_label != blank -%}
+          <a class="hero-scatter__btn hero-scatter__btn--secondary" href="{{ section.settings.button2_link }}">{{ section.settings.button2_label }}</a>
+        {%- endif -%}
+      </div>
+      {%- if section.settings.trustline != blank -%}
+        <p class="hero-scatter__trust">{{ section.settings.trustline }}</p>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+{% stylesheet %}
+.hero-scatter { container-type: inline-size; }
+.hero-scatter__inner { --stk-unit: min(0.078125cqw, 1px); position: relative; max-width: 1280px; margin: 0 auto; padding: calc(110 * var(--stk-unit)) calc(64 * var(--stk-unit)); min-height: calc(720 * var(--stk-unit)); text-align: left; overflow: hidden; }
+.hero-scatter__content { position: relative; z-index: 2; max-width: calc(var(--text-w, 480) * var(--stk-unit)); }
+.hero-scatter__eyebrow { font-size: 12px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: rgb(var(--color-foreground-rgb) / 0.55); margin: 0 0 10px; }
+.hero-scatter__title { margin: 0; line-height: 1.02; font-size: clamp(40px, 5vw, 64px); }
+.hero-scatter__sub { max-width: 44ch; margin: 20px 0 28px; font-size: 16px; line-height: 1.65; }
+.hero-scatter__cta { display: flex; gap: 12px; justify-content: flex-start; flex-wrap: wrap; }
+.hero-scatter__btn { display: inline-block; font-size: 14px; font-weight: 500; padding: 13px 28px; border: 1px solid var(--color-foreground-heading, #000); text-decoration: none; transition: background 150ms ease, color 150ms ease; }
+.hero-scatter__btn--primary { background: var(--color-foreground-heading, #000); color: var(--color-background, #fff); }
+.hero-scatter__btn--primary:hover { opacity: 0.85; }
+.hero-scatter__btn--secondary { background: transparent; color: var(--color-foreground-heading, #000); }
+.hero-scatter__btn--secondary:hover { background: rgb(var(--color-foreground-rgb) / 0.04); }
+.hero-scatter__trust { font-size: 12px; color: rgb(var(--color-foreground-rgb) / 0.55); margin: 22px 0 0; }
+.hero-scatter__field { display: contents; }
+.hero-scatter__stk { position: absolute; left: calc(var(--stk-l, 700) * var(--stk-unit)); top: calc(var(--stk-t, 72) * var(--stk-unit)); width: calc(var(--stk-w, 120) * var(--stk-unit)); transform: rotate(var(--stk-rot, 0deg)); z-index: 1; }
+.hero-scatter__img { --stk-edge: calc(3 * var(--stk-unit)); display: block; width: 100%; height: auto; filter: drop-shadow(var(--stk-edge) 0 0 #fff) drop-shadow(calc(-1 * var(--stk-edge)) 0 0 #fff) drop-shadow(0 var(--stk-edge) 0 #fff) drop-shadow(0 calc(-1 * var(--stk-edge)) 0 #fff) drop-shadow(0 calc(6 * var(--stk-unit)) calc(12 * var(--stk-unit)) rgba(0,0,0,0.14)); }
+.hero-scatter__blob { display: grid; place-items: center; width: 100%; aspect-ratio: 4 / 5; background: repeating-linear-gradient(45deg, #f3ece5, #f3ece5 8px, #e7ded3 8px, #e7ded3 16px); border: calc(4 * var(--stk-unit)) solid #fff; border-radius: 46% 54% 52% 48% / 58% 44% 56% 42%; box-shadow: 0 calc(5 * var(--stk-unit)) calc(14 * var(--stk-unit)) rgba(0,0,0,0.13); }
+.hero-scatter__blob span { font-size: calc(11 * var(--stk-unit)); letter-spacing: 0.08em; text-transform: uppercase; color: #9c8d7d; }
+@media (max-width: 749px) {
+  .hero-scatter__inner { display: flex; flex-direction: column; padding: 0 20px 48px; min-height: 0; }
+  .hero-scatter__content { width: 100%; max-width: none; text-align: center; }
+  .hero-scatter__sub { margin: 20px auto 28px; }
+  .hero-scatter__cta { flex-direction: column; align-items: stretch; padding: 0 12px; }
+  .hero-scatter__btn { text-align: center; }
+  .hero-scatter__field { display: block; position: relative; align-self: stretch; margin: 0 -20px 32px; overflow: hidden; --stk-unit: calc(100cqw / var(--field-band-w, 1280)); height: calc(var(--field-band-h, 720) * var(--stk-unit)); }
+  .hero-scatter__stk { translate: calc(var(--field-off-x, 0) * var(--stk-unit)) calc(var(--field-off-y, 0) * var(--stk-unit)); }
+}
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Hero scatter",
+  "tag": "section",
+  "settings": [
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "scheme-2" },
+    { "type": "header", "content": "Layout" },
+    { "type": "range", "id": "split", "label": "Text column width", "info": "50 = 5:5 split, 60 = 6:4. Stickers refit into the remaining column automatically.", "min": 35, "max": 65, "step": 5, "unit": "%", "default": 50 },
+    { "type": "range", "id": "cluster_zoom", "label": "Photo size (all stickers)", "info": "Raise this to make the cluster overlap more densely.", "min": 60, "max": 140, "step": 5, "unit": "%", "default": 100 },
+    { "type": "header", "content": "Content" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Made in Toronto · A5 die-cut sheets" },
+    { "type": "textarea", "id": "heading", "label": "Heading", "default": "Your people,\ncut by hand." },
+    { "type": "textarea", "id": "subtext", "label": "Subtext", "default": "Send a photograph. We trace every silhouette ourselves — hair, ears, the gap between fingers — and press it onto a sheet made to keep." },
+    { "type": "text", "id": "button1_label", "label": "Primary button label", "default": "Shop now" },
+    { "type": "url", "id": "button1_link", "label": "Primary button link" },
+    { "type": "text", "id": "button2_label", "label": "Secondary button label", "default": "How it works" },
+    { "type": "url", "id": "button2_link", "label": "Secondary button link" },
+    { "type": "text", "id": "trustline", "label": "Trust line", "default": "✓ Made-right promise · ✓ Free Canada-wide shipping · ✓ Your photos stay private" }
+  ],
+  "blocks": [
+    {
+      "type": "sticker",
+      "name": "Sticker cutout",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Cutout PNG (transparent)" },
+        { "type": "range", "id": "x", "label": "X position", "info": "Relative — auto-fitted into the sticker column.", "min": 0, "max": 100, "step": 1, "default": 60 },
+        { "type": "range", "id": "y", "label": "Y position (%)", "min": 0, "max": 100, "step": 1, "default": 10 },
+        { "type": "range", "id": "width", "label": "Width (canvas px)", "min": 60, "max": 240, "step": 5, "default": 110 },
+        { "type": "range", "id": "rotation", "label": "Rotation (deg)", "min": -10, "max": 10, "step": 1, "default": 0 }
+      ]
+    }
+  ],
+  "max_blocks": 28,
+  "presets": [
+    {
+      "name": "Hero scatter",
+      "blocks": [
+        { "type": "sticker", "settings": { "x": 52, "y": 4, "width": 180, "rotation": 4 } },
+        { "type": "sticker", "settings": { "x": 66, "y": 40, "width": 170, "rotation": -5 } },
+        { "type": "sticker", "settings": { "x": 86, "y": 8, "width": 120, "rotation": 6 } },
+        { "type": "sticker", "settings": { "x": 86, "y": 62, "width": 110, "rotation": -6 } }
+      ]
+    }
+  ]
+}
+{% endschema %}
