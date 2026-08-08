@@ -32,6 +32,34 @@
     {%- render 'theme-styles-variables' -%}
     {%- render 'color-schemes' -%}
 
+    {% comment %} Everstory Phase 2 — brand accents (SOT: docs/design/tokens.json) {% endcomment %}
+    <style id="es-brand">
+      :root { --es-coral: #FBAAA8; --es-coral-deep: #E58784; --es-warm: #E0D3CB; }
+      .eyebrow.eyebrow { color: var(--es-coral-deep); letter-spacing: 0.22em; }
+      /* PDP step labels (was inline in templates/product.json es_step1) */
+      .es-step{display:flex;align-items:baseline;gap:10px;border-top:1px solid rgba(0,0,0,.1);padding-top:18px;margin-top:6px}.es-step__no{font-size:11px;font-weight:700;letter-spacing:.1em;color:var(--es-coral-deep);font-family:var(--font-body--family)}.es-step__t{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--color-foreground-heading,#000);font-family:var(--font-body--family)}
+      /* es_step1 in templates/product.json still ships its own inline <style>
+         with the old grey. It renders in <body>, so at equal specificity it
+         wins on source order over this <head> block. Doubled class (0,2,0)
+         takes it back. Drop this line once that inline style is removed. */
+      .es-step .es-step__no { color: var(--es-coral-deep); }
+      /* Coral was doing one job (eyebrows) and so read as a stray colour rather
+         than a brand mark. Product card hover is the highest-traffic surface on
+         the site; tokens.json calls for #FBAAA8 as the link hover underline. */
+      .product-card__link:hover { text-decoration: underline; text-decoration-color: var(--es-coral); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+      /* Mobile hero order. The sticker wall is roughly 1:1, so at 375px it ran
+         ~840px tall and pushed the headline, subcopy and both CTAs below the
+         fold — the first screen had no value prop and nothing to click. Text
+         leads, the wall follows and still bleeds edge to edge underneath.
+         Doubled class = beats sections/hero-scatter.liquid regardless of load
+         order; belongs in that section file on a later refactor. */
+      @media (max-width: 749px) {
+        .hero-scatter .hero-scatter__inner { padding-top: 28px; }
+        .hero-scatter .hero-scatter__content { order: 1; }
+        .hero-scatter .hero-scatter__field { order: 2; margin: 32px -20px 0; }
+      }
+    </style>
+
     {% if request.design_mode %}
       {%- render 'theme-editor' -%}
     {% endif %}

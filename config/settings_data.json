@@ -52,9 +52,9 @@
     "card_hover_effect": "none",
     "badge_position": "top-right",
     "badge_corner_radius": 100,
-    "badge_sale_color_scheme": "scheme-1",
+    "badge_sale_color_scheme": "scheme-4",
     "badge_sold_out_color_scheme": "scheme-3",
-    "badge_text_transform": "none",
+    "badge_text_transform": "uppercase",
     "primary_button_border_width": 0,
     "button_border_radius_primary": 0,
     "secondary_button_border_width": 1,
@@ -68,7 +68,7 @@
     "icon_stroke": "default",
     "input_border_width": 1,
     "inputs_border_radius": 4,
-    "popover_border_radius": 14,
+    "popover_border_radius": 4,
     "popover_border": "none",
     "currency_code_enabled_product_pages": false,
     "currency_code_enabled_product_cards": false,
@@ -88,7 +88,6 @@
         "type": "shopify://apps/easify-options/blocks/app-embed-block/d2288b18-c1ba-42f5-b3b3-26c75c8820bf",
         "disabled": false,
         "settings": {
-          "theme_app_version": "none",
           "path_loading_mode": "exclude",
           "page_paths": ""
         }
@@ -141,12 +140,12 @@
       },
       "scheme-2": {
         "settings": {
-          "background": "#f5f5f5",
+          "background": "#f8f5f2",
           "foreground_heading": "#000000",
           "foreground": "#000000cf",
           "primary": "#000000cf",
           "primary_hover": "#ffffff",
-          "border": "#dfdfdf",
+          "border": "#ece6e0",
           "shadow": "#000000",
           "primary_button_background": "#000000",
           "primary_button_text": "#ffffff",
@@ -219,16 +218,16 @@
       },
       "scheme-4": {
         "settings": {
-          "background": "#e1edf5",
+          "background": "#d6a498",
           "foreground_heading": "#000000",
           "foreground": "#000000cf",
           "primary": "#000000cf",
           "primary_hover": "#000000",
-          "border": "#1d368680",
+          "border": "#00000033",
           "shadow": "#000000",
           "primary_button_background": "#000000",
           "primary_button_text": "#ffffff",
-          "primary_button_border": "#1d3686",
+          "primary_button_border": "#000000",
           "primary_button_hover_background": "#333333",
           "primary_button_hover_text": "#ffffff",
           "primary_button_hover_border": "#000000",

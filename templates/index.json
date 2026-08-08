@@ -9,686 +9,300 @@
  */
 {
   "sections": {
-    "hero_jVaWmY": {
-      "type": "hero",
+    "hero_scatter": {
+      "type": "hero-scatter",
       "blocks": {
-        "custom_liquid_gCJwqw": {
-          "type": "custom-liquid",
-          "name": "t:names.custom_liquid",
+        "s01": {
+          "type": "sticker",
           "settings": {
-            "custom_liquid": "<p style=\"margin:0;margin-bottom:-0.75em;color:#444;font-size:0.75rem;letter-spacing:.12em;text-transform:uppercase;line-height:1.2;\">\n  Made in Toronto\n</p>"
-          },
-          "blocks": {}
+            "image": "shopify://shop_images/hero_kid_dothat.png",
+            "x": 45,
+            "y": 0,
+            "width": 155,
+            "rotation": -7
+          }
         },
-        "text_m3MLkj": {
-          "type": "text",
-          "name": "t:names.text",
-          "disabled": true,
+        "s02": {
+          "type": "sticker",
           "settings": {
-            "text": "<p><br/>  Made in Toron</p>",
-            "width": "100%",
-            "max_width": "normal",
-            "alignment": "center",
-            "type_preset": "rte",
-            "font": "var(--font-body--family)",
-            "font_size": "1rem",
-            "line_height": "normal",
-            "letter_spacing": "loose",
-            "case": "uppercase",
-            "wrap": "pretty",
-            "color": "var(--color-foreground)",
-            "background": false,
-            "background_color": "#00000026",
-            "corner_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {}
+            "image": "shopify://shop_images/hero_cat_grumpy.png",
+            "x": 47,
+            "y": 40,
+            "width": 145,
+            "rotation": 3
+          }
         },
-        "text_YLPk4p": {
-          "type": "text",
-          "name": "t:names.heading",
+        "s04": {
+          "type": "sticker",
           "settings": {
-            "text": "<p>Photographs, kept by hand.</p>",
-            "width": "fit-content",
-            "max_width": "normal",
-            "alignment": "left",
-            "type_preset": "h1",
-            "font": "var(--font-body--family)",
-            "font_size": "1rem",
-            "line_height": "normal",
-            "letter_spacing": "normal",
-            "case": "none",
-            "wrap": "pretty",
-            "color": "var(--color-foreground-heading)",
-            "background": false,
-            "background_color": "#00000026",
-            "corner_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {}
+            "image": "shopify://shop_images/hero_chihuahua.png",
+            "x": 91,
+            "y": 19,
+            "width": 150,
+            "rotation": -6
+          }
         },
-        "text_qJdVRm": {
-          "type": "text",
-          "name": "t:names.text",
+        "s27": {
+          "type": "sticker",
           "settings": {
-            "text": "<p>A5 die-cut sticker sheets, traced and finished by hand on Korean premium substrates. Made to order, shipped in 2–5 business days.</p>",
-            "width": "fit-content",
-            "max_width": "normal",
-            "alignment": "left",
-            "type_preset": "paragraph",
-            "font": "var(--font-body--family)",
-            "font_size": "1rem",
-            "line_height": "normal",
-            "letter_spacing": "normal",
-            "case": "none",
-            "wrap": "pretty",
-            "color": "var(--color-foreground)",
-            "background": false,
-            "background_color": "#00000026",
-            "corner_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {}
+            "image": "shopify://shop_images/hero_family_pets.png",
+            "x": 73,
+            "y": 0,
+            "width": 175,
+            "rotation": -3
+          }
         },
-        "group_hanGD9": {
-          "type": "group",
-          "name": "t:names.group",
+        "s09": {
+          "type": "sticker",
           "settings": {
-            "content_direction": "row",
-            "vertical_on_mobile": true,
-            "horizontal_alignment": "center",
-            "vertical_alignment": "center",
-            "align_baseline": false,
-            "horizontal_alignment_flex_direction_column": "flex-start",
-            "vertical_alignment_flex_direction_column": "center",
-            "gap": 12,
-            "width": "fit-content",
-            "custom_width": 100,
-            "width_mobile": "fit-content",
-            "custom_width_mobile": 100,
-            "height": "fit",
-            "custom_height": 100,
-            "inherit_color_scheme": true,
-            "color_scheme": "",
-            "background_media": "none",
-            "video_position": "cover",
-            "background_image_position": "cover",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_radius": 0,
-            "toggle_overlay": false,
-            "overlay_color": "#00000026",
-            "overlay_style": "solid",
-            "gradient_direction": "to top",
-            "link": "",
-            "open_in_new_tab": false,
-            "placeholder": "",
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {
-            "button_eCCJwN": {
-              "type": "button",
-              "name": "t:names.button",
-              "settings": {
-                "label": "Shop the lookbook",
-                "link": "shopify://collections/all",
-                "open_in_new_tab": false,
-                "style_class": "button",
-                "width": "fit-content",
-                "custom_width": 100,
-                "width_mobile": "fit-content",
-                "custom_width_mobile": 100
-              },
-              "blocks": {}
-            },
-            "button_BrJRWp": {
-              "type": "button",
-              "name": "t:names.button",
-              "settings": {
-                "label": "How it works",
-                "link": "#how-it-works",
-                "open_in_new_tab": false,
-                "style_class": "button-secondary",
-                "width": "fit-content",
-                "custom_width": 100,
-                "width_mobile": "fit-content",
-                "custom_width_mobile": 100
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": [
-            "button_eCCJwN",
-            "button_BrJRWp"
-          ]
+            "image": "shopify://shop_images/hero_puppy_lab.png",
+            "x": 54,
+            "y": 0,
+            "width": 150,
+            "rotation": -3
+          }
+        },
+        "s10": {
+          "type": "sticker",
+          "settings": {
+            "image": "shopify://shop_images/hero_kid_horse.png",
+            "x": 65,
+            "y": 0,
+            "width": 165,
+            "rotation": 3
+          }
+        },
+        "s03": {
+          "type": "sticker",
+          "settings": {
+            "image": "shopify://shop_images/hero_cat_longhair.png",
+            "x": 90,
+            "y": 54,
+            "width": 140,
+            "rotation": 10
+          }
+        },
+        "s13": {
+          "type": "sticker",
+          "settings": {
+            "image": "shopify://shop_images/hero_kid_bearhat.png",
+            "x": 87,
+            "y": 72,
+            "width": 160,
+            "rotation": -4
+          }
+        },
+        "s14": {
+          "type": "sticker",
+          "settings": {
+            "image": "shopify://shop_images/hero_minpin_full.png",
+            "x": 75,
+            "y": 69,
+            "width": 165,
+            "rotation": 3
+          }
+        },
+        "s19": {
+          "type": "sticker",
+          "settings": {
+            "image": "shopify://shop_images/hero_baby_shades.png",
+            "x": 87,
+            "y": 0,
+            "width": 145,
+            "rotation": 5
+          }
+        },
+        "s12": {
+          "type": "sticker",
+          "settings": {
+            "image": "shopify://shop_images/hero_kid_scarf.png",
+            "x": 53,
+            "y": 54,
+            "width": 125,
+            "rotation": -8
+          }
+        },
+        "s15": {
+          "type": "sticker",
+          "settings": {
+            "image": "shopify://shop_images/hero_kid_circle.png",
+            "x": 61,
+            "y": 54,
+            "width": 135,
+            "rotation": -5
+          }
+        },
+        "s06": {
+          "type": "sticker",
+          "settings": {
+            "image": "shopify://shop_images/hero_kid_tongue.png",
+            "x": 59,
+            "y": 30,
+            "width": 140,
+            "rotation": 5
+          }
+        },
+        "s05": {
+          "type": "sticker",
+          "settings": {
+            "image": "shopify://shop_images/hero_dog_tongue.png",
+            "x": 78,
+            "y": 21,
+            "width": 135,
+            "rotation": 6
+          }
+        },
+        "s11": {
+          "type": "sticker",
+          "settings": {
+            "image": "shopify://shop_images/hero_kid_dress.png",
+            "x": 69,
+            "y": 59,
+            "width": 145,
+            "rotation": 4
+          }
+        },
+        "s20": {
+          "type": "sticker",
+          "settings": {
+            "image": "shopify://shop_images/hero_baby_knithat.png",
+            "x": 80,
+            "y": 45,
+            "width": 145,
+            "rotation": -7
+          }
+        },
+        "s17": {
+          "type": "sticker",
+          "settings": {
+            "image": "shopify://shop_images/hero_kid_glasses.png",
+            "x": 89,
+            "y": 35,
+            "width": 145,
+            "rotation": 7
+          }
+        },
+        "s07": {
+          "type": "sticker",
+          "settings": {
+            "image": "shopify://shop_images/hero_cat_calico.png",
+            "x": 58,
+            "y": 71,
+            "width": 135,
+            "rotation": 4
+          }
+        },
+        "s22": {
+          "type": "sticker",
+          "settings": {
+            "image": "shopify://shop_images/hero_girl_running.png",
+            "x": 42,
+            "y": 62,
+            "width": 155,
+            "rotation": -2
+          }
+        },
+        "s26": {
+          "type": "sticker",
+          "settings": {
+            "image": "shopify://shop_images/hero_cat_black.png",
+            "x": 42,
+            "y": 88,
+            "width": 160,
+            "rotation": 8
+          }
+        },
+        "sticker_redcircle": {
+          "type": "sticker",
+          "settings": {
+            "image": "shopify://shop_images/hero_kid_redcircle.png",
+            "x": 72,
+            "y": 39,
+            "width": 150,
+            "rotation": -8
+          }
         }
       },
       "block_order": [
-        "custom_liquid_gCJwqw",
-        "text_m3MLkj",
-        "text_YLPk4p",
-        "text_qJdVRm",
-        "group_hanGD9"
+        "s01",
+        "s02",
+        "s04",
+        "s27",
+        "s09",
+        "s10",
+        "s03",
+        "s13",
+        "s14",
+        "s19",
+        "s12",
+        "s15",
+        "s06",
+        "s05",
+        "s11",
+        "s20",
+        "s17",
+        "s07",
+        "s22",
+        "s26",
+        "sticker_redcircle"
       ],
-      "disabled": true,
-      "name": "t:names.hero",
+      "custom_css": [
+        ".hero-scatter__inner {min-height: min(720px, calc(100svh - var(--header-group-height, 110px)));}"
+      ],
       "settings": {
-        "media_type_1": "image",
-        "image_1": "shopify://shop_images/everstory_home_hero_reference_locked.png",
-        "media_type_2": "image",
-        "stack_media_on_mobile": false,
-        "custom_mobile_media": false,
-        "media_type_1_mobile": "image",
-        "media_type_2_mobile": "image",
-        "link": "",
-        "open_in_new_tab": false,
-        "content_direction": "column",
-        "vertical_on_mobile": true,
-        "horizontal_alignment": "space-between",
-        "vertical_alignment": "flex-end",
-        "align_baseline": true,
-        "horizontal_alignment_flex_direction_column": "flex-start",
-        "vertical_alignment_flex_direction_column": "flex-end",
-        "gap": 24,
-        "section_width": "page-width",
-        "section_height": "full-screen",
-        "section_height_custom": 50,
-        "color_scheme": "scheme-1",
-        "toggle_overlay": true,
-        "overlay_color": "#12121236",
-        "overlay_style": "solid",
-        "gradient_direction": "to top",
-        "blurred_reflection": false,
-        "reflection_opacity": 100,
-        "padding-block-start": 80,
-        "padding-block-end": 80
+        "color_scheme": "scheme-2",
+        "split": 50,
+        "cluster_zoom": 100,
+        "eyebrow": "Made in Toronto · A5 die-cut sheets",
+        "heading": "Your people,\ntraced by hand.",
+        "subtext": "Send a photograph. We trace every silhouette ourselves — hair, ears, the gap between fingers — and press it onto a sheet made to keep.",
+        "button1_label": "Shop now",
+        "button1_link": "/collections/all",
+        "button2_label": "How it works",
+        "button2_link": "#how-it-works",
+        "trustline": ""
       }
     },
-    "hero_split_r4kq9R": {
-      "type": "hero-split",
+    "trust_band": {
+      "type": "trust-band",
       "blocks": {
-        "group_8WMRjm": {
-          "type": "group",
-          "name": "t:names.group",
+        "ti1": {
+          "type": "item",
           "settings": {
-            "content_direction": "column",
-            "vertical_on_mobile": true,
-            "horizontal_alignment": "flex-start",
-            "vertical_alignment": "center",
-            "align_baseline": false,
-            "horizontal_alignment_flex_direction_column": "flex-start",
-            "vertical_alignment_flex_direction_column": "center",
-            "gap": 12,
-            "width": "fill",
-            "custom_width": 100,
-            "width_mobile": "fill",
-            "custom_width_mobile": 100,
-            "height": "fit",
-            "custom_height": 100,
-            "inherit_color_scheme": true,
-            "color_scheme": "",
-            "background_media": "none",
-            "video_position": "cover",
-            "background_image_position": "cover",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_radius": 0,
-            "toggle_overlay": false,
-            "overlay_color": "#00000026",
-            "overlay_style": "solid",
-            "gradient_direction": "to top",
-            "link": "",
-            "open_in_new_tab": false,
-            "placeholder": "",
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {
-            "eyebrow_6CmpH8": {
-              "type": "eyebrow",
-              "name": "Eyebrow",
-              "settings": {
-                "text": "MADE IN TORONTO",
-                "alignment": "left",
-                "tight": false
-              },
-              "blocks": {}
-            },
-            "text_ERG6zU": {
-              "type": "text",
-              "name": "t:names.heading",
-              "settings": {
-                "text": "<h1>Photographs, kept by hand.</h1>",
-                "width": "fit-content",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "rte",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "color": "var(--color-foreground)",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "text_mtm3wm": {
-              "type": "text",
-              "name": "t:names.text",
-              "settings": {
-                "text": "<p>A5 die-cut sticker sheets, traced and finished by hand on Korean premium substrates. Made to order, shipped in 2–5 business days.</p>",
-                "width": "fit-content",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "rte",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "color": "var(--color-foreground)",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": [
-            "eyebrow_6CmpH8",
-            "text_ERG6zU",
-            "text_mtm3wm"
-          ]
+            "icon": "heart",
+            "text": "Made by hand in Toronto"
+          }
         },
-        "group_B6Art8": {
-          "type": "group",
-          "name": "t:names.group",
+        "ti2": {
+          "type": "item",
           "settings": {
-            "content_direction": "row",
-            "vertical_on_mobile": false,
-            "horizontal_alignment": "flex-start",
-            "vertical_alignment": "center",
-            "align_baseline": false,
-            "horizontal_alignment_flex_direction_column": "flex-start",
-            "vertical_alignment_flex_direction_column": "center",
-            "gap": 12,
-            "width": "fill",
-            "custom_width": 100,
-            "width_mobile": "fill",
-            "custom_width_mobile": 100,
-            "height": "fit",
-            "custom_height": 100,
-            "inherit_color_scheme": true,
-            "color_scheme": "",
-            "background_media": "none",
-            "video_position": "cover",
-            "background_image_position": "cover",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_radius": 0,
-            "toggle_overlay": false,
-            "overlay_color": "#00000026",
-            "overlay_style": "solid",
-            "gradient_direction": "to top",
-            "link": "",
-            "open_in_new_tab": false,
-            "placeholder": "",
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {
-            "button_aMmh4R": {
-              "type": "button",
-              "name": "t:names.button",
-              "settings": {
-                "label": "Shop now",
-                "link": "shopify://collections/all",
-                "open_in_new_tab": false,
-                "style_class": "button",
-                "width": "fit-content",
-                "custom_width": 100,
-                "width_mobile": "fit-content",
-                "custom_width_mobile": 100
-              },
-              "blocks": {}
-            },
-            "button_GrRfWA": {
-              "type": "button",
-              "name": "t:names.button",
-              "settings": {
-                "label": "How it works",
-                "link": "#how-it-works",
-                "open_in_new_tab": false,
-                "style_class": "button-secondary",
-                "width": "fit-content",
-                "custom_width": 100,
-                "width_mobile": "fit-content",
-                "custom_width_mobile": 100
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": [
-            "button_aMmh4R",
-            "button_GrRfWA"
-          ]
+            "icon": "truck",
+            "text": "Free Canada-wide shipping"
+          }
+        },
+        "ti3": {
+          "type": "item",
+          "settings": {
+            "icon": "shield",
+            "text": "Made-right promise"
+          }
+        },
+        "ti4": {
+          "type": "item",
+          "settings": {
+            "icon": "lock",
+            "text": "Your photos stay private"
+          }
         }
       },
       "block_order": [
-        "group_8WMRjm",
-        "group_B6Art8"
+        "ti1",
+        "ti2",
+        "ti3",
+        "ti4"
       ],
-      "name": "Hero Split",
       "settings": {
-        "image": "shopify://shop_images/temp_template_for.png",
-        "split_ratio": "55-45"
-      },
-      "disabled": true
-    },
-    "slideshow_DdxtkG": {
-      "type": "slideshow",
-      "blocks": {
-        "slide_JEBCHf": {
-          "type": "_slide",
-          "settings": {
-            "media_type_1": "image",
-            "image_1": "shopify://shop_images/ChatGPT_Image_May_11_2026_at_01_48_46_PM.png",
-            "content_direction": "column",
-            "vertical_on_mobile": true,
-            "horizontal_alignment": "flex-start",
-            "vertical_alignment": "center",
-            "align_baseline": false,
-            "horizontal_alignment_flex_direction_column": "center",
-            "vertical_alignment_flex_direction_column": "center",
-            "gap": 12,
-            "inherit_color_scheme": false,
-            "color_scheme": "scheme-6",
-            "toggle_overlay": false,
-            "overlay_color": "#00000026",
-            "overlay_style": "solid",
-            "gradient_direction": "to top",
-            "padding-block-start": 48,
-            "padding-block-end": 48,
-            "padding-inline-start": 48,
-            "padding-inline-end": 48
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "slide_JEBCHf"
-      ],
-      "disabled": true,
-      "name": "t:names.slideshow_full_frame",
-      "settings": {
-        "display_mode": "full_frame",
-        "section_width": "full-width",
-        "full_frame_on_mobile": false,
-        "slideshow_gap": 12,
-        "corner_radius": 0,
-        "slide_height": "medium",
-        "content_position": "on-media",
-        "color_scheme": "",
-        "icons_style": "chevron",
-        "icons_shape": "none",
-        "slideshow_controls_style": "counter",
-        "autoplay": true,
-        "autoplay_speed": 5,
-        "padding-block-start": 0,
-        "padding-block-end": 0
-      }
-    },
-    "section_6ALzkf": {
-      "type": "section",
-      "blocks": {
-        "group_MgighJ": {
-          "type": "group",
-          "name": "t:names.group",
-          "settings": {
-            "content_direction": "column",
-            "vertical_on_mobile": true,
-            "horizontal_alignment": "flex-start",
-            "vertical_alignment": "center",
-            "align_baseline": false,
-            "horizontal_alignment_flex_direction_column": "flex-start",
-            "vertical_alignment_flex_direction_column": "center",
-            "gap": 12,
-            "width": "fill",
-            "custom_width": 100,
-            "width_mobile": "fill",
-            "custom_width_mobile": 100,
-            "height": "fit",
-            "custom_height": 100,
-            "inherit_color_scheme": true,
-            "color_scheme": "",
-            "background_media": "none",
-            "video_position": "cover",
-            "background_image_position": "cover",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_radius": 0,
-            "toggle_overlay": false,
-            "overlay_color": "#00000026",
-            "overlay_style": "solid",
-            "gradient_direction": "to top",
-            "link": "",
-            "open_in_new_tab": false,
-            "placeholder": "",
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {
-            "custom_liquid_fMprET": {
-              "type": "custom-liquid",
-              "name": "t:names.custom_liquid",
-              "settings": {
-                "custom_liquid": "<p style=\"margin:0;margin-bottom:-0.75em;color:#444;font-size:0.75rem;letter-spacing:.12em;text-transform:uppercase;line-height:1.2;\">\n  Made in Toronto\n</p>"
-              },
-              "blocks": {}
-            },
-            "text_XrUFe6": {
-              "type": "text",
-              "name": "t:names.heading",
-              "settings": {
-                "text": "<h1>Photographs, kept by hand.</h1>",
-                "width": "fit-content",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "h1",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "color": "var(--color-foreground)",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "text_dhiwEi": {
-              "type": "text",
-              "name": "t:names.text",
-              "settings": {
-                "text": "<p>A5 die-cut sticker sheets, traced and finished by hand on Korean premium substrates. Made to order, shipped in 2–5 business days.</p>",
-                "width": "fit-content",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "paragraph",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "color": "var(--color-foreground)",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "group_UWLXtz": {
-              "type": "group",
-              "name": "t:names.group",
-              "settings": {
-                "content_direction": "row",
-                "vertical_on_mobile": false,
-                "horizontal_alignment": "flex-start",
-                "vertical_alignment": "center",
-                "align_baseline": false,
-                "horizontal_alignment_flex_direction_column": "flex-start",
-                "vertical_alignment_flex_direction_column": "center",
-                "gap": 12,
-                "width": "fill",
-                "custom_width": 100,
-                "width_mobile": "fill",
-                "custom_width_mobile": 100,
-                "height": "fit",
-                "custom_height": 100,
-                "inherit_color_scheme": true,
-                "color_scheme": "",
-                "background_media": "none",
-                "video_position": "cover",
-                "background_image_position": "cover",
-                "border": "none",
-                "border_width": 1,
-                "border_opacity": 100,
-                "border_radius": 0,
-                "toggle_overlay": false,
-                "overlay_color": "#00000026",
-                "overlay_style": "solid",
-                "gradient_direction": "to top",
-                "link": "",
-                "open_in_new_tab": false,
-                "placeholder": "",
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {
-                "button_AWg9NM": {
-                  "type": "button",
-                  "name": "t:names.button",
-                  "settings": {
-                    "label": "Shop now",
-                    "link": "shopify://collections/all",
-                    "open_in_new_tab": false,
-                    "style_class": "button",
-                    "width": "fit-content",
-                    "custom_width": 100,
-                    "width_mobile": "fit-content",
-                    "custom_width_mobile": 100
-                  },
-                  "blocks": {}
-                },
-                "button_jPg4JY": {
-                  "type": "button",
-                  "name": "t:names.button",
-                  "settings": {
-                    "label": "How it works",
-                    "link": "#how-it-works",
-                    "open_in_new_tab": false,
-                    "style_class": "button-secondary",
-                    "width": "fit-content",
-                    "custom_width": 100,
-                    "width_mobile": "fit-content",
-                    "custom_width_mobile": 100
-                  },
-                  "blocks": {}
-                }
-              },
-              "block_order": [
-                "button_AWg9NM",
-                "button_jPg4JY"
-              ]
-            }
-          },
-          "block_order": [
-            "custom_liquid_fMprET",
-            "text_XrUFe6",
-            "text_dhiwEi",
-            "group_UWLXtz"
-          ]
-        }
-      },
-      "block_order": [
-        "group_MgighJ"
-      ],
-      "disabled": true,
-      "name": "t:names.custom_section",
-      "settings": {
-        "content_direction": "column",
-        "vertical_on_mobile": true,
-        "horizontal_alignment": "flex-start",
-        "vertical_alignment": "center",
-        "align_baseline": false,
-        "horizontal_alignment_flex_direction_column": "center",
-        "vertical_alignment_flex_direction_column": "center",
-        "gap": 12,
-        "section_width": "page-width",
-        "section_height": "",
-        "section_height_custom": 50,
-        "color_scheme": "",
-        "background_media": "none",
-        "video_position": "cover",
-        "background_image_position": "cover",
-        "border": "none",
-        "border_width": 1,
-        "border_opacity": 100,
-        "border_radius": 0,
-        "toggle_overlay": false,
-        "overlay_color": "#00000026",
-        "overlay_style": "solid",
-        "gradient_direction": "to top",
-        "padding-block-start": 20,
-        "padding-block-end": 0
+        "color_scheme": "scheme-1"
       }
     },
     "section_yr4xMG": {
@@ -944,7 +558,7 @@
                   "type": "image",
                   "name": "t:names.image",
                   "settings": {
-                    "image": "shopify://shop_images/ChatGPT_Image_May_11_2026_at_01_19_09_PM.png",
+                    "image": "shopify://shop_images/harin_image.png",
                     "link": "",
                     "image_ratio": "square",
                     "width": "fill",
@@ -967,7 +581,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>02 — We hand-cut</p>",
+                    "text": "<p>02 — Refined by hand</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -1066,7 +680,7 @@
                   "type": "image",
                   "name": "t:names.image",
                   "settings": {
-                    "image": "shopify://shop_images/ChatGPT_Image_May_11_2026_at_01_33_30_PM.png",
+                    "image": "shopify://shop_images/harin_face_sheet.png",
                     "link": "",
                     "image_ratio": "square",
                     "width": "fill",
@@ -1115,7 +729,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Free Canada-wide shipping or local pickup by arrangement </p>",
+                    "text": "<p>Printed on Korean premium substrate, laminated, and packed by hand. Free Canada-wide shipping, or pick up in Toronto.</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -1480,7 +1094,7 @@
         "image_fqWA7E": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/ChatGPT_Image_May_11_2026_at_04_15_55_PM.png",
+            "image": "shopify://shop_images/harin_stickers_phone_01.png",
             "link": "",
             "image_ratio": "landscape",
             "width": "fill",
@@ -1661,7 +1275,7 @@
         "judge_me_reviews_cards_carousel_6A8GCd": {
           "type": "shopify://apps/judge-me-reviews/blocks/cards_carousel/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
           "settings": {
-            "show_sample_reviews": true,
+            "show_sample_reviews": false,
             "reviews_selection": "product_reviews",
             "products": [],
             "filter_pinned": false,
@@ -1675,7 +1289,7 @@
             "review_length": "medium",
             "text_size": "medium",
             "image_ratio": "1",
-            "reviews_shown": 4,
+            "reviews_shown": 3,
             "show_reviewer_name": true,
             "show_product_name": true,
             "hide_arrows_mobile": true,
@@ -1724,311 +1338,11 @@
         "padding-block-start": 0,
         "padding-block-end": 0
       }
-    },
-    "hero_scatter": {
-      "type": "hero-scatter",
-      "blocks": {
-        "s01": {
-          "type": "sticker",
-          "settings": {
-            "image": "shopify://shop_images/hero_kid_dothat.png",
-            "x": 45,
-            "y": 0,
-            "width": 155,
-            "rotation": -7
-          }
-        },
-        "s02": {
-          "type": "sticker",
-          "settings": {
-            "image": "shopify://shop_images/hero_cat_grumpy.png",
-            "x": 47,
-            "y": 40,
-            "width": 145,
-            "rotation": 3
-          }
-        },
-        "s04": {
-          "type": "sticker",
-          "settings": {
-            "image": "shopify://shop_images/hero_chihuahua.png",
-            "x": 91,
-            "y": 19,
-            "width": 150,
-            "rotation": -6
-          }
-        },
-        "s27": {
-          "type": "sticker",
-          "settings": {
-            "image": "shopify://shop_images/hero_family_pets.png",
-            "x": 73,
-            "y": 0,
-            "width": 175,
-            "rotation": -3
-          }
-        },
-        "s09": {
-          "type": "sticker",
-          "settings": {
-            "image": "shopify://shop_images/hero_puppy_lab.png",
-            "x": 54,
-            "y": 0,
-            "width": 150,
-            "rotation": -3
-          }
-        },
-        "s10": {
-          "type": "sticker",
-          "settings": {
-            "image": "shopify://shop_images/hero_kid_horse.png",
-            "x": 65,
-            "y": 0,
-            "width": 165,
-            "rotation": 3
-          }
-        },
-        "s03": {
-          "type": "sticker",
-          "settings": {
-            "image": "shopify://shop_images/hero_cat_longhair.png",
-            "x": 90,
-            "y": 54,
-            "width": 140,
-            "rotation": 10
-          }
-        },
-        "s13": {
-          "type": "sticker",
-          "settings": {
-            "image": "shopify://shop_images/hero_kid_bearhat.png",
-            "x": 87,
-            "y": 72,
-            "width": 160,
-            "rotation": -4
-          }
-        },
-        "s14": {
-          "type": "sticker",
-          "settings": {
-            "image": "shopify://shop_images/hero_minpin_full.png",
-            "x": 75,
-            "y": 69,
-            "width": 165,
-            "rotation": 3
-          }
-        },
-        "s19": {
-          "type": "sticker",
-          "settings": {
-            "image": "shopify://shop_images/hero_baby_shades.png",
-            "x": 87,
-            "y": 0,
-            "width": 145,
-            "rotation": 5
-          }
-        },
-        "s12": {
-          "type": "sticker",
-          "settings": {
-            "image": "shopify://shop_images/hero_kid_scarf.png",
-            "x": 53,
-            "y": 54,
-            "width": 125,
-            "rotation": -8
-          }
-        },
-        "s15": {
-          "type": "sticker",
-          "settings": {
-            "image": "shopify://shop_images/hero_kid_circle.png",
-            "x": 61,
-            "y": 54,
-            "width": 135,
-            "rotation": -5
-          }
-        },
-        "s06": {
-          "type": "sticker",
-          "settings": {
-            "image": "shopify://shop_images/hero_kid_tongue.png",
-            "x": 59,
-            "y": 30,
-            "width": 140,
-            "rotation": 5
-          }
-        },
-        "s05": {
-          "type": "sticker",
-          "settings": {
-            "image": "shopify://shop_images/hero_dog_tongue.png",
-            "x": 78,
-            "y": 21,
-            "width": 135,
-            "rotation": 6
-          }
-        },
-        "s11": {
-          "type": "sticker",
-          "settings": {
-            "image": "shopify://shop_images/hero_kid_dress.png",
-            "x": 69,
-            "y": 59,
-            "width": 145,
-            "rotation": 4
-          }
-        },
-        "s20": {
-          "type": "sticker",
-          "settings": {
-            "image": "shopify://shop_images/hero_baby_knithat.png",
-            "x": 80,
-            "y": 45,
-            "width": 145,
-            "rotation": -7
-          }
-        },
-        "s17": {
-          "type": "sticker",
-          "settings": {
-            "image": "shopify://shop_images/hero_kid_glasses.png",
-            "x": 89,
-            "y": 35,
-            "width": 145,
-            "rotation": 7
-          }
-        },
-        "s07": {
-          "type": "sticker",
-          "settings": {
-            "image": "shopify://shop_images/hero_cat_calico.png",
-            "x": 58,
-            "y": 71,
-            "width": 135,
-            "rotation": 4
-          }
-        },
-        "s22": {
-          "type": "sticker",
-          "settings": {
-            "image": "shopify://shop_images/hero_girl_running.png",
-            "x": 42,
-            "y": 62,
-            "width": 155,
-            "rotation": -2
-          }
-        },
-        "s26": {
-          "type": "sticker",
-          "settings": {
-            "image": "shopify://shop_images/hero_cat_black.png",
-            "x": 42,
-            "y": 88,
-            "width": 160,
-            "rotation": 8
-          }
-        },
-        "sticker_redcircle": {
-          "type": "sticker",
-          "settings": {
-            "image": "shopify://shop_images/hero_kid_redcircle.png",
-            "x": 72,
-            "y": 39,
-            "width": 150,
-            "rotation": -8
-          }
-        }
-      },
-      "block_order": [
-        "s01",
-        "s02",
-        "s04",
-        "s27",
-        "s09",
-        "s10",
-        "s03",
-        "s13",
-        "s14",
-        "s19",
-        "s12",
-        "s15",
-        "s06",
-        "s05",
-        "s11",
-        "s20",
-        "s17",
-        "s07",
-        "s22",
-        "s26",
-        "sticker_redcircle"
-      ],
-      "custom_css": [
-        ".hero-scatter__inner {min-height: min(720px, calc(100svh - 110px));}"
-      ],
-      "settings": {
-        "color_scheme": "scheme-2",
-        "split": 50,
-        "cluster_zoom": 100,
-        "eyebrow": "Made in Toronto · A5 die-cut sheets",
-        "heading": "Your people,\ncut by hand.",
-        "subtext": "Send a photograph. We trace every silhouette ourselves — hair, ears, the gap between fingers — and press it onto a sheet made to keep.",
-        "button1_label": "Shop now",
-        "button1_link": "/collections/all",
-        "button2_label": "How it works",
-        "button2_link": "#how-it-works",
-        "trustline": "✓ Made-right promise · ✓ Free Canada-wide shipping · ✓ Your photos stay private"
-      }
-    },
-    "trust_band": {
-      "type": "trust-band",
-      "blocks": {
-        "ti1": {
-          "type": "item",
-          "settings": {
-            "icon": "heart",
-            "text": "Made by hand in Toronto"
-          }
-        },
-        "ti2": {
-          "type": "item",
-          "settings": {
-            "icon": "truck",
-            "text": "Free Canada-wide shipping"
-          }
-        },
-        "ti3": {
-          "type": "item",
-          "settings": {
-            "icon": "shield",
-            "text": "Made-right promise"
-          }
-        },
-        "ti4": {
-          "type": "item",
-          "settings": {
-            "icon": "lock",
-            "text": "Your photos stay private"
-          }
-        }
-      },
-      "block_order": [
-        "ti1",
-        "ti2",
-        "ti3",
-        "ti4"
-      ],
-      "settings": {
-        "color_scheme": "scheme-1"
-      }
     }
   },
   "order": [
     "hero_scatter",
     "trust_band",
-    "hero_jVaWmY",
-    "hero_split_r4kq9R",
-    "slideshow_DdxtkG",
-    "section_6ALzkf",
     "section_yr4xMG",
     "product_list_fa6P9H",
     "section_TYCfpm",
