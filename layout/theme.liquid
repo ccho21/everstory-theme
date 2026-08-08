@@ -111,6 +111,18 @@
          the site; tokens.json calls for #FBAAA8 as the link hover underline.
          Decorative use of the tint — the link text itself stays foreground. */
       .product-card__link:hover { text-decoration: underline; text-decoration-color: var(--es-clay-tint); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+      /* Product card had no internal hierarchy: title 13px, subtitle 12px and
+         price 12px, all weight 400 and all the same colour, so the three read
+         as one grey paragraph and the product name did not lead. Separated by
+         size and colour rather than weight — the theme loads Inter 400 and 700
+         only, so any mid weight snaps to 700 and reads far too heavy for a
+         quiet editorial card. */
+      .product-card__title, .product-card h3 { font-size: 15px; color: var(--color-foreground-heading, #000); }
+      .product-card [class*="price"] { font-size: 14px; }
+      .product-card__subtitle, .product-card .card__subtitle { font-size: 12px; color: var(--color-foreground-muted, rgb(0 0 0 / 0.6)); }
+      /* Judge.me's heading is disabled, but the app still emits an empty h2.
+         An empty heading is an axe failure and leaves an 8px margin behind. */
+      .jdgm-title:empty { display: none; }
       /* Mobile hero order. The sticker wall is roughly 1:1, so at 375px it ran
          ~840px tall and pushed the headline, subcopy and both CTAs below the
          fold — the first screen had no value prop and nothing to click. Text

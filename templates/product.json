@@ -235,7 +235,7 @@
                 "width": "custom",
                 "custom_width": 42,
                 "width_mobile": "custom",
-                "custom_width_mobile": 58,
+                "custom_width_mobile": 100,
                 "height": "fit",
                 "border": "none",
                 "border_width": 1,
