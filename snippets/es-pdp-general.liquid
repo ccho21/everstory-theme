@@ -20,7 +20,11 @@
       /* Brand tokens — docs/design/tokens.json (colors.web) */
       --text-primary:   #000000;
       --text-secondary: #4A4A4A;
-      --text-muted:     #8A8580;
+      /* Was #8A8580 — 3.60:1 on --bg-canvas, failing AA for normal text. It
+         carries the mm sub-labels on every size card and the long-edge
+         captions, so it is real content, not decoration. Darkened along the
+         same warm-grey hue to 5.01:1 on --bg-canvas, 5.05:1 on white. */
+      --text-muted:     #736E68;
       --text-inverse:   #FFFFFF;
       /* Inherits the single theme-level accent token defined in layout/theme.liquid.
          The old local coral #FBAAA8 is 1.84:1 on white — it was the worst contrast
