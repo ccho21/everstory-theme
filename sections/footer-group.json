@@ -56,13 +56,13 @@
           "blocks": {
             "text_Rb6cA7": {
               "type": "text",
-              "name": "t:names.heading",
+              "name": "t:names.text",
               "settings": {
-                "text": "<h3>MADE TO KEEP /  MOMENTS THAT MATTER</h3>",
+                "text": "<p>MADE TO KEEP / MOMENTS THAT MATTER</p>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
-                "type_preset": "rte",
+                "type_preset": "h5",
                 "font": "var(--font-body--family)",
                 "font_size": "1rem",
                 "line_height": "normal",
@@ -127,7 +127,7 @@
                 "align_baseline": false,
                 "horizontal_alignment_flex_direction_column": "flex-start",
                 "vertical_alignment_flex_direction_column": "center",
-                "gap": 12,
+                "gap": 24,
                 "width": "fill",
                 "custom_width": 100,
                 "width_mobile": "fill",
@@ -156,32 +156,103 @@
                 "padding-inline-end": 0
               },
               "blocks": {
-                "email_signup_QahQmC": {
-                  "type": "email-signup",
-                  "name": "t:names.email_signup",
-                  "disabled": true,
+                "group_newsletter_kQ4rTz": {
+                  "type": "group",
+                  "name": "t:names.group",
                   "settings": {
-                    "width": "fill",
+                    "content_direction": "column",
+                    "vertical_on_mobile": true,
+                    "horizontal_alignment": "flex-start",
+                    "vertical_alignment": "center",
+                    "align_baseline": false,
+                    "horizontal_alignment_flex_direction_column": "flex-start",
+                    "vertical_alignment_flex_direction_column": "flex-start",
+                    "gap": 8,
+                    "width": "custom",
                     "custom_width": 100,
+                    "width_mobile": "fill",
+                    "custom_width_mobile": 100,
+                    "height": "fit",
+                    "custom_height": 100,
                     "inherit_color_scheme": true,
                     "color_scheme": "",
-                    "heading": "",
-                    "heading_preset": "",
-                    "border_style": "all",
+                    "background_media": "none",
+                    "video_position": "cover",
+                    "background_image_position": "cover",
+                    "border": "none",
                     "border_width": 1,
-                    "border_radius": 100,
-                    "input_type_preset": "paragraph",
-                    "style_class": "button",
-                    "display_type": "text",
-                    "label": "subscribe",
-                    "integrated_button": true,
-                    "button_type_preset": "",
-                    "padding-block-start": 30,
-                    "padding-block-end": 30,
+                    "border_opacity": 100,
+                    "border_radius": 0,
+                    "toggle_overlay": false,
+                    "overlay_color": "#00000026",
+                    "overlay_style": "solid",
+                    "gradient_direction": "to top",
+                    "link": "",
+                    "open_in_new_tab": false,
+                    "placeholder": "",
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
                     "padding-inline-start": 0,
                     "padding-inline-end": 0
                   },
-                  "blocks": {}
+                  "blocks": {
+                    "email_signup_QahQmC": {
+                      "type": "email-signup",
+                      "name": "t:names.email_signup",
+                      "settings": {
+                        "width": "fill",
+                        "custom_width": 100,
+                        "inherit_color_scheme": true,
+                        "color_scheme": "",
+                        "heading": "Stay in touch",
+                        "heading_preset": "h4",
+                        "border_style": "all",
+                        "border_width": 1,
+                        "border_radius": 4,
+                        "input_type_preset": "paragraph",
+                        "style_class": "button",
+                        "display_type": "text",
+                        "label": "Sign up",
+                        "integrated_button": true,
+                        "button_type_preset": "",
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    },
+                    "text_newsletter_note": {
+                      "type": "text",
+                      "name": "t:names.text",
+                      "settings": {
+                        "text": "<p>New work and studio news, a few times a year. Unsubscribe any time.</p>",
+                        "width": "100%",
+                        "max_width": "normal",
+                        "alignment": "left",
+                        "type_preset": "custom",
+                        "font": "var(--font-body--family)",
+                        "font_size": "0.75rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "color": "var(--color-foreground)",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "email_signup_QahQmC",
+                    "text_newsletter_note"
+                  ]
                 },
                 "menu_Vg3xfQ": {
                   "type": "menu",
@@ -217,7 +288,7 @@
                     "inherit_color_scheme": true,
                     "color_scheme": "",
                     "heading_preset": "h4",
-                    "link_preset": "",
+                    "link_preset": "paragraph",
                     "padding-block-start": 0,
                     "padding-block-end": 0,
                     "padding-inline-start": 0,
@@ -238,7 +309,7 @@
                     "inherit_color_scheme": true,
                     "color_scheme": "scheme-4",
                     "heading_preset": "h4",
-                    "link_preset": "",
+                    "link_preset": "paragraph",
                     "padding-block-start": 0,
                     "padding-block-end": 0,
                     "padding-inline-start": 0,
@@ -248,10 +319,10 @@
                 }
               },
               "block_order": [
-                "email_signup_QahQmC",
                 "menu_Vg3xfQ",
                 "menu_Lfepgw",
-                "menu_VjYiVA"
+                "menu_VjYiVA",
+                "group_newsletter_kQ4rTz"
               ]
             }
           },
@@ -289,6 +360,7 @@
         },
         "footer_policy_list_VCdnpa": {
           "type": "footer-policy-list",
+          "disabled": true,
           "settings": {
             "font_size": "0.75rem",
             "case": "none"

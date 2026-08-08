@@ -34,19 +34,83 @@
 
     {% comment %} Everstory Phase 2 — brand accents (SOT: docs/design/tokens.json) {% endcomment %}
     <style id="es-brand">
-      :root { --es-coral: #FBAAA8; --es-coral-deep: #E58784; --es-warm: #E0D3CB; }
-      .eyebrow.eyebrow { color: var(--es-coral-deep); letter-spacing: 0.22em; }
+      :root {
+        /* ONE text-grade accent. --es-clay is the documented Clay (#D6A498)
+           held at the same hue (11deg) and saturation (~48%) with lightness
+           dropped to 45%, so it stays terracotta but clears WCAG 2.1 AA 4.5:1
+           at 12px. Measured: 5.39:1 on #FFFFFF (scheme-1), 4.96:1 on #F8F5F2
+           (scheme-2), 4.88:1 on #F7F3F0, 4.72:1 on #EEF1EA (scheme-3).
+           It replaces #E58784 (2.58:1) and #FBAAA8 (1.84:1), which both failed.
+           NOT safe on --es-warm #E0D3CB (3.68:1) — use --color-foreground for
+           text on the warm callout panel. */
+        --es-clay: #A9503C;
+        /* DECORATIVE ONLY — fills, borders, underlines, badges. Never text:
+           1.84:1 on white. Same rule the design system already states for Clay
+           (badge/sale marks only; never buttons, links or icons). */
+        --es-clay-tint: #FBAAA8;
+        /* Decorative background only. */
+        --es-warm: #E0D3CB;
+
+        /* DEPRECATED aliases — kept so anything still naming them resolves.
+           New code uses --es-clay / --es-clay-tint. */
+        --es-coral: var(--es-clay-tint);
+        --es-coral-deep: var(--es-clay);
+
+        /* Heading scale. Four steps, each at least 1.33x the one below, so two
+           headings can be ranked without measuring — the old 32/36/32 spread
+           was noise. h2/h3/h4 are byte-identical to what Horizon's
+           `type_preset: h2|h3|h4` already resolve to from settings_data
+           (48/32/24), so a section applies the scale by picking the preset;
+           these tokens document the intent and back the .es-h* utilities.
+           --es-h1 is the display tier and matches the hero's own clamp. */
+        --es-h1: clamp(2.5rem, 5vw, 4rem);     /* 40 to 64px  page display, one per page */
+        --es-h2: clamp(2.25rem, 4.8vw, 3rem);  /* 36 to 48px  major section heading */
+        --es-h3: 2rem;                         /* 32px        sub-section heading */
+        --es-h4: 1.5rem;                       /* 24px        card / step / list-item title */
+        --es-h1--line-height: 1.02;
+        --es-h2--line-height: 1.08;
+        --es-h3--line-height: 1.15;
+        --es-h4--line-height: 1.25;
+      }
+
+      /* Utility classes mirroring Horizon's own .h1-.h6 presets in base.css.
+         For sections that cannot express the step through `type_preset`. */
+      .es-h1, .es-h2, .es-h3, .es-h4 {
+        font-family: var(--font-heading--family);
+        font-style: var(--font-heading--style);
+        font-weight: var(--font-heading--weight);
+        color: var(--color, var(--color-foreground-heading, #000));
+      }
+      .es-h1 { font-size: var(--es-h1); line-height: var(--es-h1--line-height); }
+      .es-h2 { font-size: var(--es-h2); line-height: var(--es-h2--line-height); }
+      .es-h3 { font-size: var(--es-h3); line-height: var(--es-h3--line-height); }
+      .es-h4 { font-size: var(--es-h4); line-height: var(--es-h4--line-height); }
+
+      /* Eyebrow: ONE treatment sitewide — 12px / 600 / 0.14em uppercase, body
+         face, clay. 0.14em is the design-system value and what
+         .hero-scatter__eyebrow already ships; the 0.22em here was the outlier.
+         Doubled class beats blocks/eyebrow.liquid's own stylesheet. */
+      .eyebrow.eyebrow { color: var(--es-clay); letter-spacing: 0.14em; }
+      /* sections/hero-scatter.liquid is not ours to edit and hard-codes a
+         neutral grey eyebrow. Same element, same size, same page as the section
+         eyebrows, so it takes the same colour — otherwise the homepage shows
+         four eyebrows in two colours. Fold into that file on a later pass. */
+      .hero-scatter .hero-scatter__eyebrow { color: var(--es-clay); }
       /* PDP step labels (was inline in templates/product.json es_step1) */
-      .es-step{display:flex;align-items:baseline;gap:10px;border-top:1px solid rgba(0,0,0,.1);padding-top:18px;margin-top:6px}.es-step__no{font-size:11px;font-weight:700;letter-spacing:.1em;color:var(--es-coral-deep);font-family:var(--font-body--family)}.es-step__t{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--color-foreground-heading,#000);font-family:var(--font-body--family)}
-      /* es_step1 in templates/product.json still ships its own inline <style>
-         with the old grey. It renders in <body>, so at equal specificity it
-         wins on source order over this <head> block. Doubled class (0,2,0)
-         takes it back. Drop this line once that inline style is removed. */
-      .es-step .es-step__no { color: var(--es-coral-deep); }
-      /* Coral was doing one job (eyebrows) and so read as a stray colour rather
+      .es-step{display:flex;align-items:baseline;gap:10px;border-top:1px solid rgba(0,0,0,.1);padding-top:18px;margin-top:6px}.es-step__no{font-size:11px;font-weight:700;letter-spacing:.1em;color:var(--es-clay);font-family:var(--font-body--family)}.es-step__t{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--color-foreground-heading,#000);font-family:var(--font-body--family)}
+      /* es_step1 in templates/product.json still ships its own inline style
+         element with the old grey. It renders in the body, so at equal
+         specificity it wins on source order over this head block. Doubled
+         class (0,2,0) takes it back. Drop this line once that inline style is
+         removed. Tag names are spelled out rather than written as literal
+         markup: theme-check parses this style element's contents as HTML and
+         a nested opening tag inside a comment raises LiquidHTMLSyntaxError. */
+      .es-step .es-step__no { color: var(--es-clay); }
+      /* Clay was doing one job (eyebrows) and so read as a stray colour rather
          than a brand mark. Product card hover is the highest-traffic surface on
-         the site; tokens.json calls for #FBAAA8 as the link hover underline. */
-      .product-card__link:hover { text-decoration: underline; text-decoration-color: var(--es-coral); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+         the site; tokens.json calls for #FBAAA8 as the link hover underline.
+         Decorative use of the tint — the link text itself stays foreground. */
+      .product-card__link:hover { text-decoration: underline; text-decoration-color: var(--es-clay-tint); text-decoration-thickness: 1px; text-underline-offset: 3px; }
       /* Mobile hero order. The sticker wall is roughly 1:1, so at 375px it ran
          ~840px tall and pushed the headline, subcopy and both CTAs below the
          fold — the first screen had no value prop and nothing to click. Text

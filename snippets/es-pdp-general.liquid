@@ -22,7 +22,17 @@
       --text-secondary: #4A4A4A;
       --text-muted:     #8A8580;
       --text-inverse:   #FFFFFF;
-      --accent-coral:   #FBAAA8;
+      /* Inherits the single theme-level accent token defined in layout/theme.liquid.
+         The old local coral #FBAAA8 is 1.84:1 on white — it was the worst contrast
+         on the site, and this file used it for body-size text (eyebrows, measurement
+         labels, the notice bullet). Clay is 5.31:1 on --bg-canvas. The fallback keeps
+         this snippet self-sufficient if the theme token is ever absent.
+
+         Two exceptions live further down: --bg-warm (#E0D3CB) callouts only reach
+         3.68:1 against clay, so text on that panel is overridden to --text-primary.
+         Everything else here on clay is either text on --bg-canvas (5.31:1) or a
+         measurement rule, which needs 3:1 as a non-text graphic and clears it. */
+      --accent-coral:   var(--es-clay, #A9503C);
 
       --bg-canvas:  #FEFDFE;
       --bg-muted:   #F8F5F2;
@@ -104,6 +114,15 @@
       letter-spacing: 0.22em;
       text-transform: uppercase;
       text-align: center;
+    }
+
+    /* The only eyebrow that sits on the warm callout. Clay on #E0D3CB is 3.68:1
+       and fails AA for text this size. --text-secondary is 6.06:1 on that panel,
+       which clears AA and keeps the eyebrow subordinate to the h2 under it —
+       --text-primary would make the label exactly as heavy as its own heading.
+       Everywhere else the eyebrow is on --bg-canvas at 5.31:1. */
+    .es-pdp .es-notice-section .es-eyebrow {
+      color: var(--text-secondary);
     }
 
     /* 통일된 섹션 헤딩: eyebrow + h2 + (optional) sub */
@@ -259,6 +278,25 @@
       gap: 56px 42px;
     }
 
+    /* Desktop: 3-up, two rows of three. The point of this section is comparing
+       0.75" against 2.5"; at 2-up the extremes are three rows apart and can never
+       be seen together. Tablet deliberately stays 2-up — see the width maths below.
+
+       Breakpoints: <=860px 1-up (existing mobile rule), 861-1199px 2-up (base),
+       >=1200px 3-up. Card width accounts for the es-section-shell inline padding,
+       not just the page width: at 1200px a 3-up card is 313px and the A5 sheet
+       renders ~445px tall, holding steady at ~308px / ~437px once the page hits
+       its 1120px max. 1200 rather than 1024 keeps landscape tablets (1024, and
+       iPad Pro 11" at 1194) on 2-up, where a 3-up card would fall to ~274px.
+
+       Scoped to --six: the Package section reuses .size-grid with only two cards
+       (Mini / Full), which must stay 2-up or it renders two thirds of a row. */
+    @media (min-width: 1200px) {
+      .es-pdp .size-grid--six {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
     .es-pdp .size-card { min-width: 0; text-align: center; }
 
     .es-pdp .size-title {
@@ -304,13 +342,17 @@
     .es-pdp .measure-top::before { left: 0; }
     .es-pdp .measure-top::after { right: 0; }
 
+    /* Label floor. These are fixed-px, so the 3-up grid does not shrink them —
+       but they were already 10px, under the floor, and now sit on a ~37% smaller
+       diagram. Pinned to 11px and NOT expressed in vw/%, so no future container
+       change can scale them down. Costs ~1px of clearance against the sheet. */
     .es-pdp .measure-label-top {
       position: absolute;
       top: -14px;
       left: 50%;
       transform: translateX(-50%);
       color: var(--accent-coral);
-      font-size: 10px;
+      font-size: 11px;
       letter-spacing: 0.04em;
     }
 
@@ -336,13 +378,16 @@
     .es-pdp .measure-left::before { top: 0; }
     .es-pdp .measure-left::after { bottom: 0; }
 
+    /* Same 11px floor as measure-label-top. Rotated, so its visual footprint is
+       the line box (~13px) not the text width; at the 3-up 42px column gap it
+       still clears its neighbour. */
     .es-pdp .measure-label-left {
       position: absolute;
       left: -22px;
       top: 50%;
       transform: translateY(-50%) rotate(-90deg);
       color: var(--accent-coral);
-      font-size: 10px;
+      font-size: 11px;
       letter-spacing: 0.04em;
       white-space: nowrap;
     }
@@ -360,6 +405,35 @@
     .es-pdp .size-card.mixed { grid-column: 1 / -1; }
     .es-pdp .size-card.mixed .mockup-wrap { max-width: 50%; margin: 0 auto; }
     
+    /* Mixed note — one line under the size grid. The selector offers a 7th option
+       ("Mixed") that the h2 "One sheet, one size." would otherwise contradict. */
+    .es-pdp .size-note {
+      max-width: 720px;
+      margin: 44px auto 0;
+      text-align: center;
+      color: var(--text-secondary);
+      font-size: clamp(15px, 1.5vw, 18px);
+      line-height: 1.85;
+    }
+
+    .es-pdp .size-note strong {
+      color: var(--text-primary);
+      font-weight: 400;
+    }
+
+    /* Crop defaults — moved in from the "Photo guidelines" accordion so all photo
+       guidance sits in the single Photo quality section. */
+    .es-pdp .photo-crop {
+      margin-top: clamp(40px, 4vw, 64px);
+      display: grid;
+      gap: 16px;
+    }
+
+    .es-pdp .photo-crop .copy strong {
+      color: var(--text-primary);
+      font-weight: 400;
+    }
+
     .es-pdp .caption {
       margin: 16px 0 0;
       color: var(--text-secondary);
@@ -556,9 +630,14 @@
       line-height: 1.7;
     }
 
+    /* .notice-list only ever renders inside the warm callout, so this glyph is
+       always on #E0D3CB, where clay is 3.68:1 and fails. --text-secondary is
+       6.06:1 there, clearing AA even judged as text. --text-primary would be the
+       same colour as the li body copy, making the marker read as loud as the
+       content it introduces; the star is decoration supporting the text. */
     .es-pdp .notice-list li::before {
       content: "★";
-      color: var(--accent-coral);
+      color: var(--text-secondary);
       font-size: 14px;
       line-height: 1.9;
     }
@@ -683,57 +762,28 @@
   {%- assign sheet_prefix = product.metafields.custom.sheet_prefix.value -%}
 
   {%- comment -%}
-    Material 이미지 prefix — Material 은 전 상품 공용 표시. Package 는 sheet_prefix 없으니 full_body fallback.
+    OPTIONS section removed — it restated the buy-box controls ~2000px below them.
+
+    Size half: duplicated the "Sizes" section (which carries the per-size sheet
+    mockups and the sticker counts) and "By the longest edge", and its "Six sizes"
+    claim was contradicted by the 7-option selector.
+
+    Material half: superseded by templates/product.json → es_choice_helper +
+    es_material_swatch, which put the four-finish comparison shot directly at the
+    Material control. Its one unique fact ("inkjet stock laminated with premium
+    sheet") moved into the Materials accordion, the canonical material detail.
+
+    Dropped with it: the `material_prefix` assign and the {prefix}_sizes.jpg /
+    {prefix}_materials.jpg wide strips, which had no other reference.
   {%- endcomment -%}
-  {%- if is_package -%}{%- assign material_prefix = 'full_body' -%}{%- else -%}{%- assign material_prefix = sheet_prefix -%}{%- endif -%}
 
   <div class="es-pdp" lang="en">
     <div class="es-page">
 
-      <!-- Options — Material 은 전 상품 공용, Size 는 비-Package 만.
-           option-stack: Size·Material 각각 풀폭 1행 (가로 비교 이미지).
-           is_package → Material 만, 동일하게 풀폭 가운데. -->
-      <section class="es-section" aria-label="Options">
-        <div class="es-section-shell">
-          <div class="heading-block">
-            <span class="es-eyebrow">Options</span>
-            <h2>Choose your options.</h2>
-          </div>
-
-          <div class="option-stack">
-            {%- unless is_package -%}
-            <article class="option-block">
-              <h3 class="option-title">Size</h3>
-              <div class="option-image option-image--wide">
-                <img src="{{ sheet_prefix | append: '_sizes.jpg' | file_url }}" alt="Size comparison — 0.75 to 2.5 inch, six sizes">
-              </div>
-              <p class="option-detail">
-                <strong>0.75" · 1" · 1.25" · 1.5" · 2" · 2.5"</strong>
-                Size is set by the longest edge.
-                Six sizes, from 0.75" (19 mm) to 2.5" (64 mm).
-              </p>
-            </article>
-            {%- endunless -%}
-
-            <article class="option-block">
-              <h3 class="option-title">Material</h3>
-              <div class="option-image option-image--wide">
-                <img src="{{ material_prefix | append: '_materials.jpg' | file_url }}" alt="Material samples — White Matte · Translucent · Silver · Gold">
-              </div>
-              <p class="option-detail">
-                <strong>White Matte · Translucent · Silver · Gold</strong>
-                Inkjet stock laminated with premium sheet.
-                All four finishes are waterproof.
-              </p>
-            </article>
-          </div>
-        </div>
-      </section>
-
       {%- unless is_package -%}
       <!-- Sizes — 비-Package 전용. Package 는 size 선택 없음(tier 큐레이션),
            해당 카피는 product-specific intro metafield 가 담당. -->
-      <section class="es-section" aria-label="Sizes">
+      <section class="es-section" id="es-sizes" aria-label="Sizes">
         <div class="es-section-shell">
           <div class="heading-block">
             <span class="es-eyebrow">Sizes</span>
@@ -744,7 +794,7 @@
             </p>
           </div>
 
-          <section class="size-grid">
+          <section class="size-grid size-grid--six">
             <article class="size-card">
               <h3 class="size-title">0.75" <small>19 mm</small></h3>
               <div class="mockup-wrap">
@@ -817,6 +867,12 @@
               <p class="caption">About 4 stickers per sheet. For a car, a large backpack, one face of a desktop.</p>
             </article>
           </section>
+
+          <p class="size-note">
+            <strong>Mixed</strong> is the seventh choice in the size selector.
+            Instead of repeating one size, the studio spreads a range of sizes
+            across the same single A5 sheet.
+          </p>
         </div>
       </section>
 
@@ -911,18 +967,9 @@
             </li>
             <li>
               <span>
-                Please send a sharp, high-resolution photo.
-                <em>If a photo is too blurry or low quality, we may ask for a replacement before we start.</em>
-              </span>
-            </li>
-            <li>
-              <span>
-                Printing and cutting take <em>1–3 business days</em>, and we ship the same or next day.
-              </span>
-            </li>
-            <li>
-              <span>
-                From order to shipment usually takes <em>2–5 business days</em>.
+                From order to shipment usually takes <em>2–5 business days</em> —
+                1–3 to print and cut, then <em>free shipping across Canada</em>,
+                or local pickup by arrangement.
               </span>
             </li>
             <li>
@@ -941,12 +988,6 @@
             </li>
             <li>
               <span>
-                <em>Free shipping across Canada</em> (Canada Post lettermail).
-                <em>Local pickup by arrangement</em> is also available for nearby customers.
-              </span>
-            </li>
-            <li>
-              <span>
                 Questions? Email <em>studio.everstory@gmail.com</em>. We're happy to help in English or Korean.
               </span>
             </li>
@@ -954,8 +995,10 @@
         </div>
       </section>
 
-      <!-- Photo quality — 전 상품 공용 -->
-      <section class="es-section" aria-label="Photo quality">
+      <!-- Photo quality — all products. Single canonical home for photo guidance:
+           sharpness (below) plus the crop defaults that used to be a separate
+           "Photo guidelines" accordion in templates/product.json. -->
+      <section class="es-section" id="es-photo-quality" aria-label="Photo quality">
         <div class="es-section-shell">
           <div class="heading-block">
             <span class="es-eyebrow">Photo quality</span>
@@ -973,7 +1016,7 @@
               <div class="option-image">
                 <img src="{{ 'teo_focused.png' | file_url }}" alt="Example of a sharply focused photo">
               </div>
-              <p class="option-detail">A sharply focused photo</p>
+              <p class="option-detail">A sharp, high-resolution photo</p>
             </article>
 
             <article class="option-block">
@@ -989,6 +1032,16 @@
               </div>
               <p class="option-detail">Blurry or shaky photo · replacement requested before we start</p>
             </article>
+          </div>
+
+          <div class="photo-crop">
+            <h3 class="option-title">How we crop</h3>
+            <p class="copy">
+              If no special request is provided, the studio chooses the crop from the photo:
+              <strong>kids</strong> — face crop by default.
+              <strong>Adults</strong> — full body crop by default.
+              <strong>Pets</strong> — full body crop by default; face crop when the face has stronger impact.
+            </p>
           </div>
         </div>
       </section>

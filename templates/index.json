@@ -328,9 +328,9 @@
         },
         "text_yViXcX": {
           "type": "text",
-          "name": "t:names.text",
+          "name": "t:names.heading",
           "settings": {
-            "text": "<p>From your photo to a sheet you'll keep.</p>",
+            "text": "<h2>From your photo to a sheet you'll keep.</h2>",
             "width": "fit-content",
             "max_width": "narrow",
             "alignment": "left",
@@ -459,7 +459,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>01 — Send a photo</p>",
+                    "text": "<h3>01 — Send a photo</h3>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
@@ -581,7 +581,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>02 — Refined by hand</p>",
+                    "text": "<h3>02 — Refined by hand</h3>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -703,7 +703,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>03 — Made to keep</p>",
+                    "text": "<h3>03 — Made to keep</h3>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -882,7 +882,7 @@
                   "type": "eyebrow",
                   "name": "Eyebrow",
                   "settings": {
-                    "text": "PHOTO SHEETS BY COUNT",
+                    "text": "PHOTO STICKER SHEETS",
                     "alignment": "left",
                     "tight": false
                   },
@@ -890,9 +890,9 @@
                 },
                 "text_tLf7Bz": {
                   "type": "text",
-                  "name": "t:names.text",
+                  "name": "t:names.heading",
                   "settings": {
-                    "text": "<h3>Pick the count that fits your story.</h3>",
+                    "text": "<h2>Pick a style, or let us build the sheet.</h2>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -925,7 +925,7 @@
               "name": "t:names.collection_title",
               "disabled": true,
               "settings": {
-                "text": "<p>Photo sheets by count</p><h3>Pick the count that fits your story.</h3>",
+                "text": "<p>Photo sticker sheets</p><h2>Pick a style, or let us build the sheet.</h2>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
@@ -1166,7 +1166,7 @@
               "type": "text",
               "name": "t:names.heading",
               "settings": {
-                "text": "<p>Made to keep, not to scroll past.</p>",
+                "text": "<h2>Made to keep, not to scroll past.</h2>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
@@ -1272,6 +1272,42 @@
     "17835334163964bbd5": {
       "type": "_blocks",
       "blocks": {
+        "eyebrow_reviews": {
+          "type": "eyebrow",
+          "name": "Eyebrow",
+          "settings": {
+            "text": "REVIEWS",
+            "alignment": "left",
+            "tight": true
+          },
+          "blocks": {}
+        },
+        "text_reviews_heading": {
+          "type": "text",
+          "name": "t:names.heading",
+          "settings": {
+            "text": "<h2>Customers are saying</h2>",
+            "width": "fit-content",
+            "max_width": "normal",
+            "alignment": "left",
+            "type_preset": "h3",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "var(--color-foreground)",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
         "judge_me_reviews_cards_carousel_6A8GCd": {
           "type": "shopify://apps/judge-me-reviews/blocks/cards_carousel/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
           "settings": {
@@ -1302,14 +1338,19 @@
             "stars_color": "",
             "arrows_color": "#000000",
             "transition_speed": 5,
-            "header_text": "Customers are saying",
+            "header_text": "",
             "show_average_rating": true,
             "rating_display": "default"
           }
         }
       },
       "block_order": [
+        "eyebrow_reviews",
+        "text_reviews_heading",
         "judge_me_reviews_cards_carousel_6A8GCd"
+      ],
+      "custom_css": [
+        ".shopify-block {width: 100%;}"
       ],
       "settings": {
         "content_direction": "column",
@@ -1319,7 +1360,7 @@
         "align_baseline": false,
         "horizontal_alignment_flex_direction_column": "flex-start",
         "vertical_alignment_flex_direction_column": "center",
-        "gap": 12,
+        "gap": 24,
         "section_width": "page-width",
         "section_height": "",
         "section_height_custom": 50,
@@ -1335,8 +1376,8 @@
         "overlay_color": "#00000026",
         "overlay_style": "solid",
         "gradient_direction": "to top",
-        "padding-block-start": 0,
-        "padding-block-end": 0
+        "padding-block-start": 48,
+        "padding-block-end": 48
       }
     }
   },

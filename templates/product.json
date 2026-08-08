@@ -217,6 +217,37 @@
               },
               "blocks": {}
             },
+            "es_choice_helper": {
+              "type": "custom-liquid",
+              "name": "Size & material helper",
+              "settings": {
+                "custom_liquid": "<div style=\"display:grid;gap:7px;margin-top:2px;\">{%- unless closest.product.metafields.custom.is_package.value -%}<p style=\"margin:0;font-size:0.8125rem;line-height:1.6;opacity:0.72;\"><strong>Per A5 sheet</strong> — 0.75\" ≈50 · 1\" ≈36 · 1.25\" ≈20 · 1.5\" ≈16 · 2\" ≈6 · 2.5\" ≈4 stickers. The exact count shifts a little with your photo's ratio. <a href=\"#es-sizes\" style=\"color:inherit;text-decoration:underline;text-underline-offset:3px;\">See every size on the sheet</a></p><p style=\"margin:0;font-size:0.8125rem;line-height:1.6;opacity:0.72;\"><strong>Mixed</strong> — one sheet with a spread of sizes across the range, instead of a single size repeated.</p>{%- endunless -%}<p style=\"margin:0;font-size:0.8125rem;line-height:1.6;opacity:0.72;\"><strong>Material</strong> — White Matte is soft and paper-like, Translucent is semi-clear, Silver and Gold are reflective metallics. All four are laminated and waterproof.</p></div>"
+              },
+              "blocks": {}
+            },
+            "es_material_swatch": {
+              "type": "image",
+              "name": "Material comparison",
+              "settings": {
+                "image": "shopify://shop_images/harin_materials_01.png",
+                "link": "",
+                "image_ratio": "adapt",
+                "width": "custom",
+                "custom_width": 42,
+                "width_mobile": "custom",
+                "custom_width_mobile": 58,
+                "height": "fit",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 2,
+                "padding-block-start": 6,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
             "buy_buttons_eYQEYi": {
               "type": "buy-buttons",
               "settings": {
@@ -363,7 +394,7 @@
                     "text_YzHXbm": {
                       "type": "text",
                       "settings": {
-                        "text": "<ul><li><strong>White Matte</strong> — soft, paper-like finish. Best for diaries, journals, and indoor packaging.</li><li><strong>Translucent</strong> — semi-clear finish that lets the surface show through. Best for glass, windows, and layered looks on light surfaces.</li><li><strong>Silver</strong> — metallic silver finish. Reflective accent for waterproof use.</li><li><strong>Gold</strong> — metallic gold finish. Reflective accent for waterproof use.</li></ul><p>All four are laminated, waterproof, and fade resistant.</p>",
+                        "text": "<ul><li><strong>White Matte</strong> — soft, paper-like finish. Best for diaries, journals, and indoor packaging.</li><li><strong>Translucent</strong> — semi-clear finish that lets the surface show through. Best for glass, windows, and layered looks on light surfaces.</li><li><strong>Silver</strong> — metallic silver finish. Reflective accent for waterproof use.</li><li><strong>Gold</strong> — metallic gold finish. Reflective accent for waterproof use.</li></ul><p>Printed on inkjet stock and laminated with a premium sheet. All four are laminated, waterproof, and fade resistant.</p>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -402,7 +433,7 @@
                     "text_WgmTCC": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>Sized by the longest edge. Sticker count varies with photo proportion and selected photo count.</p><ul><li><strong>0.75\" / 19mm</strong> — tiny marks, planners, calendars</li><li><strong>1\" / 25mm</strong> — most common everyday size</li><li><strong>1.25\" / 32mm</strong> — tumblers, notebooks, phone cases</li><li><strong>1.5\" / 38mm</strong> — larger tumblers, laptops</li><li><strong>1.75\" / 45mm</strong> — bold placement</li><li><strong>2.5\" / 64mm</strong> — statement sticker</li></ul>",
+                        "text": "<p>Every order is one A5 sheet (148 × 210 mm) in the size you choose, sized by the longest edge. <a href=\"#es-sizes\">See every size on the sheet, with sticker counts</a></p>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -505,7 +536,7 @@
                     "text_pcmYjm": {
                       "type": "text",
                       "settings": {
-                        "text": "<ul><li>Production: 1-3 business days after order.</li><li>Shipping: same or next business day after cut.</li><li>Total: typically 2-5 business days from order to shipped.</li><li>Free Canada-wide shipping or local pickup by arrangement (4-10 business days).</li></ul>",
+                        "text": "<ul><li>Production: 1-3 business days after order.</li><li>Shipping: same or next business day after cut.</li><li>Total: typically 2-5 business days from order to shipped.</li><li>Free shipping across Canada by Canada Post lettermail.</li><li>Local pickup by arrangement (4-10 business days).</li></ul>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -531,45 +562,6 @@
                   "block_order": [
                     "text_pcmYjm"
                   ]
-                },
-                "accordion_row_bGLBAp": {
-                  "type": "_accordion-row",
-                  "settings": {
-                    "heading": "Photo guidelines",
-                    "open_by_default": false,
-                    "icon": "none",
-                    "width": 20
-                  },
-                  "blocks": {
-                    "text_zPTBJa": {
-                      "type": "text",
-                      "settings": {
-                        "text": "<p>If no special request is provided, Studio chooses the crop from the photo:</p><ul><li>Kids: face crop by default.</li><li>Adults: full body crop by default.</li><li>Pets: full body crop by default; face crop when the face has stronger impact.</li></ul>",
-                        "width": "100%",
-                        "max_width": "normal",
-                        "alignment": "left",
-                        "type_preset": "paragraph",
-                        "font": "var(--font-body--family)",
-                        "font_size": "1rem",
-                        "line_height": "normal",
-                        "letter_spacing": "normal",
-                        "case": "none",
-                        "wrap": "pretty",
-                        "color": "var(--color-foreground)",
-                        "background": false,
-                        "background_color": "#00000026",
-                        "corner_radius": 0,
-                        "padding-block-start": 0,
-                        "padding-block-end": 0,
-                        "padding-inline-start": 0,
-                        "padding-inline-end": 0
-                      },
-                      "blocks": {}
-                    }
-                  },
-                  "block_order": [
-                    "text_zPTBJa"
-                  ]
                 }
               },
               "block_order": [
@@ -578,8 +570,7 @@
                 "accordion_row_TUac8P",
                 "accordion_row_gtXwtx",
                 "accordion_row_GGCVwz",
-                "accordion_row_hmBQLR",
-                "accordion_row_bGLBAp"
+                "accordion_row_hmBQLR"
               ]
             },
             "text_aEtTtq": {
@@ -630,6 +621,8 @@
             "divider_VJhene",
             "es_step1",
             "variant_picker_R3rGDr",
+            "es_choice_helper",
+            "es_material_swatch",
             "es_step2",
             "buy_buttons_eYQEYi",
             "accordion_Ghx3fc",
@@ -676,6 +669,7 @@
     },
     "product_recommendations_qggXJq": {
       "type": "product-recommendations",
+      "disabled": true,
       "blocks": {
         "text_cbcgyb": {
           "type": "text",
