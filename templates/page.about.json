@@ -92,7 +92,7 @@
               "type": "text",
               "name": "t:names.text",
               "settings": {
-                "text": "<p>Everstory Studio is a small photo sticker studio in Toronto. We make A5 custom photo sticker sheets from customer photos, finished one by one.</p><p>We are not a bulk sticker factory. We clean the subject edge by hand, check the crop, and choose the layout that gives the photo the best chance to feel kept, not disposable.</p><p>Our materials are Korean premium inkjet substrates finished with lamination. White Matte, Translucent, Silver, and Gold are selected for photographic print quality, durability, and a soft keepsake feel.</p><p>When you order, you upload your photo and add the details that matter. Face Sticker, Full Body Sticker, and Shape Sticker let you choose the exact print size and number of photos. Package Mini and Package Full let you upload options by print size, then Studio chooses the strongest final set.</p><p>Made in Toronto. Free Canada-wide shipping. Toronto Studio pickup available.</p>",
+                "text": "<p>Everstory Studio is a small photo sticker studio in Toronto. We make A5 custom photo sticker sheets from customer photos, finished one by one.</p><p>We are not a bulk sticker factory. We clean the subject edge by hand, check the crop, and choose the layout that gives the photo the best chance to feel kept, not disposable.</p><p>Our materials are Korean premium inkjet substrates finished with lamination. White Matte, Translucent, Silver, and Gold are selected for photographic print quality, durability, and a soft keepsake feel.</p><p>When you order, you upload your photo and add the details that matter. Face Sticker and Full Body Sticker let you choose the exact print size and number of photos. Package Mini and Package Full let you upload options by print size, then Studio chooses the strongest final set.</p><p>Made in Toronto. Free Canada-wide shipping. Toronto Studio pickup available.</p>",
                 "width": "fit-content",
                 "max_width": "none",
                 "alignment": "left",
@@ -165,7 +165,7 @@
               "type": "eyebrow",
               "name": "Eyebrow",
               "settings": {
-                "text": "01 — Why hand cut",
+                "text": "01 — Hand-refined",
                 "alignment": "left",
                 "tight": false
               },
@@ -201,7 +201,7 @@
               "type": "text",
               "name": "t:names.text",
               "settings": {
-                "text": "<p>The sticker industry runs on automation. Most large shops use AI masking to cut around your pet, your child, your face. The result is fine, until you look closely at the hair, the ears, the gap between two paws.</p><p>Every sticker sheet is hand cut by a person looking at your photograph. We trace the silhouette, fix the gaps, and rebuild the edges where the algorithm gave up. It takes longer. The result is the difference between a sticker and a keepsake.</p>",
+                "text": "<p>The sticker industry runs on automation. Most large shops use AI masking to cut around your pet, your child, your face. The result is fine, until you look closely at the hair, the ears, the gap between two paws.</p><p>Every sticker sheet is refined by a person looking at your photograph. We trace the silhouette, fix the gaps, and rebuild the edges where the algorithm gave up. It takes longer. The result is the difference between a sticker and a keepsake.</p>",
                 "width": "fit-content",
                 "max_width": "none",
                 "alignment": "left",
@@ -310,7 +310,7 @@
               "type": "text",
               "name": "t:names.text",
               "settings": {
-                "text": "<p>Everstory Studio is a small photo sticker studio in Toronto. We make A5 custom photo sticker sheets from customer photos, finished one by one.</p><p>We are not a bulk sticker factory. We clean the subject edge by hand, check the crop, and choose the layout that gives the photo the best chance to feel kept, not disposable.</p><p>Our materials are Korean premium inkjet substrates finished with lamination. White Matte, Translucent, Silver, and Gold are selected for photographic print quality, durability, and a soft keepsake feel.</p><p>When you order, you upload your photo and add the details that matter. Face Sticker, Full Body Sticker, and Shape Sticker let you choose the exact print size and number of photos. Package Mini and Package Full let you upload options by print size, then Studio chooses the strongest final set.</p><p>Made in Toronto. Free Canada-wide shipping. Toronto Studio pickup available.</p>",
+                "text": "<p>White Matte, Translucent, Silver, and Gold — four Korean inkjet substrates, each laminated for photographic print quality. We choose stock for how it carries a photograph: colour depth, edge stability, and how it wears on a planner, a laptop, a water bottle.</p><p>One sheet, one material, chosen for the surface it will live on.</p>",
                 "width": "fit-content",
                 "max_width": "none",
                 "alignment": "left",
@@ -331,12 +331,36 @@
                 "padding-inline-end": 0
               },
               "blocks": {}
+            },
+            "image_es_materials": {
+              "type": "image",
+              "name": "t:names.image",
+              "settings": {
+                "image": "shopify://shop_images/harin_materials_01.png",
+                "link": "",
+                "image_ratio": "square",
+                "width": "fill",
+                "custom_width": 100,
+                "width_mobile": "fill",
+                "custom_width_mobile": 100,
+                "height": "fit",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
             }
           },
           "block_order": [
             "eyebrow_McKbH3",
             "text_HpmFU6",
-            "text_pc39VD"
+            "text_pc39VD",
+            "image_es_materials"
           ]
         },
         "group_pX8C8e": {
@@ -502,7 +526,7 @@
               "type": "text",
               "name": "t:names.heading",
               "settings": {
-                "text": "<p>Printed, cut, packed by hand.</p>",
+                "text": "<p>Hand-refined. Precision-cut. Packed by hand.</p>",
                 "width": "fit-content",
                 "max_width": "none",
                 "alignment": "left",
@@ -580,7 +604,7 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<p>MADE TO KEEP  |  MOMENTS THAT MATTER</p>",
+            "text": "<p>MADE TO KEEP  |  MOMENTS THAT MATTER</p>",
             "width": "fit-content",
             "max_width": "normal",
             "alignment": "left",
@@ -606,7 +630,7 @@
           "type": "text",
           "name": "t:names.text",
           "settings": {
-            "text": "<p>We make things that work better and last longer. Our products solve real problems with clean design and honest materials.</p>",
+            "text": "<p>Every sheet is made to order in our Toronto studio — printed, refined, and packed to be kept.</p>",
             "width": "fit-content",
             "max_width": "normal",
             "alignment": "left",

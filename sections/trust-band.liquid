@@ -27,6 +27,9 @@
 .trust-band__inner { display: flex; justify-content: center; gap: 56px; flex-wrap: wrap; max-width: 1280px; margin: 0 auto; padding: 22px 40px; border-bottom: 1px solid rgb(var(--color-foreground-rgb) / 0.10); font-size: 13px; }
 .trust-band__item { display: flex; align-items: center; gap: 8px; }
 .trust-band__item svg { color: var(--color-foreground-heading, #000); flex: none; }
+/* Tablet: 4 items no longer fit on one row at 56px gaps and wrap 3+1, orphaning
+   the last item. Lay them out as an even 2x2 instead of letting flex decide. */
+@media (min-width: 750px) and (max-width: 1023px) { .trust-band__inner { display: grid; grid-template-columns: 1fr 1fr; justify-items: center; gap: 16px 32px; } }
 @media (max-width: 749px) { .trust-band__inner { gap: 14px 24px; padding: 16px 20px; font-size: 12px; } }
 {% endstylesheet %}
 
