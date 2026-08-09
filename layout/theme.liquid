@@ -116,13 +116,24 @@
          as one grey paragraph and the product name did not lead. Separated by
          size and colour rather than weight — the theme loads Inter 400 and 700
          only, so any mid weight snaps to 700 and reads far too heavy for a
-         quiet editorial card. */
-      .product-card__title, .product-card h3 { font-size: 15px; color: var(--color-foreground-heading, #000); }
+         quiet editorial card.
+         The card title carries class h4, and base.css matches it with
+         .product-grid-view-zoom-out--details .h4 at (0,2,0) — a plain
+         .product-card h3 is (0,1,1) and loses. Doubling the class and
+         qualifying the tag clears it without !important. */
+      .product-card .product-card__title.product-card__title,
+      .product-card h3.h4 { font-size: 15px; color: var(--color-foreground-heading, #000); }
       .product-card [class*="price"] { font-size: 14px; }
-      .product-card__subtitle, .product-card .card__subtitle { font-size: 12px; color: var(--color-foreground-muted, rgb(0 0 0 / 0.6)); }
+      /* The subtitle is an unclassed <p> inside .product-card__content, so there
+         is no hook to mute its colour without also catching the price. It already
+         renders at 12px, and title 15px/black against subtitle 12px and price
+         14px is enough separation, so leave it rather than add a brittle
+         :not() selector. Give the subtitle a class in the card markup first. */
       /* Judge.me's heading is disabled, but the app still emits an empty h2.
-         An empty heading is an axe failure and leaves an 8px margin behind. */
-      .jdgm-title:empty { display: none; }
+         An empty heading is an axe failure and leaves an 8px margin behind.
+         :empty matches, but the app's own stylesheet re-asserts display, so
+         this needs the doubled class and !important to land. */
+      .jdgm-title.jdgm-title:empty { display: none !important; }
       /* Mobile hero order. The sticker wall is roughly 1:1, so at 375px it ran
          ~840px tall and pushed the headline, subcopy and both CTAs below the
          fold — the first screen had no value prop and nothing to click. Text
