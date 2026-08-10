@@ -312,7 +312,7 @@
           "type": "custom-liquid",
           "name": "t:names.custom_liquid",
           "settings": {
-            "custom_liquid": "<div id=\"how-it-works\" style=\"position: relative; top: -80px;\"></div>"
+            "custom_liquid": "<div id=\"how-it-works\" style=\"position: relative; top: -80px;\"></div>\n<style>\n  /* Step number. Clay is the same --es-clay the HOW IT WORKS eyebrow above\n     already uses (theme.liquid #es-brand), so the section reads as one mark.\n     Inter rather than the inherited Bayon: design_system.html forbids setting\n     numerals in Bayon, and Bayon's bare-stem 1 makes 01 read as 0I.\n     Matches the .es-step__no treatment already used on the PDP. */\n  .shopify-section:has(#how-it-works) h3 strong {\n    color: var(--es-clay, #A9503C);\n    font-family: var(--font-body--family);\n    font-weight: 700;\n    font-size: 0.72em;\n    letter-spacing: 0.08em;\n    margin-inline-end: 0.5em;\n  }\n\n  /* Four steps across is one scan line, but only while a quarter of the page\n     is still wide enough to hold a title and its two lines of copy. Below\n     1200px that stops being true, so wrap to 2x2. Horizon takes over at 749px\n     (.mobile-column) and stacks to one per row. The row gap is opened past the\n     group's own 24px so the two bands do not read as one eight-cell grid. */\n  @media screen and (min-width: 750px) and (max-width: 1199px) {\n    .shopify-section:has(#how-it-works) .layout-panel-flex--row {\n      flex-wrap: wrap;\n      row-gap: 40px;\n    }\n    .shopify-section:has(#how-it-works) .layout-panel-flex--row > .group-block {\n      flex: 0 1 calc(50% - 12px);\n    }\n  }\n\n  /* A quarter page runs about 270px, where Bayon 24px breaks the longer titles\n     onto a second line and leaves the four cards uneven. */\n  @media screen and (min-width: 1200px) {\n    .shopify-section:has(#how-it-works) .layout-panel-flex--row h3 {\n      font-size: 20px;\n    }\n  }\n</style>"
           },
           "blocks": {}
         },
@@ -352,7 +352,7 @@
           },
           "blocks": {}
         },
-        "group_9KzczH": {
+        "group_hiw_steps": {
           "type": "group",
           "name": "t:names.group",
           "settings": {
@@ -392,7 +392,7 @@
             "padding-inline-end": 0
           },
           "blocks": {
-            "group_zbG8n7": {
+            "group_hiw_01": {
               "type": "group",
               "name": "t:names.group",
               "settings": {
@@ -432,11 +432,11 @@
                 "padding-inline-end": 0
               },
               "blocks": {
-                "image_hd6Dag": {
+                "image_hiw_01": {
                   "type": "image",
                   "name": "t:names.image",
                   "settings": {
-                    "image": "shopify://shop_images/send_photo_1.png",
+                    "image": "shopify://shop_images/hiw_01_choose_your_photos.webp",
                     "link": "",
                     "image_ratio": "square",
                     "width": "fill",
@@ -455,11 +455,11 @@
                   },
                   "blocks": {}
                 },
-                "text_eNPRPg": {
+                "title_hiw_01": {
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<h3>01 — Send a photo</h3>",
+                    "text": "<h3><strong>01</strong> CHOOSE YOUR PHOTOS</h3>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
@@ -481,11 +481,11 @@
                   },
                   "blocks": {}
                 },
-                "text_rR8LLp": {
+                "body_hiw_01": {
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Pick a size and material. Upload your photograph(s) and write notes on what matters — a face we should not crop, a tone, a detail.</p>",
+                    "text": "<p>Upload 1, 4, or 8 favourites—depending on the sheet you choose.</p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
@@ -509,12 +509,12 @@
                 }
               },
               "block_order": [
-                "image_hd6Dag",
-                "text_eNPRPg",
-                "text_rR8LLp"
+                "image_hiw_01",
+                "title_hiw_01",
+                "body_hiw_01"
               ]
             },
-            "group_rqzC9M": {
+            "group_hiw_02": {
               "type": "group",
               "name": "t:names.group",
               "settings": {
@@ -554,11 +554,11 @@
                 "padding-inline-end": 0
               },
               "blocks": {
-                "image_zbGi3e": {
+                "image_hiw_02": {
                   "type": "image",
                   "name": "t:names.image",
                   "settings": {
-                    "image": "shopify://shop_images/harin_image.png",
+                    "image": "shopify://shop_images/hiw_02_we_shape_each_one.webp",
                     "link": "",
                     "image_ratio": "square",
                     "width": "fill",
@@ -577,12 +577,12 @@
                   },
                   "blocks": {}
                 },
-                "text_83VPa3": {
+                "title_hiw_02": {
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<h3>02 — Refined by hand</h3>",
-                    "width": "fit-content",
+                    "text": "<h3><strong>02</strong> WE SHAPE EACH ONE</h3>",
+                    "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
                     "type_preset": "h4",
@@ -603,12 +603,12 @@
                   },
                   "blocks": {}
                 },
-                "text_MpcqyR": {
+                "body_hiw_02": {
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Every silhouette is traced by a person, not an algorithm. We start within one business day of your order.</p>",
-                    "width": "fit-content",
+                    "text": "<p>Each photo is carefully cut out and finished by hand.</p>",
+                    "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
                     "type_preset": "rte",
@@ -631,12 +631,12 @@
                 }
               },
               "block_order": [
-                "image_zbGi3e",
-                "text_83VPa3",
-                "text_MpcqyR"
+                "image_hiw_02",
+                "title_hiw_02",
+                "body_hiw_02"
               ]
             },
-            "group_TkXW9f": {
+            "group_hiw_03": {
               "type": "group",
               "name": "t:names.group",
               "settings": {
@@ -646,7 +646,7 @@
                 "vertical_alignment": "center",
                 "align_baseline": false,
                 "horizontal_alignment_flex_direction_column": "flex-start",
-                "vertical_alignment_flex_direction_column": "flex-start",
+                "vertical_alignment_flex_direction_column": "center",
                 "gap": 12,
                 "width": "fill",
                 "custom_width": 100,
@@ -676,11 +676,11 @@
                 "padding-inline-end": 0
               },
               "blocks": {
-                "image_cL7ACg": {
+                "image_hiw_03": {
                   "type": "image",
                   "name": "t:names.image",
                   "settings": {
-                    "image": "shopify://shop_images/harin_face_sheet.png",
+                    "image": "shopify://shop_images/hiw_03_we_build_your_sheet.webp",
                     "link": "",
                     "image_ratio": "square",
                     "width": "fill",
@@ -699,12 +699,12 @@
                   },
                   "blocks": {}
                 },
-                "text_kMFkx9": {
+                "title_hiw_03": {
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<h3>03 — Made to keep</h3>",
-                    "width": "fit-content",
+                    "text": "<h3><strong>03</strong> WE BUILD YOUR SHEET</h3>",
+                    "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
                     "type_preset": "h4",
@@ -725,12 +725,12 @@
                   },
                   "blocks": {}
                 },
-                "text_qNJRUB": {
+                "body_hiw_03": {
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Printed on Korean premium substrate, laminated, and packed by hand. Free Canada-wide shipping, or pick up in Toronto.</p>",
-                    "width": "fit-content",
+                    "text": "<p>We size and arrange every design to make the most of your A5 sheet.</p>",
+                    "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
                     "type_preset": "rte",
@@ -753,16 +753,139 @@
                 }
               },
               "block_order": [
-                "image_cL7ACg",
-                "text_kMFkx9",
-                "text_qNJRUB"
+                "image_hiw_03",
+                "title_hiw_03",
+                "body_hiw_03"
+              ]
+            },
+            "group_hiw_04": {
+              "type": "group",
+              "name": "t:names.group",
+              "settings": {
+                "content_direction": "column",
+                "vertical_on_mobile": true,
+                "horizontal_alignment": "flex-start",
+                "vertical_alignment": "center",
+                "align_baseline": false,
+                "horizontal_alignment_flex_direction_column": "flex-start",
+                "vertical_alignment_flex_direction_column": "center",
+                "gap": 12,
+                "width": "fill",
+                "custom_width": 100,
+                "width_mobile": "fill",
+                "custom_width_mobile": 100,
+                "height": "fit",
+                "custom_height": 100,
+                "inherit_color_scheme": true,
+                "color_scheme": "",
+                "background_media": "none",
+                "video_position": "cover",
+                "background_image_position": "cover",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 0,
+                "toggle_overlay": false,
+                "overlay_color": "#00000026",
+                "overlay_style": "solid",
+                "gradient_direction": "to top",
+                "link": "",
+                "open_in_new_tab": false,
+                "placeholder": "",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {
+                "image_hiw_04": {
+                  "type": "image",
+                  "name": "t:names.image",
+                  "settings": {
+                    "image": "shopify://shop_images/hiw_04_made_to_keep.webp",
+                    "link": "",
+                    "image_ratio": "square",
+                    "width": "fill",
+                    "custom_width": 100,
+                    "width_mobile": "fill",
+                    "custom_width_mobile": 100,
+                    "height": "fit",
+                    "border": "none",
+                    "border_width": 1,
+                    "border_opacity": 100,
+                    "border_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                },
+                "title_hiw_04": {
+                  "type": "text",
+                  "name": "t:names.text",
+                  "settings": {
+                    "text": "<h3><strong>04</strong> MADE TO KEEP</h3>",
+                    "width": "100%",
+                    "max_width": "normal",
+                    "alignment": "left",
+                    "type_preset": "h4",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "color": "var(--color-foreground)",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                },
+                "body_hiw_04": {
+                  "type": "text",
+                  "name": "t:names.text",
+                  "settings": {
+                    "text": "<p>Printed on premium sticker paper, ready to peel, share, and keep close.</p>",
+                    "width": "100%",
+                    "max_width": "normal",
+                    "alignment": "left",
+                    "type_preset": "rte",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "color": "var(--color-foreground)",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "image_hiw_04",
+                "title_hiw_04",
+                "body_hiw_04"
               ]
             }
           },
           "block_order": [
-            "group_zbG8n7",
-            "group_rqzC9M",
-            "group_TkXW9f"
+            "group_hiw_01",
+            "group_hiw_02",
+            "group_hiw_03",
+            "group_hiw_04"
           ]
         }
       },
@@ -770,7 +893,7 @@
         "custom_liquid_j7xPNL",
         "eyebrow_kVRB8B",
         "text_yViXcX",
-        "group_9KzczH"
+        "group_hiw_steps"
       ],
       "name": "t:names.custom_section",
       "settings": {
