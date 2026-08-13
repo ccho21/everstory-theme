@@ -372,7 +372,9 @@
           "selected_variant_hover_border_color": "#1a1a1a"
         }
       }
-    }
+    },
+    "quick_add": false,
+    "empty_cart_button_link": "/collections/photo-sheets"
   },
   "presets": {
     "Horizon": {

@@ -430,28 +430,11 @@
                     "width": 20
                   },
                   "blocks": {
-                    "text_WgmTCC": {
-                      "type": "text",
+                    "es_sizes_note": {
+                      "type": "custom-liquid",
+                      "name": "Sizes note",
                       "settings": {
-                        "text": "<p>Every order is one A5 sheet (148 × 210 mm) in the size you choose, sized by the longest edge. <a href=\"#es-sizes\">See every size on the sheet, with sticker counts</a></p>",
-                        "width": "100%",
-                        "max_width": "normal",
-                        "alignment": "left",
-                        "type_preset": "paragraph",
-                        "font": "var(--font-body--family)",
-                        "font_size": "1rem",
-                        "line_height": "normal",
-                        "letter_spacing": "normal",
-                        "case": "none",
-                        "wrap": "pretty",
-                        "color": "var(--color-foreground)",
-                        "background": false,
-                        "background_color": "#00000026",
-                        "corner_radius": 0,
-                        "padding-block-start": 0,
-                        "padding-block-end": 0,
-                        "padding-inline-start": 0,
-                        "padding-inline-end": 0
+                        "custom_liquid": "{% if closest.product.metafields.custom.is_package.value %}<p>Package Mini is one A5 sheet (148 &#215; 210 mm). Package Full is two. There is no size to choose \u2014 you upload candidates by print tier (Big, Medium, Small) and Studio lays out the final sheet.</p>{% else %}<p>Every order is one A5 sheet (148 &#215; 210 mm) in the size you choose, sized by the longest edge. <a href=\"#es-sizes\">See every size on the sheet, with sticker counts</a></p>{% endif %}"
                       },
                       "blocks": {}
                     },
@@ -480,7 +463,7 @@
                     }
                   },
                   "block_order": [
-                    "text_WgmTCC",
+                    "es_sizes_note",
                     "image_es_size"
                   ]
                 },
@@ -536,7 +519,7 @@
                     "text_pcmYjm": {
                       "type": "text",
                       "settings": {
-                        "text": "<ul><li>Production: 1-3 business days after order.</li><li>Shipping: same or next business day after cut.</li><li>Total: typically 2-5 business days from order to shipped.</li><li>Free shipping across Canada by Canada Post lettermail.</li><li>Local pickup by arrangement (4-10 business days).</li></ul>",
+                        "text": "<ul><li>Production: 1-3 business days after order.</li><li>Shipping: same or next business day after cut.</li><li>Total: typically 2-5 business days from order to shipped.</li><li>Free shipping across Canada by Canada Post lettermail — 4-10 business days to arrive after shipping confirmation, no tracking.</li><li>Local pickup at the Toronto studio, arranged by email once your order is ready.</li></ul>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -599,19 +582,11 @@
               },
               "blocks": {}
             },
-            "es_step1": {
+            "es_required_gate": {
               "type": "custom-liquid",
-              "name": "Step label 01",
+              "name": "Required-option gate",
               "settings": {
-                "custom_liquid": "<div class=\"es-step\"><span class=\"es-step__no\">01</span><span class=\"es-step__t\">Sheet &amp; size</span></div>"
-              },
-              "blocks": {}
-            },
-            "es_step2": {
-              "type": "custom-liquid",
-              "name": "Step label 02",
-              "settings": {
-                "custom_liquid": "<div class=\"es-step\"><span class=\"es-step__no\">02</span><span class=\"es-step__t\">Your photos</span></div>"
+                "custom_liquid": "{% render 'es-required-gate', product: closest.product %}"
               },
               "blocks": {}
             }
@@ -619,12 +594,11 @@
           "block_order": [
             "group_icgrde",
             "divider_VJhene",
-            "es_step1",
             "variant_picker_R3rGDr",
             "es_choice_helper",
             "es_material_swatch",
-            "es_step2",
             "buy_buttons_eYQEYi",
+            "es_required_gate",
             "accordion_Ghx3fc",
             "text_aEtTtq"
           ]
@@ -639,7 +613,7 @@
         "equal_columns": true,
         "limit_details_width": false,
         "gap": 48,
-        "enable_sticky_add_to_cart": true,
+        "enable_sticky_add_to_cart": false,
         "color_scheme": "",
         "padding-block-start": 0,
         "padding-block-end": 0
@@ -669,7 +643,6 @@
     },
     "product_recommendations_qggXJq": {
       "type": "product-recommendations",
-      "disabled": true,
       "blocks": {
         "text_cbcgyb": {
           "type": "text",
@@ -789,6 +762,7 @@
       "block_order": [
         "text_cbcgyb"
       ],
+      "disabled": true,
       "name": "t:names.product_recommendations",
       "settings": {
         "product": "{{ product }}",

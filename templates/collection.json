@@ -116,13 +116,13 @@
           "type": "filters",
           "static": true,
           "settings": {
-            "enable_filtering": true,
+            "enable_filtering": false,
             "filter_style": "horizontal",
             "filter_width": "centered",
             "text_label_case": "default",
             "show_swatch_label": false,
             "show_filter_label": false,
-            "enable_sorting": true,
+            "enable_sorting": false,
             "enable_grid_density": true,
             "inherit_color_scheme": true,
             "color_scheme": "",
@@ -192,6 +192,14 @@
               },
               "blocks": {}
             },
+            "es_card_subtitle": {
+              "type": "custom-liquid",
+              "name": "Card subtitle",
+              "settings": {
+                "custom_liquid": "{% assign st = closest.product.metafields.custom.card_subtitle.value %}{% if st != blank %}<p style=\"margin:.15rem 0 0;opacity:.7;font-size:.875rem;line-height:1.4;\">{{ st }}</p>{% endif %}"
+              },
+              "blocks": {}
+            },
             "price_EzJzMm": {
               "type": "price",
               "settings": {
@@ -218,6 +226,7 @@
           "block_order": [
             "card-gallery",
             "product_title_4nY4eT",
+            "es_card_subtitle",
             "price_EzJzMm"
           ]
         }

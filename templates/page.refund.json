@@ -192,7 +192,7 @@
                     "text_N7Xam8": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>You can cancel for a full refund any time before we begin printing — typically within one business day of your order. Email <strong>studio. everstory@gmail.com</strong> as soon as possible.</p><p>Once printing starts, the order cannot be refunded. The work is yours.</p>",
+                        "text": "<p>You can cancel for a full refund any time before we begin printing — typically within one business day of your order. Email <strong>studio.everstory@gmail.com</strong> as soon as possible.</p><p>Once printing starts, the order cannot be refunded. The work is yours.</p>",
                         "width": "100%",
                         "max_width": "none",
                         "alignment": "left",
@@ -348,7 +348,7 @@
                     "text_WGUPxg": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>Please inspect your order upon reception and contact us immediately if the item is defective, damaged, or if you receive the wrong item, so that we can evaluate the issue and make it right.</p><p>Email <strong>studio.everstory@gmail.com</strong> within 7 days of delivery with a clear photo of the issue. If a return is required for evaluation, we will email return instructions and the return address:</p><p>Everstory Studio</p><p>Items sent back to us without first requesting a return will not be accepted.</p>",
+                        "text": "<p>Please inspect your order upon reception and contact us immediately if the item is defective, damaged, or if you receive the wrong item, so that we can evaluate the issue and make it right.</p><p>Email <strong>studio.everstory@gmail.com</strong> within 7 days of delivery with a clear photo of the issue. We do not accept physical returns — once we verify the issue from your photo, we reprint and reship at no cost, or refund per the Refunds section below.</p><p>Please do not mail items back. Items sent to us without a return request are discarded and not processed.</p>",
                         "width": "100%",
                         "max_width": "none",
                         "alignment": "left",

@@ -1,0 +1,201 @@
+{%- comment -%}
+  EVERSTORY — gate the Add to cart button on Easify required options.
+
+  Two jobs:
+
+  1. UX layer — grey out Add to cart until every required Easify option is
+     answered, instead of letting the shopper click and then get an error.
+     Easify blocks the /cart/add call itself, so this only removes a dead click.
+
+  2. Safety net — Easify renders the photo upload client-side. If its script
+     never arrives (blocked, offline, JS error) the page still delivers a fully
+     working Add to cart with NO upload attached, and a made-to-order sheet gets
+     paid for with no photo. On a product that expects options, we wait
+     PORTAL_TIMEOUT_MS for Easify and then block the button with a way out.
+
+  Blocking is deliberately slow and narrow: it only engages after window load
+  plus the timeout, and only where product.metafields.custom.no_photo_upload is
+  not set. If Easify merely renames its classes the portal still exists, so the
+  gate degrades to job 1 rather than blocking a sale.
+{%- endcomment -%}
+
+{%- comment -%}
+  Every current product is built from a customer photograph. Set the
+  custom.no_photo_upload boolean on any future product that ships without an
+  upload (calligraphy, name tags, logo stickers) to opt it out of the safety net.
+{%- endcomment -%}
+{%- assign expect_options = true -%}
+{%- if product.metafields.custom.no_photo_upload.value -%}
+  {%- assign expect_options = false -%}
+{%- endif -%}
+
+<script>
+(function () {
+  if (window.__esRequiredGate) return;
+  window.__esRequiredGate = true;
+
+  var HINT_ID = 'es-required-hint';
+  var EXPECT_OPTIONS = {{ expect_options | json }};
+  /* Generous: Easify is third-party and slow mobile connections are normal.
+     A false block costs a sale, so we would rather wait too long than too little. */
+  var PORTAL_TIMEOUT_MS = 12000;
+  var CONTACT_EMAIL = 'studio.everstory@gmail.com';
+
+  var applying = false;
+  var themeDisabled = null;
+  var portalOverdue = false;
+  var portalSeen = false;
+
+  /* Labels of REQUIRED Easify options that are still empty.
+     null = Easify has not rendered; apply() decides what that means. */
+  function unmetLabels() {
+    var portal = document.querySelector('.easify.portal');
+    if (!portal) return null;
+    portalSeen = true;
+
+    var required = Array.prototype.slice
+      .call(portal.querySelectorAll('.po-option-root'))
+      .filter(function (o) { return o.querySelector('.po-label-required'); });
+    if (!required.length) return [];
+
+    return required.filter(function (o) {
+      /* Easify writes every answered option into a hidden properties[...] input.
+         This is the only signal that works for text, dropdown AND file upload —
+         it clears input.files after uploading and stores the CDN url instead. */
+      return !Array.prototype.slice
+        .call(o.querySelectorAll('input[name^="properties"]'))
+        .some(function (i) { return (i.value || '').trim() !== ''; });
+    }).map(function (o) {
+      var l = o.querySelector('.po-label-label');
+      return l ? (l.textContent || '').trim() : '';
+    }).filter(Boolean);
+  }
+
+  function notInQuickAdd(b) { return !b.closest('quick-add-dialog, .quick-add-modal'); }
+
+  function mainButton() {
+    return Array.prototype.slice
+      .call(document.querySelectorAll('add-to-cart-component button[ref="addToCartButton"]'))
+      .filter(notInQuickAdd)[0];
+  }
+
+  function allButtons() {
+    return Array.prototype.slice.call(document.querySelectorAll(
+      'add-to-cart-component button[ref="addToCartButton"],' +
+      'sticky-add-to-cart button[ref="addToCartButton"],' +
+      '.sticky-add-to-cart__button'
+    )).filter(notInQuickAdd);
+  }
+
+  function setHint(text) {
+    var host = document.querySelector(
+      'product-form-component:not(.quick-add__product-form-component)'
+    );
+    if (!host) return;
+    var el = document.getElementById(HINT_ID);
+    if (text) {
+      if (!el) {
+        el = document.createElement('p');
+        el.id = HINT_ID;
+        el.setAttribute('aria-live', 'polite');
+        el.style.cssText = 'margin:.5rem 0 0;font-size:.8125rem;line-height:1.4;opacity:.7;';
+        host.appendChild(el);
+      }
+      if (el.textContent !== text) el.textContent = text;
+    } else if (el) {
+      el.remove();
+    }
+  }
+
+  function apply() {
+    var unmet = unmetLabels();
+
+    var main = mainButton();
+    if (!main) return;
+
+    /* Track what the theme itself wants, so "sold out" still wins over us. */
+    if (themeDisabled === null) themeDisabled = main.disabled;
+
+    var blockedByUs, msg;
+
+    if (unmet === null) {
+      /* Easify has not rendered. Stay out of the way until it is clearly late —
+         then block, because the alternative is a paid order with no photograph. */
+      if (!(EXPECT_OPTIONS && portalOverdue)) return;
+      blockedByUs = !themeDisabled;
+      msg = blockedByUs
+        ? 'The photo upload could not load, so this order cannot be started yet. '
+          + 'Please refresh the page — or email ' + CONTACT_EMAIL
+          + ' and we will take your photos by email.'
+        : '';
+    } else {
+      blockedByUs = !themeDisabled && unmet.length > 0;
+      msg = blockedByUs ? 'Please complete: ' + unmet.join(', ') : '';
+    }
+
+    var want = themeDisabled || blockedByUs;
+
+    applying = true;
+    allButtons().forEach(function (b) {
+      if (b.disabled !== want) b.disabled = want;
+      if (msg) b.setAttribute('title', msg);
+      else b.removeAttribute('title');
+    });
+    /* Release on a macrotask: MutationObserver callbacks are microtasks and
+       would otherwise see applying === false and mistake our write for the theme's. */
+    setTimeout(function () { applying = false; }, 0);
+
+    setHint(msg);
+  }
+
+  /* setTimeout, not requestAnimationFrame: rAF is throttled to zero in background
+     tabs, which would latch the debounce flag and freeze the gate permanently. */
+  var timer = null;
+  function schedule() {
+    if (timer) return;
+    timer = setTimeout(function () {
+      timer = null;
+      try { apply(); } catch (e) { /* never break the page */ }
+    }, 50);
+  }
+
+  var btnObserver = new MutationObserver(function (muts) {
+    if (applying) { schedule(); return; }
+    muts.forEach(function (m) {
+      if (m.attributeName === 'disabled' && m.target === mainButton()) {
+        themeDisabled = m.target.disabled;
+      }
+    });
+    schedule();
+  });
+
+  function observeButtons() {
+    var m = mainButton();
+    if (m) btnObserver.observe(m, { attributes: true, attributeFilter: ['disabled'] });
+  }
+
+  new MutationObserver(schedule).observe(document.body, {
+    childList: true, subtree: true, attributes: true, attributeFilter: ['value']
+  });
+  document.addEventListener('input', schedule, true);
+  document.addEventListener('change', schedule, true);
+
+  /* Count from window load, not from parse: a slow page should not be mistaken
+     for a missing app. If Easify turns up later the poll below clears the block
+     on its own, so this can only ever delay a sale, never lose one. */
+  function startWatchdog() {
+    setTimeout(function () {
+      if (portalSeen) return;
+      portalOverdue = true;
+      schedule();
+    }, PORTAL_TIMEOUT_MS);
+  }
+  if (document.readyState === 'complete') startWatchdog();
+  else window.addEventListener('load', startWatchdog);
+
+  observeButtons();
+  schedule();
+  /* Safety net: Easify and the theme both re-render the nodes we depend on. */
+  setInterval(function () { observeButtons(); schedule(); }, 1000);
+})();
+</script>
