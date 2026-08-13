@@ -915,37 +915,13 @@
       </section>
       {%- endunless -%}
 
-      {%- if is_package -%}
-      <!-- Package 비교 — Mini↔Full. Package 전용(Sizes 섹션 대체).
-           file_url 은 진짜 Custom Liquid(이 블록)에서만 작동 — metafield 아님. -->
-      <section class="es-section" aria-label="Package options">
-        <div class="es-section-shell">
-          <div class="heading-block">
-            <span class="es-eyebrow">Packages</span>
-            <h2>Mini or Full.</h2>
-          </div>
-
-          <section class="size-grid">
-            <article class="size-card">
-              <h3 class="size-title">Package Mini <small>4 photos · 1 A5 sheet</small></h3>
-              <div class="mockup-wrap">
-                <img class="sheet-image" src="{{ 'package_mini.png' | file_url }}"
-                     alt="Package Mini — 4 curated photos on 1 A5 sheet">
-              </div>
-              <p class="caption">Studio picks 4 from your uploads.</p>
-            </article>
-            <article class="size-card size-card--stacked">
-              <h3 class="size-title">Package Full <small>8 photos · 2 A5 sheets</small></h3>
-              <div class="mockup-wrap">
-                <img class="sheet-image" src="{{ 'package_full.png' | file_url }}"
-                     alt="Package Full — 8 curated photos across 2 A5 sheets">
-              </div>
-              <p class="caption">Studio picks 8 from your uploads.</p>
-            </article>
-          </section>
-        </div>
-      </section>
-      {%- endif -%}
+      <!-- Package 비교 섹션(Mini↔Full "Packages / Mini or Full.")은 2026-08-12 제거.
+           Package 상품은 이제 이 스니펫에서 Sizes 도 Packages 도 렌더하지 않습니다
+           (Sizes 는 위 unless is_package 로 이미 제외). 시트 장수 정보는
+           templates/product.json 의 Sizes 아코디언(is_package 분기)이 담당합니다.
+           되살리려면 git show 0a002cc:snippets/es-pdp-general.liquid 의 918-948 줄.
+           .size-grid / .size-card / .mockup-wrap / .sheet-image CSS 는 비-Package
+           Sizes 섹션이 계속 쓰므로 그대로 둡니다. -->
 
       <!-- Before you order (pearl-grey callout) — 전 상품 공용 -->
       <section class="es-section es-notice-section" aria-label="Order and production notes">
