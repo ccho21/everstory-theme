@@ -217,23 +217,15 @@
               },
               "blocks": {}
             },
-            "es_choice_helper": {
-              "type": "custom-liquid",
-              "name": "Size & material helper",
-              "settings": {
-                "custom_liquid": "<div style=\"display:grid;gap:7px;margin-top:2px;\">{%- unless closest.product.metafields.custom.is_package.value -%}<p style=\"margin:0;font-size:0.8125rem;line-height:1.6;opacity:0.72;\"><strong>Per A5 sheet</strong> — 0.75\" ≈50 · 1\" ≈36 · 1.25\" ≈20 · 1.5\" ≈16 · 2\" ≈6 · 2.5\" ≈4 stickers. The exact count shifts a little with your photo's ratio. <a href=\"#es-sizes\" style=\"color:inherit;text-decoration:underline;text-underline-offset:3px;\">See every size on the sheet</a></p><p style=\"margin:0;font-size:0.8125rem;line-height:1.6;opacity:0.72;\"><strong>Mixed</strong> — one sheet with a spread of sizes across the range, instead of a single size repeated.</p>{%- endunless -%}<p style=\"margin:0;font-size:0.8125rem;line-height:1.6;opacity:0.72;\"><strong>Material</strong> — White Matte is soft and paper-like, Translucent is semi-clear, Silver and Gold are reflective metallics. All four are laminated and waterproof.</p></div>"
-              },
-              "blocks": {}
-            },
             "es_material_swatch": {
               "type": "image",
               "name": "Material comparison",
               "settings": {
-                "image": "shopify://shop_images/harin_materials_01.png",
+                "image": "shopify://shop_images/material_comparison.png",
                 "link": "",
                 "image_ratio": "adapt",
                 "width": "custom",
-                "custom_width": 42,
+                "custom_width": 100,
                 "width_mobile": "custom",
                 "custom_width_mobile": 100,
                 "height": "fit",
@@ -245,6 +237,14 @@
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "es_choice_helper": {
+              "type": "custom-liquid",
+              "name": "Size & material helper",
+              "settings": {
+                "custom_liquid": "<div style=\"display:grid;gap:7px;margin-top:2px;\">{%- unless closest.product.metafields.custom.is_package.value -%}<p style=\"margin:0;font-size:0.8125rem;line-height:1.6;opacity:0.72;\"><strong>Per A5 sheet</strong> — 0.75\" ≈50 · 1\" ≈36 · 1.25\" ≈20 · 1.5\" ≈16 · 2\" ≈6 · 2.5\" ≈4 stickers. The exact count shifts a little with your photo's ratio. <a href=\"#es-sizes\" style=\"color:inherit;text-decoration:underline;text-underline-offset:3px;\">See every size on the sheet</a></p><p style=\"margin:0;font-size:0.8125rem;line-height:1.6;opacity:0.72;\"><strong>Mixed</strong> — one sheet with a spread of sizes across the range, instead of a single size repeated.</p>{%- endunless -%}<p style=\"margin:0;font-size:0.8125rem;line-height:1.6;opacity:0.72;\"><strong>Material</strong> — White Matte is soft and paper-like, Translucent is semi-clear, Silver and Gold are reflective metallics. All four are laminated and waterproof.</p></div>"
               },
               "blocks": {}
             },
@@ -282,6 +282,14 @@
                 }
               },
               "block_order": []
+            },
+            "es_required_gate": {
+              "type": "custom-liquid",
+              "name": "Required-option gate",
+              "settings": {
+                "custom_liquid": "{% render 'es-required-gate', product: closest.product %}"
+              },
+              "blocks": {}
             },
             "accordion_Ghx3fc": {
               "type": "accordion",
@@ -434,7 +442,7 @@
                       "type": "custom-liquid",
                       "name": "Sizes note",
                       "settings": {
-                        "custom_liquid": "{% if closest.product.metafields.custom.is_package.value %}<p>Package Mini is one A5 sheet (148 &#215; 210 mm). Package Full is two. There is no size to choose \u2014 you upload candidates by print tier (Big, Medium, Small) and Studio lays out the final sheet.</p>{% else %}<p>Every order is one A5 sheet (148 &#215; 210 mm) in the size you choose, sized by the longest edge. <a href=\"#es-sizes\">See every size on the sheet, with sticker counts</a></p>{% endif %}"
+                        "custom_liquid": "{% if closest.product.metafields.custom.is_package.value %}<p>Package Mini is one A5 sheet (148 &#215; 210 mm). Package Full is two. There is no size to choose — you upload candidates by print tier (Big, Medium, Small) and Studio lays out the final sheet.</p>{% else %}<p>Every order is one A5 sheet (148 &#215; 210 mm) in the size you choose, sized by the longest edge. <a href=\"#es-sizes\">See every size on the sheet, with sticker counts</a></p>{% endif %}"
                       },
                       "blocks": {}
                     },
@@ -442,7 +450,6 @@
                       "type": "image",
                       "name": "t:names.image",
                       "settings": {
-                        "image": "shopify://shop_images/harin_laptop_01.png",
                         "link": "",
                         "image_ratio": "portrait",
                         "width": "fill",
@@ -581,22 +588,14 @@
                 "padding-inline-end": 0
               },
               "blocks": {}
-            },
-            "es_required_gate": {
-              "type": "custom-liquid",
-              "name": "Required-option gate",
-              "settings": {
-                "custom_liquid": "{% render 'es-required-gate', product: closest.product %}"
-              },
-              "blocks": {}
             }
           },
           "block_order": [
             "group_icgrde",
             "divider_VJhene",
             "variant_picker_R3rGDr",
-            "es_choice_helper",
             "es_material_swatch",
+            "es_choice_helper",
             "buy_buttons_eYQEYi",
             "es_required_gate",
             "accordion_Ghx3fc",
