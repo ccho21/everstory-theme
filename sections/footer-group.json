@@ -156,6 +156,69 @@
                 "padding-inline-end": 0
               },
               "blocks": {
+                "menu_Vg3xfQ": {
+                  "type": "menu",
+                  "name": "t:names.menu",
+                  "settings": {
+                    "menu": "shop",
+                    "heading": "Shop",
+                    "menu_spacing": 12,
+                    "show_as_accordion": false,
+                    "accordion_icon": "caret",
+                    "accordion_dividers": false,
+                    "inherit_color_scheme": true,
+                    "color_scheme": "",
+                    "heading_preset": "h4",
+                    "link_preset": "paragraph",
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                },
+                "menu_Lfepgw": {
+                  "type": "menu",
+                  "name": "t:names.menu",
+                  "settings": {
+                    "menu": "help",
+                    "heading": "",
+                    "menu_spacing": 12,
+                    "show_as_accordion": true,
+                    "accordion_icon": "caret",
+                    "accordion_dividers": false,
+                    "inherit_color_scheme": true,
+                    "color_scheme": "",
+                    "heading_preset": "h4",
+                    "link_preset": "paragraph",
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                },
+                "menu_VjYiVA": {
+                  "type": "menu",
+                  "name": "t:names.menu",
+                  "settings": {
+                    "menu": "brand",
+                    "heading": "",
+                    "menu_spacing": 12,
+                    "show_as_accordion": true,
+                    "accordion_icon": "caret",
+                    "accordion_dividers": false,
+                    "inherit_color_scheme": true,
+                    "color_scheme": "scheme-4",
+                    "heading_preset": "h4",
+                    "link_preset": "paragraph",
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                },
                 "group_newsletter_kQ4rTz": {
                   "type": "group",
                   "name": "t:names.group",
@@ -253,69 +316,6 @@
                     "email_signup_QahQmC",
                     "text_newsletter_note"
                   ]
-                },
-                "menu_Vg3xfQ": {
-                  "type": "menu",
-                  "name": "t:names.menu",
-                  "settings": {
-                    "menu": "shop",
-                    "heading": "Shop",
-                    "menu_spacing": 12,
-                    "show_as_accordion": false,
-                    "accordion_icon": "caret",
-                    "accordion_dividers": false,
-                    "inherit_color_scheme": true,
-                    "color_scheme": "",
-                    "heading_preset": "h4",
-                    "link_preset": "paragraph",
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
-                  },
-                  "blocks": {}
-                },
-                "menu_Lfepgw": {
-                  "type": "menu",
-                  "name": "t:names.menu",
-                  "settings": {
-                    "menu": "help",
-                    "heading": "",
-                    "menu_spacing": 12,
-                    "show_as_accordion": true,
-                    "accordion_icon": "caret",
-                    "accordion_dividers": false,
-                    "inherit_color_scheme": true,
-                    "color_scheme": "",
-                    "heading_preset": "h4",
-                    "link_preset": "paragraph",
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
-                  },
-                  "blocks": {}
-                },
-                "menu_VjYiVA": {
-                  "type": "menu",
-                  "name": "t:names.menu",
-                  "settings": {
-                    "menu": "brand",
-                    "heading": "",
-                    "menu_spacing": 12,
-                    "show_as_accordion": true,
-                    "accordion_icon": "caret",
-                    "accordion_dividers": false,
-                    "inherit_color_scheme": true,
-                    "color_scheme": "scheme-4",
-                    "heading_preset": "h4",
-                    "link_preset": "paragraph",
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
-                  },
-                  "blocks": {}
                 }
               },
               "block_order": [
@@ -375,7 +375,7 @@
             "youtube_url": "",
             "tiktok_url": "",
             "twitter_url": "",
-            "threads_url": "",
+            "threads_url": "https://www.threads.com/@everstorystudio",
             "linkedin_url": "",
             "bluesky_url": "",
             "snapchat_url": "",

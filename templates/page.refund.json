@@ -66,7 +66,7 @@
               "type": "text",
               "name": "t:names.heading",
               "settings": {
-                "text": "<p>{{ closest.page.title }}</p>",
+                "text": "<h1>{{ closest.page.title }}</h1>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
@@ -270,7 +270,7 @@
                     "text_NRq3Fz": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>If your sheet arrives with a print or cutting defect — visible color shift, lamination flaws, misaligned cuts, or visible damage — we will reprint and reship at no cost. Email us within <strong>7 days of delivery </strong>with a photo of the issue at <a><strong>studio.everstory@gmail.com</strong></a>.</p>",
+                        "text": "<p>If your sheet arrives with a print or cutting defect — visible color shift, lamination flaws, misaligned cuts, or visible damage — we will reprint and reship at no cost. Email us within <strong>7 days of delivery </strong>with a photo of the issue at <a href=\"mailto:studio.everstory@gmail.com\"><strong>studio.everstory@gmail.com</strong></a>.</p>",
                         "width": "100%",
                         "max_width": "none",
                         "alignment": "left",
@@ -715,7 +715,7 @@
           "type": "text",
           "name": "t:names.text",
           "settings": {
-            "text": "<p>Email us — typically a same-day reply during studio hours.</p>",
+            "text": "<p>Email us — we reply within one business day.</p>",
             "width": "fit-content",
             "max_width": "normal",
             "alignment": "left",

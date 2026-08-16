@@ -66,7 +66,7 @@
               "type": "text",
               "name": "t:names.heading",
               "settings": {
-                "text": "<p>{{ closest.page.title }}</p>",
+                "text": "<h1>{{ closest.page.title }}</h1>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
@@ -257,7 +257,7 @@
                     "text_zxpk9g": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>Yes, before we begin printing — typically within one business day of your order. Email <a>studio.everstory@gmail.com </a>as soon as possible.</p>",
+                        "text": "<p>Yes, before we begin printing — typically within one business day of your order. Email <a href=\"mailto:studio.everstory@gmail.com\">studio.everstory@gmail.com</a> as soon as possible.</p>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -942,7 +942,7 @@
                     "text_Hrn3AC": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>Lettermail typically arrives 4–10 business days after shipping confirmation. Total time from order to delivery is usually 5–12 business days.</p>",
+                        "text": "<p>Lettermail typically arrives 4–10 business days after shipping confirmation. Total time from order to delivery is usually 6–15 business days.</p>",
                         "width": "100%",
                         "max_width": "none",
                         "alignment": "left",
@@ -1452,7 +1452,7 @@
                     "text_38PFJb": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>For orders of 20+ sheets, message us at <a><strong>studio.everstory@gmail.com</strong></a> for a custom quote.</p>",
+                        "text": "<p>For orders of 20+ sheets, message us at <a href=\"mailto:studio.everstory@gmail.com\"><strong>studio.everstory@gmail.com</strong></a> for a custom quote.</p>",
                         "width": "100%",
                         "max_width": "none",
                         "alignment": "left",

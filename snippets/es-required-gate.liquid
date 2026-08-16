@@ -35,6 +35,7 @@
   window.__esRequiredGate = true;
 
   var HINT_ID = 'es-required-hint';
+  var PRIVACY_ID = 'es-photo-privacy-note';
   var EXPECT_OPTIONS = {{ expect_options | json }};
   /* Generous: Easify is third-party and slow mobile connections are normal.
      A false block costs a sale, so we would rather wait too long than too little. */
@@ -107,7 +108,37 @@
     }
   }
 
+  function ensurePhotoPrivacy() {
+    if (document.getElementById(PRIVACY_ID)) return;
+    var portal = document.querySelector('.easify.portal');
+    if (!portal) return;
+
+    var optionRoots = Array.prototype.slice.call(portal.querySelectorAll('.po-option-root'));
+    var uploadOption = optionRoots.find(function (option) {
+      var label = option.querySelector('.po-label-label');
+      return label && /upload your photo/i.test(label.textContent || '');
+    });
+    if (!uploadOption) {
+      var fileOptions = optionRoots.filter(function (option) {
+        return option.querySelector('input[type="file"]');
+      });
+      uploadOption = fileOptions[fileOptions.length - 1];
+    }
+    if (!uploadOption) return;
+
+    var note = document.createElement('div');
+    note.id = PRIVACY_ID;
+    note.className = 'es-photo-privacy-note';
+    note.innerHTML = '<strong>Your photos stay private.</strong> '
+      + 'We use uploads only to create your order, delete the originals within 90 days of fulfillment, '
+      + 'and never share or post them without your written consent. '
+      + '<a href="/policies/privacy-policy">Photo Privacy Policy</a>'
+      + '<span>Every upload is checked before production. If a photo cannot be used, we’ll email before printing.</span>';
+    uploadOption.insertAdjacentElement('afterend', note);
+  }
+
   function apply() {
+    ensurePhotoPrivacy();
     var unmet = unmetLabels();
 
     var main = mainButton();
@@ -199,3 +230,79 @@
   setInterval(function () { observeButtons(); schedule(); }, 1000);
 })();
 </script>
+
+<div class="es-purchase-assurance" aria-label="Purchase assurances">
+  <p>
+    <strong>Made-right promise</strong>
+    <span>Print or cut issue? Send a photo within 7 days and we’ll reprint at no cost. <a href="/pages/refund-policy">Details</a></span>
+  </p>
+  <p>
+    <strong>Clear delivery timing</strong>
+    <span>Ships in 2–5 business days. Free Canada Post lettermail arrives 4–10 business days after dispatch; tracking is not included. <a href="/pages/shipping-pickup">Shipping details</a></span>
+  </p>
+</div>
+
+<style>
+  .es-photo-privacy-note {
+    margin: 10px 0 14px;
+    padding: 12px 14px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: 6px;
+    background: #faf9f7;
+    font-size: 0.8125rem;
+    line-height: 1.55;
+  }
+
+  .es-photo-privacy-note span {
+    display: block;
+    margin-top: 4px;
+    opacity: 0.72;
+  }
+
+  .es-photo-privacy-note a,
+  .es-purchase-assurance a {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .es-purchase-assurance {
+    display: grid;
+    margin-top: 14px;
+    border-block: 1px solid rgba(0, 0, 0, 0.12);
+  }
+
+  .es-purchase-assurance p {
+    display: grid;
+    gap: 3px;
+    margin: 0;
+    padding: 12px 0;
+    font-size: 0.8125rem;
+    line-height: 1.5;
+  }
+
+  .es-purchase-assurance p + p {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .es-purchase-assurance span {
+    opacity: 0.72;
+  }
+
+  .jdgm-preview-badge:has(.jdgm-prev-badge[data-number-of-reviews='0']),
+  .jdgm-review-widget:has(.jdgm-rev-widg[data-number-of-reviews='0']) {
+    display: none !important;
+  }
+
+  @media (max-width: 749px) {
+    .easify.portal > div,
+    .easify.portal .po-productPageOptions-root,
+    .easify.portal .po-optionSet-root,
+    .easify.portal .po-options-root,
+    .es-photo-privacy-note {
+      width: 100% !important;
+      max-width: 100% !important;
+      min-width: 0 !important;
+    }
+  }
+</style>

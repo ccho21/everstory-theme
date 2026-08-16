@@ -157,10 +157,11 @@
         assign slideshow_attributes = slideshow_attributes | append: ' disabled="true"'
       endif
     %}
+    {% capture product_card_url %}{% render 'product-card-url', product: product %}{% endcapture %}
     <a
       class="contents"
       ref="cardGalleryLink"
-      href="{{ product.selected_or_first_available_variant.url }}"
+      href="{{ product_card_url | strip }}"
       aria-label="{{- product.title -}}"
     >
       {% render 'slideshow',
@@ -173,11 +174,12 @@
       %}
     </a>
   {% elsif product != blank and product.media.size == 0 %}
+    {% capture product_card_url %}{% render 'product-card-url', product: product %}{% endcapture %}
     <product-title class="product-card-gallery__title-placeholder">
       <a
         class="contents"
         ref="productTitleLink"
-        href="{{ product.selected_or_first_available_variant.url }}"
+        href="{{ product_card_url | strip }}"
         aria-hidden="true"
       >
         <span class="title-text">{{- product.title -}}</span>

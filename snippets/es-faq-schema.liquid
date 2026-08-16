@@ -1,0 +1,189 @@
+{%- doc -%}
+  FAQPage structured data for /pages/faq.
+
+  The questions and answers below mirror the accordion rows in
+  `templates/page.faq.json` verbatim (plain-text form). Structured data must
+  match what the visitor can see, so if an FAQ row is edited in the Theme
+  Editor, update the matching entry here.
+
+  Rendered from `layout/theme.liquid`, gated on the page handle, so a Theme
+  Editor save cannot drop it.
+{%- enddoc -%}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "url": {{ canonical_url | json }},
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How does ordering work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Choose Face Sticker, Full Body Sticker, Package Mini, or Package Full. For non-Package products, choose size, material, and Photos to include. For Package products, upload photos into Big / Medium / Small print sections and Studio picks the final set. We start cutting within one business day and ship within 2–5 business days. No mockup back-and-forth — the order notes are how we hear what matters to you."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I cancel my order?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, before we begin printing — typically within one business day of your order. Email studio.everstory@gmail.com as soon as possible."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I request changes after I order?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The order notes at checkout are where we capture your details. If you missed something, reach out before printing starts (typically within one business day) and we will fold it in if we can. After printing, changes require a new order."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What kind of photo should I send?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The clearer, the better. Bright lighting, the subject filling the frame, minimal motion blur. We handle background removal and color correction."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What file formats do you accept?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "JPG, JPEG, PNG, HEIC. Up to 100 MB per file. Higher resolution is always better."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will my photo look exactly like the examples on your site?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Every photo is different. We do our best with the photo you upload and the details you share at checkout. The clearer your photo and the more specific your notes, the closer the result matches your expectation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I send multiple photos?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Face Sticker and Full Body Sticker accept 1–13 photos via the Photos to include option. Package Mini and Package Full accept candidate photos by Big / Medium / Small print tier and Studio picks the final set."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What size should I pick?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "1\" / 25mm is the most popular — planners, journals, bottles, phone cases. 1.25\"–1.5\" for tumblers and laptops. 2\" and 2.5\" are statement sizes. 0.75\" for collectors/calendars."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between the materials?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "White matte is paper-like, best for indoor use. Translucent is semi-clear and lets the surface show through. Silver and gold have a slight metallic finish. All are laminated and waterproof — good for bottles, phone cases, and outdoor surfaces."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are the stickers waterproof?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "All four materials are laminated and waterproof. Hand wash recommended; not dishwasher-safe."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where do you ship?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Anywhere in Canada. Free standard shipping by Canada Post lettermail."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does shipping take?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Lettermail typically arrives 4–10 business days after shipping confirmation. Total time from order to delivery is usually 5–12 business days."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why no tracking?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Lettermail is the most affordable way to ship sticker sheets. Free shipping is the trade-off. If your order is lost, we reprint and reship at no cost."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I pick up locally?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — for nearby customers by arrangement. Choose Local Pickup at checkout."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you ship internationally?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not yet — Canadian addresses only. Message us for international (US, Korea, etc.) — we evaluate case by case."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if my sticker has a defect?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We reprint and reship at no cost. Email a photo of the issue within 7 days of delivery."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if I do not like how it turned out?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "After printing, we do not refund based on personal preference, but we always reprint genuine print or cut defects."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long do the stickers last?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Indoor: 5+ years. Outdoor (UV-exposed): 2-3 years."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I order in Korean?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "네. 결제는 영어로 진행되지만, 주문 노트에 한국어로 디테일 적어주시거나 이메일로 한국어 회신 주시면 한국어로 응대합니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you offer wholesale or bulk pricing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For orders of 20+ sheets, message us at studio.everstory@gmail.com for a custom quote."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you make stickers other than photos?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Photo sticker sheets are our focus right now. Calligraphy, name tags, and logo stickers are on our roadmap."
+      }
+    }
+  ]
+}
+</script>

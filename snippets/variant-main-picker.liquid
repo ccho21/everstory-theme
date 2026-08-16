@@ -221,6 +221,31 @@
         {{ product_resource.selected_or_first_available_variant | json }}
       </script>
     </form>
+
+    {% liquid
+      assign use_one_inch_default = false
+      if product.id == product_resource.id and product_resource.selected_variant == blank
+        if product_resource.handle == 'face-sticker' or product_resource.handle == 'full-body-sticker'
+          assign use_one_inch_default = true
+        endif
+      endif
+    %}
+    {% if use_one_inch_default %}
+      <script>
+        (() => {
+          const picker = document.currentScript.closest('variant-picker');
+          customElements.whenDefined('variant-picker').then(() => {
+            requestAnimationFrame(() => {
+              const defaultSize = Array.from(picker.querySelectorAll('input[type="radio"]')).find(
+                (input) => input.value === '1" / 25mm'
+              );
+
+              if (defaultSize && !defaultSize.checked) defaultSize.click();
+            });
+          });
+        })();
+      </script>
+    {% endif %}
   </variant-picker>
 {% endunless %}
 

@@ -445,33 +445,10 @@
                         "custom_liquid": "{% if closest.product.metafields.custom.is_package.value %}<p>Package Mini is one A5 sheet (148 &#215; 210 mm). Package Full is two. There is no size to choose — you upload candidates by print tier (Big, Medium, Small) and Studio lays out the final sheet.</p>{% else %}<p>Every order is one A5 sheet (148 &#215; 210 mm) in the size you choose, sized by the longest edge. <a href=\"#es-sizes\">See every size on the sheet, with sticker counts</a></p>{% endif %}"
                       },
                       "blocks": {}
-                    },
-                    "image_es_size": {
-                      "type": "image",
-                      "name": "t:names.image",
-                      "settings": {
-                        "link": "",
-                        "image_ratio": "portrait",
-                        "width": "fill",
-                        "custom_width": 100,
-                        "width_mobile": "fill",
-                        "custom_width_mobile": 100,
-                        "height": "fit",
-                        "border": "none",
-                        "border_width": 1,
-                        "border_opacity": 100,
-                        "border_radius": 0,
-                        "padding-block-start": 0,
-                        "padding-block-end": 0,
-                        "padding-inline-start": 0,
-                        "padding-inline-end": 0
-                      },
-                      "blocks": {}
                     }
                   },
                   "block_order": [
-                    "es_sizes_note",
-                    "image_es_size"
+                    "es_sizes_note"
                   ]
                 },
                 "accordion_row_GGCVwz": {
@@ -791,7 +768,7 @@
             "review_data": "sample_data",
             "max_width": 1200,
             "show_shop_reviews": false,
-            "empty_state": "empty_widget"
+            "empty_state": "hide_widget"
           }
         }
       },

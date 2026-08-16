@@ -37,6 +37,18 @@
   # Logic to determine which variant URL to use (matching swatch selection logic)
   assign variant_to_link = product.selected_or_first_available_variant
 
+  # Keep size values ordered small-to-large while linking these sticker products to the 1-inch default.
+  if product.selected_variant == blank
+    if product.handle == 'face-sticker' or product.handle == 'full-body-sticker'
+      for product_variant in product.variants
+        if product_variant.available and product_variant.options contains '1" / 25mm'
+          assign variant_to_link = product_variant
+          break
+        endif
+      endfor
+    endif
+  endif
+
   if settings.transition_to_main_product
     assign featured_image = variant_to_link.featured_image
     if featured_image == blank

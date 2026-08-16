@@ -164,10 +164,18 @@
             style="--stk-l: {{ nl }}; --stk-t: {{ nt }}; --stk-w: {{ bw }}; --stk-rot: {{ block.settings.rotation }}deg;"
             {{ block.shopify_attributes }}
           >
+            {%- comment -%}
+              Decorative by design: the scatter is one illustration of the headline,
+              not 21 separate pieces of information. Announcing 21 cutout
+              descriptions ahead of the h1 would bury the page for screen readers,
+              so every tile carries an empty alt. Previously this inherited the
+              Shopify file alt, which left 14 of 21 empty and 7 described — the
+              inconsistent half-state, which is the one thing to avoid.
+            {%- endcomment -%}
             <img
               class="hero-scatter__img"
               src="{{ block.settings.image | image_url: width: src_w }}"
-              alt="{{ block.settings.image.alt | escape }}"
+              alt=""
               width="{{ block.settings.image.width }}"
               height="{{ block.settings.image.height }}"
               loading="eager"

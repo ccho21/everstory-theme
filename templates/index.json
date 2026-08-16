@@ -277,21 +277,21 @@
           "type": "item",
           "settings": {
             "icon": "truck",
-            "text": "Free Canada-wide shipping"
+            "text": "Free delivery · 4–10 days after dispatch"
           }
         },
         "ti3": {
           "type": "item",
           "settings": {
             "icon": "shield",
-            "text": "Made-right promise"
+            "text": "Defect? Free reprint within 7 days"
           }
         },
         "ti4": {
           "type": "item",
           "settings": {
             "icon": "lock",
-            "text": "Your photos stay private"
+            "text": "Photos deleted within 90 days"
           }
         }
       },
@@ -485,7 +485,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Upload 1, 4, or 8 favourites—depending on the sheet you choose.</p>",
+                    "text": "<p>Upload your favourites. For Package Mini and Full, add candidate photos by size — Studio selects the final 4 or 8.</p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
@@ -1444,7 +1444,7 @@
             "show_review_media": true,
             "display_order": "media_first",
             "no_image_fallback": "review_text_only",
-            "max_reviews": 20,
+            "max_reviews": 2,
             "review_length": "medium",
             "text_size": "medium",
             "image_ratio": "1",
@@ -1462,8 +1462,8 @@
             "arrows_color": "#000000",
             "transition_speed": 5,
             "header_text": "",
-            "show_average_rating": true,
-            "rating_display": "default"
+            "show_average_rating": false,
+            "rating_display": "show_nothing"
           }
         }
       },
@@ -1473,6 +1473,11 @@
         "judge_me_reviews_cards_carousel_6A8GCd"
       ],
       "custom_css": [
+        ".jdgm-cards-wrapper{display:flex!important;gap:24px!important}",
+        ".jdgm-clone-before,.jdgm-clone-after{display:none!important}",
+        ".jdgm-text{flex:none!important;display:block!important}.jdgm-text p{-webkit-line-clamp:unset!important;height:auto!important;overflow:visible!important}",
+        ".jdgm-carousel-item{flex:1!important}",
+      "@media(max-width:749px){.jdgm-videos-container{flex-direction:column!important;transform:none!important}.jdgm-carousel-item{width:100%!important}}",
         ".shopify-block {width: 100%;}"
       ],
       "settings": {
