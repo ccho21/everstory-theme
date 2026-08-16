@@ -99,7 +99,7 @@
         el = document.createElement('p');
         el.id = HINT_ID;
         el.setAttribute('aria-live', 'polite');
-        el.style.cssText = 'margin:.5rem 0 0;font-size:.8125rem;line-height:1.4;opacity:.7;';
+        el.style.cssText = 'margin:.5rem 0 0;font-size:max(.875rem, 13.5px);line-height:1.4;opacity:.7;';
         host.appendChild(el);
       }
       if (el.textContent !== text) el.textContent = text;
@@ -137,8 +137,39 @@
     uploadOption.insertAdjacentElement('afterend', note);
   }
 
+  var UPLOAD_KEY_HANDLER = function (e) {
+    if (e.key !== 'Enter' && e.key !== ' ' && e.key !== 'Spacebar') return;
+    e.preventDefault();
+    e.currentTarget.click();
+  };
+
+  /* Easify's upload trigger is a plain <div> and its real file input is
+     visibility:hidden, so a keyboard can never reach the one option a photo
+     product cannot be ordered without. Make the trigger a focusable button.
+     Presentation only — the hidden properties[...] inputs that unmetLabels()
+     reads stay untouched. */
+  function enhanceUploadA11y() {
+    var portal = document.querySelector('.easify.portal');
+    if (!portal) return;
+    Array.prototype.slice
+      .call(portal.querySelectorAll('.po-fileUpload-content:not([data-es-a11y])'))
+      .forEach(function (t) {
+        t.setAttribute('data-es-a11y', '1');
+        t.setAttribute('role', 'button');
+        t.setAttribute('tabindex', '0');
+        if (!t.getAttribute('aria-label')) {
+          var root = t.closest('.po-option-root');
+          var label = root && root.querySelector('.po-label-label');
+          var text = label ? (label.textContent || '').trim() : '';
+          t.setAttribute('aria-label', text || 'Upload photos');
+        }
+        t.addEventListener('keydown', UPLOAD_KEY_HANDLER);
+      });
+  }
+
   function apply() {
     ensurePhotoPrivacy();
+    enhanceUploadA11y();
     var unmet = unmetLabels();
 
     var main = mainButton();
@@ -168,7 +199,18 @@
 
     applying = true;
     allButtons().forEach(function (b) {
-      if (b.disabled !== want) b.disabled = want;
+      var isSticky = !!b.closest('sticky-add-to-cart') || b.classList.contains('sticky-add-to-cart__button');
+      if (isSticky && blockedByUs && !themeDisabled) {
+        /* The sticky bar exists to bring a reader 10,000px down the story back
+           to the form. Disabling it there is a dead end — keep it clickable and
+           turn the click into "scroll to the unfinished options" instead.
+           Easify still blocks /cart/add itself, so this cannot oversell. */
+        if (b.disabled) b.disabled = false;
+        b.setAttribute('data-es-goto-options', '1');
+      } else {
+        b.removeAttribute('data-es-goto-options');
+        if (b.disabled !== want) b.disabled = want;
+      }
       if (msg) b.setAttribute('title', msg);
       else b.removeAttribute('title');
     });
@@ -211,6 +253,41 @@
   document.addEventListener('input', schedule, true);
   document.addEventListener('change', schedule, true);
 
+  /* Sticky-bar click while options are unmet: go to the first unfinished
+     option. Capture phase so the theme's own add-to-cart listener never runs. */
+  document.addEventListener('click', function (e) {
+    var btn = e.target && e.target.closest && e.target.closest('[data-es-goto-options="1"]');
+    if (!btn) return;
+    e.preventDefault();
+    e.stopPropagation();
+
+    var portal = document.querySelector('.easify.portal');
+    var target = null;
+    if (portal) {
+      target = Array.prototype.slice
+        .call(portal.querySelectorAll('.po-option-root'))
+        .filter(function (o) { return o.querySelector('.po-label-required'); })
+        .filter(function (o) {
+          return !Array.prototype.slice
+            .call(o.querySelectorAll('input[name^="properties"]'))
+            .some(function (i) { return (i.value || '').trim() !== ''; });
+        })[0] || null;
+    }
+    if (!target) {
+      target = document.querySelector('product-form-component:not(.quick-add__product-form-component)');
+    }
+    if (!target) return;
+
+    var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    target.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'center' });
+    var focusable = target.querySelector('input:not([type=hidden]), textarea, select, [tabindex], [role="button"]');
+    if (focusable && focusable.focus) {
+      setTimeout(function () {
+        try { focusable.focus({ preventScroll: true }); } catch (err) { focusable.focus(); }
+      }, reduced ? 0 : 350);
+    }
+  }, true);
+
   /* Count from window load, not from parse: a slow page should not be mistaken
      for a missing app. If Easify turns up later the poll below clears the block
      on its own, so this can only ever delay a sale, never lose one. */
@@ -249,8 +326,23 @@
     border: 1px solid rgba(0, 0, 0, 0.12);
     border-radius: 6px;
     background: #faf9f7;
-    font-size: 0.8125rem;
+    /* 13.5px floor: 0.8125rem landed at 12px on mobile, under comfortable
+       reading size for decision-relevant text. Same floor as the gate hint. */
+    font-size: max(0.875rem, 13.5px);
     line-height: 1.55;
+  }
+
+  /* Keyboard path to the upload trigger (role=button is added by the gate
+     script). 44px matches the WCAG touch-target floor; the trigger measured
+     73×30px on mobile. */
+  .easify.portal .po-fileUpload-content {
+    min-block-size: 44px;
+    justify-content: center;
+  }
+
+  .easify.portal .po-fileUpload-content:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
   }
 
   .es-photo-privacy-note span {
@@ -277,7 +369,7 @@
     gap: 3px;
     margin: 0;
     padding: 12px 0;
-    font-size: 0.8125rem;
+    font-size: max(0.875rem, 13.5px);
     line-height: 1.5;
   }
 

@@ -244,7 +244,7 @@
               "type": "custom-liquid",
               "name": "Size & material helper",
               "settings": {
-                "custom_liquid": "<div style=\"display:grid;gap:7px;margin-top:2px;\">{%- unless closest.product.metafields.custom.is_package.value -%}<p style=\"margin:0;font-size:0.8125rem;line-height:1.6;opacity:0.72;\"><strong>Per A5 sheet</strong> — 0.75\" ≈50 · 1\" ≈36 · 1.25\" ≈20 · 1.5\" ≈16 · 2\" ≈6 · 2.5\" ≈4 stickers. The exact count shifts a little with your photo's ratio. <a href=\"#es-sizes\" style=\"color:inherit;text-decoration:underline;text-underline-offset:3px;\">See every size on the sheet</a></p><p style=\"margin:0;font-size:0.8125rem;line-height:1.6;opacity:0.72;\"><strong>Mixed</strong> — one sheet with a spread of sizes across the range, instead of a single size repeated.</p>{%- endunless -%}<p style=\"margin:0;font-size:0.8125rem;line-height:1.6;opacity:0.72;\"><strong>Material</strong> — White Matte is soft and paper-like, Translucent is semi-clear, Silver and Gold are reflective metallics. All four are laminated and waterproof.</p></div>"
+                "custom_liquid": "<div style=\"display:grid;gap:7px;margin-top:2px;\">{%- unless closest.product.metafields.custom.is_package.value -%}<p style=\"margin:0;font-size:max(0.875rem,13.5px);line-height:1.6;opacity:0.72;\"><strong>Per A5 sheet</strong> — 0.75\" ≈50 · 1\" ≈36 · 1.25\" ≈20 · 1.5\" ≈16 · 2\" ≈6 · 2.5\" ≈4 stickers. The exact count shifts a little with your photo's ratio. <a href=\"#es-sizes\" style=\"color:inherit;text-decoration:underline;text-underline-offset:3px;\">See every size on the sheet</a></p><p style=\"margin:0;font-size:max(0.875rem,13.5px);line-height:1.6;opacity:0.72;\"><strong>Mixed</strong> — one sheet with a spread of sizes across the range, instead of a single size repeated.</p>{%- endunless -%}<p style=\"margin:0;font-size:max(0.875rem,13.5px);line-height:1.6;opacity:0.72;\"><strong>Material</strong> — White Matte is soft and paper-like, Translucent is semi-clear, Silver and Gold are reflective metallics. All four are laminated and waterproof.</p></div>"
               },
               "blocks": {}
             },
@@ -589,7 +589,7 @@
         "equal_columns": true,
         "limit_details_width": false,
         "gap": 48,
-        "enable_sticky_add_to_cart": false,
+        "enable_sticky_add_to_cart": true,
         "color_scheme": "",
         "padding-block-start": 0,
         "padding-block-end": 0

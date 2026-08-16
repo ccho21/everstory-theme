@@ -175,7 +175,7 @@
               "type": "text",
               "name": "t:names.heading",
               "settings": {
-                "text": "<p>By a person, not an algorithm.</p>",
+                "text": "<h2>By a person, not an algorithm.</h2>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
@@ -284,7 +284,7 @@
               "type": "text",
               "name": "t:names.heading",
               "settings": {
-                "text": "<p>The materials we trust.</p>",
+                "text": "<h2>The materials we trust.</h2>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
@@ -417,7 +417,7 @@
               "type": "text",
               "name": "t:names.heading",
               "settings": {
-                "text": "<p>The order notes are the conversation.</p>",
+                "text": "<h2>The order notes are the conversation.</h2>",
                 "width": "fit-content",
                 "max_width": "none",
                 "alignment": "left",
@@ -526,7 +526,7 @@
               "type": "text",
               "name": "t:names.heading",
               "settings": {
-                "text": "<p>Hand-refined. Precision-cut. Packed by hand.</p>",
+                "text": "<h2>Hand-refined. Precision-cut. Packed by hand.</h2>",
                 "width": "fit-content",
                 "max_width": "none",
                 "alignment": "left",

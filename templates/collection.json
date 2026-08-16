@@ -26,7 +26,7 @@
           "type": "text",
           "name": "Title",
           "settings": {
-            "text": "<h1>Photo sheets by count.</h1>",
+            "text": "<h1>Photo sticker sheets.</h1>",
             "width": "fit-content",
             "max_width": "normal",
             "alignment": "left",
@@ -52,7 +52,7 @@
           "type": "text",
           "name": "Description",
           "settings": {
-            "text": "<p>A5 die-cut sheets, hand-refined and precision-cut in our Toronto studio. Pick the count that fits your story — from a single portrait to an eight-photo curated set.</p>",
+            "text": "<p>A5 die-cut sheets, hand-refined and precision-cut in our Toronto studio. Pick a style — Face or Full Body — or let the studio build the set with Package Mini and Package Full.</p>",
             "width": "fit-content",
             "max_width": "normal",
             "alignment": "left",

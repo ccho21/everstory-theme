@@ -129,11 +129,19 @@
   >
 {%- endif -%}
 
+{%- liquid
+  # The stock guard compares case-sensitively, and every SEO title on this
+  # store writes the brand as "Everstory Studio" while shop.name is
+  # "EVERSTORY STUDIO" — so the suffix was appended on top of the brand
+  # already in the title ("… | Everstory Studio – EVERSTORY STUDIO").
+  assign es_title_down = page_title | downcase
+  assign es_shop_down = shop.name | downcase
+-%}
 <title>
   {{ page_title }}
   {%- if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif -%}
   {%- if current_page != 1 %} &ndash; Page {{ current_page }}{% endif -%}
-  {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
+  {%- unless es_title_down contains es_shop_down %} &ndash; {{ shop.name }}{% endunless -%}
 </title>
 
 <link
