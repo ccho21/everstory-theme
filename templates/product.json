@@ -503,7 +503,7 @@
                     "text_pcmYjm": {
                       "type": "text",
                       "settings": {
-                        "text": "<ul><li>Production: 1-3 business days after order.</li><li>Shipping: same or next business day after cut.</li><li>Total: typically 2-5 business days from order to shipped.</li><li>Free shipping across Canada by Canada Post lettermail — 4-10 business days to arrive after shipping confirmation, no tracking.</li><li>Local pickup at the Toronto studio, arranged by email once your order is ready.</li></ul>",
+                        "text": "<ul><li>Production: 1-3 business days after order.</li><li>Shipping: same or next business day after cut.</li><li>Total: typically 2-5 business days from order to shipped.</li><li>Free Standard Lettermail: 4-10 business days after shipping confirmation, no tracking.</li><li>Canada Post Expedited Parcel: optional paid shipping with tracking; price and delivery estimate are calculated at checkout.</li><li>Local pickup at the Toronto studio, arranged by email once your order is ready.</li></ul>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
