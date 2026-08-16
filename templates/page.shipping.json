@@ -231,7 +231,7 @@
                     "text_zxpk9g": {
                       "type": "text",
                       "settings": {
-                        "text": "<p><strong>1. Free shipping across Canada</strong><br/>Canada Post lettermail. No tracking number. Delivery typically arrives 4–10 business days after shipping confirmation, but lettermail timing varies.</p><p><strong>2. Local pickup (by arrangement)</strong><br/>Free, for nearby customers. We email you after production to arrange a pickup location and time. Pickup window is 30 days from that email.</p>",
+                        "text": "<p><strong>1. Free Standard Lettermail</strong><br/>Canada Post lettermail. No tracking number. Delivery typically arrives 4–10 business days after shipping confirmation, but lettermail timing varies.</p><p><strong>2. Canada Post Expedited Parcel</strong><br/>Optional paid shipping with tracking. Price and delivery estimate are calculated at checkout.</p><p><strong>3. Local pickup (by arrangement)</strong><br/>Free, for nearby customers. We email you after production to arrange a pickup location and time. Pickup window is 30 days from that email.</p>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -309,7 +309,7 @@
                     "text_t94UAC": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>Lettermail does not include tracking. If 14 business days have passed since your shipping confirmation and your order has not arrived, email <a href=\"mailto:studio.everstory@gmail.com\"><strong>studio.everstory@gmail.com</strong></a>. We will reprint and reship one replacement at no cost.</p>",
+                        "text": "<p>Free Standard Lettermail does not include tracking. If 14 business days have passed since your shipping confirmation and your order has not arrived, email <a href=\"mailto:studio.everstory@gmail.com\"><strong>studio.everstory@gmail.com</strong></a>. We will reprint and reship one replacement at no cost. For Expedited Parcel orders, use the Canada Post tracking link in your shipping confirmation.</p>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",

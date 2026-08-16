@@ -465,7 +465,7 @@
                     "text_gR7pzM": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>Canada Post lettermail does not include tracking. If your sheet has not arrived 14 business days after shipping confirmation, email us. We will reprint and reship one replacement at no cost. Lost replacements are evaluated case by case.</p>",
+                        "text": "<p>Free Standard Lettermail does not include tracking. If your sheet has not arrived 14 business days after shipping confirmation, email us. We will reprint and reship one replacement at no cost. For Expedited Parcel orders, use the Canada Post tracking link in your shipping confirmation. Lost replacements are evaluated case by case.</p>",
                         "width": "100%",
                         "max_width": "none",
                         "alignment": "left",

@@ -903,7 +903,7 @@
                     "text_pUqcRz": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>Anywhere in Canada. Free standard shipping by Canada Post lettermail.</p>",
+                        "text": "<p>Anywhere in Canada. Choose free Canada Post lettermail or paid Canada Post Expedited Parcel with tracking at checkout.</p>",
                         "width": "100%",
                         "max_width": "none",
                         "alignment": "left",
@@ -942,7 +942,7 @@
                     "text_Hrn3AC": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>Lettermail typically arrives 4–10 business days after shipping confirmation. Total time from order to delivery is usually 6–15 business days.</p>",
+                        "text": "<p>Free Standard Lettermail typically arrives 4–10 business days after shipping confirmation. Expedited Parcel delivery timing is calculated for your address at checkout. Production takes 2–5 business days before dispatch.</p>",
                         "width": "100%",
                         "max_width": "none",
                         "alignment": "left",
@@ -981,7 +981,7 @@
                     "text_XY3xUa": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>Lettermail is the most affordable way to ship sticker sheets. Free shipping is the trade-off. If your order is lost, we reprint and reship at no cost.</p>",
+                        "text": "<p>Free Standard Lettermail does not include tracking. If you would like tracking, choose Canada Post Expedited Parcel at checkout. If a free lettermail order is lost, we reprint and reship at no cost.</p>",
                         "width": "100%",
                         "max_width": "none",
                         "alignment": "left",
