@@ -267,7 +267,7 @@
                         "custom_width": 100,
                         "inherit_color_scheme": true,
                         "color_scheme": "",
-                        "heading": "Stay in touch",
+                        "heading": "Send better photographs.",
                         "heading_preset": "h4",
                         "border_style": "all",
                         "border_width": 1,
@@ -289,7 +289,7 @@
                       "type": "text",
                       "name": "t:names.text",
                       "settings": {
-                        "text": "<p>New work and studio news, a few times a year. Unsubscribe any time.</p>",
+                        "text": "<p>Tips for choosing photos that print beautifully, plus new work from the studio. A few times a year — unsubscribe any time.</p>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
