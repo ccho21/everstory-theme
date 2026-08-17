@@ -1016,12 +1016,31 @@
 
           <div class="photo-crop">
             <h3 class="option-title">How we crop</h3>
-            <p class="copy">
-              If no special request is provided, the studio chooses the crop from the photo:
-              <strong>kids</strong> — face crop by default.
-              <strong>Adults</strong> — full body crop by default.
-              <strong>Pets</strong> — full body crop by default; face crop when the face has stronger impact.
-            </p>
+            <!-- 단일 스타일 상품은 상품 자체가 크롭을 정의 — subject 별 규칙(kids/Adults/Pets)은 큐레이션하는 Package 에서만 유효 -->
+            {%- case sheet_prefix -%}
+              {%- when 'face' -%}
+                <p class="copy">
+                  Face Sticker sheets are cropped to the face and shoulders by default.
+                  If you'd like a different framing, tell us in the special instructions.
+                </p>
+              {%- when 'full_body' -%}
+                <p class="copy">
+                  Full Body sheets keep the whole figure, head to toe.
+                  If you'd like a tighter crop, tell us in the special instructions.
+                </p>
+              {%- when 'shape' -%}
+                <p class="copy">
+                  Shape Sticker sheets crop your photo to a clean circle.
+                  Tell us in the special instructions which part to center.
+                </p>
+              {%- else -%}
+                <p class="copy">
+                  If no special request is provided, the studio chooses the crop from the photo:
+                  <strong>kids</strong> — face crop by default.
+                  <strong>Adults</strong> — full body crop by default.
+                  <strong>Pets</strong> — full body crop by default; face crop when the face has stronger impact.
+                </p>
+            {%- endcase -%}
           </div>
         </div>
       </section>
