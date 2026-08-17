@@ -1392,6 +1392,99 @@
         "padding-block-end": 48
       }
     },
+    "in_use_strip": {
+      "type": "_blocks",
+      "blocks": {
+        "eyebrow_in_use": {
+          "type": "eyebrow",
+          "name": "Eyebrow",
+          "settings": {
+            "text": "IN USE",
+            "alignment": "left",
+            "tight": true
+          },
+          "blocks": {}
+        },
+        "text_in_use_heading": {
+          "type": "text",
+          "name": "t:names.heading",
+          "settings": {
+            "text": "<h2>Where they end up.</h2>",
+            "width": "fit-content",
+            "max_width": "normal",
+            "alignment": "left",
+            "type_preset": "h3",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "var(--color-foreground)",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "group_in_use": {
+          "type": "group",
+          "name": "Group",
+          "settings": {
+            "content_direction": "row",
+            "vertical_on_mobile": false,
+            "gap": 16,
+            "width": "fill"
+          },
+          "blocks": {
+            "img_use_1": {
+              "type": "image",
+              "name": "Image",
+              "settings": {
+                "image": "shopify://shop_images/face_post_2.jpg",
+                "image_ratio": "square",
+                "width": "fill"
+              },
+              "blocks": {}
+            },
+            "img_use_2": {
+              "type": "image",
+              "name": "Image",
+              "settings": {
+                "image": "shopify://shop_images/face_post_5.jpg",
+                "image_ratio": "square",
+                "width": "fill"
+              },
+              "blocks": {}
+            },
+            "img_use_3": {
+              "type": "image",
+              "name": "Image",
+              "settings": {
+                "image": "shopify://shop_images/full_body_post_2.jpg",
+                "image_ratio": "square",
+                "width": "fill"
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "img_use_1",
+            "img_use_2",
+            "img_use_3"
+          ]
+        }
+      },
+      "block_order": [
+        "eyebrow_in_use",
+        "text_in_use_heading",
+        "group_in_use"
+      ]
+    },
     "17835334163964bbd5": {
       "type": "_blocks",
       "blocks": {
@@ -1515,6 +1608,7 @@
     "section_yr4xMG",
     "product_list_fa6P9H",
     "section_TYCfpm",
+    "in_use_strip",
     "17835334163964bbd5"
   ]
 }
