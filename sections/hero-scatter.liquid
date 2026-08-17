@@ -172,13 +172,19 @@
               Shopify file alt, which left 14 of 21 empty and 7 described — the
               inconsistent half-state, which is the one thing to avoid.
             {%- endcomment -%}
+            {%- comment -%}
+              First 6 blocks stay eager so the collage anchors paint with the
+              headline. The rest share the same viewport, so lazy only demotes
+              their fetch priority behind LCP/app scripts — width/height above
+              keeps the slot reserved either way.
+            {%- endcomment -%}
             <img
               class="hero-scatter__img"
               src="{{ block.settings.image | image_url: width: src_w }}"
               alt=""
               width="{{ block.settings.image.width }}"
               height="{{ block.settings.image.height }}"
-              loading="eager"
+              loading="{% if forloop.index <= 6 %}eager{% else %}lazy{% endif %}"
               decoding="async"
             >
           </div>
