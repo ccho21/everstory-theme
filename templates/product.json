@@ -565,6 +565,14 @@
                 "padding-inline-end": 0
               },
               "blocks": {}
+            },
+            "es_how_to_order": {
+              "type": "custom-liquid",
+              "name": "How to order",
+              "settings": {
+                "custom_liquid": "{% render 'es-how-to-order', product: closest.product %}"
+              },
+              "blocks": {}
             }
           },
           "block_order": [
@@ -575,6 +583,7 @@
             "es_choice_helper",
             "buy_buttons_eYQEYi",
             "es_required_gate",
+            "es_how_to_order",
             "accordion_Ghx3fc",
             "text_aEtTtq"
           ]
