@@ -218,7 +218,7 @@
                     "text_N7Xam8": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>Choose Face Sticker, Full Body Sticker, Package Mini, or Package Full. For non-Package products, choose size, material, and Photos to include. For Package products, upload photos into Big / Medium / Small print sections and Studio picks the final set. We start cutting within one business day and ship within 2–5 business days. No mockup back-and-forth — the order notes are how we hear what matters to you.</p>",
+                        "text": "<p>Pick the sheet for where the stickers will go — Planner, Phone &amp; Bottle, Laptop, or Full Set with every size. Then choose how many photos (1, 4, or 8) and a material, and upload your photos in one go. We choose the crop, the size of each photo, and the layout. If you would rather set the size yourself, choose Custom Sheet.</p>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -550,7 +550,7 @@
                     "text_MdX9L6": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>Face Sticker and Full Body Sticker accept 1–13 photos via the Photos to include option. Package Mini and Package Full accept candidate photos by Big / Medium / Small print tier and Studio picks the final set.</p>",
+                        "text": "<p>Yes. Each sheet takes 1, 4, or 8 photos — you pick when you order and upload them all in one go. Fewer than you chose is fine; we repeat your favourites to fill the sheet. Custom Sheet takes 1 to 13 photos.</p>",
                         "width": "100%",
                         "max_width": "none",
                         "alignment": "left",
@@ -688,7 +688,7 @@
                     "text_pjAwCm": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>1\" / 25mm is the most popular — planners, journals, bottles, phone cases. 1.25\"–1.5\" for tumblers and laptops. 2\" and 2.5\" are statement sizes. 0.75\" for collectors/calendars.</p>",
+                        "text": "<p>On the use-case sheets you do not pick a size — the sheet does. Planner is 0.75\" and 1\". Phone &amp; Bottle is 1\" and 1.25\". Laptop is 1.5\" and 2\". Full Set spans 0.75\" to 2.5\".</p><p>On Custom Sheet you choose one size. 1\" / 25mm is the most popular — planners, journals, bottles, phone cases. 1.25\"–1.5\" for tumblers and laptops. 2\" and 2.5\" are statement sizes. 0.75\" for planners and calendars.</p>",
                         "width": "100%",
                         "max_width": "none",
                         "alignment": "left",

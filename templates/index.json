@@ -463,7 +463,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<h3><strong>01</strong> CHOOSE YOUR PHOTOS</h3>",
+                    "text": "<h3><strong>01</strong> CHOOSE WHERE IT GOES</h3>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
@@ -489,7 +489,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Upload your favourites. For Package Mini and Full, add candidate photos by size — Studio selects the final 4 or 8.</p>",
+                    "text": "<p>Planner, phone, laptop, or every size at once. Then upload your photos in one go; fewer than you chose is fine.</p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
