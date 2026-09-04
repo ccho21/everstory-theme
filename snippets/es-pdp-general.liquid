@@ -888,6 +888,77 @@
         </div>
       </section>
 
+      {%- endunless -%}
+
+      {%- comment -%}
+        Sizes — 용도 팩 전용. 팩은 사이즈를 고르지 않으므로 위 선택 안내 대신
+        "이 시트에 담기는 사이즈"를 보여준다. 이미지는 **그 사이즈만으로 채운 시트**라
+        스케일 기준일 뿐 팩의 실제 산출물이 아니다 — sub 문장이 그걸 명시한다.
+        팩의 실제 스티커 개수는 테스트 시트로 실측하기 전까지 쓰지 않는다.
+        코드는 Files 의 파일명 접미사와 같다 ({prefix}_0.75in.png).
+      {%- endcomment -%}
+      {%- assign pack_size_codes = product.metafields.custom.pack_size_codes.value -%}
+      {%- if is_package and pack_size_codes != blank -%}
+      {%- assign es_codes = pack_size_codes | split: ',' -%}
+      <section class="es-section" id="es-sizes" aria-label="Sizes">
+        <div class="es-section-shell">
+          <div class="heading-block">
+            <span class="es-eyebrow">Sizes</span>
+            <h2>The sizes on this sheet.</h2>
+            <p class="sub">
+              You don't choose a size here — the sheet does.
+              Each preview below is a full A5 sheet (148 × 210 mm) of that one size,
+              so you can judge the scale. Your sheet mixes them.
+            </p>
+          </div>
+
+          <section class="size-grid{% if es_codes.size > 2 %} size-grid--six{% endif %}">
+            {%- for es_code in es_codes -%}
+              {%- assign c = es_code | strip -%}
+              {%- case c -%}
+                {%- when '0.75' -%}
+                  {%- assign es_t = '0.75"' -%}{%- assign es_mm = '19 mm' -%}
+                  {%- assign es_cap = 'For a corner of a page, small labels, fingernail-size details.' -%}
+                {%- when '1.00' -%}
+                  {%- assign es_t = '1"' -%}{%- assign es_mm = '25 mm · most popular' -%}
+                  {%- assign es_cap = 'Good for planners, phone cases, water bottles.' -%}
+                {%- when '1.25' -%}
+                  {%- assign es_t = '1.25"' -%}{%- assign es_mm = '32 mm' -%}
+                  {%- assign es_cap = 'Good for tumblers and laptop covers.' -%}
+                {%- when '1.50' -%}
+                  {%- assign es_t = '1.5"' -%}{%- assign es_mm = '38 mm' -%}
+                  {%- assign es_cap = 'For laptops, large tumblers, a single bold placement.' -%}
+                {%- when '2.00' -%}
+                  {%- assign es_t = '2"' -%}{%- assign es_mm = '51 mm' -%}
+                  {%- assign es_cap = 'Good for laptops, backpacks, iPad cases.' -%}
+                {%- when '2.50' -%}
+                  {%- assign es_t = '2.5"' -%}{%- assign es_mm = '64 mm' -%}
+                  {%- assign es_cap = 'For a car, a large backpack, one face of a desktop.' -%}
+                {%- else -%}
+                  {%- assign es_t = blank -%}
+              {%- endcase -%}
+              {%- if es_t != blank -%}
+              <article class="size-card">
+                <h3 class="size-title">{{ es_t }} <small>{{ es_mm }}</small></h3>
+                <div class="mockup-wrap">
+                  <div class="measure-top"><span class="measure-label-top">148 mm</span></div>
+                  <div class="measure-left"><span class="measure-label-left">210 mm</span></div>
+                  <img class="sheet-image" loading="lazy"
+                       src="{{ sheet_prefix | append: '_' | append: c | append: 'in.png' | file_url }}"
+                       width="1942" height="2616"
+                       alt="A full A5 sheet of {{ es_t }} stickers, shown for scale">
+                </div>
+                <p class="caption">{{ es_cap }}</p>
+              </article>
+              {%- endif -%}
+            {%- endfor -%}
+          </section>
+        </div>
+      </section>
+      {%- endif -%}
+
+      {%- unless is_package -%}
+
       <!-- 긴 변 기준 — Sizes 설명의 운영 규칙. 사이즈 그리드와 시각적으로 분리해 별도 섹션. -->
       <section class="es-section" aria-label="By the longest edge">
         <div class="es-section-shell">
