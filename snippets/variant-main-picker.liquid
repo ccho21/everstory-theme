@@ -225,7 +225,7 @@
     {% liquid
       assign use_one_inch_default = false
       if product.id == product_resource.id and product_resource.selected_variant == blank
-        if product_resource.handle == 'face-sticker' or product_resource.handle == 'full-body-sticker'
+        if product_resource.options contains 'Size'
           assign use_one_inch_default = true
         endif
       endif

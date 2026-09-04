@@ -1,0 +1,89 @@
+{%- comment -%}
+  EVERSTORY — "What you'll get": the crop rule the studio follows, shown before
+  the customer orders so the result is predictable without a proof step.
+
+  Two customer-facing outcomes only: silhouette (default) or a clean circle.
+  Face vs full body is decided by the photo and the subject, not by the product,
+  so it is stated as a rule instead of sold as separate products.
+
+  Rendered inside snippets/es-pdp-general.liquid (within .es-pdp) and reuses its
+  section, shell, heading and eyebrow styles. Only the table styles live here.
+
+  Products with a Size option (Custom Sheet) also get the crop-preference line;
+  packs get the "biggest photo" line.
+{%- endcomment -%}
+
+{%- liquid
+  assign has_size_option = false
+  if product.options contains 'Size'
+    assign has_size_option = true
+  endif
+-%}
+
+<style>
+  .es-pdp .es-wyg-table { width: 100%; border-collapse: collapse; margin-top: 4px; }
+  .es-pdp .es-wyg-table th,
+  .es-pdp .es-wyg-table td { text-align: left; vertical-align: top; padding: 12px 0; border-top: 1px solid color-mix(in srgb, currentColor 14%, transparent); font-size: max(0.9375rem, 14px); line-height: 1.55; }
+  .es-pdp .es-wyg-table th { font-weight: 600; width: 46%; padding-right: 20px; }
+  .es-pdp .es-wyg-table thead th { font-weight: 500; font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.6; border-top: 0; padding-top: 0; padding-bottom: 6px; }
+  .es-pdp .es-wyg-rule { margin: 18px 0 0; font-size: max(0.9375rem, 14px); line-height: 1.6; opacity: 0.8; }
+  @media (max-width: 749px) {
+    .es-pdp .es-wyg-table th { width: 44%; padding-right: 14px; }
+  }
+</style>
+
+<div class="es-wyg" id="es-what-you-get">
+  <div class="heading-block">
+    <span class="es-eyebrow">What you'll get</span>
+    <h2>Silhouette by default. A circle when the edge won't hold.</h2>
+    <p class="sub">
+      We trace the subject and cut around it. If a photo has no clean edge to trace,
+      we crop it to a clean circle instead — still a sticker, still with a white border.
+    </p>
+  </div>
+
+  <table class="es-wyg-table">
+    <thead>
+      <tr><th scope="col">The photo you send</th><th scope="col">The sticker you get</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">A clear subject with a clean edge</th>
+        <td>Silhouette die-cut with a white border.</td>
+      </tr>
+      <tr>
+        <th scope="row">Kids</th>
+        <td>Face and shoulders by default.</td>
+      </tr>
+      <tr>
+        <th scope="row">Adults and pets</th>
+        <td>Full body by default; the face when it carries the photo.</td>
+      </tr>
+      <tr>
+        <th scope="row">A group</th>
+        <td>One group silhouette if the figures separate from the background. If not, a circle.</td>
+      </tr>
+      <tr>
+        <th scope="row">A busy background, hair blending in, an edge cut off, motion blur</th>
+        <td>A clean circle with a white border.</td>
+      </tr>
+      <tr>
+        <th scope="row">A blurry, tiny or dark subject</th>
+        <td>We email for a replacement before printing.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  {%- if has_size_option -%}
+    <p class="es-wyg-rule">
+      Prefer a specific crop? Leave it in the special instructions: <em>silhouette only</em>,
+      <em>face and shoulders</em>, <em>full body</em> or <em>circle</em>. With <em>silhouette only</em>
+      we email instead of cropping to a circle.
+    </p>
+  {%- else -%}
+    <p class="es-wyg-rule">
+      Want one photo printed biggest? Say which in the special instructions.
+      Prefer <em>silhouette only</em>? Say so, and we email instead of cropping to a circle.
+    </p>
+  {%- endif -%}
+</div>

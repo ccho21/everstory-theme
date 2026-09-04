@@ -1019,7 +1019,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<h2>Pick a style, or let us build the sheet.</h2>",
+                    "text": "<h2>Pick where it goes. We size the stickers.</h2>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -1052,7 +1052,7 @@
               "name": "t:names.collection_title",
               "disabled": true,
               "settings": {
-                "text": "<p>Photo sticker sheets</p><h2>Pick a style, or let us build the sheet.</h2>",
+                "text": "<p>Photo sticker sheets</p><h2>Pick where it goes. We size the stickers.</h2>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
@@ -1199,8 +1199,8 @@
         "collection": "all",
         "layout_type": "grid",
         "carousel_on_mobile": true,
-        "max_products": 4,
-        "columns": 4,
+        "max_products": 5,
+        "columns": 5,
         "mobile_columns": "2",
         "mobile_card_size": "60cqw",
         "columns_gap": 8,
