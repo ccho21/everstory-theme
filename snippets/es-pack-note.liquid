@@ -12,7 +12,8 @@
   selected value, and the script updates it on the theme's `variant:update`
   event (assets/events.js). Variant titles look like "4 photos · 1 sheet / White
   Matte", so both numbers are read from the title with a regex — no dependency
-  on option order.
+  on option order. The event's detail is {resource, sourceId, data}; resource is
+  the variant. If it is missing, the checked radios are read instead.
 {%- endcomment -%}
 
 {%- assign pack_sizes = product.metafields.custom.pack_sizes.value -%}
@@ -53,7 +54,8 @@
         if (sheets && sheetsEl) sheetsEl.textContent = sheets[1] === '1' ? 'the sheet' : 'both sheets';
       };
       document.addEventListener('variant:update', (event) => {
-        const variant = event.detail && event.detail.variant;
+        // Horizon's VariantUpdateEvent carries the variant JSON as detail.resource (assets/events.js).
+        const variant = event.detail && (event.detail.resource || event.detail.variant);
         if (variant && variant.title) { apply(variant.title); return; }
         const checked = Array.from(document.querySelectorAll('variant-picker input[type="radio"]:checked'));
         apply(checked.map((input) => input.value).join(' / '));
