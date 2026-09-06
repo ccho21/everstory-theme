@@ -463,7 +463,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<h3><strong>01</strong> CHOOSE WHERE IT GOES</h3>",
+                    "text": "<h3><strong>01</strong> CHOOSE HOW MANY</h3>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
@@ -489,7 +489,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Planner, phone, laptop, or every size at once. Then upload your photos in one go; fewer than you chose is fine.</p>",
+                    "text": "<p>Pick how many different designs you want on the sheet. Then upload your photos in one go, plus a spare or two.</p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
