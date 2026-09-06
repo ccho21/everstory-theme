@@ -757,7 +757,7 @@
   {%- endcomment -%}
   {%- assign is_package = false -%}
   {%- if product.metafields.custom.is_package.value -%}{%- assign is_package = true -%}{%- endif -%}
-  {%- comment -%} Use-case packs (custom.pack_sizes set) have no size choice either — same branch. {%- endcomment -%}
+  {%- comment -%} The studio-sized sheet (custom.pack_sizes set) has no size choice either — same branch. {%- endcomment -%}
   {%- if product.metafields.custom.pack_sizes.value != blank -%}{%- assign is_package = true -%}{%- endif -%}
 
   {%- comment -%}
