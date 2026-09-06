@@ -8,9 +8,9 @@
   Renders nothing on products without pack_sizes (Custom Sheet, legacy products),
   so it is safe to place on the shared product template.
 
-  Photo count follows the selected Photos variant: Liquid seeds it from the
+  Photo count follows the selected Designs variant: Liquid seeds it from the
   selected value, and the script updates it on the theme's `variant:update`
-  event (assets/events.js). Variant titles look like "4 photos · 1 sheet / White
+  event (assets/events.js). Variant titles look like "4 designs · 1 sheet / White
   Matte", so both numbers are read from the title with a regex — no dependency
   on option order. The event's detail is {resource, sourceId, data}; resource is
   the variant. If it is missing, the checked radios are read instead.
@@ -21,7 +21,7 @@
   {%- assign photos_max = '' -%}
   {%- assign sheets_text = 'the sheet' -%}
   {%- for option in product.options_with_values -%}
-    {%- if option.name == 'Photos' -%}
+    {%- if option.name == 'Designs' or option.name == 'Photos' -%}
       {%- assign selected = option.selected_value -%}
       {%- assign photos_max = selected | split: ' ' | first -%}
       {%- if selected contains '2 sheet' -%}{%- assign sheets_text = 'both sheets' -%}{%- endif -%}
@@ -48,7 +48,7 @@
       const maxEl = root.querySelector('[data-es-photo-max]');
       const sheetsEl = root.querySelector('[data-es-sheets]');
       const apply = (title) => {
-        const photos = /(\d+)\s*photo/i.exec(title || '');
+        const photos = /(\d+)\s*(?:design|photo)/i.exec(title || '');
         const sheets = /(\d+)\s*sheet/i.exec(title || '');
         if (photos && maxEl) maxEl.textContent = photos[1];
         if (sheets && sheetsEl) sheetsEl.textContent = sheets[1] === '1' ? 'the sheet' : 'both sheets';
