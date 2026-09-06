@@ -28,6 +28,12 @@
     {%- endif -%}
   {%- endfor -%}
   {%- if photos_max == blank -%}{%- assign photos_max = '8' -%}{%- endif -%}
+  {%- comment -%} "1 different photos" 를 막는다. JS 쪽 apply() 도 같은 규칙을 쓴다. {%- endcomment -%}
+  {%- if photos_max == '1' -%}
+    {%- assign count_text = '1 photo' -%}
+  {%- else -%}
+    {%- assign count_text = photos_max | append: ' different photos' -%}
+  {%- endif -%}
 
   <div class="es-pack-note" data-es-pack-note style="display:grid;gap:7px;margin-top:2px;">
     <p style="margin:0;font-size:max(0.875rem,13.5px);line-height:1.6;opacity:0.72;">
@@ -35,7 +41,7 @@
       Nothing to choose here; we size each photo on the sheet.
     </p>
     <p style="margin:0;font-size:max(0.875rem,13.5px);line-height:1.6;opacity:0.72;">
-      <strong>Photos</strong> — <span data-es-photo-max>{{ photos_max }}</span> different photos on <span data-es-sheets>{{ sheets_text }}</span>,
+      <strong>Photos</strong> — <span data-es-photo-count>{{ count_text }}</span> on <span data-es-sheets>{{ sheets_text }}</span>,
       uploaded in one go, plus a spare or two in case one can't be cut cleanly.
       Have fewer photos than that? Choose a smaller set.
       We choose the crop, the size of each photo and the layout.
@@ -46,12 +52,12 @@
     (() => {
       const root = document.querySelector('[data-es-pack-note]');
       if (!root) return;
-      const maxEl = root.querySelector('[data-es-photo-max]');
+      const countEl = root.querySelector('[data-es-photo-count]');
       const sheetsEl = root.querySelector('[data-es-sheets]');
       const apply = (title) => {
         const photos = /(\d+)\s*(?:design|photo)/i.exec(title || '');
         const sheets = /(\d+)\s*sheet/i.exec(title || '');
-        if (photos && maxEl) maxEl.textContent = photos[1];
+        if (photos && countEl) countEl.textContent = photos[1] === '1' ? '1 photo' : photos[1] + ' different photos';
         if (sheets && sheetsEl) sheetsEl.textContent = sheets[1] === '1' ? 'the sheet' : 'both sheets';
       };
       document.addEventListener('variant:update', (event) => {
