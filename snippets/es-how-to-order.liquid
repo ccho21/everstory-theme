@@ -6,9 +6,9 @@
   not have to assemble it. Numbered markers are used because this genuinely is a
   sequence, not decoration.
 
-  Step 1 differs by product: the studio-sized sheet fixes the sizes for you, Custom
-  Sheet does not. Everything else is identical, so it is one snippet with one
-  branch rather than two blocks in the template.
+  Step 1 differs by product: the Name & Photo Sticker Sheet fixes the sizes and
+  adds the name; the Custom Sticker Sheet does not. Everything else is identical,
+  so it is one snippet with one branch rather than two blocks in the template.
 
   Styles are scoped to .es-hto and take their colour from the surrounding text,
   so this follows the theme's light/dark scheme without its own palette.
@@ -43,9 +43,9 @@
     <p>
       <strong>Choose.</strong>
       {% if es_hto_pack != blank %}
-        <span>The sheet sets the sizes — {{ es_hto_pack }}. You pick how many photos and the material.</span>
+        <span>Send five photos and the name. The sizes are mixed for you — {{ es_hto_pack }}; you pick the material and the lettering style.</span>
       {% else %}
-        <span>Pick your size, your material, and how many photos.</span>
+        <span>Pick your size, your material, how many photos, and how we crop them.</span>
       {% endif %}
     </p>
   </div>

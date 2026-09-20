@@ -52,7 +52,7 @@
           "type": "text",
           "name": "Description",
           "settings": {
-            "text": "<p>A5 die-cut sheets, hand-refined and precision-cut in our Toronto studio. Pick how many different designs you want; we mix every size and lay out the sheet. Choose Custom Size Sheet if you would rather pick one size yourself.</p>",
+            "text": "<p>A5 die-cut sheets, hand-refined and precision-cut in our Toronto studio. The Name &amp; Photo Sticker Sheet takes five photos and a name; we mix the sizes and lay it out. Choose the Custom Sticker Sheet if you would rather pick one size, the crop and how many photos yourself.</p>",
             "width": "fit-content",
             "max_width": "normal",
             "alignment": "left",

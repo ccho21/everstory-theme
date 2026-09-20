@@ -1,72 +1,30 @@
 {%- comment -%}
-  EVERSTORY — buy-box note for the studio-sized sheet (Photo Sticker Sheet).
+  EVERSTORY — buy-box note for the studio-laid-out sheet (Name & Photo Sticker Sheet).
 
   A product is a pack when custom.pack_sizes is set. Packs have no Size option:
-  the size mix is fixed by where the sheet goes, and the studio sizes each photo.
-  The only customer inputs are the Photos variant (1 / 4 / 8) and the upload.
+  the size mix is fixed and the studio sizes each photo. Since 2026-09-19 the pack
+  is one fixed offer — five photos and a name on one sheet — so there is no
+  Designs option to follow any more and this note is static (no variant script).
 
-  Renders nothing on products without pack_sizes (Custom Sheet, legacy products),
-  so it is safe to place on the shared product template.
-
-  Photo count follows the selected Designs variant: Liquid seeds it from the
-  selected value, and the script updates it on the theme's `variant:update`
-  event (assets/events.js). Variant titles look like "4 designs · 1 sheet / White
-  Matte", so both numbers are read from the title with a regex — no dependency
-  on option order. The event's detail is {resource, sourceId, data}; resource is
-  the variant. If it is missing, the checked radios are read instead.
+  Renders nothing on products without pack_sizes (Custom Sticker Sheet, legacy
+  products), so it is safe to place on the shared product template.
 {%- endcomment -%}
 
 {%- assign pack_sizes = product.metafields.custom.pack_sizes.value -%}
 {%- if pack_sizes != blank -%}
-  {%- assign photos_max = '' -%}
-  {%- assign sheets_text = 'the sheet' -%}
-  {%- for option in product.options_with_values -%}
-    {%- if option.name == 'Designs' or option.name == 'Photos' -%}
-      {%- assign selected = option.selected_value -%}
-      {%- assign photos_max = selected | split: ' ' | first -%}
-      {%- if selected contains '2 sheet' -%}{%- assign sheets_text = 'both sheets' -%}{%- endif -%}
-    {%- endif -%}
-  {%- endfor -%}
-  {%- if photos_max == blank -%}{%- assign photos_max = '8' -%}{%- endif -%}
-  {%- comment -%} "1 different photos" 를 막는다. JS 쪽 apply() 도 같은 규칙을 쓴다. {%- endcomment -%}
-  {%- if photos_max == '1' -%}
-    {%- assign count_text = '1 photo' -%}
-  {%- else -%}
-    {%- assign count_text = photos_max | append: ' different photos' -%}
-  {%- endif -%}
-
   <div class="es-pack-note" data-es-pack-note style="display:grid;gap:7px;margin-top:2px;">
     <p style="margin:0;font-size:max(0.875rem,13.5px);line-height:1.6;opacity:0.72;">
-      <strong>Sizes</strong> — set by where it goes: {{ pack_sizes }}, measured by the longest edge.
-      Nothing to choose here; we size each photo on the sheet.
+      <strong>Sizes</strong> — {{ pack_sizes }}, mixed on one sheet and measured by the longest edge.
+      Nothing to choose here; we size each photo.
     </p>
     <p style="margin:0;font-size:max(0.875rem,13.5px);line-height:1.6;opacity:0.72;">
-      <strong>Photos</strong> — <span data-es-photo-count>{{ count_text }}</span> on <span data-es-sheets>{{ sheets_text }}</span>,
-      uploaded in one go, plus a spare or two in case one can't be cut cleanly.
-      Have fewer photos than that? Choose a smaller set.
+      <strong>Photos</strong> — five different photos, uploaded in one go, plus a spare or two in case one can't be cut cleanly.
       We choose the crop, the size of each photo and the layout.
       <a href="#es-what-you-get" style="color:inherit;text-decoration:underline;text-underline-offset:3px;">What you'll get</a>
     </p>
+    <p style="margin:0;font-size:max(0.875rem,13.5px);line-height:1.6;opacity:0.72;">
+      <strong>Name</strong> — lettered in capitals as its own sticker, in the style you pick.
+      Letters A–Z and spaces only; a space starts a new line.
+    </p>
   </div>
-  <script>
-    (() => {
-      const root = document.querySelector('[data-es-pack-note]');
-      if (!root) return;
-      const countEl = root.querySelector('[data-es-photo-count]');
-      const sheetsEl = root.querySelector('[data-es-sheets]');
-      const apply = (title) => {
-        const photos = /(\d+)\s*(?:design|photo)/i.exec(title || '');
-        const sheets = /(\d+)\s*sheet/i.exec(title || '');
-        if (photos && countEl) countEl.textContent = photos[1] === '1' ? '1 photo' : photos[1] + ' different photos';
-        if (sheets && sheetsEl) sheetsEl.textContent = sheets[1] === '1' ? 'the sheet' : 'both sheets';
-      };
-      document.addEventListener('variant:update', (event) => {
-        // Horizon's VariantUpdateEvent carries the variant JSON as detail.resource (assets/events.js).
-        const variant = event.detail && (event.detail.resource || event.detail.variant);
-        if (variant && variant.title) { apply(variant.title); return; }
-        const checked = Array.from(document.querySelectorAll('variant-picker input[type="radio"]:checked'));
-        apply(checked.map((input) => input.value).join(' / '));
-      });
-    })();
-  </script>
 {%- endif -%}

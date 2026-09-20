@@ -463,7 +463,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<h3><strong>01</strong> CHOOSE HOW MANY</h3>",
+                    "text": "<h3><strong>01</strong> CHOOSE YOUR PHOTOS</h3>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
@@ -489,7 +489,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Pick how many different designs you want on the sheet. Then upload your photos in one go, plus a spare or two.</p>",
+                    "text": "<p>Five photos and a name for the Name &amp; Photo Sticker Sheet, or one size and as many photos as you like on the Custom Sticker Sheet. Upload them in one go, plus a spare or two.</p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
@@ -1019,7 +1019,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<h2>Pick where it goes. We size the stickers.</h2>",
+                    "text": "<h2>We lay it out, or you pick the size.</h2>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -1052,7 +1052,7 @@
               "name": "t:names.collection_title",
               "disabled": true,
               "settings": {
-                "text": "<p>Photo sticker sheets</p><h2>Pick where it goes. We size the stickers.</h2>",
+                "text": "<p>Photo sticker sheets</p><h2>We lay it out, or you pick the size.</h2>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",

@@ -218,7 +218,7 @@
                     "text_N7Xam8": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>Pick how many different designs you want — 1, 4 or 8 — and a material. Then upload your photos in one go, plus a spare or two. We choose the crop, the size of each photo and the layout, and we mix every size from 0.75\" to 2.5\" on the sheet. If you would rather pick one size yourself, choose Custom Size Sheet.</p>",
+                        "text": "<p>On the Name &amp; Photo Sticker Sheet you pick a material, upload five photos in one go (plus a spare or two) and type the name. We choose the crop, the size of each photo and the layout, mixing sizes from 0.75\" to 2.5\" on the sheet. If you would rather pick one size yourself, choose the Custom Sticker Sheet — there you also choose how many photos and how we crop them.</p>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -550,7 +550,7 @@
                     "text_MdX9L6": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>Yes — that is the point. Each design is a different photo, and you pick 1, 4 or 8 when you order. Upload them in one go, plus a spare or two in case one can't be cut cleanly. If you have fewer photos than that, choose a smaller set.</p>",
+                        "text": "<p>Yes. The Name &amp; Photo Sticker Sheet takes five different photos — upload them in one go, plus a spare or two in case one can't be cut cleanly. On the Custom Sticker Sheet you choose the number, from 1 to 13.</p>",
                         "width": "100%",
                         "max_width": "none",
                         "alignment": "left",
@@ -688,7 +688,7 @@
                     "text_pjAwCm": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>On the Photo Sticker Sheet you do not pick a size. We mix every size from 0.75\" to 2.5\" on the sheet and choose which photo goes at which size.</p><p>On Custom Size Sheet you choose one size. 1\" / 25mm is the most popular — planners, journals, bottles, phone cases. 1.25\"–1.5\" for tumblers and laptops. 2\" and 2.5\" are statement sizes. 0.75\" for planners and calendars.</p>",
+                        "text": "<p>On the Name &amp; Photo Sticker Sheet you do not pick a size. We mix every size from 0.75\" to 2.5\" on the sheet and choose which photo goes at which size.</p><p>On the Custom Sticker Sheet you choose one size. 1\" / 25mm is the most popular — planners, journals, bottles, phone cases. 1.25\"–1.5\" for tumblers and laptops. 2\" and 2.5\" are statement sizes. 0.75\" for planners and calendars.</p>",
                         "width": "100%",
                         "max_width": "none",
                         "alignment": "left",
