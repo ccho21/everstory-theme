@@ -550,7 +550,7 @@
                     "text_MdX9L6": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>Yes. The Name &amp; Photo Sticker Sheet takes five different photos — upload them in one go, plus a spare or two in case one can't be cut cleanly. On the Custom Sticker Sheet you choose the number, from 1 to 13.</p>",
+                        "text": "<p>Yes. The Name &amp; Photo Sticker Sheet takes five different photos — upload them in one go, plus a spare or two in case one can't be cut cleanly. On the Custom Sticker Sheet you choose the number — up to 13 at 0.75\", fewer as the size goes up.</p>",
                         "width": "100%",
                         "max_width": "none",
                         "alignment": "left",
