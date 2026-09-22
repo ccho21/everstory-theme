@@ -256,7 +256,7 @@
       "name": "Featured collection",
       "settings": {
         "collection": "all",
-        "products": ["package-full", "face-sticker"],
+        "products": ["name-photo-sticker-sheet", "custom-sticker-sheet"],
         "layout_type": "grid",
         "carousel_on_mobile": false,
         "max_products": 2,

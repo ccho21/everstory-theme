@@ -1197,7 +1197,7 @@
       "name": "Featured collection",
       "settings": {
         "collection": "all",
-        "products": ["package-full", "face-sticker"],
+        "products": ["name-photo-sticker-sheet", "custom-sticker-sheet"],
         "layout_type": "grid",
         "carousel_on_mobile": false,
         "max_products": 2,
@@ -1748,10 +1748,8 @@
             "show_sample_reviews": false,
             "reviews_selection": "product_reviews",
             "products": [
-              "face-sticker",
-              "full-body-sticker",
-              "package-full",
-              "package-mini"
+              "name-photo-sticker-sheet",
+              "custom-sticker-sheet"
             ],
             "filter_pinned": false,
             "filter_featured": false,
