@@ -92,7 +92,7 @@
               "type": "text",
               "name": "t:names.text",
               "settings": {
-                "text": "<p>Everstory Studio is a small photo sticker studio in Toronto. We make A5 custom photo sticker sheets from customer photos, finished one by one.</p><p>We are not a bulk sticker factory. We clean the subject edge by hand, check the crop, and choose the layout that gives the photo the best chance to feel kept, not disposable.</p><p>Our materials are Korean premium inkjet substrates finished with lamination. White Matte, Translucent, Silver, and Gold are selected for photographic print quality, durability, and a soft keepsake feel.</p><p>When you order, you upload your photo and add the details that matter. Face Sticker and Full Body Sticker let you choose the exact print size and number of photos. Package Mini and Package Full let you upload options by print size, then Studio chooses the strongest final set.</p><p>Made in Toronto. Free Canada-wide shipping. Toronto Studio pickup available.</p>",
+                "text": "<p>Everstory Studio is a small photo sticker studio in Toronto. We make A5 custom photo sticker sheets from customer photos, finished one by one.</p><p>We are not a bulk sticker factory. We clean the subject edge by hand, check the crop, and choose the layout that gives the photo the best chance to feel kept, not disposable.</p><p>Our materials are Korean premium inkjet substrates finished with lamination. White Matte, Translucent, Silver, and Gold are selected for photographic print quality, durability, and a soft keepsake feel.</p><p>Choose a Name &amp; Photo Sticker Sheet for five photos selected and arranged by the studio, with a name in Retro or Bubble style. Choose a Custom Sticker Sheet to pick the size, photo count and crop yourself.</p><p>Made in Toronto. Free Canada-wide shipping. Toronto Studio pickup available.</p>",
                 "width": "fit-content",
                 "max_width": "none",
                 "alignment": "left",
@@ -417,7 +417,7 @@
               "type": "text",
               "name": "t:names.heading",
               "settings": {
-                "text": "<h2>The order notes are the conversation.</h2>",
+                "text": "<h2>Tell us what matters in Special instructions.</h2>",
                 "width": "fit-content",
                 "max_width": "none",
                 "alignment": "left",
@@ -443,7 +443,7 @@
               "type": "text",
               "name": "t:names.text",
               "settings": {
-                "text": "<p>When you place an order, you upload your photo and write a few lines about what matters — a face we should not crop, a tone you prefer, a detail we should keep crisp. Those notes are how we hear you.</p><p>We check every upload before production and email if a photo needs replacing. Otherwise, we work from your order notes without a separate proof and send the next update when your sheet is on its way.</p>",
+                "text": "<p>On the product page, upload your photos and add any details in Special instructions — a face we should not crop, a tone you prefer, a detail we should keep crisp. Those notes are how we hear you.</p><p>We check every upload before production. For Name &amp; Photo sheets, we choose five suitable photos and email if we need a replacement. For Custom sheets, we email before printing if a photo cannot be used. We work from your photos and Special instructions without a separate proof and send the next update when your sheet is on its way.</p>",
                 "width": "fit-content",
                 "max_width": "none",
                 "alignment": "left",
@@ -552,7 +552,7 @@
               "type": "text",
               "name": "t:names.text",
               "settings": {
-                "text": "<p>We print on Epson ET-8550, cut on Summa D75, and pack by hand in Toronto. Local pickup is available for nearby customers by arrangement — message us at checkout.</p><p>For the Korean diaspora across the GTA: 한국어 주문 환영합니다. 주문 노트에 한국어로 디테일 적어주시거나 이메일로 한국어 회신 주시면 한국어로 응대해드립니다.</p>",
+                "text": "<p>We print on Epson ET-8550, cut on Summa D75, and pack by hand in Toronto. Local pickup is available for nearby customers by arrangement — add a note in Special instructions on the product page.</p><p>For the Korean diaspora across the GTA: 한국어 주문 환영합니다. 상품 페이지의 Special instructions 칸에 한국어로 자세한 요청을 적어주시거나 이메일로 한국어 회신 주시면 한국어로 응대해드립니다.</p>",
                 "width": "fit-content",
                 "max_width": "none",
                 "alignment": "left",

@@ -70,20 +70,28 @@
       </tr>
       <tr>
         <th scope="row">A blurry, tiny or dark subject</th>
-        <td>We use one of your spares. If you didn't send any, we email before printing.</td>
+        <td>
+          {%- if has_size_option -%}
+            We email you before printing so you can send a replacement.
+          {%- elsif product.metafields.custom.pack_sizes.value != blank -%}
+            We use another suitable photo from your uploads. If we cannot make the final set of five, we email before printing.
+          {%- else -%}
+            We use one of your spares. If you didn't send any, we email before printing.
+          {%- endif -%}
+        </td>
       </tr>
     </tbody>
   </table>
 
   {%- if has_size_option -%}
     <p class="es-wyg-rule">
-      Prefer a specific crop? Leave it in the special instructions: <em>silhouette only</em>,
-      <em>face and shoulders</em>, <em>full body</em> or <em>circle</em>. With <em>silhouette only</em>
-      we email instead of cropping to a circle.
+      Choose a crop in Crop preference: <em>Studio's choice</em>, <em>Face &amp; shoulders</em>,
+      <em>Full body</em> or <em>Round</em>. Use Special instructions for any extra details.
+      Prefer <em>silhouette only</em>? Add it in Special instructions, and we email instead of cropping to a circle.
     </p>
   {%- else -%}
     <p class="es-wyg-rule">
-      Want one photo printed biggest? Say which in the special instructions.
+      Want one photo printed biggest? Say which in Special instructions.
       Prefer <em>silhouette only</em>? Say so, and we email instead of cropping to a circle.
     </p>
   {%- endif -%}

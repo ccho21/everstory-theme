@@ -489,7 +489,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Five photos and a name for the Name &amp; Photo Sticker Sheet, or one size and as many photos as you like on the Custom Sticker Sheet. Upload them in one go, plus a spare or two.</p>",
+                    "text": "<p>For a Name &amp; Photo Sticker Sheet, upload 5–7 photos and a name; we choose the final five. For a Custom Sticker Sheet, choose one size and a photo count within that size's limit, then upload the number you chose.</p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
@@ -611,7 +611,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Each photo is carefully cut out and finished by hand.</p>",
+                    "text": "<p>Each photo is traced and refined by hand.</p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
@@ -1197,11 +1197,12 @@
       "name": "Featured collection",
       "settings": {
         "collection": "all",
+        "products": ["package-full", "face-sticker"],
         "layout_type": "grid",
-        "carousel_on_mobile": true,
-        "max_products": 5,
-        "columns": 5,
-        "mobile_columns": "2",
+        "carousel_on_mobile": false,
+        "max_products": 2,
+        "columns": 2,
+        "mobile_columns": "1",
         "mobile_card_size": "60cqw",
         "columns_gap": 8,
         "rows_gap": 24,
@@ -1823,8 +1824,8 @@
   "order": [
     "hero_scatter",
     "trust_band",
-    "section_yr4xMG",
     "product_list_fa6P9H",
+    "section_yr4xMG",
     "section_TYCfpm",
     "in_use_strip",
     "17835334163964bbd5"

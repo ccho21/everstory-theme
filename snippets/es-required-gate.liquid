@@ -133,7 +133,7 @@
       + 'We use uploads only to create your order, delete the originals within 90 days of fulfillment, '
       + 'and never share or post them without your written consent. '
       + '<a href="/policies/privacy-policy">Photo Privacy Policy</a>'
-      + '<span>Every upload is checked before production. If a photo cannot be used we swap in one of your spares, and email you only if there are none.</span>';
+      + '<span>Every upload is checked before production.</span>';
     uploadOption.insertAdjacentElement('afterend', note);
   }
 
@@ -167,9 +167,59 @@
       });
   }
 
+  var optionLabelId = 0;
+  var OPTION_LABEL_OWNER = 'data-es-option-labelledby';
+
+  function optionNodeId(node) {
+    if (node.id && document.getElementById(node.id) === node) return node.id;
+    var id;
+    do { id = 'es-option-label-' + (++optionLabelId); }
+    while (document.getElementById(id));
+    node.id = id;
+    return id;
+  }
+
+  /* Connect Easify's visible headings without touching submitted properties.
+     Select buttons keep the selected value in their accessible name. */
+  function enhanceOptionLabels() {
+    var portal = document.querySelector('.easify.portal');
+    if (!portal) return;
+    Array.prototype.slice.call(portal.querySelectorAll('.po-option-root'))
+      .forEach(function (root) {
+        var label = root.querySelector('.po-label-label');
+        if (!label) return;
+        Array.prototype.slice.call(root.querySelectorAll(
+          'input.po-textField-input[type="text"], textarea.po-textAreaField-textarea, ' +
+          'select, button.po-select-button[aria-haspopup="listbox"]'
+        )).forEach(function (control) {
+          var owned = control.getAttribute(OPTION_LABEL_OWNER);
+          var current = control.getAttribute('aria-labelledby');
+          /* If the app changes our reference (including removing it), yield. */
+          if (owned && current !== owned) return;
+          if (!owned && current) return;
+          if (control.getAttribute('aria-label') || (control.labels && control.labels.length)) {
+            if (owned) {
+              control.removeAttribute('aria-labelledby');
+              control.removeAttribute(OPTION_LABEL_OWNER);
+            }
+            return;
+          }
+
+          var selected = control.matches('button.po-select-button')
+            ? control.querySelector('.po-select-selectedValue') : null;
+          if (control.matches('button.po-select-button') && !selected) return;
+          var reference = optionNodeId(label);
+          if (selected) reference += ' ' + optionNodeId(selected);
+          if (current !== reference) control.setAttribute('aria-labelledby', reference);
+          if (owned !== reference) control.setAttribute(OPTION_LABEL_OWNER, reference);
+        });
+      });
+  }
+
   function apply() {
     ensurePhotoPrivacy();
     enhanceUploadA11y();
+    enhanceOptionLabels();
     var unmet = unmetLabels();
 
     var main = mainButton();

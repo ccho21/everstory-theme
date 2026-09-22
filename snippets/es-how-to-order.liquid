@@ -6,9 +6,8 @@
   not have to assemble it. Numbered markers are used because this genuinely is a
   sequence, not decoration.
 
-  Step 1 differs by product: the Name & Photo Sticker Sheet fixes the sizes and
-  adds the name; the Custom Sticker Sheet does not. Everything else is identical,
-  so it is one snippet with one branch rather than two blocks in the template.
+  Choose and upload steps differ by product: the studio selects five photos for
+  the Name & Photo sheet; Custom uses the photo count the customer chooses.
 
   Styles are scoped to .es-hto and take their colour from the surrounding text,
   so this follows the theme's light/dark scheme without its own palette.
@@ -43,9 +42,11 @@
     <p>
       <strong>Choose.</strong>
       {% if es_hto_pack != blank %}
-        <span>Send five photos and the name. The sizes are mixed for you — {{ es_hto_pack }}; you pick the material and the lettering style.</span>
-      {% else %}
+        <span>Choose the material and lettering style. We choose five photos and arrange them at mixed sizes on one A5 sheet.</span>
+      {% elsif product.options contains 'Size' %}
         <span>Pick your size, your material, how many photos, and how we crop them.</span>
+      {% else %}
+        <span>Choose your material and follow this package's photo upload instructions.</span>
       {% endif %}
     </p>
   </div>
@@ -53,14 +54,20 @@
     <span class="es-hto-num">02</span>
     <p>
       <strong>Upload.</strong>
-      <span>Send them in one go, plus a spare or two and a note if something matters. If one can't be cut cleanly we use a spare instead of holding up your order.</span>
+      {% if es_hto_pack != blank %}
+        <span>Upload 5–7 photos and add the name. We choose the final five. If we cannot use enough of your uploads, we email you before printing.</span>
+      {% elsif product.options contains 'Size' %}
+        <span>Upload the number of photos you chose. If one cannot be used, we email you before printing. Add any details in Special instructions.</span>
+      {% else %}
+        <span>Send them in one go, plus a spare or two and a note if something matters. If one can't be cut cleanly we use a spare instead of holding up your order.</span>
+      {% endif %}
     </p>
   </div>
   <div class="es-hto-row">
     <span class="es-hto-num">03</span>
     <p>
       <strong>We make it.</strong>
-      <span>Traced, sized, laid out, cut and packed by hand in Toronto. Ships in 2–5 business days, free across Canada.</span>
+      <span>Traced and laid out by hand, precision-cut and packed in Toronto. Ships in 2–5 business days, free across Canada.</span>
     </p>
   </div>
 </div>
