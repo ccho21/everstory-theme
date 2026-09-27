@@ -1,30 +1,27 @@
 {%- comment -%}
   EVERSTORY — buy-box note for the studio-laid-out sheet (Name & Photo Sticker Sheet).
-
   A product is a pack when custom.pack_sizes is set. Packs have no Size option:
-  the size mix is fixed and the studio sizes each photo. Since 2026-09-19 the pack
-  is one fixed offer — five photos and a name on one sheet — so there is no
-  Designs option to follow any more and this note is static (no variant script).
-
+  the size mix is fixed and the studio sizes each photo.
+  2026-09-24 (owner: "too wordy, hard to follow"): the Sizes / Photos / Name paragraphs
+  repeated what each field's own hint and the accordions below already say, and sat
+  between Material and the first field. Now one line under the material photo; the
+  template skips its Material paragraph for packs. Details live in the accordions
+  (What you get, Materials, Sizes).
+  2026-09-25 (owner: "not needed"): the last line went too, so packs show nothing here.
+  The es_choice_helper custom-liquid block that renders this snippet is a bare <div> in
+  the product details' 24px-gap flex column — left empty it would still add a gap, so the
+  marker hides that block's wrapper (:has — older browsers just keep the extra gap). Each marker has
+  its own value and its rule matches only that value: es-how-to-order uses the same trick one level
+  up, and a shared marker let this two-level rule hide the whole product details column (2026-09-25).
   Renders nothing on products without pack_sizes (Custom Sticker Sheet, legacy
   products), so it is safe to place on the shared product template.
 {%- endcomment -%}
-
 {%- assign pack_sizes = product.metafields.custom.pack_sizes.value -%}
 {%- if pack_sizes != blank -%}
-  <div class="es-pack-note" data-es-pack-note style="display:grid;gap:7px;margin-top:2px;">
-    <p style="margin:0;font-size:max(0.875rem,13.5px);line-height:1.6;opacity:0.72;">
-      <strong>Sizes</strong> — {{ pack_sizes }}, mixed on one sheet and measured by the longest edge.
-      Nothing to choose here; we size each photo.
-    </p>
-    <p style="margin:0;font-size:max(0.875rem,13.5px);line-height:1.6;opacity:0.72;">
-      <strong>Photos</strong> — upload 5–7 photos. We choose the final five and set the crop, size and layout.
-      If a photo cannot be used, we use another suitable upload and email you only if we need a replacement.
-      <a href="#es-what-you-get" style="color:inherit;text-decoration:underline;text-underline-offset:3px;">What you'll get</a>
-    </p>
-    <p style="margin:0;font-size:max(0.875rem,13.5px);line-height:1.6;opacity:0.72;">
-      <strong>Name</strong> — lettered in capitals as its own sticker, in the style you pick.
-      Letters A–Z and spaces only; a space starts a new line.
-    </p>
-  </div>
+  <span data-es-empty-block="choice-helper" hidden></span>
+  <style>
+    div:has(> div > [data-es-empty-block='choice-helper']) {
+      display: none;
+    }
+  </style>
 {%- endif -%}

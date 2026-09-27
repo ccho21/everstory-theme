@@ -6,14 +6,33 @@
   not have to assemble it. Numbered markers are used because this genuinely is a
   sequence, not decoration.
 
-  Choose and upload steps differ by product: the studio selects five photos for
-  the Name & Photo sheet; Custom uses the photo count the customer chooses.
+  Custom shows all three steps. The Name & Photo sheet (a pack) showed only "We make
+  it." without its number or the shipping sentence (2026-09-24, owner: too wordy): its
+  buy box already walks through material, name, style and photos with one hint per
+  field, and the purchase assurance just above states shipping. Since 2026-09-25 that
+  line is a row of the purchase assurance instead, and the pack renders nothing here.
 
   Styles are scoped to .es-hto and take their colour from the surrounding text,
   so this follows the theme's light/dark scheme without its own palette.
 {%- endcomment -%}
 
 {%- assign es_hto_pack = product.metafields.custom.pack_sizes.value -%}
+{%- comment -%}
+  2026-09-25 (UX review): on the pack, the lone "We make it." line sat between its own dividers under
+  the purchase assurance and read as a stray fragment. It is now the third row of that assurance block
+  (es-required-gate), so the pack renders nothing here. The marker hides this custom-liquid block's
+  bare wrapper <div>, which would otherwise keep an empty 24px gap in the product details column.
+  The marker value is its own: es-pack-note hides a wrapper two levels up, and with a shared marker
+  that rule caught this wrapper's parent — the whole details column.
+{%- endcomment -%}
+{%- if es_hto_pack != blank -%}
+  <span data-es-empty-block="how-to-order" hidden></span>
+  <style>
+    div:has(> [data-es-empty-block='how-to-order']) {
+      display: none;
+    }
+  </style>
+{%- else -%}
 
 <style>
   .es-hto {
@@ -41,9 +60,7 @@
     <span class="es-hto-num">01</span>
     <p>
       <strong>Choose.</strong>
-      {% if es_hto_pack != blank %}
-        <span>Choose the material and lettering style. We choose five photos and arrange them at mixed sizes on one A5 sheet.</span>
-      {% elsif product.options contains 'Size' %}
+      {% if product.options contains 'Size' %}
         <span>Pick your size, your material, how many photos, and how we crop them.</span>
       {% else %}
         <span>Choose your material and follow this package's photo upload instructions.</span>
@@ -54,9 +71,7 @@
     <span class="es-hto-num">02</span>
     <p>
       <strong>Upload.</strong>
-      {% if es_hto_pack != blank %}
-        <span>Upload 5–7 photos and add the name. We choose the final five. If we cannot use enough of your uploads, we email you before printing.</span>
-      {% elsif product.options contains 'Size' %}
+      {% if product.options contains 'Size' %}
         <span>Upload the number of photos you chose. If one cannot be used, we email you before printing. Add any details in Special instructions.</span>
       {% else %}
         <span>Send them in one go, plus a spare or two and a note if something matters. If one can't be cut cleanly we use a spare instead of holding up your order.</span>
@@ -71,3 +86,4 @@
     </p>
   </div>
 </div>
+{%- endif -%}

@@ -244,7 +244,7 @@
               "type": "custom-liquid",
               "name": "Size & material helper",
               "settings": {
-                "custom_liquid": "<div style=\"display:grid;gap:7px;margin-top:2px;\">{%- assign es_pack_sizes = closest.product.metafields.custom.pack_sizes.value -%}{%- if es_pack_sizes != blank -%}{%- render 'es-pack-note', product: closest.product -%}{%- elsif closest.product.metafields.custom.is_package.value -%}{%- else -%}<p style=\"margin:0;font-size:max(0.875rem,13.5px);line-height:1.6;opacity:0.72;\"><strong>Per A5 sheet</strong> — 0.75\" ≈50 · 1\" ≈36 · 1.25\" ≈20 · 1.5\" ≈16 · 2\" ≈6 · 2.5\" ≈4 stickers. The exact count shifts a little with your photo's ratio. <a href=\"#es-sizes\" style=\"color:inherit;text-decoration:underline;text-underline-offset:3px;\">See every size on the sheet</a></p>{%- endif -%}<p style=\"margin:0;font-size:max(0.875rem,13.5px);line-height:1.6;opacity:0.72;\"><strong>Material</strong> — White Matte is soft and paper-like, Translucent is semi-clear, Silver and Gold are reflective metallics. All four are laminated and waterproof.</p></div>"
+                "custom_liquid": "<div style=\"display:grid;gap:7px;margin-top:2px;\">{%- assign es_pack_sizes = closest.product.metafields.custom.pack_sizes.value -%}{%- if es_pack_sizes != blank -%}{%- render 'es-pack-note', product: closest.product -%}{%- elsif closest.product.metafields.custom.is_package.value -%}{%- else -%}<p style=\"margin:0;font-size:max(0.875rem,13.5px);line-height:1.6;opacity:0.72;\"><strong>Per A5 sheet</strong> — 0.75\" ≈50 · 1\" ≈36 · 1.25\" ≈20 · 1.5\" ≈16 · 2\" ≈6 · 2.5\" ≈4 stickers. The exact count shifts a little with your photo's ratio. <a href=\"#es-sizes\" style=\"color:inherit;text-decoration:underline;text-underline-offset:3px;\">See every size on the sheet</a></p>{%- endif -%}{%- if es_pack_sizes == blank -%}<p style=\"margin:0;font-size:max(0.875rem,13.5px);line-height:1.6;opacity:0.72;\"><strong>Material</strong> — White Matte is soft and paper-like, Translucent is semi-clear, Silver and Gold are reflective metallics. All four are laminated and waterproof.</p>{%- endif -%}</div>"
               },
               "blocks": {}
             },
@@ -285,9 +285,9 @@
             },
             "es_required_gate": {
               "type": "custom-liquid",
-              "name": "Required-option gate",
+              "name": "Required-option gate + Name style photo",
               "settings": {
-                "custom_liquid": "{% render 'es-required-gate', product: closest.product %}"
+                "custom_liquid": "{% render 'es-required-gate', product: closest.product %}{% render 'es-name-style-media', product: closest.product %}"
               },
               "blocks": {}
             },
@@ -363,7 +363,7 @@
                     "text_KXwCJR": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>Everstory sticker sheets are decorative photo products, <strong>not a toy </strong>and <strong>not a children's product</strong>.</p><ul><li>Not suitable for children <strong>under 3</strong> — small peelable die-cut parts pose a choking hazard.</li><li>Not intended for unsupervised use by children <strong>under 14</strong>. Adults should place the stickers or supervise placement.</li><li>Keep sheets and any loose cut pieces out of reach of infants and toddlers.</li><li>Even when the photograph features a child, the finished sheet is intended for adult handling and care.</li><li>Damage or injury caused by use outside this guidance is not covered by reprint or refund.<br/></li></ul>",
+                        "text": "<p>Everstory sticker sheets are decorative photo products, <strong>not a toy </strong>and <strong>not a children's product</strong>.</p><ul><li>Not suitable for children <strong>under 3</strong> — small peelable die-cut parts pose a choking hazard.</li><li>Not intended for unsupervised use by children <strong>under 14</strong>. Adults should place the stickers or supervise placement.</li><li>Keep sheets and any loose cut pieces out of reach of infants and toddlers.</li><li>Even when the photograph features a child, the finished sheet is intended for adult handling and care.</li><li>Damage or injury caused by use outside this guidance is not covered by reprint or refund.</li></ul>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -402,7 +402,7 @@
                     "text_YzHXbm": {
                       "type": "text",
                       "settings": {
-                        "text": "<ul><li><strong>White Matte</strong> — soft, paper-like finish. Best for diaries, journals, and indoor packaging.</li><li><strong>Translucent</strong> — semi-clear finish that lets the surface show through. Best for glass, windows, and layered looks on light surfaces.</li><li><strong>Silver</strong> — metallic silver finish. Reflective accent for waterproof use.</li><li><strong>Gold</strong> — metallic gold finish. Reflective accent for waterproof use.</li></ul><p>Printed on inkjet stock and laminated with a premium sheet. All four are laminated, waterproof, and fade resistant.</p>",
+                        "text": "<ul><li><strong>White Matte</strong> — soft, paper-like finish. Best for diaries, journals, and indoor packaging.</li><li><strong>Translucent</strong> — semi-clear finish that lets the surface show through. Best for glass, windows, and layered looks on light surfaces.</li><li><strong>Silver</strong> — metallic silver finish with a reflective shine.</li><li><strong>Gold</strong> — metallic gold finish with a reflective shine.</li></ul><p>Printed on inkjet stock and laminated with a premium sheet, so all four are waterproof and fade resistant.</p>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -463,7 +463,7 @@
                     "text_X6BebL": {
                       "type": "text",
                       "settings": {
-                        "text": "<ul><li>Indoor: 5+ years without fade.</li><li>Outdoor: 2-3 years depending on UV exposure.</li><li>Waterproof: yes.</li><li>Dishwasher: not recommended. Hand wash only.</li></ul>",
+                        "text": "<ul><li>Indoor: 5+ years without fade.</li><li>Outdoor: 2–3 years depending on UV exposure.</li><li>Waterproof: yes.</li><li>Dishwasher: not recommended. Hand wash only.</li></ul>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -503,7 +503,7 @@
                     "text_pcmYjm": {
                       "type": "text",
                       "settings": {
-                        "text": "<ul><li>Production: 1-3 business days after order.</li><li>Shipping: same or next business day after cut.</li><li>Total: typically 2-5 business days from order to shipped.</li><li>Free Standard Lettermail: 4-10 business days after shipping confirmation, no tracking.</li><li>Canada Post Expedited Parcel: optional paid shipping with tracking; price and delivery estimate are calculated at checkout.</li><li>Local pickup at the Toronto studio, arranged by email once your order is ready.</li></ul>",
+                        "text": "<ul><li>Production: 1–3 business days after order.</li><li>Shipping: same or next business day after cut.</li><li>Total: typically 2–5 business days from order to shipped.</li><li>Free Standard Lettermail: 4–10 business days after shipping confirmation, no tracking.</li><li>Canada Post Expedited Parcel: optional paid shipping with tracking; price and delivery estimate are calculated at checkout.</li><li>Local pickup at the Toronto studio, arranged by email once your order is ready.</li></ul>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -543,6 +543,7 @@
             "text_aEtTtq": {
               "type": "text",
               "name": "Product description",
+              "disabled": true,
               "settings": {
                 "text": "{{ closest.product.description }}",
                 "width": "100%",

@@ -489,7 +489,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>For a Name &amp; Photo Sticker Sheet, upload 5–7 photos and a name; we choose the final five. For a Custom Sticker Sheet, choose one size and a photo count within that size's limit, then upload the number you chose.</p>",
+                    "text": "<p>For a Name &amp; Photo Sticker Sheet, upload 5–7 photos and add a name if you like; we choose the final five. For a Custom Sticker Sheet, choose one size and a photo count within that size's limit, then upload the number you chose.</p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",

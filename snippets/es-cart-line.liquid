@@ -1,0 +1,108 @@
+{%- comment -%}
+  EVERSTORY — a cart line from a photo product, in the shopper's words (2026-09-25).
+
+  Horizon lists every line item property as it is. For our orders that meant seven rows of
+  "Your photos-3: e2957b73-…-IMG_7403.HEIC" (owner: "means nothing"). This shows what the
+  shopper chose instead: the name and its lettering (or No name), how many photos went up,
+  extra sheets, crop and a short note. Material stays in the variant line above.
+
+  Display only — the order keeps every property exactly as Easify sent it, and the studio
+  intake reads those. cart-products renders this for lines that carry uploads or Easify's
+  _tpo_add_by marker; any other property still shows as "Key: value".
+
+  @param item - the cart line item
+{%- endcomment -%}
+{%- liquid
+  assign es_name = ''
+  assign es_style = ''
+  assign es_photos = 0
+  assign es_extra = 0
+  assign es_crop = ''
+  assign es_count = ''
+  assign es_note = ''
+  assign es_other = ''
+
+  for property in item.properties
+    assign es_value = property.last | strip
+    if es_value == blank
+      continue
+    endif
+    comment
+      An upload is a value that is one URL. Easify's hidden _po:items:properties also holds the
+      upload URLs (756 characters, starting with http, in Liquid), so a value with spaces,
+      commas or quotes is bookkeeping, not a photo — it counted one too many before.
+    endcomment
+    assign es_head = es_value | slice: 0, 4
+    if es_head == 'http' and es_value contains '/uploads/'
+      assign es_single_url = true
+      if es_value contains ' ' or es_value contains ',' or es_value contains '"'
+        assign es_single_url = false
+      endif
+      if es_single_url
+        assign es_photos = es_photos | plus: 1
+      endif
+      continue
+    endif
+    assign es_first = property.first | slice: 0
+    if es_first == '_'
+      continue
+    endif
+
+    assign es_key = property.first | downcase | strip
+    if es_key == 'name'
+      assign es_name = es_value
+    elsif es_key == 'name style'
+      assign es_style = es_value
+    elsif es_key == 'extra sheets'
+      assign es_extra = es_value | remove_first: 'Add ' | remove_first: 'add ' | split: ' ' | first | plus: 0
+    elsif es_key contains 'crop'
+      assign es_crop = es_value
+    elsif es_key contains 'photos to include'
+      assign es_count = es_value
+    elsif es_key contains 'special'
+      assign es_note = es_value
+    else
+      capture es_row
+        echo '<li>'
+        echo property.first | escape
+        echo ': '
+        echo es_value | escape
+        echo '</li>'
+      endcapture
+      assign es_other = es_other | append: es_row
+    endif
+  endfor
+
+  assign es_style_key = es_style | downcase
+-%}
+<ul class="cart-items__properties es-cart-line list-unstyled">
+  {%- if es_style_key == 'no name' -%}
+    <li>No name — photos only</li>
+  {%- elsif es_style != blank and es_name != blank -%}
+    <li><span class="es-cart-line__name">{{ es_name | upcase | escape }}</span> · {{ es_style | escape }} letters</li>
+  {%- elsif es_style != blank -%}
+    <li>{{ es_style | escape }} letters</li>
+  {%- elsif es_name != blank -%}
+    <li>Name: {{ es_name | escape }}</li>
+  {%- endif -%}
+
+  {%- if es_count != blank -%}
+    <li>{{ es_count | escape }} on the sheet{% if es_photos > 0 %} · {{ es_photos }} uploaded{% endif %}</li>
+  {%- elsif es_photos > 0 -%}
+    <li>{{ es_photos }} {% if es_photos == 1 %}photo{% else %}photos{% endif %} uploaded</li>
+  {%- endif -%}
+
+  {%- if es_crop != blank -%}
+    <li>Crop: {{ es_crop | escape }}</li>
+  {%- endif -%}
+
+  {%- if es_extra > 0 -%}
+    <li>+{{ es_extra }} extra {% if es_extra == 1 %}sheet{% else %}sheets{% endif %}</li>
+  {%- endif -%}
+
+  {%- if es_note != blank -%}
+    <li class="es-cart-line__note">Note: {{ es_note | truncate: 70 | escape }}</li>
+  {%- endif -%}
+
+  {{- es_other -}}
+</ul>

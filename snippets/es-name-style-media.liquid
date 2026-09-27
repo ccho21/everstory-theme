@@ -1,0 +1,223 @@
+{%- comment -%}
+  EVERSTORY — the product gallery follows the Easify "Name style" option (2026-09-23).
+
+  Picking Retro / Bubble slides the gallery to that style's sheet photo. A style's photo is the
+  product image whose alt text starts with "Name style: <option value>" (e.g. "Name style: Bubble —
+  A5 sheet with…"), so photos can be swapped in admin without touching code. Products without such
+  images get no script at all. "No name" (2026-09-24) follows the same rule — its image is the
+  photo-only sheet.
+
+  Changing Material re-renders the gallery and it would open on the first image. Our variants have
+  no photos of their own, so an identical incoming gallery is skipped and the gallery stays put
+  (variant:update, 2026-09-25); if a variant ever brings different photos, we re-apply when the
+  gallery element is replaced, not only when the style changes.
+
+  Phones: the gallery is far above the Name style field, so the switch happened off-screen and looked
+  like nothing changed. Under 750px a small preview of the chosen style sits right after the Name style
+  option (same insert-after pattern as the gate's privacy note); tapping it opens that photo in the
+  gallery's zoom dialog, so the shopper stays where they are in the form.
+
+  Only this page follows the style — cart, checkout and emails still show the product's first image.
+  Rendered from the "Required-option gate" custom-liquid block in templates/product.json (a block of
+  its own would add an empty flex gap under the buy buttons).
+{%- endcomment -%}
+{%- assign es_has_style_media = false -%}
+{%- for media in product.media -%}
+  {%- assign es_alt = media.alt | downcase -%}
+  {%- if es_alt contains 'name style:' -%}
+    {%- assign es_has_style_media = true -%}
+  {%- endif -%}
+{%- endfor -%}
+
+{%- if es_has_style_media -%}
+<script>
+(function () {
+  if (window.__esNameStyleMedia) return;
+  window.__esNameStyleMedia = true;
+
+  var FIELD = 'properties[Name style]';
+  var PREVIEW_ID = 'es-name-style-preview';
+  var MEDIA = [
+    {%- for media in product.media -%}
+      {
+        "id": {{ media.id | json }},
+        "alt": {{ media.alt | json }},
+        "src": {{ media.preview_image | image_url: width: 240 | json }}
+      }{% unless forloop.last %},{% endunless %}
+    {%- endfor -%}
+  ];
+
+  /* "Name style: Bubble — A5 sheet with…" → "bubble" → { id, src } of that image */
+  var byStyle = {};
+  MEDIA.forEach(function (m) {
+    var hit = /^\s*name style:\s*([^—–,.(]+)/i.exec(m.alt || '');
+    if (!hit) return;
+    var key = hit[1].replace(/\s+-\s.*$/, '').trim().toLowerCase();
+    if (key && !byStyle[key]) byStyle[key] = { id: String(m.id), src: m.src };
+  });
+
+  /* The gallery (and slide index) that shows this media id — the main product gallery. */
+  function findTarget(id) {
+    var galleries = document.querySelectorAll('media-gallery slideshow-component');
+    for (var g = 0; g < galleries.length; g++) {
+      var slides = galleries[g].querySelectorAll('slideshow-slide');
+      for (var i = 0; i < slides.length; i++) {
+        if (slides[i].getAttribute('data-media-id') === id ||
+            slides[i].querySelector('[data-media-id="' + id + '"]')) return { gallery: galleries[g], index: i };
+      }
+    }
+    return null;
+  }
+
+  /* Phone preview right after the Name style option. Every write is guarded: the body observer
+     below also sees our own DOM changes, so an unguarded write would loop. */
+  function showPreview(input, value, media) {
+    var el = document.getElementById(PREVIEW_ID);
+    if (!media) {
+      if (el) el.remove();
+      return;
+    }
+    var anchor = input.closest('.po-option-root') || input.parentElement;
+    if (!el) {
+      el = document.createElement('button');
+      el.type = 'button';
+      el.id = PREVIEW_ID;
+      el.className = 'es-name-style-preview';
+      el.innerHTML = '<img alt="" width="96" height="96"><span><strong></strong><small>Tap to see the sheet larger</small></span>';
+      el.addEventListener('click', function (event) {
+        var gallery = document.querySelector('media-gallery');
+        var input = document.querySelector('input[name="' + FIELD + '"]');
+        var chosen = input ? byStyle[String(input.value || '').trim().toLowerCase()] : null;
+        var target = chosen ? findTarget(chosen.id) : null;
+        /* Open the photo right here in Horizon's zoom dialog (2026-09-25): scrolling up to the
+           gallery lost the shopper's place in the form. Scroll only if there is no zoom. */
+        if (gallery && target && typeof gallery.zoom === 'function' && gallery.querySelector('zoom-dialog')) {
+          gallery.zoom(target.index, event);
+          return;
+        }
+        if (gallery) gallery.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    }
+    if (anchor && el.previousElementSibling !== anchor) anchor.insertAdjacentElement('afterend', el);
+    var img = el.querySelector('img');
+    if (img.getAttribute('src') !== media.src) img.setAttribute('src', media.src);
+    /* "No name" is not a lettering style — say what the sheet is instead. */
+    var label = /^no name$/i.test(value) ? 'No name — all photos' : value + ' style';
+    var strong = el.querySelector('strong');
+    if (strong.textContent !== label) strong.textContent = label;
+    var aria = label + ' — open the sheet photo larger';
+    if (el.getAttribute('aria-label') !== aria) el.setAttribute('aria-label', aria);
+  }
+
+  var lastValue = null, lastGallery = null;
+  function apply() {
+    var input = document.querySelector('input[name="' + FIELD + '"]');
+    if (!input) return;
+    var value = String(input.value || '').trim();
+    var media = byStyle[value.toLowerCase()] || null;
+    showPreview(input, value, media);
+    var target = media ? findTarget(media.id) : null;
+    var gallery = target ? target.gallery : null;
+    if (value === lastValue && gallery === lastGallery) return;
+    if (target && typeof target.gallery.select !== 'function') return;   /* not upgraded yet — the next mutation retries */
+    lastValue = value;
+    lastGallery = gallery;
+    /* animate:false like Horizon's own variant → media switch: a jump of more than one slide
+       otherwise waits on a smooth scroll that never runs in a hidden or occluded tab. */
+    if (target && target.gallery.current !== target.index) target.gallery.select(target.index, undefined, { animate: false });
+  }
+
+  /* Changing Material makes Horizon swap in a freshly rendered gallery (media-gallery.js
+     replaceWith) that opens on the first photo, so the chosen style's photo flashed away and
+     came back — the gallery looked like it followed Material too. Our variants carry no photos
+     of their own, so when the incoming gallery holds the same photos in the same order we take
+     it out of the update and the gallery just stays put (only media-gallery reads it; price,
+     buttons and the rest take their own parts). This capture listener runs before
+     media-gallery's listener on the section. A variant that brings different photos is left to
+     Horizon, and apply() moves back to the style's photo after the swap. */
+  function mediaOrder(root) {
+    return Array.prototype.map.call(root.querySelectorAll('slideshow-slide'), function (slide) {
+      var el = slide.hasAttribute('data-media-id') ? slide : slide.querySelector('[data-media-id]');
+      return el ? el.getAttribute('data-media-id') : '';
+    }).join(',');
+  }
+  document.addEventListener('variant:update', function (event) {
+    try {
+      var html = event.detail && event.detail.data && event.detail.data.html;
+      if (!html || typeof html.querySelector !== 'function') return;
+      var incoming = html.querySelector('media-gallery');
+      var shown = document.querySelector('media-gallery');
+      if (!incoming || !shown) return;
+      var order = mediaOrder(shown);
+      if (order.replace(/,/g, '') !== '' && mediaOrder(incoming) === order) incoming.remove();
+    } catch (e) { /* never break the variant switch */ }
+  }, true);
+
+  /* Same debounce as es-required-gate: setTimeout, not rAF (throttled to zero in background tabs). */
+  var timer = null;
+  function schedule() {
+    if (timer) return;
+    timer = setTimeout(function () {
+      timer = null;
+      try { apply(); } catch (e) { /* never break the page */ }
+    }, 50);
+  }
+
+  new MutationObserver(schedule).observe(document.body, {
+    childList: true, subtree: true, attributes: true, attributeFilter: ['value']
+  });
+  schedule();
+})();
+</script>
+
+<style>
+  /* Computers keep the gallery pinned beside the options — the preview is for phones only. */
+  .es-name-style-preview {
+    display: none;
+  }
+
+  @media (max-width: 749px) {
+    .es-name-style-preview {
+      appearance: none;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      box-sizing: border-box;
+      width: 100%;
+      min-height: 0;
+      margin: 8px 0 14px;
+      padding: 8px;
+      border: 1px solid rgba(0, 0, 0, 0.12);
+      border-radius: 6px;
+      background: #faf9f7;
+      box-shadow: none;
+      color: inherit;
+      font: inherit;
+      letter-spacing: inherit;
+      text-align: left;
+      text-transform: none;
+      cursor: pointer;
+    }
+
+    .es-name-style-preview img {
+      flex: none;
+      width: 96px;
+      height: 96px;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+
+    .es-name-style-preview strong {
+      display: block;
+      font-size: max(0.875rem, 13.5px);
+    }
+
+    .es-name-style-preview small {
+      display: block;
+      margin-top: 2px;
+      font-size: max(0.8125rem, 12.5px);
+      opacity: 0.72;
+    }
+  }
+</style>
+{%- endif -%}

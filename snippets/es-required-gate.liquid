@@ -13,6 +13,9 @@
      paid for with no photo. On a product that expects options, we wait
      PORTAL_TIMEOUT_MS for Easify and then block the button with a way out.
 
+  The styles below also trim the buy buttons on these products (2026-09-25): no quantity
+  stepper and no Shop Pay / Buy it now next to Add to cart — see the note in <style>.
+
   Blocking is deliberately slow and narrow: it only engages after window load
   plus the timeout, and only where product.metafields.custom.no_photo_upload is
   not set. If Easify merely renames its classes the portal still exists, so the
@@ -47,6 +50,19 @@
   var portalOverdue = false;
   var portalSeen = false;
 
+  /* REQUIRED Easify options the shopper is actually asked. Easify conditional logic can hide one
+     (Name while Name style = No name, 2026-09-24) — skip it only while the portal itself is on
+     screen; if the whole portal is hidden, keep counting so the button is never released early. */
+  function askedRequired(portal) {
+    var portalShown = portal.getClientRects().length > 0;
+    return Array.prototype.slice
+      .call(portal.querySelectorAll('.po-option-root'))
+      .filter(function (o) {
+        if (!o.querySelector('.po-label-required')) return false;
+        return !portalShown || o.getClientRects().length > 0;
+      });
+  }
+
   /* Labels of REQUIRED Easify options that are still empty.
      null = Easify has not rendered; apply() decides what that means. */
   function unmetLabels() {
@@ -54,9 +70,7 @@
     if (!portal) return null;
     portalSeen = true;
 
-    var required = Array.prototype.slice
-      .call(portal.querySelectorAll('.po-option-root'))
-      .filter(function (o) { return o.querySelector('.po-label-required'); });
+    var required = askedRequired(portal);
     if (!required.length) return [];
 
     return required.filter(function (o) {
@@ -70,6 +84,29 @@
       var l = o.querySelector('.po-label-label');
       return l ? (l.textContent || '').trim() : '';
     }).filter(Boolean);
+  }
+
+  /* The hint under the button in plain words (2026-09-25 UX review): "Add a name and your photos
+     to continue." instead of "Please complete: Name *, Your photos *". Easify labels end with " *";
+     the upload labels differ per product. Anything unknown falls back to its own label. */
+  var HINT_PHRASES = {
+    'name': 'a name',
+    'your photos': 'your photos',
+    'upload your photo(s)': 'your photos'
+  };
+
+  function hintFor(labels) {
+    var parts = [];
+    labels.forEach(function (label) {
+      var key = label.replace(/\*/g, '').trim();
+      var phrase = HINT_PHRASES[key.toLowerCase()] || key;
+      if (phrase && parts.indexOf(phrase) === -1) parts.push(phrase);
+    });
+    if (!parts.length) return '';
+    var list = parts.length === 1
+      ? parts[0]
+      : parts.slice(0, -1).join(', ') + ' and ' + parts[parts.length - 1];
+    return 'Add ' + list + ' to continue.';
   }
 
   function notInQuickAdd(b) { return !b.closest('quick-add-dialog, .quick-add-modal'); }
@@ -99,7 +136,8 @@
         el = document.createElement('p');
         el.id = HINT_ID;
         el.setAttribute('aria-live', 'polite');
-        el.style.cssText = 'margin:.5rem 0 0;font-size:max(.875rem, 13.5px);line-height:1.4;opacity:.7;';
+        /* Clay, not faded grey: it is the reason the button is off (5.4:1 on white). */
+        el.style.cssText = 'margin:.625rem 0 0;font-size:max(.875rem, 13.5px);line-height:1.4;color:var(--es-clay, #A9503C);';
         host.appendChild(el);
       }
       if (el.textContent !== text) el.textContent = text;
@@ -129,11 +167,11 @@
     var note = document.createElement('div');
     note.id = PRIVACY_ID;
     note.className = 'es-photo-privacy-note';
-    note.innerHTML = '<strong>Your photos stay private.</strong> '
-      + 'We use uploads only to create your order, delete the originals within 90 days of fulfillment, '
-      + 'and never share or post them without your written consent. '
-      + '<a href="/policies/privacy-policy">Photo Privacy Policy</a>'
-      + '<span>Every upload is checked before production.</span>';
+    /* One line (2026-09-24, owner: the 5-line box read as another wall of text). The three
+       promises stay: used only for the order, not shared without consent, deleted in 90 days. */
+    note.innerHTML = '<strong>Your photos stay private</strong> — used only for your order, '
+      + 'never shared without your consent, and deleted within 90 days of fulfillment. '
+      + '<a href="/policies/privacy-policy">Privacy policy</a>';
     uploadOption.insertAdjacentElement('afterend', note);
   }
 
@@ -242,7 +280,7 @@
         : '';
     } else {
       blockedByUs = !themeDisabled && unmet.length > 0;
-      msg = blockedByUs ? 'Please complete: ' + unmet.join(', ') : '';
+      msg = blockedByUs ? hintFor(unmet) : '';
     }
 
     var want = themeDisabled || blockedByUs;
@@ -314,9 +352,7 @@
     var portal = document.querySelector('.easify.portal');
     var target = null;
     if (portal) {
-      target = Array.prototype.slice
-        .call(portal.querySelectorAll('.po-option-root'))
-        .filter(function (o) { return o.querySelector('.po-label-required'); })
+      target = askedRequired(portal)
         .filter(function (o) {
           return !Array.prototype.slice
             .call(o.querySelectorAll('input[name^="properties"]'))
@@ -367,15 +403,20 @@
     <strong>Clear delivery timing</strong>
     <span>Ships in 2–5 business days. Free Standard Lettermail arrives in 4–10 business days after dispatch; optional tracked Canada Post shipping is available at checkout. <a href="/pages/shipping-pickup">Shipping details</a></span>
   </p>
+  {%- comment -%} The pack's "We make it." line moved here from es-how-to-order (2026-09-25). {%- endcomment -%}
+  {%- if product.metafields.custom.pack_sizes.value != blank %}
+  <p>
+    <strong>We make it</strong>
+    <span>Traced and laid out by hand, precision-cut and packed in Toronto.</span>
+  </p>
+  {%- endif %}
 </div>
 
 <style>
+  /* A quiet line under the upload field, like the field hints (was a bordered box). */
   .es-photo-privacy-note {
-    margin: 10px 0 14px;
-    padding: 12px 14px;
-    border: 1px solid rgba(0, 0, 0, 0.12);
-    border-radius: 6px;
-    background: #faf9f7;
+    margin: 6px 0 14px;
+    opacity: 0.72;
     /* 13.5px floor: 0.8125rem landed at 12px on mobile, under comfortable
        reading size for decision-relevant text. Same floor as the gate hint. */
     font-size: max(0.875rem, 13.5px);
@@ -393,12 +434,6 @@
   .easify.portal .po-fileUpload-content:focus-visible {
     outline: 2px solid currentColor;
     outline-offset: 2px;
-  }
-
-  .es-photo-privacy-note span {
-    display: block;
-    margin-top: 4px;
-    opacity: 0.72;
   }
 
   .es-photo-privacy-note a,
@@ -429,6 +464,88 @@
 
   .es-purchase-assurance span {
     opacity: 0.72;
+  }
+
+  {%- if expect_options %}
+  /* Made-to-order photo products (2026-09-25 UX review):
+     - no quantity stepper: another copy of the same sheet is the Extra sheets option ($7 each),
+       while a quantity of 2 charged the full price twice for the same design;
+     - no Shop Pay / Buy it now on the page: it stayed bright while Add to cart was greyed out for
+       missing photos, and it skips the cart where the upload is reviewed. Shop Pay is still
+       offered at checkout.
+     Add to cart then fills the row (buy-buttons-styles: flex 1 1 51%) and the hint sits under it. */
+  product-form-component:not(.quick-add__product-form-component) .quantity-selector-wrapper,
+  product-form-component:not(.quick-add__product-form-component) .quantity-label,
+  product-form-component:not(.quick-add__product-form-component) .accelerated-checkout-block {
+    display: none !important;
+  }
+  {%- endif %}
+
+  /* Easify "Buttons" options (Name style since 2026-09-25) drawn like the Material buttons above:
+     equal columns in one row, 1px border, the chosen one black with white text. Easify's own chosen
+     style darkened only the background and left the text dark — unreadable. It marks the chosen
+     button with .po-buttonOption-selected on an ancestor. */
+  .easify.portal .po-buttons-optionGroup {
+    display: grid !important;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(0, 1fr);
+    gap: 10px;
+  }
+
+  .easify.portal .po-buttons-optionGroup > *,
+  .easify.portal .po-buttons-optionGroup .po-optionItem-item,
+  .easify.portal .po-buttons-optionGroup .po-optionItem-inner,
+  .easify.portal .po-buttons-optionGroup .po-buttonOption-optionContainer,
+  .easify.portal .po-buttons-optionGroup .po-buttonOption-swatchColumn,
+  .easify.portal .po-buttons-optionGroup .po-buttonOption-swatchWrapper {
+    width: 100% !important;
+    min-width: 0;
+    margin: 0 !important;
+  }
+
+  .easify.portal .po-buttonOption-optionItem {
+    width: 100% !important;
+    min-height: 52px;
+    margin: 0 !important;
+    border: 1px solid rgb(0 0 0 / 0.2) !important;
+    border-radius: 0 !important;
+    background: #fff !important;
+    color: #000 !important;
+    cursor: pointer;
+    /* Easify fades the colours in over 0.2s; the choice should show at once (like Material). */
+    transition: none !important;
+  }
+
+  .easify.portal .po-buttonOption-label {
+    font-size: 1rem;
+    color: inherit !important;
+  }
+
+  .easify.portal .po-buttonOption-selected .po-buttonOption-optionItem {
+    border-color: #000 !important;
+    background: #000 !important;
+    color: #fff !important;
+  }
+
+  /* Four materials (2026-09-25): Horizon's auto-fit grid left "Translucent" alone on a second row
+     in the ~460–600px desktop column. One row of four where it fits, otherwise two by two. */
+  variant-picker {
+    container-type: inline-size;
+  }
+
+  .variant-option--equal-width-buttons:has(> .variant-option__button-label:nth-of-type(4):last-of-type) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .variant-option--equal-width-buttons:has(> .variant-option__button-label:nth-of-type(4):last-of-type)
+    > .variant-option__button-label {
+    min-width: 0;
+  }
+
+  @container (min-width: 540px) {
+    .variant-option--equal-width-buttons:has(> .variant-option__button-label:nth-of-type(4):last-of-type) {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
   }
 
   .jdgm-preview-badge:has(.jdgm-prev-badge[data-number-of-reviews='0']),
