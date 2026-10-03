@@ -55,6 +55,8 @@
 .emg .emg-note { max-width: 46rem; margin: 24px 0 0; font-size: 0.8125rem; line-height: 1.7; color: var(--emg-muted); }
 .emg .emg-note--samples { margin: 0 0 20px; }
 .emg .emg-error { margin: 12px 0 0; font-size: 0.875rem; line-height: 1.6; }
+.emg .emg-more { margin: 28px 0 0; font-size: 0.9375rem; line-height: 1.5; }
+.emg .emg-more a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
 
 .emg-dialog { width: min(1000px, calc(100% - 24px)); max-width: none; max-height: calc(100dvh - 24px); padding: 20px; border: 1px solid var(--emg-line); background: var(--color-background); color: var(--color-foreground); overflow: auto; }
 .emg-dialog::backdrop { background: rgb(0 0 0 / 0.72); }

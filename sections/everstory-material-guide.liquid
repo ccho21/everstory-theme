@@ -65,11 +65,11 @@
     {%- if has_samples -%}
       <div class="emg-toolbar" data-emg-controls hidden>
         <div class="emg-controls" role="group" aria-label="Choose a design">
-          {%- if portrait_count > 0 -%}
-            <button type="button" data-emg-design="portrait" aria-pressed="true">Portrait</button>
-          {%- endif -%}
           {%- if lettering_count > 0 -%}
-            <button type="button" data-emg-design="lettering" aria-pressed="{% if portrait_count > 0 %}false{% else %}true{% endif %}">Lettering</button>
+            <button type="button" data-emg-design="lettering" aria-pressed="true">Lettering</button>
+          {%- endif -%}
+          {%- if portrait_count > 0 -%}
+            <button type="button" data-emg-design="portrait" aria-pressed="{% if lettering_count > 0 %}false{% else %}true{% endif %}">Portrait</button>
           {%- endif -%}
         </div>
         <div class="emg-controls" role="group" aria-label="Choose a photo view">
@@ -82,14 +82,17 @@
         <p class="emg-note emg-note--samples">Sample numbers follow the order in the photographs. Material labels will be added once each sample has been confirmed.</p>
       {%- endif -%}
 
-      {%- if portrait_count > 0 -%}
-        {% render 'everstory-material-panel', section: section, image: portrait_image, design: 'portrait', panel_title: 'Portrait', crop_width: portrait_crop_width, crop_height: portrait_crop_height, image_widths: '240, 360, 480, 560, 648' %}
-      {%- endif -%}
+      {%- comment -%} Lettering first: its photograph reads best (owner, 2026-10-02). The first panel is the one shown on load. {%- endcomment -%}
       {%- if lettering_count > 0 -%}
         {% render 'everstory-material-panel', section: section, image: lettering_image, design: 'lettering', panel_title: 'Lettering', crop_width: lettering_crop_width, crop_height: lettering_crop_height, image_widths: '280, 420, 560, 700, 889' %}
       {%- endif -%}
+      {%- if portrait_count > 0 -%}
+        {% render 'everstory-material-panel', section: section, image: portrait_image, design: 'portrait', panel_title: 'Portrait', crop_width: portrait_crop_width, crop_height: portrait_crop_height, image_widths: '240, 360, 480, 560, 648' %}
+      {%- endif -%}
 
-      <p class="emg-note">{{ section.settings.photo_note | escape }}</p>
+      {%- if section.settings.photo_note != blank -%}
+        <p class="emg-note">{{ section.settings.photo_note | escape }}</p>
+      {%- endif -%}
     {%- endif -%}
 
     {%- if sheet_count > 0 or sheets_together != blank -%}
@@ -152,6 +155,10 @@
       </section>
     {%- endif -%}
 
+    {%- if section.settings.link_label != blank and section.settings.link_url != blank -%}
+      <p class="emg-more"><a href="{{ section.settings.link_url }}">{{ section.settings.link_label | escape }}</a></p>
+    {%- endif -%}
+
     {%- if has_samples or sheet_count > 0 or sheets_together != blank -%}
       <dialog class="emg-dialog" data-emg-dialog aria-labelledby="emg-zoom-title-{{ section.id }}">
         <div class="emg-dialog-heading">
@@ -192,7 +199,7 @@
     { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Materials, in real life" },
     { "type": "text", "id": "heading", "label": "Heading", "default": "Same photo. Four materials." },
     { "type": "select", "id": "heading_level", "label": "Heading level", "default": "h1", "options": [{ "value": "h1", "label": "H1 — page heading" }, { "value": "h2", "label": "H2 — section heading" }] },
-    { "type": "textarea", "id": "intro", "label": "Introduction", "default": "White Matte, Silver, Gold and Translucent each give a photograph a different feel. Compare the same portrait and lettering on four real samples, then see a whole sheet printed on each material." },
+    { "type": "textarea", "id": "intro", "label": "Introduction", "default": "White Matte, Silver, Gold and Translucent each give a photograph a different feel. Compare the same lettering and portrait on four real samples, then see a whole sheet printed on each material." },
     { "type": "image_picker", "id": "portrait_image", "label": "Portrait source photograph", "info": "Use IMG_8382-shopify-srgb.webp (4032 × 3024 pixels), the native-resolution sRGB publication export." },
     { "type": "image_picker", "id": "lettering_image", "label": "Lettering source photograph", "info": "Use IMG_8363-shopify-srgb.webp (4284 × 2856 pixels), the sRGB publication export trimmed without resizing." },
     { "type": "textarea", "id": "photo_note", "label": "Photo note", "default": "The wood background stays in the photographs so you can compare how the surface shows through and how each sample catches the light. Colour and shine can vary with lighting, angle and screen." },
@@ -200,7 +207,9 @@
     { "type": "text", "id": "sheet_heading", "label": "Whole sheet heading", "default": "The whole sheet" },
     { "type": "textarea", "id": "sheet_intro", "label": "Whole sheet introduction", "default": "The same sheet design on all four materials, photographed together and then one by one." },
     { "type": "image_picker", "id": "sheets_together_image", "label": "Photograph of all sheets together", "info": "Shown uncropped beside the single-sheet photographs." },
-    { "type": "text", "id": "sheets_together_caption", "label": "Caption for the photograph of all sheets", "info": "Name the sheets in the order they appear, using the material printed on each." }
+    { "type": "text", "id": "sheets_together_caption", "label": "Caption for the photograph of all sheets", "info": "Name the sheets in the order they appear, using the material printed on each." },
+    { "type": "text", "id": "link_label", "label": "Link label", "info": "Optional link under the section, e.g. to the full guide when the section sits on the home page." },
+    { "type": "url", "id": "link_url", "label": "Link" }
   ],
   "blocks": [
     {

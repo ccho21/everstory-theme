@@ -1216,6 +1216,70 @@
         "padding-block-end": 48
       }
     },
+    "material_guide_home": {
+      "type": "everstory-material-guide",
+      "settings": {
+        "color_scheme": "scheme-1",
+        "eyebrow": "Materials, in real life",
+        "heading": "Same photo. Four materials.",
+        "heading_level": "h2",
+        "intro": "White Matte, Silver, Gold and Translucent, side by side on real samples photographed on wood.",
+        "portrait_image": "shopify://shop_images/IMG_8382-shopify-srgb.webp",
+        "lettering_image": "shopify://shop_images/IMG_8363-shopify-srgb.webp",
+        "photo_note": "",
+        "show_sample_note": false,
+        "link_label": "See each material on a whole sheet",
+        "link_url": "/pages/materials-guide"
+      },
+      "blocks": {
+        "sample01": {
+          "type": "sample",
+          "settings": {
+            "title": "White Matte",
+            "portrait_x": 829,
+            "portrait_y": 1107,
+            "lettering_x": 311,
+            "lettering_y": 1212
+          }
+        },
+        "sample02": {
+          "type": "sample",
+          "settings": {
+            "title": "Silver",
+            "portrait_x": 1496,
+            "portrait_y": 1073,
+            "lettering_x": 1174,
+            "lettering_y": 1212
+          }
+        },
+        "sample03": {
+          "type": "sample",
+          "settings": {
+            "title": "Gold",
+            "portrait_x": 2091,
+            "portrait_y": 1027,
+            "lettering_x": 2018,
+            "lettering_y": 1212
+          }
+        },
+        "sample04": {
+          "type": "sample",
+          "settings": {
+            "title": "Translucent",
+            "portrait_x": 2665,
+            "portrait_y": 1007,
+            "lettering_x": 2901,
+            "lettering_y": 1212
+          }
+        }
+      },
+      "block_order": [
+        "sample01",
+        "sample02",
+        "sample03",
+        "sample04"
+      ]
+    },
     "section_TYCfpm": {
       "type": "section",
       "blocks": {
@@ -1824,6 +1888,7 @@
     "trust_band",
     "product_list_fa6P9H",
     "section_yr4xMG",
+    "material_guide_home",
     "section_TYCfpm",
     "in_use_strip",
     "17835334163964bbd5"
