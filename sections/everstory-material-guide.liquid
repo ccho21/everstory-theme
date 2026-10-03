@@ -1,0 +1,244 @@
+{{ 'everstory-material-guide.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'everstory-material-guide.js' | asset_url }}" defer></script>
+
+{%- comment -%}
+  Crop windows are source-image pixels. Every sample of a design shares one
+  window size, so only the position changes between cards. Portrait windows are
+  648 × 756: the portrait stickers sit about 110 px apart, and a wider window
+  shows the edge of the neighbouring sample.
+
+  Sheet blocks are separate photographs, one whole sheet each, labelled with
+  the material printed on that sheet. They are not tied to sample blocks,
+  whose material order is confirmed separately. An optional photograph of all
+  sheets together sits beside them.
+{%- endcomment -%}
+{%- liquid
+  assign portrait_image = section.settings.portrait_image
+  assign lettering_image = section.settings.lettering_image
+  assign sheets_together = section.settings.sheets_together_image
+  assign portrait_crop_width = 648
+  assign portrait_crop_height = 756
+  assign lettering_crop_width = 889
+  assign lettering_crop_height = 762
+  assign portrait_count = 0
+  assign lettering_count = 0
+  assign sheet_count = 0
+
+  for block in section.blocks
+    if block.type == 'sheet'
+      if block.settings.image != blank
+        assign sheet_count = sheet_count | plus: 1
+      endif
+      continue
+    endif
+    assign portrait_right = block.settings.portrait_x | plus: portrait_crop_width
+    assign portrait_bottom = block.settings.portrait_y | plus: portrait_crop_height
+    assign lettering_right = block.settings.lettering_x | plus: lettering_crop_width
+    assign lettering_bottom = block.settings.lettering_y | plus: lettering_crop_height
+    if portrait_image != blank and block.settings.portrait_x >= 0 and block.settings.portrait_y >= 0 and portrait_right <= portrait_image.width and portrait_bottom <= portrait_image.height
+      assign portrait_count = portrait_count | plus: 1
+    endif
+    if lettering_image != blank and block.settings.lettering_x >= 0 and block.settings.lettering_y >= 0 and lettering_right <= lettering_image.width and lettering_bottom <= lettering_image.height
+      assign lettering_count = lettering_count | plus: 1
+    endif
+  endfor
+
+  assign has_samples = false
+  if portrait_count > 0 or lettering_count > 0
+    assign has_samples = true
+  endif
+-%}
+
+<div class="section-background color-{{ section.settings.color_scheme }}"></div>
+<div class="section section--page-width color-{{ section.settings.color_scheme }}">
+  <everstory-material-guide class="emg" id="everstory-material-guide-{{ section.id }}">
+    <header class="emg-header">
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="emg-kicker">{{ section.settings.eyebrow | escape }}</p>
+      {%- endif -%}
+      <{{ section.settings.heading_level }} class="emg-heading">{{ section.settings.heading | escape }}</{{ section.settings.heading_level }}>
+      {%- if section.settings.intro != blank -%}
+        <p class="emg-intro">{{ section.settings.intro | escape }}</p>
+      {%- endif -%}
+    </header>
+
+    {%- if has_samples -%}
+      <div class="emg-toolbar" data-emg-controls hidden>
+        <div class="emg-controls" role="group" aria-label="Choose a design">
+          {%- if portrait_count > 0 -%}
+            <button type="button" data-emg-design="portrait" aria-pressed="true">Portrait</button>
+          {%- endif -%}
+          {%- if lettering_count > 0 -%}
+            <button type="button" data-emg-design="lettering" aria-pressed="{% if portrait_count > 0 %}false{% else %}true{% endif %}">Lettering</button>
+          {%- endif -%}
+        </div>
+        <div class="emg-controls" role="group" aria-label="Choose a photo view">
+          <button type="button" data-emg-view="samples" aria-pressed="true">Side by side</button>
+          <button type="button" data-emg-view="full" aria-pressed="false">Full photograph</button>
+        </div>
+      </div>
+
+      {%- if section.settings.show_sample_note -%}
+        <p class="emg-note emg-note--samples">Sample numbers follow the order in the photographs. Material labels will be added once each sample has been confirmed.</p>
+      {%- endif -%}
+
+      {%- if portrait_count > 0 -%}
+        {% render 'everstory-material-panel', section: section, image: portrait_image, design: 'portrait', panel_title: 'Portrait', crop_width: portrait_crop_width, crop_height: portrait_crop_height, image_widths: '240, 360, 480, 560, 648' %}
+      {%- endif -%}
+      {%- if lettering_count > 0 -%}
+        {% render 'everstory-material-panel', section: section, image: lettering_image, design: 'lettering', panel_title: 'Lettering', crop_width: lettering_crop_width, crop_height: lettering_crop_height, image_widths: '280, 420, 560, 700, 889' %}
+      {%- endif -%}
+
+      <p class="emg-note">{{ section.settings.photo_note | escape }}</p>
+    {%- endif -%}
+
+    {%- if sheet_count > 0 or sheets_together != blank -%}
+      <section class="emg-sheets" aria-labelledby="emg-sheets-title-{{ section.id }}">
+        <h2 class="emg-sheets-title" id="emg-sheets-title-{{ section.id }}">{{ section.settings.sheet_heading | escape }}</h2>
+        {%- if section.settings.sheet_intro != blank -%}
+          <p class="emg-sheets-intro">{{ section.settings.sheet_intro | escape }}</p>
+        {%- endif -%}
+        <div class="emg-sheets-body{% if sheets_together != blank and sheet_count > 0 %} emg-sheets-body--split{% endif %}">
+        {%- if sheets_together != blank -%}
+          {%- liquid
+            assign together_caption = section.settings.sheets_together_caption
+            assign together_alt = 'Four sticker sheets overlapping on a wooden table'
+            if together_caption != blank
+              assign together_alt = together_alt | append: '. ' | append: together_caption
+            endif
+            assign together_url = sheets_together | image_url: width: sheets_together.width
+            assign together_widths = '480, 720, 960, 1440, ' | append: sheets_together.width
+          -%}
+          <figure class="emg-sheets-together">
+            <div class="emg-photo" style="aspect-ratio: {{ sheets_together.aspect_ratio }}">
+              {{ sheets_together | image_url: width: sheets_together.width | image_tag: class: 'emg-image', widths: together_widths, sizes: '(min-width: 1520px) 710px, (min-width: 990px) calc((100vw - 100px) / 2), (min-width: 750px) 560px, calc(100vw - 32px)', alt: together_alt, loading: 'lazy' }}
+            </div>
+            <figcaption>
+              <span>{{ together_caption | escape }}</span>
+              <button class="emg-detail" type="button" data-emg-zoom data-emg-title="{{ section.settings.sheet_heading | escape }}" data-emg-src="{{ together_url | escape }}" data-emg-alt="{{ together_alt | escape }}" aria-label="Enlarge the photograph of all sheets together" hidden>Enlarge</button>
+            </figcaption>
+          </figure>
+        {%- endif -%}
+        {%- if sheet_count > 0 -%}
+        <div class="emg-grid">
+          {%- for block in section.blocks -%}
+            {%- if block.type != 'sheet' or block.settings.image == blank -%}
+              {%- continue -%}
+            {%- endif -%}
+            {%- liquid
+              assign sheet_image = block.settings.image
+              assign sheet_label = block.settings.title | default: 'Sheet'
+              assign sheet_alt = sheet_label | append: ' sticker sheet photographed on wood'
+              assign sheet_title = 'Whole sheet · ' | append: sheet_label
+              assign sheet_url = sheet_image | image_url: width: sheet_image.width
+              assign sheet_widths = '240, 360, 480, 720, 960, ' | append: sheet_image.width
+            -%}
+            <article class="emg-card" {{ block.shopify_attributes }}>
+              <figure class="emg-photo" style="aspect-ratio: {{ sheet_image.aspect_ratio }}">
+                {{ sheet_image | image_url: width: sheet_image.width | image_tag: class: 'emg-image', widths: sheet_widths, sizes: '(min-width: 1520px) 345px, (min-width: 990px) calc((100vw - 140px) / 4), (min-width: 750px) calc((100vw - 100px) / 2), calc((100vw - 46px) / 2)', alt: sheet_alt, loading: 'lazy' }}
+              </figure>
+              <div class="emg-card-heading">
+                <h3>{{ sheet_label | escape }}</h3>
+                <button class="emg-detail" type="button" data-emg-zoom data-emg-title="{{ sheet_title | escape }}" data-emg-src="{{ sheet_url | escape }}" data-emg-alt="{{ sheet_alt | escape }}" aria-label="Enlarge whole sheet: {{ sheet_label | escape }}" hidden>Enlarge</button>
+              </div>
+              {%- if block.settings.description != blank -%}
+                <p class="emg-description">{{ block.settings.description | escape }}</p>
+              {%- endif -%}
+            </article>
+          {%- endfor -%}
+        </div>
+        {%- endif -%}
+        </div>
+      </section>
+    {%- endif -%}
+
+    {%- if has_samples or sheet_count > 0 or sheets_together != blank -%}
+      <dialog class="emg-dialog" data-emg-dialog aria-labelledby="emg-zoom-title-{{ section.id }}">
+        <div class="emg-dialog-heading">
+          <h2 id="emg-zoom-title-{{ section.id }}" data-emg-zoom-title>Photo detail</h2>
+          <button type="button" data-emg-close autofocus>Close</button>
+        </div>
+        <div class="emg-zoom-stage" data-emg-zoom-stage></div>
+        <p class="emg-note">Colour and reflection can vary with your screen and viewing conditions.</p>
+      </dialog>
+    {%- endif -%}
+
+    {%- if request.design_mode -%}
+      {%- if portrait_image == blank -%}
+        <p class="emg-note">Choose IMG_8382-shopify-srgb.webp (4032 × 3024 pixels) in this section's settings. This sRGB publication export preserves the source dimensions and supplied crop positions.</p>
+      {%- elsif portrait_count == 0 -%}
+        <p class="emg-note">No portrait crop fits this photograph. Add sample blocks and enter valid pixel positions for the selected image.</p>
+      {%- endif -%}
+      {%- if lettering_image == blank -%}
+        <p class="emg-note">Choose IMG_8363-shopify-srgb.webp (4284 × 2856 pixels) in this section's settings. This sRGB publication export is trimmed without resizing from IMG_8363 and matches the supplied crop positions.</p>
+      {%- elsif lettering_count == 0 -%}
+        <p class="emg-note">No lettering crop fits this photograph. Add sample blocks and enter valid pixel positions for the selected image.</p>
+      {%- endif -%}
+      {%- if sheet_count == 0 and sheets_together == blank -%}
+        <p class="emg-note">To show whole sheets, choose a photograph of all sheets together in this section's settings, or add Whole sheet blocks with a sheet photograph and the material printed on that sheet.</p>
+      {%- endif -%}
+    {%- endif -%}
+  </everstory-material-guide>
+</div>
+
+{% schema %}
+{
+  "name": "Everstory material guide",
+  "tag": "section",
+  "class": "everstory-material-section",
+  "max_blocks": 8,
+  "settings": [
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "scheme-1" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Materials, in real life" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Same photo. Four materials." },
+    { "type": "select", "id": "heading_level", "label": "Heading level", "default": "h1", "options": [{ "value": "h1", "label": "H1 — page heading" }, { "value": "h2", "label": "H2 — section heading" }] },
+    { "type": "textarea", "id": "intro", "label": "Introduction", "default": "White Matte, Silver, Gold and Translucent each give a photograph a different feel. Compare the same portrait and lettering on four real samples, then see a whole sheet printed on each material." },
+    { "type": "image_picker", "id": "portrait_image", "label": "Portrait source photograph", "info": "Use IMG_8382-shopify-srgb.webp (4032 × 3024 pixels), the native-resolution sRGB publication export." },
+    { "type": "image_picker", "id": "lettering_image", "label": "Lettering source photograph", "info": "Use IMG_8363-shopify-srgb.webp (4284 × 2856 pixels), the sRGB publication export trimmed without resizing." },
+    { "type": "textarea", "id": "photo_note", "label": "Photo note", "default": "The wood background stays in the photographs so you can compare how the surface shows through and how each sample catches the light. Colour and shine can vary with lighting, angle and screen." },
+    { "type": "checkbox", "id": "show_sample_note", "label": "Show unconfirmed material label note", "default": true, "info": "Turn off only after the material identity of every displayed sample is confirmed." },
+    { "type": "text", "id": "sheet_heading", "label": "Whole sheet heading", "default": "The whole sheet" },
+    { "type": "textarea", "id": "sheet_intro", "label": "Whole sheet introduction", "default": "The same sheet design on all four materials, photographed together and then one by one." },
+    { "type": "image_picker", "id": "sheets_together_image", "label": "Photograph of all sheets together", "info": "Shown uncropped beside the single-sheet photographs." },
+    { "type": "text", "id": "sheets_together_caption", "label": "Caption for the photograph of all sheets", "info": "Name the sheets in the order they appear, using the material printed on each." }
+  ],
+  "blocks": [
+    {
+      "type": "sample",
+      "name": "Material sample",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Confirmed material or sample label", "default": "Sample" },
+        { "type": "textarea", "id": "description", "label": "Visual description", "info": "Describe confirmed appearance only. Leave empty while the material identity is unconfirmed." },
+        { "type": "number", "id": "portrait_x", "label": "Portrait crop left (pixels)", "info": "Window is 648 × 756 pixels.", "default": 829 },
+        { "type": "number", "id": "portrait_y", "label": "Portrait crop top (pixels)", "default": 1107 },
+        { "type": "number", "id": "lettering_x", "label": "Lettering crop left (pixels)", "info": "Window is 889 × 762 pixels.", "default": 311 },
+        { "type": "number", "id": "lettering_y", "label": "Lettering crop top (pixels)", "default": 1212 }
+      ]
+    },
+    {
+      "type": "sheet",
+      "name": "Whole sheet",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Sheet photograph", "info": "One whole sheet per photograph, shown uncropped." },
+        { "type": "text", "id": "title", "label": "Material printed on the sheet", "info": "Use the material name printed on the photographed sheet." },
+        { "type": "textarea", "id": "description", "label": "Visual description", "info": "Optional. Describe what the photograph shows only." }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Everstory material guide",
+      "blocks": [
+        { "type": "sample", "settings": { "title": "Sample 01", "portrait_x": 829, "portrait_y": 1107, "lettering_x": 311, "lettering_y": 1212 } },
+        { "type": "sample", "settings": { "title": "Sample 02", "portrait_x": 1496, "portrait_y": 1073, "lettering_x": 1174, "lettering_y": 1212 } },
+        { "type": "sample", "settings": { "title": "Sample 03", "portrait_x": 2091, "portrait_y": 1027, "lettering_x": 2018, "lettering_y": 1212 } },
+        { "type": "sample", "settings": { "title": "Sample 04", "portrait_x": 2665, "portrait_y": 1007, "lettering_x": 2901, "lettering_y": 1212 } },
+        { "type": "sheet", "settings": { "title": "White Matte" } },
+        { "type": "sheet", "settings": { "title": "Silver" } },
+        { "type": "sheet", "settings": { "title": "Gold" } },
+        { "type": "sheet", "settings": { "title": "Translucent" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

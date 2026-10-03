@@ -1,0 +1,34 @@
+{
+  "sections": {
+    "materialguide": {
+      "type": "everstory-material-guide",
+      "settings": {
+        "color_scheme": "scheme-1",
+        "eyebrow": "Materials, in real life",
+        "heading": "Same photo. Four materials.",
+        "heading_level": "h1",
+        "intro": "White Matte, Silver, Gold and Translucent each give a photograph a different feel. Compare the same portrait and lettering on four real samples, then see a whole sheet printed on each material.",
+        "portrait_image": "shopify://shop_images/IMG_8382-shopify-srgb.webp",
+        "lettering_image": "shopify://shop_images/IMG_8363-shopify-srgb.webp",
+        "photo_note": "The wood background stays in the photographs so you can compare how the surface shows through and how each sample catches the light. Colour and shine can vary with lighting, angle and screen.",
+        "show_sample_note": false,
+        "sheet_heading": "The whole sheet",
+        "sheet_intro": "The same sheet design on all four materials, photographed together and then one by one.",
+        "sheets_together_image": "shopify://shop_images/materials-sheets-together-srgb.webp",
+        "sheets_together_caption": "All four together, left to right: Gold, Translucent, Silver, White Matte."
+      },
+      "blocks": {
+        "sample01": { "type": "sample", "settings": { "title": "White Matte", "portrait_x": 829, "portrait_y": 1107, "lettering_x": 311, "lettering_y": 1212 } },
+        "sample02": { "type": "sample", "settings": { "title": "Silver", "portrait_x": 1496, "portrait_y": 1073, "lettering_x": 1174, "lettering_y": 1212 } },
+        "sample03": { "type": "sample", "settings": { "title": "Gold", "portrait_x": 2091, "portrait_y": 1027, "lettering_x": 2018, "lettering_y": 1212 } },
+        "sample04": { "type": "sample", "settings": { "title": "Translucent", "portrait_x": 2665, "portrait_y": 1007, "lettering_x": 2901, "lettering_y": 1212 } },
+        "sheet_white_matte": { "type": "sheet", "settings": { "image": "shopify://shop_images/materials-sheet-white-matte-srgb.webp", "title": "White Matte" } },
+        "sheet_silver": { "type": "sheet", "settings": { "image": "shopify://shop_images/materials-sheet-silver-srgb.webp", "title": "Silver" } },
+        "sheet_gold": { "type": "sheet", "settings": { "image": "shopify://shop_images/materials-sheet-gold-srgb.webp", "title": "Gold" } },
+        "sheet_translucent": { "type": "sheet", "settings": { "image": "shopify://shop_images/materials-sheet-translucent-srgb.webp", "title": "Translucent" } }
+      },
+      "block_order": ["sample01", "sample02", "sample03", "sample04", "sheet_white_matte", "sheet_silver", "sheet_gold", "sheet_translucent"]
+    }
+  },
+  "order": ["materialguide"]
+}

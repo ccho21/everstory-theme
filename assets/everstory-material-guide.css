@@ -1,0 +1,96 @@
+/* Colours, fonts and page width come from the theme (colour scheme variables,
+   the theme's h1/h2 rules, the .section grid) so the guide lines up with the
+   header, footer and the pages around it. */
+.emg {
+  --emg-muted: var(--color-foreground-muted, rgb(var(--color-foreground-rgb) / 0.6));
+  --emg-line: rgb(var(--color-foreground-rgb) / 0.12);
+  --emg-tint: rgb(var(--color-foreground-rgb) / 0.04);
+  display: block;
+  padding-block: 40px 72px;
+}
+.emg *, .emg *::before, .emg *::after { box-sizing: border-box; }
+.emg [hidden] { display: none !important; }
+.emg button { font: inherit; color: inherit; cursor: pointer; }
+
+/* Header: eyebrow and display heading match the site's other page openers
+   (blocks/eyebrow.liquid, hero-scatter). Font family, case and tracking of the
+   heading come from the theme's own h1/h2 rules. */
+.emg-header { max-width: 46rem; margin-bottom: 32px; }
+.emg .emg-kicker { margin: 0 0 14px; font-family: var(--font-body--family); font-size: 0.75rem; font-weight: 600; line-height: 1.2; letter-spacing: 0.14em; text-transform: uppercase; color: var(--es-clay, var(--emg-muted)); }
+.emg .emg-heading { margin: 0 0 18px; font-size: var(--es-h1, clamp(2.5rem, 5vw, 4rem)); line-height: var(--es-h1--line-height, 1.02); text-wrap: balance; }
+.emg h2.emg-heading { font-size: var(--es-h2, clamp(2.25rem, 4.8vw, 3rem)); line-height: var(--es-h2--line-height, 1.08); }
+.emg .emg-intro { max-width: 36rem; margin: 0; font-size: 1rem; line-height: 1.65; }
+
+.emg-toolbar { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px 16px; padding-block: 14px; border-block: 1px solid var(--emg-line); margin-bottom: 24px; }
+.emg-controls { display: flex; flex-wrap: wrap; gap: 4px; }
+.emg .emg-controls button { min-height: 44px; padding: 10px 18px; border: 1px solid transparent; border-radius: 0; background: transparent; font-size: 0.875rem; line-height: 1.2; }
+.emg .emg-controls button:hover { border-color: var(--emg-line); }
+.emg .emg-controls button[aria-pressed="true"] { background: var(--color-primary-button-background, rgb(var(--color-foreground-rgb))); border-color: var(--color-primary-button-background, rgb(var(--color-foreground-rgb))); color: var(--color-primary-button-text, rgb(var(--color-background-rgb))); }
+
+.emg-panel + .emg-panel { margin-top: 40px; }
+.emg.has-js .emg-panel { margin-top: 0; }
+.emg .emg-panel-title { margin: 0 0 16px; font-family: var(--font-body--family); font-size: 0.875rem; font-weight: 400; line-height: 1.4; letter-spacing: normal; text-transform: none; color: var(--emg-muted); }
+
+.emg-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 14px; }
+.emg-card { min-width: 0; }
+.emg-photo { display: block; position: relative; width: 100%; margin: 0; overflow: hidden; background: var(--emg-tint); }
+.emg-photo > img { display: block; width: 100%; max-width: 100%; height: auto; }
+.emg-photo.is-source-window > img { position: absolute; max-width: none; height: auto; }
+.emg-card-heading { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-top: 8px; }
+.emg .emg-card h3 { margin: 0; font-family: var(--font-body--family); font-size: 1rem; font-weight: 400; line-height: 1.4; letter-spacing: normal; text-transform: none; color: var(--color-foreground-heading); }
+.emg .emg-detail { flex: none; min-height: 44px; padding: 0; border: 0; background: transparent; font-size: 0.8125rem; text-decoration: underline; text-underline-offset: 3px; }
+.emg .emg-description { margin: 2px 0 0; font-size: 0.875rem; line-height: 1.6; color: var(--emg-muted); }
+
+.emg-full { margin: 0; }
+.emg .emg-full img { display: block; width: 100%; max-width: 960px; height: auto; margin-inline: auto; }
+.emg-full figcaption { display: flex; justify-content: space-between; align-items: center; gap: 12px; max-width: 960px; margin: 8px auto 0; font-size: 0.875rem; color: var(--emg-muted); }
+
+/* Whole sheets: separate photographs, one per material, below the close-ups. */
+.emg-sheets { margin-top: 56px; padding-top: 32px; border-top: 1px solid var(--emg-line); }
+.emg .emg-sheets-title { margin: 0 0 10px; font-size: var(--es-h3, 2rem); line-height: var(--es-h3--line-height, 1.15); }
+.emg .emg-sheets-intro { max-width: 36rem; margin: 0 0 24px; font-size: 1rem; line-height: 1.65; }
+.emg-sheets-together { max-width: 560px; margin: 0 auto 32px; }
+.emg-sheets-together figcaption { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-top: 8px; font-size: 0.875rem; line-height: 1.5; color: var(--emg-muted); }
+
+.emg .emg-note { max-width: 46rem; margin: 24px 0 0; font-size: 0.8125rem; line-height: 1.7; color: var(--emg-muted); }
+.emg .emg-note--samples { margin: 0 0 20px; }
+.emg .emg-error { margin: 12px 0 0; font-size: 0.875rem; line-height: 1.6; }
+
+.emg-dialog { width: min(1000px, calc(100% - 24px)); max-width: none; max-height: calc(100dvh - 24px); padding: 20px; border: 1px solid var(--emg-line); background: var(--color-background); color: var(--color-foreground); overflow: auto; }
+.emg-dialog::backdrop { background: rgb(0 0 0 / 0.72); }
+.emg-dialog-heading { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-bottom: 16px; }
+.emg .emg-dialog-heading h2 { margin: 0; font-family: var(--font-body--family); font-size: 1.125rem; font-weight: 400; line-height: 1.3; letter-spacing: normal; text-transform: none; color: var(--color-foreground-heading); }
+.emg .emg-dialog-heading button { min-height: 44px; padding: 8px 16px; border: 1px solid var(--emg-line); border-radius: 0; background: transparent; }
+.emg-zoom-stage { overflow: auto; }
+.emg .emg-zoom-stage > img { display: block; width: auto; max-width: 100%; height: auto; max-height: calc(100dvh - 170px); margin: auto; }
+.emg-zoom-window { position: relative; overflow: hidden; max-width: 100%; margin: auto; }
+.emg .emg-zoom-window img { position: absolute; display: block; max-width: none; height: auto; }
+.emg-dialog .emg-note { margin-top: 12px; }
+
+@media (min-width: 750px) {
+  .emg-grid { gap: 32px 20px; }
+}
+@media (min-width: 990px) {
+  .emg-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  /* Photograph of all sheets on the left, the single sheets 2 × 2 on the right:
+     each single card keeps the width of a close-up card. */
+  .emg-sheets-body--split { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; align-items: start; }
+  .emg-sheets-body--split .emg-sheets-together { max-width: none; margin: 0; }
+  .emg-sheets-body--split .emg-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 749px) {
+  .emg { padding-block: 28px 48px; }
+  .emg-sheets { margin-top: 40px; padding-top: 24px; }
+  .emg-sheets-together { max-width: none; margin-bottom: 28px; }
+  .emg-sheets-together figcaption { flex-direction: column; align-items: flex-start; gap: 0; }
+  /* Two narrow columns: keep Enlarge under its own title so it never reads as
+     part of the next card's label. */
+  .emg-card-heading { flex-direction: column; align-items: flex-start; gap: 0; }
+  .emg .emg-card h3 { font-size: 0.875rem; }
+  .emg .emg-description { font-size: 0.8125rem; }
+}
+@media (max-width: 519px) {
+  .emg-toolbar { flex-direction: column; align-items: stretch; }
+  .emg-controls { width: 100%; }
+  .emg .emg-controls button { flex: 1; padding-inline: 12px; }
+}

@@ -240,6 +240,14 @@
               },
               "blocks": {}
             },
+            "es_compare_materials": {
+              "type": "custom-liquid",
+              "name": "Compare materials link",
+              "settings": {
+                "custom_liquid": "<p style=\"margin:4px 0 0;font-size:max(0.875rem,13.5px);line-height:1.6;\"><a href=\"/pages/materials-guide\" target=\"_blank\" rel=\"noopener\" style=\"color:inherit;text-decoration:underline;text-underline-offset:3px;\">Compare materials<span aria-hidden=\"true\"> ↗</span><span class=\"visually-hidden\"> (opens in a new tab)</span></a></p>"
+              },
+              "blocks": {}
+            },
             "es_choice_helper": {
               "type": "custom-liquid",
               "name": "Size & material helper",
@@ -581,6 +589,7 @@
             "divider_VJhene",
             "variant_picker_R3rGDr",
             "es_material_swatch",
+            "es_compare_materials",
             "es_choice_helper",
             "buy_buttons_eYQEYi",
             "es_required_gate",

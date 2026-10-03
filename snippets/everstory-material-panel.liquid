@@ -1,0 +1,63 @@
+{%- comment -%}
+  Render photographed samples with Shopify CDN region crops. Crop positions are
+  original-image pixels. Blocks outside the source image are omitted rather than
+  replaced with invented product imagery. Both panels remain visible without JS.
+{%- endcomment -%}
+<section class="emg-panel" data-emg-panel="{{ design }}" aria-labelledby="emg-panel-{{ design }}-{{ section.id }}">
+  <h2 class="emg-panel-title" id="emg-panel-{{ design }}-{{ section.id }}">{{ panel_title | escape }}</h2>
+  <div class="emg-grid" data-emg-layout="samples">
+    {%- assign sample_index = 0 -%}
+    {%- for block in section.blocks -%}
+      {%- if block.type != 'sample' -%}
+        {%- continue -%}
+      {%- endif -%}
+      {%- liquid
+        assign sample_index = sample_index | plus: 1
+        if design == 'portrait'
+          assign crop_x = block.settings.portrait_x
+          assign crop_y = block.settings.portrait_y
+        else
+          assign crop_x = block.settings.lettering_x
+          assign crop_y = block.settings.lettering_y
+        endif
+        assign crop_right = crop_x | plus: crop_width
+        assign crop_bottom = crop_y | plus: crop_height
+        assign sample_number = sample_index | prepend: '0'
+        assign fallback_label = 'Sample ' | append: sample_number
+        assign sample_label = block.settings.title | default: fallback_label
+        assign image_alt = sample_label | append: ' — ' | append: panel_title | append: ' sticker sample photographed on wood'
+        assign zoom_title = panel_title | append: ' · ' | append: sample_label
+      -%}
+      {%- if crop_x >= 0 and crop_y >= 0 and crop_right <= image.width and crop_bottom <= image.height -%}
+        {%- assign crop_url = image | image_url: crop: 'region', crop_left: crop_x, crop_top: crop_y, crop_width: crop_width, crop_height: crop_height, width: crop_width, height: crop_height -%}
+        <article class="emg-card" {{ block.shopify_attributes }}>
+          <figure class="emg-photo" style="aspect-ratio: {{ crop_width }} / {{ crop_height }}">
+            {{ image | image_url: crop: 'region', crop_left: crop_x, crop_top: crop_y, crop_width: crop_width, crop_height: crop_height, width: crop_width, height: crop_height | image_tag: class: 'emg-image', width: crop_width, height: crop_height, widths: image_widths, sizes: '(min-width: 1520px) 345px, (min-width: 990px) calc((100vw - 140px) / 4), (min-width: 750px) calc((100vw - 100px) / 2), calc((100vw - 46px) / 2)', alt: image_alt, loading: 'lazy' }}
+          </figure>
+          <div class="emg-card-heading">
+            <h3>{{ sample_label | escape }}</h3>
+            <button class="emg-detail" type="button" data-emg-zoom data-emg-title="{{ zoom_title | escape }}" data-emg-src="{{ crop_url | escape }}" data-emg-alt="{{ image_alt | escape }}" aria-label="Enlarge {{ panel_title | escape }}: {{ sample_label | escape }}" hidden>Enlarge</button>
+          </div>
+          {%- if block.settings.description != blank -%}
+            <p class="emg-description">{{ block.settings.description | escape }}</p>
+          {%- endif -%}
+        </article>
+      {%- elsif request.design_mode -%}
+        <p class="emg-note" {{ block.shopify_attributes }}>{{ sample_label | escape }}: this {{ design }} crop is outside the selected photograph. Adjust its left and top pixel positions.</p>
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+  {%- liquid
+    assign full_url = image | image_url: width: image.width
+    assign full_alt = 'Four ' | append: design | append: ' sticker samples photographed together on wood'
+    assign full_title = panel_title | append: ' · Full photograph'
+    assign full_widths = '640, 960, 1440, 1920, 2560, ' | append: image.width
+  -%}
+  <figure class="emg-full" data-emg-layout="full" hidden>
+    {{ image | image_url: width: image.width | image_tag: class: 'emg-full-image', width: image.width, height: image.height, widths: full_widths, sizes: '(min-width: 1040px) 960px, (min-width: 750px) calc(100vw - 80px), calc(100vw - 32px)', alt: full_alt, loading: 'lazy' }}
+    <figcaption>
+      <span>{{ panel_title | escape }} · Full photograph</span>
+      <button class="emg-detail" type="button" data-emg-zoom data-emg-title="{{ full_title | escape }}" data-emg-src="{{ full_url | escape }}" data-emg-alt="{{ full_alt | escape }}" hidden>Enlarge</button>
+    </figcaption>
+  </figure>
+</section>
