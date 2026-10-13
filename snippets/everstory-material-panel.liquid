@@ -2,6 +2,10 @@
   Render photographed samples with Shopify CDN region crops. Crop positions are
   original-image pixels. Blocks outside the source image are omitted rather than
   replaced with invented product imagery. Both panels remain visible without JS.
+
+  A lettering sample with its own photograph (one sample per photo) shows that
+  photo as a centred square instead of a crop; the shared source photograph is
+  still the Full photograph.
 {%- endcomment -%}
 <section class="emg-panel" data-emg-panel="{{ design }}" aria-labelledby="emg-panel-{{ design }}-{{ section.id }}">
   <h2 class="emg-panel-title" id="emg-panel-{{ design }}-{{ section.id }}">{{ panel_title | escape }}</h2>
@@ -13,12 +17,14 @@
       {%- endif -%}
       {%- liquid
         assign sample_index = sample_index | plus: 1
+        assign own_photo = nil
         if design == 'portrait'
           assign crop_x = block.settings.portrait_x
           assign crop_y = block.settings.portrait_y
         else
           assign crop_x = block.settings.lettering_x
           assign crop_y = block.settings.lettering_y
+          assign own_photo = block.settings.lettering_photo
         endif
         assign crop_right = crop_x | plus: crop_width
         assign crop_bottom = crop_y | plus: crop_height
@@ -27,16 +33,31 @@
         assign sample_label = block.settings.title | default: fallback_label
         assign image_alt = sample_label | append: ' — ' | append: panel_title | append: ' sticker sample photographed on wood'
         assign zoom_title = panel_title | append: ' · ' | append: sample_label
+        assign card_ready = false
+        if own_photo != blank
+          assign card_ready = true
+          assign card_aspect = '1 / 1'
+          assign photo_fallback_alt = sample_label | append: ' — ' | append: panel_title | append: ' sticker sample'
+          assign image_alt = own_photo.alt | default: photo_fallback_alt
+          assign zoom_url = own_photo | image_url: width: own_photo.width
+        elsif crop_x >= 0 and crop_y >= 0 and crop_right <= image.width and crop_bottom <= image.height
+          assign card_ready = true
+          assign card_aspect = crop_width | append: ' / ' | append: crop_height
+          assign zoom_url = image | image_url: crop: 'region', crop_left: crop_x, crop_top: crop_y, crop_width: crop_width, crop_height: crop_height, width: crop_width, height: crop_height
+        endif
       -%}
-      {%- if crop_x >= 0 and crop_y >= 0 and crop_right <= image.width and crop_bottom <= image.height -%}
-        {%- assign crop_url = image | image_url: crop: 'region', crop_left: crop_x, crop_top: crop_y, crop_width: crop_width, crop_height: crop_height, width: crop_width, height: crop_height -%}
+      {%- if card_ready -%}
         <article class="emg-card" {{ block.shopify_attributes }}>
-          <figure class="emg-photo" style="aspect-ratio: {{ crop_width }} / {{ crop_height }}">
-            {{ image | image_url: crop: 'region', crop_left: crop_x, crop_top: crop_y, crop_width: crop_width, crop_height: crop_height, width: crop_width, height: crop_height | image_tag: class: 'emg-image', width: crop_width, height: crop_height, widths: image_widths, sizes: '(min-width: 1520px) 345px, (min-width: 990px) calc((100vw - 140px) / 4), (min-width: 750px) calc((100vw - 100px) / 2), calc((100vw - 46px) / 2)', alt: image_alt, loading: 'lazy' }}
+          <figure class="emg-photo" style="aspect-ratio: {{ card_aspect }}">
+            {%- if own_photo != blank -%}
+              {{ own_photo | image_url: width: 1100, height: 1100, crop: 'center' | image_tag: class: 'emg-image', width: 1100, height: 1100, widths: '280, 420, 560, 700, 900, 1100', sizes: '(min-width: 1520px) 345px, (min-width: 990px) calc((100vw - 140px) / 4), (min-width: 750px) calc((100vw - 100px) / 2), calc((100vw - 46px) / 2)', alt: image_alt, loading: 'lazy' }}
+            {%- else -%}
+              {{ image | image_url: crop: 'region', crop_left: crop_x, crop_top: crop_y, crop_width: crop_width, crop_height: crop_height, width: crop_width, height: crop_height | image_tag: class: 'emg-image', width: crop_width, height: crop_height, widths: image_widths, sizes: '(min-width: 1520px) 345px, (min-width: 990px) calc((100vw - 140px) / 4), (min-width: 750px) calc((100vw - 100px) / 2), calc((100vw - 46px) / 2)', alt: image_alt, loading: 'lazy' }}
+            {%- endif -%}
           </figure>
           <div class="emg-card-heading">
             <h3>{{ sample_label | escape }}</h3>
-            <button class="emg-detail" type="button" data-emg-zoom data-emg-title="{{ zoom_title | escape }}" data-emg-src="{{ crop_url | escape }}" data-emg-alt="{{ image_alt | escape }}" aria-label="Enlarge {{ panel_title | escape }}: {{ sample_label | escape }}" hidden>Enlarge</button>
+            <button class="emg-detail" type="button" data-emg-zoom data-emg-title="{{ zoom_title | escape }}" data-emg-src="{{ zoom_url | escape }}" data-emg-alt="{{ image_alt | escape }}" aria-label="Enlarge {{ panel_title | escape }}: {{ sample_label | escape }}" hidden>Enlarge</button>
           </div>
           {%- if block.settings.description != blank -%}
             <p class="emg-description">{{ block.settings.description | escape }}</p>
@@ -47,9 +68,11 @@
       {%- endif -%}
     {%- endfor -%}
   </div>
+  {%- if image != blank -%}
   {%- liquid
     assign full_url = image | image_url: width: image.width
-    assign full_alt = 'Four ' | append: design | append: ' sticker samples photographed together on wood'
+    assign full_fallback_alt = 'Four ' | append: design | append: ' sticker samples photographed together on wood'
+    assign full_alt = image.alt | default: full_fallback_alt
     assign full_title = panel_title | append: ' · Full photograph'
     assign full_widths = '640, 960, 1440, 1920, 2560, ' | append: image.width
   -%}
@@ -60,4 +83,5 @@
       <button class="emg-detail" type="button" data-emg-zoom data-emg-title="{{ full_title | escape }}" data-emg-src="{{ full_url | escape }}" data-emg-alt="{{ full_alt | escape }}" hidden>Enlarge</button>
     </figcaption>
   </figure>
+  {%- endif -%}
 </section>

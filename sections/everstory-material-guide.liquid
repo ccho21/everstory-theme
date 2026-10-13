@@ -7,6 +7,10 @@
   648 × 756: the portrait stickers sit about 110 px apart, and a wider window
   shows the edge of the neighbouring sample.
 
+  A sample block may carry its own lettering photograph (one sample per photo).
+  It then replaces that sample's lettering crop, and the lettering source
+  photograph is used only as the Full photograph.
+
   Sheet blocks are separate photographs, one whole sheet each, labelled with
   the material printed on that sheet. They are not tied to sample blocks,
   whose material order is confirmed separately. An optional photograph of all
@@ -38,7 +42,9 @@
     if portrait_image != blank and block.settings.portrait_x >= 0 and block.settings.portrait_y >= 0 and portrait_right <= portrait_image.width and portrait_bottom <= portrait_image.height
       assign portrait_count = portrait_count | plus: 1
     endif
-    if lettering_image != blank and block.settings.lettering_x >= 0 and block.settings.lettering_y >= 0 and lettering_right <= lettering_image.width and lettering_bottom <= lettering_image.height
+    if block.settings.lettering_photo != blank
+      assign lettering_count = lettering_count | plus: 1
+    elsif lettering_image != blank and block.settings.lettering_x >= 0 and block.settings.lettering_y >= 0 and lettering_right <= lettering_image.width and lettering_bottom <= lettering_image.height
       assign lettering_count = lettering_count | plus: 1
     endif
   endfor
@@ -201,7 +207,7 @@
     { "type": "select", "id": "heading_level", "label": "Heading level", "default": "h1", "options": [{ "value": "h1", "label": "H1 — page heading" }, { "value": "h2", "label": "H2 — section heading" }] },
     { "type": "textarea", "id": "intro", "label": "Introduction", "default": "White Matte, Silver, Gold and Translucent each give a photograph a different feel. Compare the same lettering and portrait on four real samples, then see a whole sheet printed on each material." },
     { "type": "image_picker", "id": "portrait_image", "label": "Portrait source photograph", "info": "Use IMG_8382-shopify-srgb.webp (4032 × 3024 pixels), the native-resolution sRGB publication export." },
-    { "type": "image_picker", "id": "lettering_image", "label": "Lettering source photograph", "info": "Use IMG_8363-shopify-srgb.webp (4284 × 2856 pixels), the sRGB publication export trimmed without resizing." },
+    { "type": "image_picker", "id": "lettering_image", "label": "Lettering source photograph", "info": "Shown as the lettering Full photograph. Samples without their own lettering photograph are cropped from it; the default crop positions match IMG_8363-shopify-srgb.webp (4284 × 2856 pixels)." },
     { "type": "textarea", "id": "photo_note", "label": "Photo note", "default": "The wood background stays in the photographs so you can compare how the surface shows through and how each sample catches the light. Colour and shine can vary with lighting, angle and screen." },
     { "type": "checkbox", "id": "show_sample_note", "label": "Show unconfirmed material label note", "default": true, "info": "Turn off only after the material identity of every displayed sample is confirmed." },
     { "type": "text", "id": "sheet_heading", "label": "Whole sheet heading", "default": "The whole sheet" },
@@ -220,6 +226,7 @@
         { "type": "textarea", "id": "description", "label": "Visual description", "info": "Describe confirmed appearance only. Leave empty while the material identity is unconfirmed." },
         { "type": "number", "id": "portrait_x", "label": "Portrait crop left (pixels)", "info": "Window is 648 × 756 pixels.", "default": 829 },
         { "type": "number", "id": "portrait_y", "label": "Portrait crop top (pixels)", "default": 1107 },
+        { "type": "image_picker", "id": "lettering_photo", "label": "Lettering photograph", "info": "Optional. One sample per photograph, shown as a centred square instead of the lettering crop below." },
         { "type": "number", "id": "lettering_x", "label": "Lettering crop left (pixels)", "info": "Window is 889 × 762 pixels.", "default": 311 },
         { "type": "number", "id": "lettering_y", "label": "Lettering crop top (pixels)", "default": 1212 }
       ]

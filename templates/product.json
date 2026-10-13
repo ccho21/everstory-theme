@@ -221,7 +221,7 @@
               "type": "image",
               "name": "Material comparison",
               "settings": {
-                "image": "shopify://shop_images/material_comparison.png",
+                "image": "shopify://shop_images/materials-round-row.png",
                 "link": "",
                 "image_ratio": "adapt",
                 "width": "custom",
