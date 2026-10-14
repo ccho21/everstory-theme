@@ -768,6 +768,14 @@
   {%- assign sheet_prefix = product.metafields.custom.sheet_prefix.value -%}
 
   {%- comment -%}
+    Special Day (2026-10-13) — templates/product.special-day.json renders this with kind: 'special_day'.
+    No size choice and no silhouette die-cut there (photo sticker = rounded card, ring badge = circle,
+    twelve 1.5″ per sheet), so the two size sections, the sticker-count note and What you'll get are left out.
+  {%- endcomment -%}
+  {%- assign es_special_day = false -%}
+  {%- if kind == 'special_day' -%}{%- assign es_special_day = true -%}{%- endif -%}
+
+  {%- comment -%}
     OPTIONS section removed — it restated the buy-box controls ~2000px below them.
 
     Size half: duplicated the "Sizes" section (which carries the per-size sheet
@@ -786,7 +794,7 @@
   <div class="es-pdp" lang="en">
     <div class="es-page">
 
-      {%- unless is_package -%}
+      {%- unless is_package or es_special_day -%}
       <!-- Sizes — 비-Package 전용. Package 는 size 선택 없음(tier 큐레이션),
            해당 카피는 product-specific intro metafield 가 담당. -->
       <section class="es-section" id="es-sizes" aria-label="Sizes">
@@ -957,7 +965,7 @@
       </section>
       {%- endif -%}
 
-      {%- unless is_package -%}
+      {%- unless is_package or es_special_day -%}
 
       <!-- 긴 변 기준 — Sizes 설명의 운영 규칙. 사이즈 그리드와 시각적으로 분리해 별도 섹션. -->
       <section class="es-section" aria-label="By the longest edge">
@@ -1042,9 +1050,11 @@
                 See the color note below.
               </span>
             </li>
+            {%- unless es_special_day -%}
             <li>
               <span>The number of stickers changes with each photo's shape. A tall photo fits fewer per row.</span>
             </li>
+            {%- endunless -%}
             <li>
               <span>
                 Questions? Email <em>studio.everstory@gmail.com</em>. We're happy to help in English or Korean.
@@ -1100,7 +1110,7 @@
           </div>
 
           {%- comment -%} Crop rules moved to a product-aware card: snippets/es-what-you-get.liquid {%- endcomment -%}
-          {%- render 'es-what-you-get', product: product -%}
+          {%- unless es_special_day -%}{%- render 'es-what-you-get', product: product -%}{%- endunless -%}
         </div>
       </section>
 

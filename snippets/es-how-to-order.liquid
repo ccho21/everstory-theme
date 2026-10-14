@@ -6,7 +6,8 @@
   not have to assemble it. Numbered markers are used because this genuinely is a
   sequence, not decoration.
 
-  Custom shows all three steps. The Name & Photo sheet (a pack) showed only "We make
+  Custom shows all three steps. Special Day (rendered with kind: 'special_day' from
+  templates/product.special-day.json, 2026-10-13) shows all three with its own Choose and Upload lines. The Name & Photo sheet (a pack) showed only "We make
   it." without its number or the shipping sentence (2026-09-24, owner: too wordy): its
   buy box already walks through material, name, style and photos with one hint per
   field, and the purchase assurance just above states shipping. Since 2026-09-25 that
@@ -60,7 +61,9 @@
     <span class="es-hto-num">01</span>
     <p>
       <strong>Choose.</strong>
-      {% if product.options contains 'Size' %}
+      {% if kind == 'special_day' %}
+        <span>Pick the design and material, then write the words you want on every sticker.</span>
+      {% elsif product.options contains 'Size' %}
         <span>Pick your size, your material, how many photos, and how we crop them.</span>
       {% else %}
         <span>Choose your material and follow this package's photo upload instructions.</span>
@@ -71,7 +74,9 @@
     <span class="es-hto-num">02</span>
     <p>
       <strong>Upload.</strong>
-      {% if product.options contains 'Size' %}
+      {% if kind == 'special_day' %}
+        <span>Upload up to three photos; we repeat them across the sheet. If one can't be used, we email you before printing.</span>
+      {% elsif product.options contains 'Size' %}
         <span>Upload the number of photos you chose. If one cannot be used, we email you before printing. Add any details in Special instructions.</span>
       {% else %}
         <span>Send them in one go, plus a spare or two and a note if something matters. If one can't be cut cleanly we use a spare instead of holding up your order.</span>
