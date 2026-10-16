@@ -527,6 +527,32 @@
     color: #fff !important;
   }
 
+  /* No wrap-around between the first and last option button (2026-10-15, owner: the animation looked wrong on
+     Photo sticker after Special Day got a third design). With 3+ buttons Horizon (base.css) parks the first and last
+     buttons' black fill on the "wrong" side, so picking the last button flips the first button's hidden fill from right
+     to left (it can sweep across it), and last → first exits right and re-enters from the left. These reset those four
+     cases to the neighbour rules — the fill now always slides straight toward the chosen button. Materials too. */
+  variant-picker .variant-option--buttons:has(:nth-of-type(3))
+    .variant-option__button-label:has([data-current-checked='true']):first-of-type ~ label:last-of-type {
+    --pill-offset: calc(-100% - 1px);
+  }
+
+  variant-picker .variant-option--buttons:has(:nth-of-type(3))
+    .variant-option__button-label:not(:has([data-current-checked='true'])):first-of-type:has(~ label:last-of-type > :checked) {
+    --pill-offset: calc(100% + 1px);
+  }
+
+  variant-picker .variant-option__button-label:has([data-current-checked='true']):first-of-type
+    ~ label:last-of-type:not(.variant-option__button-label--has-swatch) {
+    --clip: 0 100% 0 0;
+  }
+
+  variant-picker .variant-option__button-label:not(:has([data-current-checked='true'])):first-of-type:has(
+      ~ label:last-of-type > :checked
+    ):not(.variant-option__button-label--has-swatch) {
+    --clip: 0 0 0 100%;
+  }
+
   /* Four materials (2026-09-25): Horizon's auto-fit grid left "Translucent" alone on a second row
      in the ~460–600px desktop column. One row of four where it fits, otherwise two by two. */
   variant-picker {

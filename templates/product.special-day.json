@@ -441,7 +441,7 @@
                       "type": "custom-liquid",
                       "name": "Sizes note",
                       "settings": {
-                        "custom_liquid": "<p>Every order is one A5 sheet (148 &#215; 210 mm) of twelve stickers. Photo stickers are 1.5″ wide (38 &#215; 41 mm); ring badges are 1.5″ round (38 mm).</p>"
+                        "custom_liquid": "<p>Every order is one A5 sheet (148 &#215; 210 mm) of twelve stickers. Photo stickers are 1.5″ wide (38 &#215; 41 mm); ring and stripe badges are 1.5″ round (38 mm).</p>"
                       },
                       "blocks": {}
                     }
